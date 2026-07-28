@@ -440,5 +440,151 @@ export const technologies: Technology[] = [
     category: "Monitoring",
     description: "Auto-discovering network monitoring platform tailored for broad device support.",
     icon: "network"
+  },
+  
+  // --- Self-Hosted & AI Platforms ---
+  {
+    id: "proxmox-ve",
+    slug: "proxmox-ve",
+    name: "Proxmox VE",
+    category: "Platforms",
+    description: "Open-source server virtualization management platform based on KVM and LXC.",
+    icon: "server"
+  },
+  {
+    id: "docker",
+    slug: "docker",
+    name: "Docker",
+    category: "Platforms",
+    description: "Platform for developing, shipping, and running containerized applications.",
+    icon: "box"
+  },
+  {
+    id: "docker-compose",
+    slug: "docker-compose",
+    name: "Docker Compose",
+    category: "Platforms",
+    description: "Tool for defining and running multi-container Docker applications.",
+    icon: "box"
+  },
+  {
+    id: "portainer",
+    slug: "portainer",
+    name: "Portainer",
+    category: "Platforms",
+    description: "Universal container management platform for deploying and managing Docker environments.",
+    icon: "box"
+  },
+  {
+    id: "ubuntu-server",
+    slug: "ubuntu-server",
+    name: "Ubuntu Server",
+    category: "Platforms",
+    description: "Enterprise open-source Linux operating system powering self-hosted infrastructure.",
+    icon: "server"
+  },
+  {
+    id: "ollama",
+    slug: "ollama",
+    name: "Ollama",
+    category: "Platforms",
+    description: "Framework for running, managing, and interacting with large language models locally.",
+    icon: "cpu"
+  },
+  {
+    id: "hermes-ui",
+    slug: "hermes-ui",
+    name: "Hermes UI",
+    category: "Platforms",
+    description: "Self-hosted Web UI platform for conversational interactions with local LLMs.",
+    icon: "layout"
+  },
+  {
+    id: "9router",
+    slug: "9router",
+    name: "9Router",
+    category: "Platforms",
+    description: "Local AI routing service for distributing requests to self-hosted models.",
+    icon: "network"
+  },
+  {
+    id: "gemini-api",
+    slug: "gemini-api",
+    name: "Gemini API",
+    category: "Platforms",
+    description: "Integration with Google's advanced language model API for infrastructure documentation.",
+    icon: "cpu"
+  },
+  {
+    id: "adguard-home",
+    slug: "adguard-home",
+    name: "AdGuard Home",
+    category: "Platforms",
+    description: "Network-wide software for blocking ads and tracking acting as an enterprise DNS server.",
+    icon: "shield"
+  },
+  {
+    id: "nginx-reverse-proxy",
+    slug: "nginx-reverse-proxy",
+    name: "Nginx Reverse Proxy",
+    category: "Platforms",
+    description: "High-performance reverse proxy for internal routing and local domain resolution.",
+    icon: "server"
+  },
+  {
+    id: "agent-dvr",
+    slug: "agent-dvr",
+    name: "Agent DVR",
+    category: "Platforms",
+    description: "Advanced video surveillance and CCTV recording platform.",
+    icon: "server"
+  },
+  {
+    id: "site-to-site-vpn",
+    slug: "site-to-site-vpn",
+    name: "Site-to-Site VPN",
+    category: "Connectivity",
+    description: "Encrypted point-to-point tunnels securely bridging remote private networks.",
+    icon: "lock"
+  },
+  {
+    id: "beszel",
+    slug: "beszel",
+    name: "Beszel",
+    category: "Monitoring",
+    description: "Lightweight, modern dashboard for monitoring server metrics and Docker containers.",
+    icon: "activity"
+  },
+  {
+    id: "snmp",
+    slug: "snmp",
+    name: "SNMP",
+    category: "Monitoring",
+    description: "Simple Network Management Protocol for collecting hardware telemetry from enterprise devices.",
+    icon: "activity"
+  },
+  {
+    id: "linux-monitoring",
+    slug: "linux-monitoring",
+    name: "Linux Monitoring",
+    category: "Monitoring",
+    description: "Comprehensive telemetry and health monitoring for Linux-based servers.",
+    icon: "activity"
+  },
+  {
+    id: "eve-ng",
+    slug: "eve-ng",
+    name: "EVE-NG",
+    category: "Platforms",
+    description: "Emulated Virtual Environment Next Generation for simulating complex network topologies.",
+    icon: "network"
+  },
+  {
+    id: "pnetlab",
+    slug: "pnetlab",
+    name: "PNETLab",
+    category: "Platforms",
+    description: "Network simulation and emulation platform for testing data center topologies.",
+    icon: "network"
   }
 ];
