@@ -4,12 +4,12 @@ export const footer = {
   copyright: `© ${new Date().getFullYear()} Enterprise Network Engineer. All rights reserved.`,
   navigation: [
     { name: "Home", href: "/" },
-    { name: "About", href: "#about" },
     { name: "Expertise", href: "#expertise" },
     { name: "Projects", href: "#projects" },
     { name: "Experience", href: "#experience" },
     { name: "Certifications", href: "#certifications" },
     { name: "Articles", href: "/articles" },
+    { name: "About", href: "#about" },
     { name: "Resume", href: "/resume.pdf" },
     { name: "Contact", href: "#contact" },
   ],
