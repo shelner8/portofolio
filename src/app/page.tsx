@@ -15,7 +15,7 @@ import { hero } from "@/data/hero"
 import { about } from "@/data/about"
 import { skills } from "@/data/skills"
 import { architectures } from "@/data/architectures"
-import { projects } from "@/data/projects"
+import { getFeaturedProjects } from "@/lib/projects"
 import { experience } from "@/data/experience"
 import { certifications } from "@/data/certifications"
 import { articles } from "@/data/articles"
@@ -29,7 +29,7 @@ export default function Home() {
       <AboutSection about={about} />
       <ExpertiseSection skills={skills} />
       <ArchitectureSection architectures={architectures} />
-      <ProjectSection projects={projects} />
+      <ProjectSection projects={getFeaturedProjects()} />
       <ExperienceSection experience={experience} />
       <CertificationSection certifications={certifications} />
       <ArticleSection articles={articles} />

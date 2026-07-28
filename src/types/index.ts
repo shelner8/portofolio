@@ -2,23 +2,20 @@ export interface Project {
   id: string;
   slug: string;
   title: string;
+  customer?: string;
+  environment?: string;
+  category: string;
+  role?: string;
+  duration: string;
+  location?: string;
   summary: string;
-  description: string;
-  status: "Production" | "Completed" | "In Progress" | "Lab" | "Research";
-  category: "Data Center" | "Enterprise Networking" | "Automation" | "Monitoring" | "Security" | "Operations";
-  environment: "Production" | "Lab";
-  vendor: string[];
+  responsibilities?: string[];
   technologies: string[];
-  architecture: string[];
-  highlights: string[];
-  responsibilities: string[];
-  lessonsLearned: string[];
-  challenges: string[];
-  images: string[];
-  diagrams: string[];
-  github?: string;
-  documentation?: string;
+  skills?: string[];
+  status: string;
   featured: boolean;
+  futureCaseStudy: boolean;
+  associatedWith?: string;
 }
 
 export interface Experience {

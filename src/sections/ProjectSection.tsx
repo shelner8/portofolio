@@ -14,8 +14,7 @@ interface ProjectSectionProps {
 }
 
 export function ProjectSection({ projects }: ProjectSectionProps) {
-  // Extract only featured projects, limit to 6 for a balanced grid
-  const featuredProjects = projects.filter(p => p.featured).slice(0, 6);
+  const featuredProjects = projects;
 
   return (
     <SectionLayout 
@@ -24,10 +23,10 @@ export function ProjectSection({ projects }: ProjectSectionProps) {
       id="projects"
       footerLink={
         <Button variant="ghost" className="gap-2 group text-primary hover:text-accent-orange transition-colors" asChild>
-          <a href="#">
+          <Link href="/projects">
             View All Projects 
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
+            <ArrowRight aria-hidden="true" className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </Button>
       }
     >

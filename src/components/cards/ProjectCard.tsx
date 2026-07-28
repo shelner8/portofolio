@@ -22,16 +22,33 @@ export function ProjectCard({ project, className, ...props }: ProjectCardProps) 
             <div className="p-3 rounded-xl bg-surface/80 border border-surface flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-soft">
               <FolderGit2 className="w-6 h-6 text-accent-orange" />
             </div>
-            <Badge variant="outline" className="border-accent-emerald/30 text-accent-emerald bg-accent-emerald/5 mt-1 font-medium">
-              {project.status}
-            </Badge>
+            <div className="flex flex-col items-end gap-1">
+              <Badge variant="outline" className={cn(
+                "font-medium border-surface-light text-xs",
+                project.status === 'Completed' ? "text-accent-emerald bg-accent-emerald/5 border-accent-emerald/30" : "text-accent-orange bg-accent-orange/5 border-accent-orange/30"
+              )}>
+                {project.status}
+              </Badge>
+              {project.category && (
+                <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">{project.category}</span>
+              )}
+            </div>
           </div>
-          <h3 className="text-xl md:text-2xl font-bold text-primary group-hover:text-accent-blue transition-colors duration-300 leading-tight">
-            {project.title}
-          </h3>
+          <div className="flex flex-col gap-1.5">
+            <h3 className="text-xl md:text-2xl font-bold text-primary group-hover:text-accent-blue transition-colors duration-300 leading-tight">
+              {project.title}
+            </h3>
+            {(project.customer || project.associatedWith || project.duration) && (
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground font-medium">
+                {project.customer || project.associatedWith ? <span>{project.customer || project.associatedWith}</span> : null}
+                {(project.customer || project.associatedWith) && project.duration ? <span className="w-1 h-1 rounded-full bg-surface-light" /> : null}
+                {project.duration ? <span>{project.duration}</span> : null}
+              </div>
+            )}
+          </div>
         </div>
         
-        <p className="text-muted text-base md:text-lg leading-relaxed line-clamp-4">
+        <p className="text-muted text-base leading-relaxed line-clamp-3">
           {project.summary}
         </p>
 
