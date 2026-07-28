@@ -5,12 +5,14 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { Container } from "@/components/shared/Container"
 import { animations } from "@/components/animations/presets"
-import { getAllTechnologies } from "@/lib/technologies"
+import { Technology } from "@/types"
 import { ChevronRight, Cpu } from "lucide-react"
 
-export function CoreExpertiseSection() {
-  // Fetch featured technologies dynamically
-  const technologies = getAllTechnologies().filter(tech => tech.featured)
+interface CoreExpertiseSectionProps {
+  technologies: Technology[]
+}
+
+export function CoreExpertiseSection({ technologies }: CoreExpertiseSectionProps) {
 
   if (technologies.length === 0) return null
 

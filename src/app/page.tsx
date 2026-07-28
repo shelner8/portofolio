@@ -22,12 +22,15 @@ import { certifications } from "@/data/certifications"
 import { articles } from "@/data/articles"
 import { resumeCTA } from "@/data/resume"
 import { contact } from "@/data/contact"
+import { getAllTechnologies } from "@/lib/technologies"
 
 export default function Home() {
+  const featuredTechnologies = getAllTechnologies().filter(tech => tech.featured);
+
   return (
     <div className="flex flex-col gap-0 pb-16">
       <HeroSection hero={hero} />
-      <CoreExpertiseSection />
+      <CoreExpertiseSection technologies={featuredTechnologies} />
       <AboutSection about={about} />
       <ExpertiseSection skills={skills} />
       <ArchitectureSection architectures={architectures} />
