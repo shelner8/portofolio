@@ -102,17 +102,17 @@ const SpineLeafMesh = () => (
       preserveAspectRatio="none"
       viewBox="0 0 100 100"
     >
-      {/* Spine 1 (25) Links */}
-      <CVDFabricLine startX={25} endX={12.5} />
-      <CVDFabricLine startX={25} endX={37.5} />
-      <CVDFabricLine startX={25} endX={62.5} />
-      <CVDFabricLine startX={25} endX={87.5} />
+      {/* Spine 1 (25) Links - Fanned anchors */}
+      <CVDFabricLine startX={19} endX={12.5} />
+      <CVDFabricLine startX={23} endX={37.5} />
+      <CVDFabricLine startX={27} endX={62.5} />
+      <CVDFabricLine startX={31} endX={87.5} />
       
-      {/* Spine 2 (75) Links */}
-      <CVDFabricLine startX={75} endX={12.5} />
-      <CVDFabricLine startX={75} endX={37.5} />
-      <CVDFabricLine startX={75} endX={62.5} />
-      <CVDFabricLine startX={75} endX={87.5} />
+      {/* Spine 2 (75) Links - Fanned anchors */}
+      <CVDFabricLine startX={69} endX={12.5} />
+      <CVDFabricLine startX={73} endX={37.5} />
+      <CVDFabricLine startX={77} endX={62.5} />
+      <CVDFabricLine startX={81} endX={87.5} />
     </svg>
   </div>
 )
@@ -198,12 +198,12 @@ export function FabricArchitectureDiagram() {
              <Node title="Leaf-04" subtitle="Aruba CX10000" small />
           </div>
           
-          <div className="absolute inset-0 z-0 flex items-center pointer-events-none">
+          <div className="absolute inset-0 z-20 flex items-center pointer-events-none">
              <div className="absolute left-[25%] -translate-x-1/2">
-               <VSXLink labelOffset="top-5 md:top-6" />
+               <VSXLink labelOffset="top-3 md:top-4" />
              </div>
              <div className="absolute left-[75%] -translate-x-1/2">
-               <VSXLink labelOffset="top-5 md:top-6" />
+               <VSXLink labelOffset="top-3 md:top-4" />
              </div>
           </div>
         </div>
