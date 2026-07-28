@@ -1,12 +1,12 @@
 import { ContactData } from "@/types";
 
 export const contact: ContactData = {
-  title: "Get In Touch",
-  description: "Currently open to new opportunities. Whether you have a question or just want to discuss network architectures, I'll try my best to get back to you!",
-  email: "hello@example.com",
-  location: "Jakarta, Indonesia",
+  title: "Let's Build Reliable Infrastructure Together",
+  description: "Whether it's enterprise networking, modern data center architecture, infrastructure automation, or technical collaboration, I'm always open to meaningful conversations and new opportunities.",
+  email: "",
+  location: "",
   socials: [
-    { platform: "GitHub", url: "https://github.com/", handle: "@username" },
-    { platform: "LinkedIn", url: "https://linkedin.com/", handle: "in/username" }
+    { platform: "LinkedIn", url: "https://www.linkedin.com/in/shelnerio", handle: "in/shelnerio" },
+    { platform: "GitHub", url: "https://github.com/shelner8", handle: "shelner8" }
   ]
 };
