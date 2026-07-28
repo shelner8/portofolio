@@ -4,7 +4,7 @@ import { Project } from "@/types"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { FolderGit2, ArrowRight } from "lucide-react"
+import { FolderGit2, ArrowRight, ExternalLink } from "lucide-react"
 
 interface ProjectCardProps extends React.HTMLAttributes<HTMLDivElement> {
   project: Project
@@ -44,10 +44,10 @@ export function ProjectCard({ project, className, ...props }: ProjectCardProps) 
         </div>
       </div>
       <div className="p-8 md:p-10 pt-0 mt-auto">
-        <Button variant="secondary" className="w-full group/btn bg-surface hover:bg-surface-light border border-surface transition-all" asChild>
-          <a href="#">
-            View Case Study 
-            <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+        <Button variant="secondary" size="sm" className="w-full gap-2 group/btn border-surface bg-surface/50 hover:bg-surface" asChild>
+          <a href="#" aria-label={`View Case Study for ${project.title}`}>
+            View Case Study
+            <ExternalLink aria-hidden="true" className="w-3.5 h-3.5 group-hover/btn:text-accent-orange transition-colors" />
           </a>
         </Button>
       </div>

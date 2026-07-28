@@ -54,9 +54,9 @@ export function CertificationCard({ certification, className, ...props }: Certif
         
         {certification.url && (
           <Button variant="secondary" size="sm" className="w-full group/btn bg-surface hover:bg-surface-light border border-surface transition-all text-xs" asChild>
-            <a href={certification.url} target="_blank" rel="noopener noreferrer">
+            <a href={certification.url} target="_blank" rel="noopener noreferrer" aria-label={`Verify ${certification.name} credential`}>
               Verify Credential
-              <ExternalLink className="w-3.5 h-3.5 ml-2 text-muted-foreground group-hover/btn:text-primary transition-colors" />
+              <ExternalLink aria-hidden="true" className="w-3.5 h-3.5 ml-2 text-muted-foreground group-hover/btn:text-primary transition-colors" />
             </a>
           </Button>
         )}

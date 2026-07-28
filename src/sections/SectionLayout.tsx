@@ -16,6 +16,7 @@ export const SectionLayout = React.forwardRef<HTMLElement, SectionLayoutProps>(
     return (
       <section
         ref={ref}
+        aria-labelledby={props.id ? `${props.id}-heading` : undefined}
         className={cn(
           "w-full py-24 md:py-32 lg:py-40 relative",
           className
@@ -23,7 +24,7 @@ export const SectionLayout = React.forwardRef<HTMLElement, SectionLayoutProps>(
         {...props}
       >
         <Container>
-          <SectionHeader title={title} description={description} align={headerAlign} />
+          <SectionHeader id={props.id ? `${props.id}-heading` : undefined} title={title} description={description} align={headerAlign} />
           
           <div className="w-full">
             {children}

@@ -34,7 +34,7 @@ export function Navbar({ navigation }: NavbarProps) {
           <span className="text-accent-orange">/</span>DC<span className="hidden sm:inline">_Eng</span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-6">
+        <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-6">
           {navigation.map((item) => (
             <Link
               key={item.name}

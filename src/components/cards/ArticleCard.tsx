@@ -52,9 +52,9 @@ export function ArticleCard({ article, className, ...props }: ArticleCardProps) 
         </div>
         
         <Button variant="ghost" className="gap-2 group/btn hover:text-accent-orange hover:bg-transparent px-0 transition-colors" asChild>
-          <a href={article.url}>
+          <a href={article.url} aria-label={`Read more about ${article.title}`}>
             Read More 
-            <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+            <ArrowRight aria-hidden="true" className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
           </a>
         </Button>
       </div>

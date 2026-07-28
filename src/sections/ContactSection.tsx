@@ -45,9 +45,9 @@ export function ContactSection({ contact }: ContactSectionProps) {
             
             <div className="mt-auto pt-6 border-t border-surface/60">
               <Button variant="secondary" className="w-full group/btn bg-surface hover:bg-[#0A66C2]/10 hover:text-[#0A66C2] hover:border-[#0A66C2]/20 border border-surface transition-all" asChild>
-                <a href={contact.socials.find(s => s.platform === "LinkedIn")?.url || "#"} target="_blank" rel="noopener noreferrer">
+                <a href={contact.socials.find(s => s.platform === "LinkedIn")?.url || "#"} target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn">
                   Connect on LinkedIn
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                  <ArrowRight aria-hidden="true" className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                 </a>
               </Button>
             </div>
@@ -72,9 +72,9 @@ export function ContactSection({ contact }: ContactSectionProps) {
             
             <div className="mt-auto pt-6 border-t border-surface/60">
               <Button variant="secondary" className="w-full group/btn bg-surface hover:bg-accent-orange/10 hover:text-accent-orange hover:border-accent-orange/20 border border-surface transition-all" asChild>
-                <a href={contact.socials.find(s => s.platform === "GitHub")?.url || "#"} target="_blank" rel="noopener noreferrer">
+                <a href={contact.socials.find(s => s.platform === "GitHub")?.url || "#"} target="_blank" rel="noopener noreferrer" aria-label="View GitHub profile">
                   View GitHub
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                  <ArrowRight aria-hidden="true" className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                 </a>
               </Button>
             </div>
@@ -99,9 +99,9 @@ export function ContactSection({ contact }: ContactSectionProps) {
             
             <div className="mt-auto pt-6 border-t border-surface/60">
               <Button variant="secondary" className="w-full group/btn bg-surface hover:bg-accent-emerald/10 hover:text-accent-emerald hover:border-accent-emerald/20 border border-surface transition-all" asChild>
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Resume PDF">
                   Download Resume
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                  <ArrowRight aria-hidden="true" className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                 </a>
               </Button>
             </div>

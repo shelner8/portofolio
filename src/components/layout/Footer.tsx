@@ -25,8 +25,8 @@ export function Footer({ footer }: FooterProps) {
           </div>
 
           <div className="flex flex-col gap-4">
-            <h3 className="font-semibold text-primary">Navigation</h3>
-            <ul className="flex flex-col gap-2">
+            <h3 id="footer-nav" className="font-semibold text-primary">Navigation</h3>
+            <ul aria-labelledby="footer-nav" className="flex flex-col gap-2">
               {footer.navigation.map((item) => (
                 <li key={item.name}>
                   <Link href={item.href} className="text-sm text-muted hover:text-accent-orange transition-colors">
@@ -38,8 +38,8 @@ export function Footer({ footer }: FooterProps) {
           </div>
 
           <div className="flex flex-col gap-4">
-            <h3 className="font-semibold text-primary">Technologies</h3>
-            <ul className="flex flex-wrap gap-2">
+            <h3 id="footer-tech" className="font-semibold text-primary">Technologies</h3>
+            <ul aria-labelledby="footer-tech" className="flex flex-wrap gap-2">
               {footer.technologies.slice(0, 7).map((tech) => (
                 <li key={tech} className="text-xs text-muted">
                   {tech}
