@@ -15,15 +15,17 @@ export const viewport: Viewport = {
   themeColor: "#0B1120",
 }
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://enterprise-portfolio.vercel.app";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://your-portfolio.com"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Data Center Network Specialist | Enterprise Network Engineer",
     template: "%s | Enterprise Network Portfolio"
   },
   description: "Professional engineering portfolio showcasing enterprise networking, modern data center architecture, automation, and infrastructure engineering.",
   keywords: ["Network Engineer", "Data Center", "Aruba AOS-CX", "EVPN", "VXLAN", "BGP", "Network Automation", "Python", "Zero Trust Campus"],
-  authors: [{ name: "Enterprise Network Engineer", url: "https://your-portfolio.com" }],
+  authors: [{ name: "Enterprise Network Engineer", url: siteUrl }],
   creator: "Enterprise Network Engineer",
   alternates: {
     canonical: "/",
@@ -31,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Data Center Network Specialist | Enterprise Network Engineer",
     description: "Professional engineering portfolio showcasing enterprise networking, modern data center architecture, automation, and infrastructure engineering.",
-    url: "https://your-portfolio.com",
+    url: siteUrl,
     siteName: "Enterprise Network Portfolio",
     images: [
       {
@@ -69,7 +71,7 @@ const jsonLd = {
   "@type": "Person",
   "name": "Enterprise Network Engineer",
   "jobTitle": "Data Center Network Specialist",
-  "url": "https://your-portfolio.com",
+  "url": siteUrl,
   "sameAs": [
     "https://linkedin.com/in/shelnerio",
     "https://github.com/shelner8"
