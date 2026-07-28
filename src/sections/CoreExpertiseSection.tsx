@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import { Container } from "@/components/shared/Container"
 import { animations } from "@/components/animations/presets"
 import { Technology } from "@/types"
-import { Cpu, Check } from "lucide-react"
+import { Cpu } from "lucide-react"
 
 interface CoreExpertiseSectionProps {
   technologies: Technology[]
@@ -22,27 +22,13 @@ export function CoreExpertiseSection({ technologies }: CoreExpertiseSectionProps
     "Self-Hosted Infrastructure",
     "Network Automation",
     "Virtualization",
-    "Monitoring",
-    "AI Integration"
+    "Monitoring"
   ]
 
   const resolveCapability = (cap: string) => {
-    const match = technologies.find(t => t.name.toLowerCase() === cap.toLowerCase())
-    if (match) {
-      return (
-        <Link href={`/technology/${match.slug || match.id}`} className="group outline-none block">
-          <div className="flex items-center gap-2.5 px-6 py-3 rounded-full bg-surface/30 border border-surface text-primary font-medium hover:border-accent-orange/50 hover:bg-accent-orange/10 hover:text-accent-orange hover:shadow-[0_0_20px_rgba(249,115,22,0.15)] transition-all duration-300 transform hover:-translate-y-0.5">
-            <Check className="w-4 h-4 text-accent-orange flex-shrink-0 opacity-80 group-hover:opacity-100" />
-            <span className="text-sm md:text-base tracking-wide">{cap}</span>
-          </div>
-        </Link>
-      )
-    }
-
     return (
-      <div className="flex items-center gap-2.5 px-6 py-3 rounded-full bg-surface/30 border border-surface text-primary font-medium hover:border-accent-orange/30 hover:bg-surface/50 transition-all duration-300">
-        <Check className="w-4 h-4 text-accent-orange flex-shrink-0 opacity-80" />
-        <span className="text-sm md:text-base tracking-wide">{cap}</span>
+      <div className="inline-flex items-center px-4 py-2 rounded-full bg-surface/30 border border-surface/50 text-sm font-medium text-primary hover:text-accent-orange hover:border-accent-orange/50 hover:bg-accent-orange/10 transition-colors shadow-sm">
+        {cap}
       </div>
     )
   }
@@ -65,7 +51,7 @@ export function CoreExpertiseSection({ technologies }: CoreExpertiseSectionProps
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary tracking-tight">Core Expertise</h2>
             <p className="text-muted text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-              Core enterprise networking technologies used across production deployments, technical articles, and professional certifications.
+              Core engineering capabilities developed through enterprise projects, production deployments, certifications, and continuous learning.
             </p>
           </motion.div>
 
