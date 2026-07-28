@@ -44,6 +44,7 @@ const getIcon = (iconName?: string) => {
 
 export function TechnologyCard({ technology, className, ...props }: TechnologyCardProps) {
   const projectCount = technology.relatedProjects?.length || 0;
+  const experienceCount = technology.relatedExperience?.length || 0;
   const articleCount = technology.relatedArticles?.length || 0;
   const certCount = technology.relatedCertifications?.length || 0;
 
@@ -72,21 +73,26 @@ export function TechnologyCard({ technology, className, ...props }: TechnologyCa
         </div>
         
         <div className="flex flex-col gap-4 mt-auto pt-6 border-t border-surface/60">
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-4 gap-2">
             <div className="flex flex-col gap-1 items-center justify-center p-2 rounded-lg bg-surface/30 border border-surface-light/50">
               <FolderGit2 className="w-4 h-4 text-accent-blue/70 mb-1" />
               <span className="text-lg font-bold text-primary leading-none">{projectCount}</span>
-              <span className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground">Projects</span>
+              <span className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground text-center">Projects</span>
+            </div>
+            <div className="flex flex-col gap-1 items-center justify-center p-2 rounded-lg bg-surface/30 border border-surface-light/50">
+              <Network className="w-4 h-4 text-accent-purple/70 mb-1" />
+              <span className="text-lg font-bold text-primary leading-none">{experienceCount}</span>
+              <span className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground text-center">Roles</span>
             </div>
             <div className="flex flex-col gap-1 items-center justify-center p-2 rounded-lg bg-surface/30 border border-surface-light/50">
               <FileText className="w-4 h-4 text-accent-orange/70 mb-1" />
               <span className="text-lg font-bold text-primary leading-none">{articleCount}</span>
-              <span className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground">Articles</span>
+              <span className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground text-center">Articles</span>
             </div>
             <div className="flex flex-col gap-1 items-center justify-center p-2 rounded-lg bg-surface/30 border border-surface-light/50">
               <Award className="w-4 h-4 text-accent-emerald/70 mb-1" />
               <span className="text-lg font-bold text-primary leading-none">{certCount}</span>
-              <span className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground">Certs</span>
+              <span className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground text-center">Certs</span>
             </div>
           </div>
           

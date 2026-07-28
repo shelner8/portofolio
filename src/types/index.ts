@@ -64,6 +64,7 @@ export interface Technology {
   tags?: string[];
 
   relatedProjects?: string[];
+  relatedExperience?: string[];
   relatedArticles?: string[];
   relatedCertifications?: string[];
   relatedTechnologies?: string[];
