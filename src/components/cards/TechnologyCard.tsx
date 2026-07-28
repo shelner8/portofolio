@@ -67,12 +67,9 @@ export function TechnologyCard({ technology, className, ...props }: TechnologyCa
           </p>
         </div>
         
-        <div className="flex flex-col gap-4 mt-auto pt-6 border-t border-surface/60">
-          
-          <div className="flex items-center justify-between mt-2 pt-2 border-t border-surface/30">
-            <span className="text-xs font-medium text-accent-blue group-hover:text-accent-blue/80 transition-colors">Explore Technology</span>
-            <ChevronRight className="w-4 h-4 text-accent-blue transform group-hover:translate-x-1 transition-transform" />
-          </div>
+        <div className="flex items-center justify-between mt-auto pt-6 border-t border-surface/30">
+          <span className="text-xs font-medium text-accent-blue group-hover:text-accent-blue/80 transition-colors">Explore Technology</span>
+          <ChevronRight className="w-4 h-4 text-accent-blue transform group-hover:translate-x-1 transition-transform" />
         </div>
       </BaseCard>
     </Link>
