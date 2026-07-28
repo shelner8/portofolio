@@ -39,6 +39,8 @@ export default function ProjectCaseStudy({ params }: { params: { slug: string } 
   const nextProject = projectIndex < projects.length - 1 ? projects[projectIndex + 1] : null
   const relatedProjects = getRelatedProjects(project.category, project.id)
 
+  const contentParts = (project.content || "").split(/```diagram\s*\r?\n(fabric|security)\s*\r?\n```/)
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -93,64 +95,73 @@ export default function ProjectCaseStudy({ params }: { params: { slug: string } 
       </section>
 
       {/* Content Section */}
-      <section className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-            
-            {/* Main Markdown Body */}
-            <div className="lg:col-span-8 flex flex-col gap-10">
-              <div className="prose prose-invert prose-lg max-w-none 
-                [&>h3]:text-2xl [&>h3]:font-bold [&>h3]:text-primary [&>h3]:mt-12 [&>h3]:mb-6
-                [&>p]:text-muted [&>p]:leading-relaxed [&>p]:mb-6
-                [&>ul]:text-muted [&>ul]:list-disc [&>ul]:pl-6 [&>ul>li]:mb-3 [&>ul>li]:pl-2
-                [&>ul>li::marker]:text-accent-orange/50">
-                <ReactMarkdown
-                  components={{
-                    code({ node, inline, className, children, ...props }: any) {
-                      const match = /language-(\w+)/.exec(className || "")
-                      if (!inline && match && match[1] === "diagram") {
-                        const type = String(children).replace(/\n$/, "").trim()
-                        if (type === "fabric") return <FabricArchitectureDiagram />
-                        if (type === "security") return <SecurityFlowDiagram />
-                      }
-                      return <code className={className} {...props}>{children}</code>
-                    }
-                  }}
-                >
-                  {project.content || ""}
-                </ReactMarkdown>
+      <section className="py-16 md:py-24 bg-background flex flex-col gap-12 md:gap-20">
+        {contentParts.map((part, index) => {
+          if (part === "fabric") {
+            return (
+              <div key={index} className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px]">
+                <FabricArchitectureDiagram />
               </div>
-            </div>
-            
-            {/* Sidebar / Meta */}
-            <div className="lg:col-span-4 flex flex-col gap-10">
-              <div className="p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface flex flex-col gap-6">
-                <h3 className="text-lg font-semibold text-primary">Technologies</h3>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map(tech => (
-                    <Badge key={tech} variant="outline" className="bg-surface/50 border-surface-light text-muted hover:text-primary transition-colors py-1 px-3">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
+            )
+          }
+          if (part === "security") {
+            return (
+              <div key={index} className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px]">
+                <SecurityFlowDiagram />
               </div>
-              
-              {project.skills && project.skills.length > 0 && (
-                <div className="p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface flex flex-col gap-6">
-                  <h3 className="text-lg font-semibold text-primary">Key Skills</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {project.skills.map(skill => (
-                      <Badge key={skill} variant="outline" className="border-accent-blue/30 text-accent-blue bg-accent-blue/5 py-1 px-3">
-                        {skill}
-                      </Badge>
-                    ))}
+            )
+          }
+
+          if (!part.trim()) return null
+
+          return (
+            <div key={index} className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+                
+                {/* Main Markdown Body */}
+                <div className="lg:col-span-8 flex flex-col gap-10">
+                  <div className="prose prose-invert prose-lg max-w-none 
+                    [&>h3]:text-2xl [&>h3]:font-bold [&>h3]:text-primary [&>h3]:mt-12 [&>h3]:mb-6
+                    [&>p]:text-muted [&>p]:leading-relaxed [&>p]:mb-6
+                    [&>ul]:text-muted [&>ul]:list-disc [&>ul]:pl-6 [&>ul>li]:mb-3 [&>ul>li]:pl-2
+                    [&>ul>li::marker]:text-accent-orange/50">
+                    <ReactMarkdown>{part}</ReactMarkdown>
                   </div>
                 </div>
-              )}
+                
+                {/* Sidebar / Meta (Only render once alongside the first text block) */}
+                {index === 0 && (
+                  <div className="lg:col-span-4 flex flex-col gap-10">
+                    <div className="p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface flex flex-col gap-6">
+                      <h3 className="text-lg font-semibold text-primary">Technologies</h3>
+                      <div className="flex flex-wrap gap-2">
+                        {project.technologies.map(tech => (
+                          <Badge key={tech} variant="outline" className="bg-surface/50 border-surface-light text-muted hover:text-primary transition-colors py-1 px-3">
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    {project.skills && project.skills.length > 0 && (
+                      <div className="p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface flex flex-col gap-6">
+                        <h3 className="text-lg font-semibold text-primary">Key Skills</h3>
+                        <div className="flex flex-wrap gap-2">
+                          {project.skills.map(skill => (
+                            <Badge key={skill} variant="outline" className="border-accent-blue/30 text-accent-blue bg-accent-blue/5 py-1 px-3">
+                              {skill}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
+                
+              </div>
             </div>
-            
-          </div>
-        </div>
+          )
+        })}
       </section>
 
       {/* Related Projects */}

@@ -122,7 +122,7 @@ const SpineLeafMesh = () => (
 
 export function FabricArchitectureDiagram() {
   return (
-    <div className="w-full overflow-hidden rounded-2xl border border-surface bg-[#0a0f1c] shadow-2xl my-12">
+    <div className="w-full overflow-hidden rounded-2xl border border-surface bg-[#0a0f1c] shadow-2xl">
       <div className="p-6 md:p-8 border-b border-surface/50 bg-[#0f172a] flex flex-col md:flex-row items-center justify-between gap-6">
         <h3 className="text-lg md:text-xl font-bold text-primary font-mono flex items-center gap-3">
           <div className="w-3 h-3 rounded-full bg-accent-orange animate-pulse shadow-[0_0_8px_#f97316]" />
