@@ -2,31 +2,45 @@ import { Skill } from "@/types";
 
 export const skills: Skill[] = [
   {
-    id: "modern-data-center",
-    name: "Modern Data Center",
+    id: "data-center-networking",
+    name: "Data Center Networking",
     category: "Data Center",
-    description: "Design and implementation of enterprise-grade data center infrastructure using modern leaf-spine architecture and EVPN-VXLAN technologies.",
-    technologies: ["Aruba AOS-CX", "EVPN", "VXLAN", "MP-BGP", "VSX"]
+    description: "Designing and deploying highly available, scalable enterprise data center fabrics using modern architectures.",
+    technologies: [
+      "Aruba AOS-CX", "Aruba CX10000", "VSX", "EVPN", 
+      "VXLAN", "MP-BGP", "VTEP", "Spine-Leaf", 
+      "Border Leaf", "Aruba Fabric Composer"
+    ]
   },
   {
     id: "enterprise-networking",
     name: "Enterprise Networking",
     category: "Networking",
-    description: "Building reliable enterprise campus and backbone networks to support business-critical applications with high availability.",
-    technologies: ["OSPF", "BGP", "VRF", "QoS", "Spanning Tree"]
+    description: "Building robust enterprise campus networks and routing topologies to support seamless, secure business operations.",
+    technologies: [
+      "Routing", "Switching", "OSPF", "BGP", 
+      "VLAN", "VRF", "ACL", "High Availability", 
+      "Network Segmentation"
+    ]
   },
   {
     id: "network-automation",
     name: "Network Automation",
     category: "Automation",
-    description: "Automating network provisioning, configuration management, and operational state validation to reduce human error.",
-    technologies: ["Python", "Ansible", "FastAPI", "Netmiko", "REST APIs"]
+    description: "Creating programmatic workflows and infrastructure-as-code deployments to eliminate manual misconfigurations.",
+    technologies: [
+      "Python", "FastAPI", "REST API", "Docker", 
+      "Linux", "Git", "Infrastructure Automation"
+    ]
   },
   {
-    id: "infrastructure-security",
-    name: "Infrastructure Security",
-    category: "Security",
-    description: "Securing network perimeters and lateral movement through microsegmentation, precise access controls, and secure tunneling.",
-    technologies: ["Firewalls", "802.1X", "IPsec", "Tailscale", "Zero Trust"]
+    id: "operations-infrastructure",
+    name: "Operations & Infrastructure",
+    category: "Operations",
+    description: "Ensuring 24/7 uptime through rigorous capacity planning, proactive monitoring, and meticulous migration strategies.",
+    technologies: [
+      "Migration", "Troubleshooting", "Monitoring", 
+      "Capacity Planning", "Documentation", "Operational Excellence"
+    ]
   }
 ];
