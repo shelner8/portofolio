@@ -125,22 +125,17 @@ export default function TechnologyDetailPage({ params }: { params: { slug: strin
               )}
 
               {/* Architecture */}
-              <div className="flex flex-col gap-6">
-                <div className="flex items-center gap-3">
-                  <LayoutTemplate className="w-6 h-6 text-accent-emerald" />
-                  <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Architecture</h2>
-                </div>
-                {ArchitectureDiagram ? (
+              {ArchitectureDiagram && (
+                <div className="flex flex-col gap-6">
+                  <div className="flex items-center gap-3">
+                    <LayoutTemplate className="w-6 h-6 text-accent-emerald" />
+                    <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Architecture</h2>
+                  </div>
                   <div className="p-1 rounded-2xl bg-surface/20 border border-surface shadow-2xl">
                     <ArchitectureDiagram />
                   </div>
-                ) : (
-                  <div className="flex flex-col items-center justify-center p-12 md:p-24 rounded-2xl bg-surface/10 border border-surface border-dashed">
-                    <LayoutTemplate className="w-12 h-12 text-muted-foreground/30 mb-4" />
-                    <span className="text-muted font-medium">Architecture diagram coming soon.</span>
-                  </div>
-                )}
-              </div>
+                </div>
+              )}
 
               {/* Best Practices */}
               {technology.bestPractices && technology.bestPractices.length > 0 && (
