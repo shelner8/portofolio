@@ -3,6 +3,15 @@ import { Technology } from "@/types";
 export const technologies: Technology[] = [
   // --- Data Center ---
   {
+    id: "vxlan-evpn-fabric",
+    slug: "vxlan-evpn-fabric",
+    name: "VXLAN EVPN Fabric",
+    category: "Data Center",
+    featured: true,
+    description: "Enterprise spine-leaf fabric architecture combining EVPN control-plane and VXLAN overlay networking for scalable modern data center deployments.",
+    icon: "layers"
+  },
+  {
     id: "evpn",
     slug: "evpn",
     name: "EVPN",
@@ -25,10 +34,6 @@ export const technologies: Technology[] = [
         summary: "Production deployment using Aruba CX10000 Spine-Leaf architecture with EVPN-VXLAN overlay and MP-BGP control plane."
       }
     ],
-    relatedProjects: ["kompas-gramedia"],
-    relatedArticles: [],
-    relatedCertifications: ["juniper-jncis-dc"],
-    relatedTechnologies: ["vxlan", "mp-bgp"],
     icon: "network"
   },
   {
@@ -38,10 +43,6 @@ export const technologies: Technology[] = [
     category: "Data Center",
     featured: true,
     description: "Layer 2 overlay scheme over a Layer 3 network, offering scalable multi-tenancy.",
-    relatedProjects: ["kompas-gramedia"],
-    relatedArticles: [],
-    relatedCertifications: ["juniper-jncis-dc"],
-    relatedTechnologies: ["evpn", "anycast-gateway"],
     icon: "layers"
   },
   {
@@ -51,10 +52,6 @@ export const technologies: Technology[] = [
     category: "Data Center",
     featured: true,
     description: "Multiprotocol BGP used to distribute MAC and IP reachability information.",
-    relatedProjects: ["kompas-gramedia"],
-    relatedArticles: [],
-    relatedCertifications: ["juniper-jncis-dc"],
-    relatedTechnologies: ["evpn", "bgp"],
     icon: "share-2"
   },
   {
@@ -70,10 +67,6 @@ export const technologies: Technology[] = [
         summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
       }
     ],
-    relatedProjects: ["kompas-gramedia", "gmf-aeroasia"],
-    relatedArticles: [],
-    relatedCertifications: ["juniper-jncis-dc", "juniper-jncia-dc"],
-    relatedTechnologies: ["bgp"],
     icon: "route"
   },
   {
@@ -89,10 +82,6 @@ export const technologies: Technology[] = [
         summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
       }
     ],
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: ["juniper-jncis-dc"],
-    relatedTechnologies: ["mp-bgp", "ospf"],
     icon: "globe"
   },
   {
@@ -101,10 +90,6 @@ export const technologies: Technology[] = [
     name: "Anycast Gateway",
     category: "Data Center",
     description: "Distributed default gateway architecture providing optimal first-hop routing.",
-    relatedProjects: ["kompas-gramedia"],
-    relatedArticles: [],
-    relatedCertifications: ["juniper-jncis-dc"],
-    relatedTechnologies: ["evpn", "vxlan", "vrf"],
     icon: "milestone"
   },
   {
@@ -114,10 +99,6 @@ export const technologies: Technology[] = [
     category: "Data Center",
     featured: true,
     description: "Virtual Routing and Forwarding enables multiple routing tables for multi-tenancy.",
-    relatedProjects: ["kompas-gramedia"],
-    relatedArticles: [],
-    relatedCertifications: ["juniper-jncis-dc", "aruba-acsp"],
-    relatedTechnologies: ["evpn", "anycast-gateway"],
     icon: "box"
   },
   {
@@ -126,10 +107,6 @@ export const technologies: Technology[] = [
     name: "Spine-Leaf",
     category: "Data Center",
     description: "Two-tier network topology offering non-blocking, predictable east-west traffic flow.",
-    relatedProjects: ["kompas-gramedia"],
-    relatedArticles: [],
-    relatedCertifications: ["juniper-jncis-dc"],
-    relatedTechnologies: ["leaf-switch", "border-leaf", "evpn"],
     icon: "git-merge"
   },
   {
@@ -138,10 +115,6 @@ export const technologies: Technology[] = [
     name: "Leaf Switch",
     category: "Data Center",
     description: "Access-layer switch in a Clos architecture providing endpoint connectivity.",
-    relatedProjects: ["kompas-gramedia"],
-    relatedArticles: [],
-    relatedCertifications: ["aruba-acsp"],
-    relatedTechnologies: ["spine-leaf"],
     icon: "server"
   },
   {
@@ -150,12 +123,9 @@ export const technologies: Technology[] = [
     name: "Border Leaf",
     category: "Data Center",
     description: "Gateway switches bridging the internal fabric to external networks and services.",
-    relatedProjects: ["kompas-gramedia"],
-    relatedArticles: [],
-    relatedCertifications: ["juniper-jncis-dc"],
-    relatedTechnologies: ["spine-leaf"],
     icon: "shield-alert"
   },
+
   // --- Aruba ---
   {
     id: "aruba-aos-cx",
@@ -170,10 +140,6 @@ export const technologies: Technology[] = [
         summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
       }
     ],
-    relatedProjects: ["kompas-gramedia", "gmf-aeroasia"],
-    relatedArticles: [],
-    relatedCertifications: ["aruba-acsp"],
-    relatedTechnologies: ["aruba-vsx", "aruba-vsf"],
     icon: "hard-drive"
   },
   {
@@ -197,10 +163,6 @@ export const technologies: Technology[] = [
         summary: "Implemented redundant Aruba VSX core pairs for seamless high availability and simplified MC-LAG connectivity to server racks."
       }
     ],
-    relatedProjects: ["kompas-gramedia", "gmf-aeroasia"],
-    relatedArticles: [],
-    relatedCertifications: ["aruba-acsp"],
-    relatedTechnologies: ["aruba-aos-cx", "lacp"],
     icon: "copy"
   },
   {
@@ -209,24 +171,7 @@ export const technologies: Technology[] = [
     name: "Aruba VSF",
     category: "Aruba",
     description: "Virtual Switching Framework combines multiple switches into a single logical device.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: ["aruba-acsp"],
-    relatedTechnologies: ["aruba-aos-cx"],
     icon: "link"
-  },
-  {
-    id: "aruba-fabric-composer",
-    slug: "aruba-fabric-composer",
-    name: "Aruba Fabric Composer",
-    category: "Automation",
-    featured: true,
-    description: "API-driven software-defined orchestration tool for data center fabrics.",
-    relatedProjects: ["kompas-gramedia"],
-    relatedArticles: [],
-    relatedCertifications: [],
-    relatedTechnologies: ["aruba-aos-cx", "spine-leaf", "evpn"],
-    icon: "cpu"
   },
   {
     id: "aruba-cx10000",
@@ -235,12 +180,20 @@ export const technologies: Technology[] = [
     category: "Aruba",
     featured: true,
     description: "Distributed services switch powered by Pensando DPU for stateful inspection.",
-    relatedProjects: ["kompas-gramedia"],
-    relatedArticles: [],
-    relatedCertifications: [],
-    relatedTechnologies: ["aruba-aos-cx"],
     icon: "server"
   },
+
+  // --- Automation ---
+  {
+    id: "aruba-fabric-composer",
+    slug: "aruba-fabric-composer",
+    name: "Aruba Fabric Composer",
+    category: "Automation",
+    featured: true,
+    description: "Automation platform for Aruba CX Data Center lifecycle management, configuration orchestration, and fabric provisioning.",
+    icon: "cpu"
+  },
+
   // --- Enterprise Networking ---
   {
     id: "vlan",
@@ -248,16 +201,6 @@ export const technologies: Technology[] = [
     name: "VLAN",
     category: "Enterprise Networking",
     description: "Virtual Local Area Network enabling Layer 2 segmentation.",
-    experience: [
-      {
-        experienceId: "angkasa-pura-solusi-integra",
-        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
-      }
-    ],
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: ["juniper-jncia-dc", "aruba-acsp"],
-    relatedTechnologies: ["mstp"],
     icon: "layers"
   },
   {
@@ -266,10 +209,6 @@ export const technologies: Technology[] = [
     name: "LACP",
     category: "Enterprise Networking",
     description: "Link Aggregation Control Protocol providing dynamic bandwidth bundling and redundancy.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: ["aruba-acsp"],
-    relatedTechnologies: ["aruba-vsx"],
     icon: "git-commit"
   },
   {
@@ -278,239 +217,63 @@ export const technologies: Technology[] = [
     name: "STP",
     category: "Enterprise Networking",
     description: "Spanning Tree Protocol preventing Layer 2 loops.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: [],
-    relatedTechnologies: ["mstp", "vlan"],
     icon: "git-pull-request"
-  },
-  {
-    id: "mstp",
-    slug: "mstp",
-    name: "MSTP",
-    category: "Enterprise Networking",
-    description: "Multiple Spanning Tree Protocol mapping multiple VLANs to instances.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: ["aruba-acsp"],
-    relatedTechnologies: ["stp", "vlan"],
-    icon: "git-branch"
-  },
-  {
-    id: "jumbo-frames",
-    slug: "jumbo-frames",
-    name: "Jumbo Frames",
-    category: "Enterprise Networking",
-    description: "Ethernet frames exceeding 1500 bytes MTU, optimizing data center throughput.",
-    relatedProjects: ["kompas-gramedia"],
-    relatedArticles: [],
-    relatedCertifications: [],
-    relatedTechnologies: [],
-    icon: "maximize"
-  },
-  // --- Security ---
-  {
-    id: "cisco-firepower",
-    slug: "cisco-firepower",
-    name: "Cisco Firepower",
-    category: "Enterprise Networking",
-    featured: true,
-    description: "Enterprise firewall integration with Aruba switching, enterprise routing, and production network infrastructure.",
-    relatedProjects: ["kompas-gramedia"],
-    relatedArticles: [],
-    relatedCertifications: [],
-    relatedTechnologies: ["border-leaf"],
-    icon: "shield"
-  },
-  // --- Connectivity ---
-  {
-    id: "tailscale",
-    slug: "tailscale",
-    name: "Tailscale",
-    category: "Connectivity",
-    description: "Zero-config VPN utilizing WireGuard for peer-to-peer mesh connectivity.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: [],
-    relatedTechnologies: [],
-    icon: "network"
-  },
-  // --- Platforms ---
-  {
-    id: "mikrotik",
-    slug: "mikrotik",
-    name: "MikroTik",
-    category: "Platforms",
-    featured: true,
-    description: "RouterOS platform providing cost-effective routing and switching capabilities.",
-    experience: [
-      {
-        experienceId: "angkasa-pura-solusi-integra",
-        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
-      }
-    ],
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: [],
-    relatedTechnologies: [],
-    icon: "server"
-  }
-,
-  {
-    id: "routeros",
-    slug: "routeros",
-    name: "RouterOS",
-    category: "Platforms",
-    description: "Enterprise implementation of RouterOS.",
-    experience: [
-      {
-        experienceId: "angkasa-pura-solusi-integra",
-        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
-      }
-    ]
   },
   {
     id: "static-routing",
     slug: "static-routing",
     name: "Static Routing",
     category: "Enterprise Networking",
-    description: "Enterprise implementation of Static Routing.",
-    experience: [
-      {
-        experienceId: "angkasa-pura-solusi-integra",
-        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
-      }
-    ]
+    description: "Manual configuration of network routes for deterministic traffic flow.",
+    icon: "route"
   },
   {
     id: "policy-based-routing",
     slug: "policy-based-routing",
     name: "Policy-Based Routing",
     category: "Enterprise Networking",
-    description: "Enterprise implementation of Policy-Based Routing.",
-    experience: [
-      {
-        experienceId: "angkasa-pura-solusi-integra",
-        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
-      }
-    ]
+    description: "Forwarding and routing data packets based on defined policies rather than strictly destination IP.",
+    icon: "route"
   },
   {
     id: "qos",
     slug: "qos",
     name: "QoS",
     category: "Enterprise Networking",
-    description: "Enterprise implementation of QoS.",
-    experience: [
-      {
-        experienceId: "angkasa-pura-solusi-integra",
-        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
-      }
-    ]
+    description: "Quality of Service strategies for bandwidth management and traffic prioritization.",
+    icon: "layers"
   },
   {
     id: "queue-tree",
     slug: "queue-tree",
     name: "Queue Tree",
     category: "Enterprise Networking",
-    description: "Enterprise implementation of Queue Tree.",
-    experience: [
-      {
-        experienceId: "angkasa-pura-solusi-integra",
-        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
-      }
-    ]
+    description: "Hierarchical bandwidth management and traffic shaping mechanism.",
+    icon: "layers"
   },
   {
     id: "pcq",
     slug: "pcq",
     name: "PCQ",
     category: "Enterprise Networking",
-    description: "Enterprise implementation of PCQ.",
-    experience: [
-      {
-        experienceId: "angkasa-pura-solusi-integra",
-        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
-      }
-    ]
-  },
-  {
-    id: "fasttrack",
-    slug: "fasttrack",
-    name: "FastTrack",
-    category: "Enterprise Networking",
-    description: "Enterprise implementation of FastTrack.",
-    experience: [
-      {
-        experienceId: "angkasa-pura-solusi-integra",
-        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
-      }
-    ]
+    description: "Per Connection Queue for dynamic and equitable bandwidth allocation.",
+    icon: "layers"
   },
   {
     id: "dhcp",
     slug: "dhcp",
     name: "DHCP",
     category: "Enterprise Networking",
-    description: "Enterprise implementation of DHCP.",
-    experience: [
-      {
-        experienceId: "angkasa-pura-solusi-integra",
-        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
-      }
-    ]
+    description: "Dynamic Host Configuration Protocol for automated IP assignment.",
+    icon: "network"
   },
   {
     id: "dhcp-relay",
     slug: "dhcp-relay",
     name: "DHCP Relay",
     category: "Enterprise Networking",
-    description: "Enterprise implementation of DHCP Relay.",
-    experience: [
-      {
-        experienceId: "angkasa-pura-solusi-integra",
-        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
-      }
-    ]
-  },
-  {
-    id: "multi-wan",
-    slug: "multi-wan",
-    name: "Multi-WAN",
-    category: "Connectivity",
-    description: "Enterprise implementation of Multi-WAN.",
-    experience: [
-      {
-        experienceId: "angkasa-pura-solusi-integra",
-        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
-      }
-    ]
-  },
-  {
-    id: "isp-peering",
-    slug: "isp-peering",
-    name: "ISP Peering",
-    category: "Connectivity",
-    description: "Enterprise implementation of ISP Peering.",
-    experience: [
-      {
-        experienceId: "angkasa-pura-solusi-integra",
-        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
-      }
-    ]
-  },
-  {
-    id: "internet-exchange",
-    slug: "internet-exchange",
-    name: "Internet Exchange",
-    category: "Connectivity",
-    description: "Enterprise implementation of Internet Exchange.",
-    experience: [
-      {
-        experienceId: "angkasa-pura-solusi-integra",
-        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
-      }
-    ]
+    description: "Forwarding DHCP packets between clients and servers on different subnets.",
+    icon: "share-2"
   },
   {
     id: "fortinet",
@@ -518,264 +281,208 @@ export const technologies: Technology[] = [
     name: "Fortinet",
     category: "Enterprise Networking",
     description: "Enterprise firewall integration supporting secure connectivity within enterprise network deployments.",
-    experience: [
-      {
-        experienceId: "angkasa-pura-solusi-integra",
-        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
-      }
-    ]
+    icon: "shield"
   },
   {
-    id: "vmware-esxi",
-    slug: "vmware-esxi",
-    name: "VMware ESXi",
-    category: "Platforms",
-    description: "Enterprise implementation of VMware ESXi.",
-    experience: [
-      {
-        experienceId: "angkasa-pura-solusi-integra",
-        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
-      }
-    ]
-  },
-  {
-    id: "zabbix",
-    slug: "zabbix",
-    name: "Zabbix",
-    category: "Monitoring",
-    description: "Enterprise implementation of Zabbix.",
-    experience: [
-      {
-        experienceId: "angkasa-pura-solusi-integra",
-        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
-      }
-    ]
-  },
-  {
-    id: "cacti",
-    slug: "cacti",
-    name: "Cacti",
-    category: "Monitoring",
-    description: "Enterprise implementation of Cacti.",
-    experience: [
-      {
-        experienceId: "angkasa-pura-solusi-integra",
-        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
-      }
-    ]
-  },
-  {
-    id: "observium",
-    slug: "observium",
-    name: "Observium",
-    category: "Monitoring",
-    description: "Enterprise implementation of Observium.",
-    experience: [
-      {
-        experienceId: "angkasa-pura-solusi-integra",
-        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
-      }
-    ]
-  }
-,
-  {
-    id: "ixia",
-    slug: "ixia",
-    name: "IXIA",
+    id: "cisco-firepower",
+    slug: "cisco-firepower",
+    name: "Cisco Firepower",
     category: "Enterprise Networking",
-    description: "Enterprise implementation of IXIA.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: []
-  },
-  {
-    id: "network-visibility",
-    slug: "network-visibility",
-    name: "Network Visibility",
-    category: "Enterprise Networking",
-    description: "Enterprise implementation of Network Visibility.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: []
-  },
-  {
-    id: "high-availability",
-    slug: "high-availability",
-    name: "High Availability",
-    category: "Enterprise Networking",
-    description: "Enterprise implementation of High Availability.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: []
-  },
-  {
-    id: "bypass-switch",
-    slug: "bypass-switch",
-    name: "Bypass Switch",
-    category: "Enterprise Networking",
-    description: "Enterprise implementation of Bypass Switch.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: []
-  },
-  {
-    id: "traffic-monitoring",
-    slug: "traffic-monitoring",
-    name: "Traffic Monitoring",
-    category: "Enterprise Networking",
-    description: "Enterprise implementation of Traffic Monitoring.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: []
-  },
-  {
-    id: "enterprise-switching",
-    slug: "enterprise-switching",
-    name: "Enterprise Switching",
-    category: "Enterprise Networking",
-    description: "Enterprise implementation of Enterprise Switching.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: []
+    featured: true,
+    description: "Enterprise firewall integration with Aruba switching, enterprise routing, and production network infrastructure.",
+    icon: "shield"
   },
   {
     id: "layer-3-routing",
     slug: "layer-3-routing",
     name: "Layer 3 Routing",
     category: "Enterprise Networking",
-    description: "Enterprise implementation of Layer 3 Routing.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: []
-  },
-  {
-    id: "stacking",
-    slug: "stacking",
-    name: "Stacking",
-    category: "Enterprise Networking",
-    description: "Enterprise implementation of Stacking.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: []
-  },
-  {
-    id: "bandwidth-management",
-    slug: "bandwidth-management",
-    name: "Bandwidth Management",
-    category: "Enterprise Networking",
-    description: "Enterprise implementation of Bandwidth Management.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: []
+    description: "Inter-VLAN routing and enterprise network traversal.",
+    icon: "route"
   },
   {
     id: "ruckus",
     slug: "ruckus",
     name: "Ruckus",
     category: "Enterprise Networking",
-    description: "Enterprise implementation of Ruckus.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: []
+    description: "Enterprise wireless LAN infrastructure deployment and optimization.",
+    icon: "wifi"
   },
   {
     id: "alcatel",
     slug: "alcatel",
     name: "Alcatel",
     category: "Enterprise Networking",
-    description: "Enterprise implementation of Alcatel.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: []
-  },
-  {
-    id: "enterprise-lan",
-    slug: "enterprise-lan",
-    name: "Enterprise LAN",
-    category: "Enterprise Networking",
-    description: "Enterprise implementation of Enterprise LAN.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: []
+    description: "Enterprise switching integration for LAN architectures.",
+    icon: "server"
   },
   {
     id: "aruba-wireless",
     slug: "aruba-wireless",
     name: "Aruba Wireless",
     category: "Enterprise Networking",
-    description: "Enterprise implementation of Aruba Wireless.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: []
+    description: "Enterprise implementation of Aruba Wireless infrastructure.",
+    icon: "wifi"
   },
   {
     id: "access-point",
     slug: "access-point",
     name: "Access Point",
     category: "Enterprise Networking",
-    description: "Enterprise implementation of Access Point.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: []
+    description: "Wireless Access Point deployment for enterprise mobility.",
+    icon: "wifi"
   },
   {
     id: "isp",
     slug: "isp",
     name: "ISP",
     category: "Enterprise Networking",
-    description: "Enterprise implementation of ISP.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: []
+    description: "Internet Service Provider circuit integration and gateway management.",
+    icon: "globe"
   },
   {
     id: "tunneling",
     slug: "tunneling",
     name: "Tunneling",
     category: "Enterprise Networking",
-    description: "Enterprise implementation of Tunneling.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: []
+    description: "Site-to-site network tunneling for secure remote interconnectivity.",
+    icon: "network"
   },
   {
     id: "enterprise-routing",
     slug: "enterprise-routing",
     name: "Enterprise Routing",
     category: "Enterprise Networking",
-    description: "Enterprise implementation of Enterprise Routing.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: []
-  },
-  {
-    id: "broadband",
-    slug: "broadband",
-    name: "Broadband",
-    category: "Enterprise Networking",
-    description: "Enterprise implementation of Broadband.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: []
+    description: "Design and deployment of highly available enterprise routing architectures.",
+    icon: "route"
   },
   {
     id: "wireless-lan",
     slug: "wireless-lan",
     name: "Wireless LAN",
     category: "Enterprise Networking",
-    description: "Enterprise implementation of Wireless LAN.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: []
+    description: "Enterprise wireless networking for reliable connectivity and mobility.",
+    icon: "wifi"
   },
   {
     id: "internet-gateway",
     slug: "internet-gateway",
     name: "Internet Gateway",
     category: "Enterprise Networking",
-    description: "Enterprise implementation of Internet Gateway.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: []
+    description: "Production gateway deployment securing and routing enterprise internet traffic.",
+    icon: "globe"
+  },
+
+  // MikroTik Enhancements (Enterprise Networking)
+  {
+    id: "nat",
+    slug: "nat",
+    name: "NAT",
+    category: "Enterprise Networking",
+    description: "Enterprise gateway deployment and Network Address Translation for production network operations.",
+    icon: "share-2"
+  },
+  {
+    id: "firewall-filter",
+    slug: "firewall-filter",
+    name: "Firewall Filter",
+    category: "Enterprise Networking",
+    description: "Access control and security policies for enterprise gateway deployments.",
+    icon: "shield"
+  },
+  {
+    id: "mangle",
+    slug: "mangle",
+    name: "Mangle",
+    category: "Enterprise Networking",
+    description: "Advanced packet marking and routing policies for enterprise bandwidth management.",
+    icon: "layers"
+  },
+  {
+    id: "fasttrack",
+    slug: "fasttrack",
+    name: "FastTrack",
+    category: "Enterprise Networking",
+    description: "Traffic acceleration technique for optimizing enterprise gateway performance.",
+    icon: "maximize"
+  },
+
+  // --- Connectivity ---
+  {
+    id: "tailscale",
+    slug: "tailscale",
+    name: "Tailscale",
+    category: "Connectivity",
+    description: "Zero-config VPN utilizing WireGuard for peer-to-peer mesh connectivity.",
+    icon: "network"
+  },
+  {
+    id: "multi-wan",
+    slug: "multi-wan",
+    name: "Multi-WAN",
+    category: "Connectivity",
+    description: "Redundant wide area network connectivity for enterprise reliability.",
+    icon: "network"
+  },
+  {
+    id: "isp-peering",
+    slug: "isp-peering",
+    name: "ISP Peering",
+    category: "Connectivity",
+    description: "BGP peering implementation with Internet Service Providers.",
+    icon: "globe"
+  },
+  {
+    id: "ix-iix-peering",
+    slug: "ix-iix-peering",
+    name: "IX & IIX Peering",
+    category: "Connectivity",
+    description: "Internet Exchange connectivity using public IX infrastructure and BGP peering.",
+    icon: "globe"
+  },
+
+  // --- Platforms ---
+  {
+    id: "mikrotik",
+    slug: "mikrotik",
+    name: "MikroTik",
+    category: "Platforms",
+    featured: true,
+    description: "Enterprise hardware platform providing robust routing, switching, and gateway capabilities.",
+    icon: "server"
+  },
+  {
+    id: "vmware-esxi",
+    slug: "vmware-esxi",
+    name: "VMware ESXi",
+    category: "Platforms",
+    description: "Enterprise bare-metal hypervisor for compute virtualization and data center workloads.",
+    icon: "server"
+  },
+
+  // --- Monitoring ---
+  {
+    id: "zabbix",
+    slug: "zabbix",
+    name: "Zabbix",
+    category: "Monitoring",
+    description: "Enterprise-class open source distributed monitoring solution.",
+    icon: "network"
+  },
+  {
+    id: "cacti",
+    slug: "cacti",
+    name: "Cacti",
+    category: "Monitoring",
+    description: "Network graphing solution leveraging RRDTool for telemetry visualization.",
+    icon: "network"
+  },
+  {
+    id: "observium",
+    slug: "observium",
+    name: "Observium",
+    category: "Monitoring",
+    description: "Auto-discovering network monitoring platform tailored for broad device support.",
+    icon: "network"
   }
 ];
