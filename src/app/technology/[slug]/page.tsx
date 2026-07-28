@@ -62,7 +62,7 @@ export default function TechnologyDetailPage({ params }: { params: { slug: strin
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 md:pt-48 md:pb-24 overflow-hidden border-b border-surface">
+      <section className="relative pt-32 pb-16 md:pt-48 md:pb-16 overflow-hidden border-b border-surface">
         <div className="absolute inset-0 bg-background" />
         <div className="absolute inset-0 bg-gradient-to-br from-accent-blue/10 via-transparent to-transparent opacity-50" />
         
@@ -91,12 +91,12 @@ export default function TechnologyDetailPage({ params }: { params: { slug: strin
       </section>
 
       {/* Main Content Section */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
             
             {/* Left Column: Documentation */}
-            <div className="lg:col-span-8 flex flex-col gap-16 md:gap-24">
+            <div className="lg:col-span-8 flex flex-col gap-10 md:gap-16">
               
               {/* Overview */}
               {technology.overview && (
@@ -253,7 +253,7 @@ export default function TechnologyDetailPage({ params }: { params: { slug: strin
 
       {/* Full Width Related Projects */}
       {relatedProjects.length > 0 && (
-        <section className="py-16 md:py-24 bg-surface/10 border-t border-surface">
+        <section className="py-12 md:py-16 bg-surface/10 border-t border-surface">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px]">
             <div className="flex flex-col gap-12">
               <div className="flex items-center gap-4 border-b border-surface/50 pb-4">

@@ -3,7 +3,7 @@ import { Container } from "@/components/shared/Container"
 
 export default function Loading() {
   return (
-    <Container className="py-12 md:py-24 w-full">
+    <Container className="py-8 md:py-16 w-full">
       <div className="flex flex-col gap-16 w-full">
         {/* Hero Skeleton */}
         <div className="flex flex-col gap-6 pt-12 animate-pulse w-full">

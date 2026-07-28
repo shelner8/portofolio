@@ -18,7 +18,7 @@ export const SectionLayout = React.forwardRef<HTMLElement, SectionLayoutProps>(
         ref={ref}
         aria-labelledby={props.id ? `${props.id}-heading` : undefined}
         className={cn(
-          "w-full py-24 md:py-32 lg:py-40 relative",
+          "w-full py-12 md:py-16 relative",
           className
         )}
         {...props}

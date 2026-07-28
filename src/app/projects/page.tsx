@@ -28,7 +28,7 @@ export default function ProjectsPage() {
   });
 
   return (
-    <div className="flex flex-col gap-12 md:gap-24 pb-24">
+    <div className="flex flex-col gap-8 md:gap-16 pb-16">
       <SectionLayout 
         title="Enterprise Implementations" 
         description="A complete history of data center, campus, and airport networking projects."

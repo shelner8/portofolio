@@ -103,7 +103,7 @@ export default function ProjectCaseStudy({ params }: { params: { slug: string } 
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 md:pt-48 md:pb-24 overflow-hidden border-b border-surface">
+      <section className="relative pt-32 pb-16 md:pt-48 md:pb-16 overflow-hidden border-b border-surface">
         <div className="absolute inset-0 bg-background" />
         <div className="absolute inset-0 bg-gradient-to-br from-accent-orange/5 via-transparent to-transparent opacity-50" />
         
@@ -226,7 +226,7 @@ export default function ProjectCaseStudy({ params }: { params: { slug: string } 
       {/* Content Section */}
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px]">
-          <div className="flex flex-col gap-16 md:gap-24">
+          <div className="flex flex-col gap-10 md:gap-16">
             
             {/* Render Dynamic Diagrams & Sidebars */}
             {project.diagrams?.map((diagramId, index) => {
@@ -372,7 +372,7 @@ export default function ProjectCaseStudy({ params }: { params: { slug: string } 
 
       {/* Related Projects */}
       {relatedProjects.length > 0 && (
-        <section className="py-16 md:py-24 bg-surface/10 border-t border-surface">
+        <section className="py-12 md:py-16 bg-surface/10 border-t border-surface">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px]">
             <div className="flex flex-col gap-12">
               <div className="flex items-center justify-between">

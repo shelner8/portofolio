@@ -39,7 +39,7 @@ export default function TechnologyLibraryPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 md:pt-48 md:pb-24 overflow-hidden border-b border-surface">
+      <section className="relative pt-32 pb-16 md:pt-48 md:pb-16 overflow-hidden border-b border-surface">
         <div className="absolute inset-0 bg-background" />
         <div className="absolute inset-0 bg-gradient-to-br from-accent-blue/10 via-transparent to-transparent opacity-50" />
         
@@ -76,9 +76,9 @@ export default function TechnologyLibraryPage() {
       </section>
 
       {/* Library Grid Section */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px]">
-          <div className="flex flex-col gap-24">
+          <div className="flex flex-col gap-12">
             
             {orderedCategories.map(category => (
               <div key={category} className="flex flex-col gap-8 scroll-mt-24" id={category.toLowerCase().replace(/\s+/g, '-')}>
