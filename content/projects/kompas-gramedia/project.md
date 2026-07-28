@@ -40,20 +40,27 @@ TODO
 ### Infrastructure Environment
 
 #### Hardware
-| Role | Platform |
-|---|---|
-| Core Layer | Aruba CX 8325 (VSX Pair) |
-| Border Leaf | Aruba CX 8360-48XT4C (VSX Pair) |
-| Leaf Layer | Aruba CX10000 |
-| Spine Layer | Aruba CX 8360-12C (Two Standalone Switches) |
+- Core Layer
+  - Aruba CX 8325 (VSX Pair)
+- Border Leaf
+  - Aruba CX 8360-48XT4C (VSX Pair)
+- Leaf Layer
+  - Aruba CX10000
+- Spine Layer
+  - Aruba CX 8360-12C
+  - Two Standalone Switches
 
 #### Network Design
 - Spine-Leaf Architecture
 - EVPN-VXLAN Fabric
 - Aruba Fabric Composer (AFC)
+- OSPF Underlay
+- BGP EVPN Overlay
+- VSX High Availability
+- Multi-VRF Segmentation
 
 ### Network Architecture Summary
-The data center network utilizes a high-performance Spine-Leaf topology integrated with an EVPN-VXLAN overlay to enable scalable Layer-2 extension and robust Layer-3 routing. The Core layer is powered by an Aruba CX 8325 VSX pair, while the Spine layer consists of two standalone Aruba CX 8360-12C switches. The Leaf layer utilizes Aruba CX10000 switches. External connectivity is handled by an Aruba CX 8360-48XT4C VSX pair acting as the Border Leaf. Centralized provisioning and automation are handled by Aruba Fabric Composer.
+The data center network utilizes a high-performance Spine and Leaf topology featuring Core VSX and Border Leaf VSX clusters. The architecture integrates an EVPN-VXLAN overlay with Multi-VRF segmentation to enable scalable Layer-2 and Layer-3 routing, orchestrated via Aruba Fabric Composer (AFC).
 
 ### Security Architecture
 
@@ -73,29 +80,46 @@ The data center network utilizes a high-performance Spine-Leaf topology integrat
 - Documentation
 
 ### Responsibilities
-- Participated in Aruba CX10000 fabric deployment.
-- Implemented EVPN-VXLAN networking.
-- Configured Aruba Fabric Composer.
-- Configured VSX for high availability.
-- Configured Border Leaf connectivity.
-- Configured Policy-Based Routing (PBR) for traffic steering.
-- Integrated Cisco Firepower.
-- Performed validation and troubleshooting.
-- Assisted with implementation documentation.
+- Aruba CX10000 deployment
+- EVPN-VXLAN implementation
+- VSX configuration
+- Aruba Fabric Composer provisioning
+- Multi-VRF implementation
+- VTEP configuration
+- L2VNI implementation
+- L3VNI implementation
+- Border Leaf integration
+- Policy Based Routing (PBR)
+- Cisco Firepower integration
+- Validation
+- Troubleshooting
 
 ### Technologies
+
+#### Networking
 - Aruba CX 8325
 - Aruba CX 8360-48XT4C
 - Aruba CX 8360-12C
 - Aruba CX10000
-- Aruba Fabric Composer
+- Spine-Leaf Architecture
+
+#### Protocols
 - EVPN
 - VXLAN
-- VSX
 - OSPF
+
+#### Automation
+- Aruba Fabric Composer
+
+#### Security
 - Policy-Based Routing (PBR)
 - Cisco Firepower
-- Spine-Leaf Architecture
+
+#### High Availability
+- VSX
+
+#### Segmentation
+- Multi-VRF
 
 ### Implementation Highlights
 - Spine-Leaf deployment
