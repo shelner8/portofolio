@@ -34,60 +34,46 @@ const resolveTechLink = (techName: string, technologies: Technology[]) => {
 export function SelfHostedInfrastructureSection({ technologies }: SelfHostedInfrastructureSectionProps) {
   const cards = [
     {
-      title: "Enterprise Networking Lab",
+      title: "Enterprise Networking",
       icon: <Network className="w-6 h-6 text-accent-blue" />,
-      description: "Production-like enterprise networking environment used to validate routing, switching, VPN, and modern data center architectures before deployment.",
-      techLabel: "Technologies",
+      description: "Personal networking lab for learning, validation, and testing enterprise network technologies.",
       techs: ["Aruba AOS-CX", "Aruba VSX", "EVPN", "VXLAN", "MP-BGP", "OSPF", "MikroTik", "Tailscale"]
     },
     {
-      title: "Virtualization Platform",
+      title: "Virtualization",
       icon: <Server className="w-6 h-6 text-accent-purple" />,
-      description: "Ubuntu-based virtualization platform hosting network laboratories, self-hosted services, AI workloads, and infrastructure management.",
-      techLabel: "Platform",
-      techs: ["Proxmox VE", "VMware ESXi", "Ubuntu Server"],
-      subLabel: "Lab Environment",
-      subTechs: ["EVE-NG", "PNETLab"]
+      description: "Virtualization platform hosting networking labs and self-hosted infrastructure.",
+      techs: ["Proxmox VE", "VMware ESXi", "Ubuntu Server", "EVE-NG", "PNETLab"]
     },
     {
-      title: "Self-Hosted AI Platform",
+      title: "AI Platform",
       icon: <BrainCircuit className="w-6 h-6 text-accent-emerald" />,
-      description: "Local AI platform supporting engineering documentation, infrastructure workflows, and private inference running entirely on self-hosted Ubuntu servers.",
-      techLabel: "Technologies",
-      techs: ["Ollama", "Hermes UI", "9Router", "Gemini API", "Ubuntu Server"]
+      description: "Local AI services running entirely within my home lab.",
+      techs: ["Ollama", "Hermes UI", "9Router", "Gemini API"]
     },
     {
-      title: "Container Platform",
+      title: "Containers",
       icon: <Box className="w-6 h-6 text-accent-orange" />,
-      description: "Containerized application platform running production and development services using Docker with centralized lifecycle management.",
-      techLabel: "Technologies",
-      techs: ["Docker", "Docker Compose", "Portainer", "Ubuntu Server"]
+      description: "Containerized applications managed for development and production services.",
+      techs: ["Docker", "Docker Compose", "Portainer"]
     },
     {
       title: "Infrastructure Services",
       icon: <LayoutGrid className="w-6 h-6 text-accent-blue" />,
-      description: "Production self-hosted infrastructure providing DNS, reverse proxy, local domain resolution, and CCTV recording for daily operations.",
-      techLabel: "Services",
-      techs: ["AdGuard Home", "Nginx Reverse Proxy", "Agent DVR"],
-      highlights: [
-        "AdGuard Home is the primary DNS service for the home network.",
-        "Nginx provides local domain names for internal services instead of accessing them via IP addresses.",
-        "Agent DVR operates as the production CCTV recording platform."
-      ]
+      description: "Production services used daily across my home network.",
+      techs: ["AdGuard Home", "Nginx Reverse Proxy", "Agent DVR"]
+    },
+    {
+      title: "Monitoring",
+      icon: <Activity className="w-6 h-6 text-accent-purple" />,
+      description: "Infrastructure monitoring for servers, containers, and network devices.",
+      techs: ["Zabbix", "Beszel", "SNMP", "MikroTik"]
     },
     {
       title: "Secure Connectivity",
       icon: <ShieldCheck className="w-6 h-6 text-accent-emerald" />,
-      description: "Encrypted site-to-site connectivity between Ubuntu servers using overlay networking for secure remote access and infrastructure management.",
-      techLabel: "Technologies",
+      description: "Encrypted site-to-site connectivity between Ubuntu servers.",
       techs: ["Tailscale", "Site-to-Site VPN", "Ubuntu Server"]
-    },
-    {
-      title: "Monitoring & Observability",
-      icon: <Activity className="w-6 h-6 text-accent-purple" />,
-      description: "Centralized monitoring platform providing visibility into Linux servers, MikroTik infrastructure, virtual machines, and self-hosted services.",
-      techLabel: "Technologies",
-      techs: ["Zabbix", "Beszel", "SNMP", "MikroTik", "Linux Monitoring"]
     }
   ]
 
@@ -136,33 +122,10 @@ export function SelfHostedInfrastructureSection({ technologies }: SelfHostedInfr
                     {card.description}
                   </p>
                   
-                  <div className="flex flex-col gap-4 mt-auto">
-                    <div className="flex flex-col gap-2">
-                      <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">{card.techLabel}</span>
-                      <div className="flex flex-wrap gap-2">
-                        {card.techs.map(t => resolveTechLink(t, technologies))}
-                      </div>
+                  <div className="flex flex-col gap-4 mt-auto pt-4">
+                    <div className="flex flex-wrap gap-2">
+                      {card.techs.map(t => resolveTechLink(t, technologies))}
                     </div>
-
-                    {card.subLabel && card.subTechs && (
-                      <div className="flex flex-col gap-2 mt-2">
-                        <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">{card.subLabel}</span>
-                        <div className="flex flex-wrap gap-2">
-                          {card.subTechs.map(t => resolveTechLink(t, technologies))}
-                        </div>
-                      </div>
-                    )}
-
-                    {card.highlights && (
-                      <div className="flex flex-col gap-3 mt-3 pt-4 border-t border-surface/50">
-                        {card.highlights.map((highlight, i) => (
-                          <div key={i} className="flex items-start gap-2">
-                            <CheckCircle2 className="w-4 h-4 text-accent-orange mt-0.5 flex-shrink-0" />
-                            <span className="text-sm text-muted-foreground leading-relaxed">{highlight}</span>
-                          </div>
-                        ))}
-                      </div>
-                    )}
                   </div>
                 </BaseCard>
               </motion.div>
