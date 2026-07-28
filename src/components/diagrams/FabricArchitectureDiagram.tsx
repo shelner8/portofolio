@@ -57,23 +57,13 @@ const StraightLink = ({ color, label }: { color: string, label?: string }) => (
   </div>
 )
 
-const CVDFabricLine = ({ startX, endX, startY = 0, trunkY = 25, endY = 100, color = "#f97316" }: { startX: number, endX: number, startY?: number, trunkY?: number, endY?: number, color?: string }) => {
-  const dx = endX - startX;
-  const absDx = Math.abs(dx);
-  
-  let path = "";
-  if (absDx === 0) {
-    path = `M ${startX} ${startY} L ${startX} ${endY}`;
-  } else {
-    const midY = trunkY + absDx;
-    path = `M ${startX} ${startY} L ${startX} ${trunkY} L ${endX} ${midY} L ${endX} ${endY}`;
-  }
-  
+const CVDFabricLine = ({ startX, endX, startY = 0, endY = 100, color = "#f97316" }: { startX: number, endX: number, startY?: number, endY?: number, color?: string }) => {
   return (
     <g>
-      <path d={path} fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" vectorEffect="non-scaling-stroke" strokeLinejoin="round" />
-      <motion.path 
-        d={path} fill="none" stroke={color} strokeWidth="1.5" strokeDasharray="4 8" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke"
+      <line x1={startX} y1={startY} x2={endX} y2={endY} stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" vectorEffect="non-scaling-stroke" strokeLinecap="round" />
+      <motion.line 
+        x1={startX} y1={startY} x2={endX} y2={endY} 
+        stroke={color} strokeWidth="1.5" strokeDasharray="4 8" strokeLinecap="round" vectorEffect="non-scaling-stroke"
         initial={{ strokeDashoffset: 24 }} animate={{ strokeDashoffset: 0 }} transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
         style={{ filter: `drop-shadow(0 0 4px ${color})` }}
       />
