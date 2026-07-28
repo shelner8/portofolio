@@ -16,18 +16,59 @@ const Node = ({ title, subtitle, glow = false }: { title: string, subtitle: stri
 )
 
 const VerticalConnector = () => (
-  <div className="flex justify-center items-center h-12 w-full">
-    <svg width="2" height="48" className="overflow-visible">
-      <line x1="1" y1="0" x2="1" y2="48" stroke="rgba(255,255,255,0.1)" strokeWidth="2" />
+  <div className="flex justify-center items-center h-8 md:h-12 w-full">
+    <svg width="2" height="100%" className="overflow-visible" preserveAspectRatio="none">
+      <line x1="1" y1="0" x2="1" y2="100%" stroke="rgba(255,255,255,0.1)" strokeWidth="2" />
       <motion.line 
-        x1="1" y1="0" x2="1" y2="48" 
+        x1="1" y1="0" x2="1" y2="100%" 
         stroke="#f97316" 
         strokeWidth="2" 
         strokeDasharray="4 8"
         initial={{ strokeDashoffset: 24 }}
         animate={{ strokeDashoffset: 0 }}
         transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
+        style={{ filter: 'drop-shadow(0 0 5px rgba(249,115,22,0.5))' }}
       />
+    </svg>
+  </div>
+)
+
+const FabricLine = ({ x1, x2 }: { x1: string, x2: string }) => (
+  <g>
+    <line x1={x1} y1="0" x2={x2} y2="100" stroke="rgba(255,255,255,0.08)" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+    <motion.line 
+      x1={x1} y1="0" x2={x2} y2="100" 
+      stroke="#f97316" 
+      strokeWidth="1.5" 
+      strokeDasharray="4 8"
+      strokeLinecap="round"
+      vectorEffect="non-scaling-stroke"
+      initial={{ strokeDashoffset: 24 }}
+      animate={{ strokeDashoffset: 0 }}
+      transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
+      style={{ filter: 'drop-shadow(0 0 4px rgba(249,115,22,0.6))' }}
+    />
+  </g>
+)
+
+const SpineLeafMesh = () => (
+  <div className="w-full h-16 md:h-24 relative overflow-visible flex items-center justify-center">
+    <svg 
+      className="absolute inset-0 w-full h-full overflow-visible"
+      preserveAspectRatio="none"
+      viewBox="0 0 100 100"
+    >
+      {/* Spine 1 (left) Links */}
+      <FabricLine x1="36" x2="12.5" />
+      <FabricLine x1="36" x2="37.5" />
+      <FabricLine x1="36" x2="62.5" />
+      <FabricLine x1="36" x2="87.5" />
+      
+      {/* Spine 2 (right) Links */}
+      <FabricLine x1="64" x2="12.5" />
+      <FabricLine x1="64" x2="37.5" />
+      <FabricLine x1="64" x2="62.5" />
+      <FabricLine x1="64" x2="87.5" />
     </svg>
   </div>
 )
@@ -59,14 +100,16 @@ export function FabricArchitectureDiagram() {
         <VerticalConnector />
         
         {/* Spines */}
-        <div className="flex flex-col sm:flex-row gap-6 sm:gap-12 w-full max-w-2xl justify-center items-center">
+        <div className="flex gap-6 md:gap-12 w-full max-w-2xl justify-center items-center">
            <Node title="Spine-01" subtitle="Aruba CX8360-12C" glow />
            <Node title="Spine-02" subtitle="Aruba CX8360-12C" glow />
         </div>
-        <VerticalConnector />
         
-        {/* Leaves */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full justify-items-center">
+        {/* Full Fabric Mesh Connections */}
+        <SpineLeafMesh />
+        
+        {/* Leaves (Forced 4-columns to match Mesh) */}
+        <div className="grid grid-cols-4 gap-2 md:gap-6 w-full justify-items-center">
            <Node title="Leaf-01" subtitle="Aruba CX10000" />
            <Node title="Leaf-02" subtitle="Aruba CX10000" />
            <Node title="Leaf-03" subtitle="Aruba CX10000" />
