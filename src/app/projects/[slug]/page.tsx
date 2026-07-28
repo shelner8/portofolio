@@ -67,6 +67,8 @@ export default function ProjectCaseStudy({ params }: { params: { slug: string } 
     }
   })
 
+  const contentParts = mainMarkdown.split(/```diagram\s*\r?\n(fabric|security)\s*\r?\n```/)
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -74,8 +76,8 @@ export default function ProjectCaseStudy({ params }: { params: { slug: string } 
         <div className="absolute inset-0 bg-background" />
         <div className="absolute inset-0 bg-gradient-to-br from-accent-orange/5 via-transparent to-transparent opacity-50" />
         
-        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto flex flex-col gap-8">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px]">
+          <div className="flex flex-col gap-8 w-full lg:max-w-[900px]">
             <Link href="/projects" className="inline-flex items-center gap-2 text-sm text-muted hover:text-accent-orange transition-colors w-fit">
               <ArrowLeft className="w-4 h-4" />
               Back to Projects
@@ -122,80 +124,107 @@ export default function ProjectCaseStudy({ params }: { params: { slug: string } 
 
       {/* Content Section */}
       <section className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px]">
+          <div className="flex flex-col gap-16 md:gap-24">
             
-            {/* Main Markdown Body */}
-            <div className="lg:col-span-8 flex flex-col gap-10">
-              <div className="prose prose-invert prose-lg max-w-none 
-                [&>h3]:text-2xl [&>h3]:font-bold [&>h3]:text-primary [&>h3]:mt-12 [&>h3]:mb-6
-                [&>h4]:text-xl [&>h4]:font-bold [&>h4]:text-primary [&>h4]:mt-8 [&>h4]:mb-4
-                [&>p]:text-muted [&>p]:leading-relaxed [&>p]:mb-6
-                [&>ul]:text-muted [&>ul]:list-disc [&>ul]:pl-6 [&>ul>li]:mb-3 [&>ul>li]:pl-2
-                [&>ul>li::marker]:text-accent-orange/50">
-                <ReactMarkdown
-                  components={{
-                    code({ node, inline, className, children, ...props }: any) {
-                      const match = /language-(\w+)/.exec(className || "")
-                      if (!inline && match && match[1] === "diagram") {
-                        const type = String(children).replace(/\n$/, "").trim()
-                        if (type === "fabric") return <div className="mt-8 mb-12 w-full"><FabricArchitectureDiagram /></div>
-                        if (type === "security") return <div className="mt-8 mb-12 w-full"><SecurityFlowDiagram /></div>
-                      }
-                      return <code className={className} {...props}>{children}</code>
-                    }
-                  }}
-                >
-                  {mainMarkdown}
-                </ReactMarkdown>
-              </div>
-
-              {/* Documentation Cards Grid */}
-              {cardSections.length > 0 && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                  {cardSections.map((card, idx) => (
-                    <div key={idx} className="flex flex-col p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface shadow-lg h-full">
-                      <h3 className="text-xl font-bold text-primary font-mono mb-4 pb-4 border-b border-surface/50">{card.title}</h3>
-                      <div className="prose prose-invert prose-base max-w-none 
-                        [&>p]:text-muted [&>p]:leading-relaxed
-                        [&>ul]:text-muted [&>ul]:list-disc [&>ul]:pl-5 [&>ul>li]:mb-2
-                        [&>ul>li::marker]:text-accent-blue/50
-                        [&>h4]:text-lg [&>h4]:font-bold [&>h4]:text-primary/90 [&>h4]:mt-6 [&>h4]:mb-3">
-                        <ReactMarkdown>{card.content}</ReactMarkdown>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-            
-            {/* Sidebar / Meta */}
-            <div className="lg:col-span-4 flex flex-col gap-10">
-              <div className="p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface flex flex-col gap-6">
-                <h3 className="text-lg font-semibold text-primary">Technologies</h3>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map(tech => (
-                    <Badge key={tech} variant="outline" className="bg-surface/50 border-surface-light text-muted hover:text-primary transition-colors py-1 px-3">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-              
-              {project.skills && project.skills.length > 0 && (
-                <div className="p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface flex flex-col gap-6">
-                  <h3 className="text-lg font-semibold text-primary">Key Skills</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {project.skills.map(skill => (
-                      <Badge key={skill} variant="outline" className="border-accent-blue/30 text-accent-blue bg-accent-blue/5 py-1 px-3">
-                        {skill}
-                      </Badge>
-                    ))}
+            {/* Top Section: Overview + Sidebar */}
+            {contentParts[0] && contentParts[0].trim() && (
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+                
+                {/* Main Markdown Body */}
+                <div className="lg:col-span-8 flex flex-col gap-10">
+                  <div className="prose prose-invert prose-lg max-w-none 
+                    [&>h3]:text-2xl [&>h3]:font-bold [&>h3]:text-primary [&>h3]:mt-12 [&>h3]:mb-6
+                    [&>h4]:text-xl [&>h4]:font-bold [&>h4]:text-primary [&>h4]:mt-8 [&>h4]:mb-4
+                    [&>p]:text-muted [&>p]:leading-relaxed [&>p]:mb-6
+                    [&>ul]:text-muted [&>ul]:list-disc [&>ul]:pl-6 [&>ul>li]:mb-3 [&>ul>li]:pl-2
+                    [&>ul>li::marker]:text-accent-orange/50">
+                    <ReactMarkdown>{contentParts[0]}</ReactMarkdown>
                   </div>
                 </div>
-              )}
-            </div>
-            
+                
+                {/* Sidebar / Meta */}
+                <div className="lg:col-span-4 flex flex-col gap-10">
+                  <div className="p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface flex flex-col gap-6">
+                    <h3 className="text-lg font-semibold text-primary">Technologies</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map(tech => (
+                        <Badge key={tech} variant="outline" className="bg-surface/50 border-surface-light text-muted hover:text-primary transition-colors py-1 px-3">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {project.skills && project.skills.length > 0 && (
+                    <div className="p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface flex flex-col gap-6">
+                      <h3 className="text-lg font-semibold text-primary">Key Skills</h3>
+                      <div className="flex flex-wrap gap-2">
+                        {project.skills.map(skill => (
+                          <Badge key={skill} variant="outline" className="border-accent-blue/30 text-accent-blue bg-accent-blue/5 py-1 px-3">
+                            {skill}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Interleaved Diagrams and Text */}
+            {contentParts.slice(1).map((part, index) => {
+              if (part === "fabric") {
+                return (
+                  <div key={index} className="w-full">
+                    <FabricArchitectureDiagram />
+                  </div>
+                )
+              }
+              if (part === "security") {
+                return (
+                  <div key={index} className="w-full">
+                    <SecurityFlowDiagram />
+                  </div>
+                )
+              }
+              if (part.trim()) {
+                return (
+                  <div key={index} className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+                    <div className="lg:col-span-8 flex flex-col gap-10">
+                      <div className="prose prose-invert prose-lg max-w-none 
+                        [&>h3]:text-2xl [&>h3]:font-bold [&>h3]:text-primary [&>h3]:mt-12 [&>h3]:mb-6
+                        [&>h4]:text-xl [&>h4]:font-bold [&>h4]:text-primary [&>h4]:mt-8 [&>h4]:mb-4
+                        [&>p]:text-muted [&>p]:leading-relaxed [&>p]:mb-6
+                        [&>ul]:text-muted [&>ul]:list-disc [&>ul]:pl-6 [&>ul>li]:mb-3 [&>ul>li]:pl-2
+                        [&>ul>li::marker]:text-accent-orange/50">
+                        <ReactMarkdown>{part}</ReactMarkdown>
+                      </div>
+                    </div>
+                  </div>
+                )
+              }
+              return null
+            })}
+
+            {/* Documentation Cards Grid */}
+            {cardSections.length > 0 && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                {cardSections.map((card, idx) => (
+                  <div key={idx} className="flex flex-col p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface shadow-lg h-full">
+                    <h3 className="text-xl font-bold text-primary font-mono mb-4 pb-4 border-b border-surface/50">{card.title}</h3>
+                    <div className="prose prose-invert prose-base max-w-none 
+                      [&>p]:text-muted [&>p]:leading-relaxed
+                      [&>ul]:text-muted [&>ul]:list-disc [&>ul]:pl-5 [&>ul>li]:mb-2
+                      [&>ul>li::marker]:text-accent-blue/50
+                      [&>h4]:text-lg [&>h4]:font-bold [&>h4]:text-primary/90 [&>h4]:mt-6 [&>h4]:mb-3">
+                      <ReactMarkdown>{card.content}</ReactMarkdown>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
           </div>
         </div>
       </section>
@@ -203,7 +232,7 @@ export default function ProjectCaseStudy({ params }: { params: { slug: string } 
       {/* Related Projects */}
       {relatedProjects.length > 0 && (
         <section className="py-16 md:py-24 bg-surface/10 border-t border-surface">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px]">
             <div className="flex flex-col gap-12">
               <div className="flex items-center justify-between">
                 <h2 className="text-2xl md:text-3xl font-bold text-primary">Related Case Studies</h2>
@@ -220,7 +249,7 @@ export default function ProjectCaseStudy({ params }: { params: { slug: string } 
 
       {/* Pagination */}
       <section className="py-12 border-t border-surface bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px]">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6 max-w-4xl mx-auto">
             {prevProject ? (
               <Button variant="ghost" className="w-full sm:w-auto justify-start gap-3 h-auto py-4 group" asChild>
