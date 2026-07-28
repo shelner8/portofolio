@@ -4,12 +4,17 @@ title: PT Angkasa Pura Solusi Integra
 duration: Feb 2023 - Mar 2023
 category: Enterprise Network
 technologies:
-- Alcatel
+  - MikroTik
+  - Broadband
+  - Ruckus
+  - Wireless LAN
+  - Internet Gateway
 status: Completed
 featured: false
 futureCaseStudy: false
-summary: Integrated Alcatel enterprise networking hardware to support reliable corporate
-  communications and infrastructure.
+summary: >-
+  Integrated Alcatel enterprise networking hardware to support reliable
+  corporate communications and infrastructure.
 ---
 
 ### Overview

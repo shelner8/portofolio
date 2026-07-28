@@ -4,12 +4,15 @@ title: Implementing Network Mayapada Hospital
 duration: Apr 2024 - Jun 2024
 category: Enterprise Network
 technologies:
-- Routing
-- Switching
+  - Aruba VSF
+  - Enterprise Switching
+  - Stacking
+  - Aruba AOS-CX
 status: Completed
 featured: true
 futureCaseStudy: false
-summary: Delivered a robust and highly available enterprise network architecture to
+summary: >-
+  Delivered a robust and highly available enterprise network architecture to
   support critical healthcare operations.
 ---
 

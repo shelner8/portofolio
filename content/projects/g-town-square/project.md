@@ -4,20 +4,23 @@ title: G-Town Square Serpong
 duration: Apr 2023 - Sep 2023
 category: Campus Network
 responsibilities:
-- Network Infrastructure Design
-- Fiber Backbone
-- Ruckus Wireless
-- Implementation
+  - Network Infrastructure Design
+  - Fiber Backbone
+  - Ruckus Wireless
+  - Implementation
 technologies:
-- Ruckus
-- Fiber Backbone
-- Routing
-- Switching
+  - MikroTik
+  - Queue Tree
+  - Bandwidth Management
+  - Ruckus
+  - Alcatel
+  - Enterprise LAN
 status: Completed
 featured: true
 futureCaseStudy: false
-summary: Architected a comprehensive campus network integrating a high-speed fiber
-  backbone with pervasive Ruckus wireless coverage.
+summary: >-
+  Designed and led the implementation of enterprise network infrastructure and
+  backbone systems.
 ---
 
 ### Overview

@@ -2,20 +2,24 @@
 id: kualanamu-international
 title: Kualanamu International Airport
 duration: Mar 2023 - Apr 2023
-category: Airport Network
+category: Enterprise Network
 responsibilities:
-- Enterprise Backbone
-- BGP
-- ISP Connectivity
-- Network Monitoring
+  - Enterprise Backbone
+  - BGP
+  - ISP Connectivity
+  - Network Monitoring
 technologies:
-- BGP
-- Cacti
+  - MikroTik
+  - BGP
+  - ISP
+  - Tunneling
+  - Enterprise Routing
 status: Completed
 featured: false
 futureCaseStudy: false
-summary: Modernized critical airport backbone routing via BGP and established centralized
-  monitoring systems using Cacti.
+summary: >-
+  Modernized critical airport backbone routing via BGP and established
+  centralized monitoring systems using Cacti.
 ---
 
 ### Overview

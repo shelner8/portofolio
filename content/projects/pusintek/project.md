@@ -1,21 +1,26 @@
 ---
 id: pusintek
-title: Data Center Pusat Sistem Informasi dan Teknologi Keuangan (PUSINTEK) Kementerian
-  Keuangan
+title: >-
+  Data Center Pusat Sistem Informasi dan Teknologi Keuangan (PUSINTEK)
+  Kementerian Keuangan
 duration: Jan 2025 - Present
-category: Enterprise Data Center
+category: Data Center
 environment: Government Data Center
 technologies:
-- SDN
-- IXIA
+  - IXIA
+  - Network Visibility
+  - High Availability
+  - Bypass Switch
+  - Traffic Monitoring
 skills:
-- Multi-Tenant VRF
-- BGP
+  - Multi-Tenant VRF
+  - BGP
 status: In Progress
 featured: true
 futureCaseStudy: true
-summary: Engineered Software-Defined Networking (SDN) solutions and validated infrastructure
-  resilience using IXIA for a secure government data center.
+summary: >-
+  Implemented network visibility and validated infrastructure resilience using
+  IXIA bypass switches for a secure government data center.
 ---
 
 ### Overview

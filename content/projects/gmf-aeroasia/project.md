@@ -2,25 +2,28 @@
 id: gmf-aeroasia
 title: GMF AeroAsia - Soekarno Hatta International Airport
 duration: Jul 2024 - Apr 2025
-category: Airport Enterprise Network
+category: Enterprise Network
 role: Senior Network Engineer
 environment: Production
 architecture: Core-Distribution-Access
 availability: VSX Redundancy
 responsibilities:
-- Enterprise L2/L3 Operations
-- VSX Core
-- OSPF
-- Troubleshooting
-- Performance Optimization
+  - Enterprise L2/L3 Operations
+  - VSX Core
+  - OSPF
+  - Troubleshooting
+  - Performance Optimization
 technologies:
-- Aruba VSX
-- OSPF
-- Enterprise Switching
+  - Aruba VSX
+  - OSPF
+  - Aruba AOS-CX
+  - High Availability
+  - Enterprise Switching
 status: Completed
 featured: true
 futureCaseStudy: true
-summary: Optimized enterprise network operations and configured highly available Aruba
+summary: >-
+  Optimized enterprise network operations and configured highly available Aruba
   VSX core switching infrastructure for an aviation facility.
 ---
 

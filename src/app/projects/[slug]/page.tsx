@@ -1,5 +1,6 @@
 import React from 'react'
 import { getProjectBySlug, getAllProjects, getRelatedProjects } from "@/lib/projects"
+import { getAllTechnologies } from "@/lib/technologies"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import ReactMarkdown from "react-markdown"
@@ -255,11 +256,24 @@ export default function ProjectCaseStudy({ params }: { params: { slug: string } 
                         <div className="p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface flex flex-col gap-4 shadow-lg h-full">
                           <h3 className="text-xl font-bold text-primary font-mono border-b border-surface/50 pb-3">Technologies</h3>
                           <div className="flex flex-wrap gap-2">
-                            {project.technologies.map(tech => (
-                              <Badge key={tech} variant="outline" className="bg-surface/50 border-surface-light text-muted hover:text-primary transition-colors py-1 px-3">
-                                {tech}
-                              </Badge>
-                            ))}
+                            {project.technologies.map(tech => {
+                              const allTechs = getAllTechnologies()
+                              const matchedTech = allTechs.find(t => t.name === tech || t.id === tech)
+                              if (matchedTech) {
+                                return (
+                                  <Link key={tech} href={`/technology/${matchedTech.slug || matchedTech.id}`}>
+                                    <Badge variant="outline" className="bg-surface/50 border-accent-blue/30 text-accent-blue hover:text-accent-blue/80 hover:bg-accent-blue/10 transition-colors py-1 px-3 cursor-pointer">
+                                      {tech}
+                                    </Badge>
+                                  </Link>
+                                )
+                              }
+                              return (
+                                <Badge key={tech} variant="outline" className="bg-surface/50 border-surface-light text-muted transition-colors py-1 px-3">
+                                  {tech}
+                                </Badge>
+                              )
+                            })}
                           </div>
                         </div>
                         

@@ -46,7 +46,14 @@ export default function TechnologyDetailPage({ params }: { params: { slug: strin
 
   // Fetch relations
   const allProjects = getAllProjects()
-  const relatedProjects = allProjects.filter(p => technology.relatedProjects?.includes(p.id))
+  const relatedProjects = allProjects.filter(p => 
+    p.technologies?.some(tech => 
+      tech === technology.name || 
+      tech.toLowerCase() === technology.id.toLowerCase() || 
+      tech.toLowerCase() === technology.slug?.toLowerCase()
+    ) || 
+    technology.relatedProjects?.includes(p.id)
+  )
   const relatedCerts = certifications.filter(c => technology.relatedCertifications?.includes(c.id))
   const relatedTechs = getRelatedTechnologies(technology.relatedTechnologies || [])
 

@@ -2,13 +2,17 @@
 id: airport-learning-center
 title: Airport Learning Center Soekarno Hatta
 duration: May 2023 - Jul 2023
-category: Enterprise Wireless
+category: Enterprise Network
 technologies:
-- Aruba Wireless
+  - Aruba AOS-CX
+  - Enterprise Switching
+  - Aruba Wireless
+  - Access Point
 status: Completed
 featured: true
 futureCaseStudy: false
-summary: Engineered and optimized high-density Aruba Wireless enterprise infrastructure
+summary: >-
+  Engineered and optimized high-density Aruba Wireless enterprise infrastructure
   for an educational airport facility.
 ---
 

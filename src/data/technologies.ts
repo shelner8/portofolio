@@ -627,4 +627,205 @@ export const technologies: Technology[] = [
       }
     ]
   }
+,
+  {
+    id: "ixia",
+    slug: "ixia",
+    name: "IXIA",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of IXIA.",
+    relatedProjects: [],
+    relatedArticles: [],
+    relatedCertifications: []
+  },
+  {
+    id: "network-visibility",
+    slug: "network-visibility",
+    name: "Network Visibility",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of Network Visibility.",
+    relatedProjects: [],
+    relatedArticles: [],
+    relatedCertifications: []
+  },
+  {
+    id: "high-availability",
+    slug: "high-availability",
+    name: "High Availability",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of High Availability.",
+    relatedProjects: [],
+    relatedArticles: [],
+    relatedCertifications: []
+  },
+  {
+    id: "bypass-switch",
+    slug: "bypass-switch",
+    name: "Bypass Switch",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of Bypass Switch.",
+    relatedProjects: [],
+    relatedArticles: [],
+    relatedCertifications: []
+  },
+  {
+    id: "traffic-monitoring",
+    slug: "traffic-monitoring",
+    name: "Traffic Monitoring",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of Traffic Monitoring.",
+    relatedProjects: [],
+    relatedArticles: [],
+    relatedCertifications: []
+  },
+  {
+    id: "enterprise-switching",
+    slug: "enterprise-switching",
+    name: "Enterprise Switching",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of Enterprise Switching.",
+    relatedProjects: [],
+    relatedArticles: [],
+    relatedCertifications: []
+  },
+  {
+    id: "layer-3-routing",
+    slug: "layer-3-routing",
+    name: "Layer 3 Routing",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of Layer 3 Routing.",
+    relatedProjects: [],
+    relatedArticles: [],
+    relatedCertifications: []
+  },
+  {
+    id: "stacking",
+    slug: "stacking",
+    name: "Stacking",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of Stacking.",
+    relatedProjects: [],
+    relatedArticles: [],
+    relatedCertifications: []
+  },
+  {
+    id: "bandwidth-management",
+    slug: "bandwidth-management",
+    name: "Bandwidth Management",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of Bandwidth Management.",
+    relatedProjects: [],
+    relatedArticles: [],
+    relatedCertifications: []
+  },
+  {
+    id: "ruckus",
+    slug: "ruckus",
+    name: "Ruckus",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of Ruckus.",
+    relatedProjects: [],
+    relatedArticles: [],
+    relatedCertifications: []
+  },
+  {
+    id: "alcatel",
+    slug: "alcatel",
+    name: "Alcatel",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of Alcatel.",
+    relatedProjects: [],
+    relatedArticles: [],
+    relatedCertifications: []
+  },
+  {
+    id: "enterprise-lan",
+    slug: "enterprise-lan",
+    name: "Enterprise LAN",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of Enterprise LAN.",
+    relatedProjects: [],
+    relatedArticles: [],
+    relatedCertifications: []
+  },
+  {
+    id: "aruba-wireless",
+    slug: "aruba-wireless",
+    name: "Aruba Wireless",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of Aruba Wireless.",
+    relatedProjects: [],
+    relatedArticles: [],
+    relatedCertifications: []
+  },
+  {
+    id: "access-point",
+    slug: "access-point",
+    name: "Access Point",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of Access Point.",
+    relatedProjects: [],
+    relatedArticles: [],
+    relatedCertifications: []
+  },
+  {
+    id: "isp",
+    slug: "isp",
+    name: "ISP",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of ISP.",
+    relatedProjects: [],
+    relatedArticles: [],
+    relatedCertifications: []
+  },
+  {
+    id: "tunneling",
+    slug: "tunneling",
+    name: "Tunneling",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of Tunneling.",
+    relatedProjects: [],
+    relatedArticles: [],
+    relatedCertifications: []
+  },
+  {
+    id: "enterprise-routing",
+    slug: "enterprise-routing",
+    name: "Enterprise Routing",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of Enterprise Routing.",
+    relatedProjects: [],
+    relatedArticles: [],
+    relatedCertifications: []
+  },
+  {
+    id: "broadband",
+    slug: "broadband",
+    name: "Broadband",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of Broadband.",
+    relatedProjects: [],
+    relatedArticles: [],
+    relatedCertifications: []
+  },
+  {
+    id: "wireless-lan",
+    slug: "wireless-lan",
+    name: "Wireless LAN",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of Wireless LAN.",
+    relatedProjects: [],
+    relatedArticles: [],
+    relatedCertifications: []
+  },
+  {
+    id: "internet-gateway",
+    slug: "internet-gateway",
+    name: "Internet Gateway",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of Internet Gateway.",
+    relatedProjects: [],
+    relatedArticles: [],
+    relatedCertifications: []
+  }
 ];
