@@ -15,13 +15,30 @@ summary: >-
   Engineered and optimized high-density Aruba Wireless enterprise infrastructure
   for an educational airport facility.
 ---
-
 ### Overview
 Engineered an enterprise-grade wireless network designed to support high-density concurrent connectivity for an educational airport facility.
 
+### Infrastructure Environment
+
+#### Network Hardware
+- Aruba Switches
+- Aruba Access Points
+
+#### Core Services
+- Enterprise Switching
+- Wireless LAN
+- VLAN
+
+#### Deployment Type
+Enterprise Network
+
+#### Production Environment
+Production
+
 ### Responsibilities
 - Deployed Aruba Wireless infrastructure tailored for learning environments.
-- Optimized radio frequency (RF) tuning and access point placement to maximize coverage and minimize interference.
 
-### Technologies
-Aruba Wireless
+### Implementation Highlights
+- Aruba Switching
+- Aruba Wireless
+- Enterprise LAN

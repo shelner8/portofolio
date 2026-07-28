@@ -16,13 +16,33 @@ summary: >-
   Integrated Alcatel enterprise networking hardware to support reliable
   corporate communications and infrastructure.
 ---
-
 ### Overview
 Integrated enterprise networking hardware to support reliable corporate communications and data infrastructure.
 
+### Infrastructure Environment
+
+#### Network Hardware
+- MikroTik Router
+- Ruckus Access Points
+
+#### Core Services
+- Internet Broadband
+- Internet Gateway
+- Wireless LAN
+- DHCP
+- NAT
+
+#### Deployment Type
+Enterprise Network
+
+#### Production Environment
+Production
+
 ### Responsibilities
 - Deployed and configured Alcatel enterprise networking equipment.
-- Validated network topology to ensure secure and efficient inter-departmental connectivity.
 
-### Technologies
-Alcatel
+### Implementation Highlights
+- Broadband Gateway
+- MikroTik Deployment
+- Ruckus Wireless
+- Enterprise WiFi

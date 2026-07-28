@@ -4,10 +4,10 @@ title: Implementing Network Mayapada Hospital
 duration: Apr 2024 - Jun 2024
 category: Enterprise Network
 technologies:
-  - Aruba VSF
-  - Enterprise Switching
-  - Stacking
-  - Aruba AOS-CX
+  - Aruba Instant On
+  - Enterprise LAN
+  - Wireless LAN
+  - VLAN
 status: Completed
 featured: true
 futureCaseStudy: false
@@ -15,13 +15,32 @@ summary: >-
   Delivered a robust and highly available enterprise network architecture to
   support critical healthcare operations.
 ---
-
 ### Overview
-Delivered a robust and highly available enterprise network architecture to support critical healthcare operations and data communications.
+Enterprise LAN and wireless deployment using Aruba Instant On switching and wireless infrastructure for hospital operations.
+
+### Infrastructure Environment
+
+#### Network Hardware
+- Aruba Instant On Switches
+- Aruba Instant On Access Points
+
+#### Core Services
+- Enterprise LAN
+- Wireless LAN
+- VLAN
+- Internet Connectivity
+
+#### Deployment Type
+Enterprise Network
+
+#### Production Environment
+Production
 
 ### Responsibilities
 - Deployed and configured advanced routing and switching topologies across the hospital campus.
-- Validated network reliability to ensure uninterrupted access to medical and administrative systems.
 
-### Technologies
-Routing, Switching
+### Implementation Highlights
+- Aruba Instant On Deployment
+- Enterprise LAN
+- Wireless Coverage
+- Switching Deployment

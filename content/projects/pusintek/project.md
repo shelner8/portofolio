@@ -22,43 +22,29 @@ summary: >-
   Implemented network visibility and validated infrastructure resilience using
   IXIA bypass switches for a secure government data center.
 ---
-
 ### Overview
 Engineered Software-Defined Networking (SDN) solutions tailored for a secure government data center environment.
 
-### Background
-TODO
+### Infrastructure Environment
 
-### Environment
-- Government Data Center
+#### Network Hardware
+- IXIA Network Visibility Nodes
+- Bypass Switches
 
-### Scope
-Implementation of Software-Defined Networking (SDN) and validation of network infrastructure resilience for a secure government data center.
+#### Core Services
+- Traffic Monitoring
+- Network Visibility
+- High Availability
+
+#### Deployment Type
+Data Center Network
+
+#### Production Environment
+Production
 
 ### Responsibilities
 - Architected multi-tenant VRF separation to ensure strict logical isolation across critical government domains.
-- Designed and optimized BGP routing policies for robust inter-tenant communication.
 
-### Technologies
-- SDN
-- IXIA
-- Multi-Tenant VRF
-- BGP
-
-### Challenges
-TODO
-
-### Solution
-TODO
-
-### Validation
-- Validated network performance and infrastructure resilience through rigorous IXIA load testing.
-
-### Operational Notes
-TODO
-
-### Lessons Learned
-TODO
-
-### Future Improvements
-TODO
+### Implementation Highlights
+- IXIA Network Visibility
+- High Availability Bypass

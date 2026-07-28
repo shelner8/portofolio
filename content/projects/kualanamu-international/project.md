@@ -21,14 +21,33 @@ summary: >-
   Modernized critical airport backbone routing via BGP and established
   centralized monitoring systems using Cacti.
 ---
-
 ### Overview
-Modernized critical airport enterprise routing and established centralized monitoring systems to enhance infrastructure visibility.
+Enterprise gateway deployment providing ISP connectivity and secure inter-site communication between Kualanamu International Airport and Soekarno-Hatta International Airport.
+
+### Infrastructure Environment
+
+#### Network Hardware
+- MikroTik Router
+
+#### Core Services
+- External BGP
+- ISP Connectivity
+- Site-to-Site Tunnel
+- Internet Gateway
+- Routing
+
+#### Deployment Type
+Enterprise Network
+
+#### Production Environment
+Production
 
 ### Responsibilities
 - Architected the enterprise backbone network to handle large-scale data aggregation.
-- Configured BGP routing policies to ensure resilient and optimal ISP connectivity.
-- Integrated Cacti network monitoring to provide continuous visibility into traffic patterns and hardware health.
 
-### Technologies
-BGP, Cacti
+### Implementation Highlights
+- MikroTik Gateway
+- BGP Routing
+- ISP Integration
+- Site-to-Site Tunnel
+- Enterprise WAN

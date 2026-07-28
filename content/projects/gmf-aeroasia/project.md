@@ -15,8 +15,8 @@ responsibilities:
   - Performance Optimization
 technologies:
   - Aruba VSX
-  - OSPF
   - Aruba AOS-CX
+  - OSPF
   - High Availability
   - Enterprise Switching
 status: Completed
@@ -26,15 +26,34 @@ summary: >-
   Optimized enterprise network operations and configured highly available Aruba
   VSX core switching infrastructure for an aviation facility.
 ---
-
 ### Overview
-Maintained and optimized enterprise network infrastructure for a major aviation maintenance facility, ensuring high availability and seamless data flow.
+Enterprise core network deployment using Aruba switching infrastructure with VSX redundancy and OSPF routing to provide a resilient production network.
+
+### Infrastructure Environment
+
+#### Network Hardware
+- Aruba CX Core Switches
+- Aruba Access Switches
+
+#### Core Services
+- OSPF Routing
+- VSX High Availability
+- Layer 3 Routing
+- Enterprise Switching
+- VLAN
+
+#### Deployment Type
+Enterprise Network
+
+#### Production Environment
+Production
 
 ### Responsibilities
 - Managed complex Layer 2 and Layer 3 enterprise network operations across the campus infrastructure.
-- Configured Aruba VSX to provide resilient and highly available core switching infrastructure.
-- Designed and optimized OSPF routing to ensure efficient dynamic path selection and rapid network convergence.
-- Troubleshot critical network anomalies and applied performance optimizations to sustain operational continuity.
 
-### Technologies
-Aruba VSX, OSPF, Enterprise Switching
+### Implementation Highlights
+- Aruba VSX Core
+- OSPF Routing
+- High Availability
+- Enterprise Core Switching
+- Production Deployment
