@@ -13,9 +13,9 @@ export function Footer({ footer }: FooterProps) {
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-16">
           <div className="lg:col-span-2 flex flex-col gap-4">
-            <div className="text-2xl font-bold text-primary">
-              <span className="text-accent-orange">/</span>DC_Eng
-            </div>
+            <Link href="/" className="text-xl font-bold tracking-tight text-primary hover:text-accent-orange transition-colors w-fit">
+              <span className="text-accent-orange">SH</span>LNR
+            </Link>
             <p className="text-muted text-sm max-w-sm leading-relaxed">
               {footer.brandStatement}
             </p>

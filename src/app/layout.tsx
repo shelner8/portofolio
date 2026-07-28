@@ -20,21 +20,21 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://enterprise-portfoli
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Data Center Network Specialist | Enterprise Network Engineer",
-    template: "%s | Enterprise Network Portfolio"
+    default: "Shelnerio | Enterprise Network Engineer",
+    template: "%s | SHLNR"
   },
   description: "Professional engineering portfolio showcasing enterprise networking, modern data center architecture, automation, and infrastructure engineering.",
   keywords: ["Network Engineer", "Data Center", "Aruba AOS-CX", "EVPN", "VXLAN", "BGP", "Network Automation", "Python", "Zero Trust Campus"],
-  authors: [{ name: "Enterprise Network Engineer", url: siteUrl }],
-  creator: "Enterprise Network Engineer",
+  authors: [{ name: "Shelnerio", url: siteUrl }],
+  creator: "Shelnerio",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Data Center Network Specialist | Enterprise Network Engineer",
+    title: "Shelnerio | Enterprise Network Engineer",
     description: "Professional engineering portfolio showcasing enterprise networking, modern data center architecture, automation, and infrastructure engineering.",
     url: siteUrl,
-    siteName: "Enterprise Network Portfolio",
+    siteName: "SHLNR",
     images: [
       {
         url: "/og-image.jpg",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Data Center Network Specialist | Enterprise Network Engineer",
+    title: "Shelnerio | Enterprise Network Engineer",
     description: "Professional engineering portfolio showcasing enterprise networking, modern data center architecture, automation, and infrastructure engineering.",
     images: ["/og-image.jpg"],
     creator: "@yourhandle",
@@ -69,8 +69,8 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "Enterprise Network Engineer",
-  "jobTitle": "Data Center Network Specialist",
+  "name": "Shelnerio",
+  "jobTitle": "Enterprise Network Engineer",
   "url": siteUrl,
   "sameAs": [
     "https://linkedin.com/in/shelnerio",

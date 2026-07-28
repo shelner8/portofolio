@@ -31,7 +31,7 @@ export function Navbar({ navigation }: NavbarProps) {
     >
       <Container className="flex items-center justify-between">
         <Link href="/" className="text-xl font-bold tracking-tight text-primary transition-colors hover:text-accent-orange">
-          <span className="text-accent-orange">/</span>DC<span className="hidden sm:inline">_Eng</span>
+          <span className="text-accent-orange">SH</span>LNR
         </Link>
 
         <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-6">
