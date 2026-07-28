@@ -56,12 +56,12 @@ const StraightLink = ({ color, label }: { color: string, label?: string }) => (
   </div>
 )
 
-const FabricLine = ({ x1, x2 }: { x1: string, x2: string }) => (
+const FabricLine = ({ x1, x2, color = "#f97316" }: { x1: string, x2: string, color?: string }) => (
   <g>
     <line x1={x1} y1="0" x2={x2} y2="100" stroke="rgba(255,255,255,0.08)" strokeWidth="1" vectorEffect="non-scaling-stroke" />
     <motion.line 
       x1={x1} y1="0" x2={x2} y2="100" 
-      stroke="#f97316" 
+      stroke={color} 
       strokeWidth="1.5" 
       strokeDasharray="4 8"
       strokeLinecap="round"
@@ -69,27 +69,52 @@ const FabricLine = ({ x1, x2 }: { x1: string, x2: string }) => (
       initial={{ strokeDashoffset: 24 }}
       animate={{ strokeDashoffset: 0 }}
       transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
-      style={{ filter: 'drop-shadow(0 0 4px rgba(249,115,22,0.6))' }}
+      style={{ filter: `drop-shadow(0 0 4px ${color})` }}
     />
   </g>
 )
 
-const SpineLeafMesh = () => (
-  <div className="w-full h-16 md:h-24 relative overflow-visible flex items-center justify-center mt-2">
+const BorderSpineMesh = () => (
+  <div className="w-full max-w-3xl h-24 md:h-32 relative overflow-visible flex items-center justify-center mt-2 z-0">
     <svg 
       className="absolute inset-0 w-full h-full overflow-visible"
       preserveAspectRatio="none"
       viewBox="0 0 100 100"
     >
-      <FabricLine x1="36" x2="12.5" />
-      <FabricLine x1="36" x2="37.5" />
-      <FabricLine x1="36" x2="62.5" />
-      <FabricLine x1="36" x2="87.5" />
+      {/* Border A (left) to Spines */}
+      <FabricLine x1="22" x2="22" color="#3b82f6" />
+      <FabricLine x1="22" x2="78" color="#3b82f6" />
       
-      <FabricLine x1="64" x2="12.5" />
-      <FabricLine x1="64" x2="37.5" />
-      <FabricLine x1="64" x2="62.5" />
-      <FabricLine x1="64" x2="87.5" />
+      {/* Border B (right) to Spines */}
+      <FabricLine x1="78" x2="22" color="#3b82f6" />
+      <FabricLine x1="78" x2="78" color="#3b82f6" />
+    </svg>
+    
+    {/* Logical Fabric Overlay */}
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-xl rounded-xl border border-[#3b82f6]/30 bg-[#0a0f1c]/90 backdrop-blur-sm p-3 md:p-4 text-center shadow-[0_0_15px_rgba(59,130,246,0.1)]">
+       <span className="text-[#3b82f6] font-bold font-mono text-sm tracking-widest">EVPN-VXLAN MULTI-VRF FABRIC</span>
+    </div>
+  </div>
+)
+
+const SpineLeafMesh = () => (
+  <div className="w-full h-16 md:h-24 relative overflow-visible flex items-center justify-center mt-2 z-0">
+    <svg 
+      className="absolute inset-0 w-full h-full overflow-visible"
+      preserveAspectRatio="none"
+      viewBox="0 0 100 100"
+    >
+      {/* Spine 1 (left) Links */}
+      <FabricLine x1="29" x2="12.5" />
+      <FabricLine x1="29" x2="37.5" />
+      <FabricLine x1="29" x2="62.5" />
+      <FabricLine x1="29" x2="87.5" />
+      
+      {/* Spine 2 (right) Links */}
+      <FabricLine x1="71" x2="12.5" />
+      <FabricLine x1="71" x2="37.5" />
+      <FabricLine x1="71" x2="62.5" />
+      <FabricLine x1="71" x2="87.5" />
     </svg>
   </div>
 )
@@ -137,28 +162,17 @@ export function FabricArchitectureDiagram() {
           <StraightLink color="#f97316" label="eBGP" />
         </div>
         
-        <div className="grid grid-cols-[1fr_auto_1fr] gap-2 items-center w-full max-w-3xl justify-items-center">
+        {/* Border Layer */}
+        <div className="grid grid-cols-[1fr_auto_1fr] gap-2 items-center w-full max-w-3xl justify-items-center relative z-10">
           <Node title="Border-A" subtitle="Aruba CX8360-48XT4C" />
           <VSXLink />
           <Node title="Border-B" subtitle="Aruba CX8360-48XT4C" />
         </div>
 
-        <div className="grid grid-cols-[1fr_auto_1fr] gap-2 w-full max-w-3xl justify-items-center">
-          <StraightLink color="#3b82f6" label="iBGP EVPN Overlay" />
-          <div className="w-16 md:w-24"></div>
-          <StraightLink color="#3b82f6" label="iBGP EVPN Overlay" />
-        </div>
+        {/* Border -> Spine Full Mesh (Passing through EVPN Fabric Banner) */}
+        <BorderSpineMesh />
         
-        <div className="w-full max-w-3xl rounded-2xl border-2 border-accent-orange/30 bg-accent-orange/5 p-4 md:p-6 text-center shadow-[inset_0_0_20px_rgba(249,115,22,0.05)] relative z-10">
-           <span className="text-primary font-bold font-mono text-base md:text-lg tracking-wide">EVPN-VXLAN Multi-VRF Fabric</span>
-        </div>
-        
-        <div className="grid grid-cols-[1fr_auto_1fr] gap-2 w-full max-w-3xl justify-items-center">
-          <StraightLink color="#3b82f6" />
-          <div className="w-16 md:w-24"></div>
-          <StraightLink color="#3b82f6" />
-        </div>
-        
+        {/* Spines */}
         <div className="grid grid-cols-[1fr_auto_1fr] gap-2 items-center w-full max-w-3xl justify-items-center relative z-10">
            <Node title="Spine-01" subtitle="Aruba CX8360-12C" glow />
            <div className="w-16 md:w-24"></div>
