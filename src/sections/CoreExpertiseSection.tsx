@@ -19,10 +19,11 @@ export function CoreExpertiseSection({ technologies }: CoreExpertiseSectionProps
   const capabilities = [
     "Enterprise Networking",
     "Data Center Fabric",
-    "Self-Hosted Infrastructure",
     "Network Automation",
     "Virtualization",
-    "Monitoring"
+    "Self-Hosted Infrastructure",
+    "Monitoring",
+    "AI Integration"
   ]
 
   const resolveCapability = (cap: string) => {
@@ -51,7 +52,7 @@ export function CoreExpertiseSection({ technologies }: CoreExpertiseSectionProps
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary tracking-tight">Core Expertise</h2>
             <p className="text-muted text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-              Core engineering capabilities developed through enterprise projects, production deployments, certifications, and continuous learning.
+              Core engineering capabilities built through enterprise deployments, modern data center projects, professional certifications, and continuous learning.
             </p>
           </motion.div>
 
@@ -60,7 +61,7 @@ export function CoreExpertiseSection({ technologies }: CoreExpertiseSectionProps
             initial="initial"
             whileInView="whileInView"
             viewport={{ once: true, margin: "-50px" }}
-            className="flex flex-wrap justify-center gap-3 md:gap-4 max-w-5xl mx-auto"
+            className="flex flex-wrap justify-center gap-3 md:gap-4 max-w-4xl mx-auto"
           >
             {capabilities.map((cap, i) => (
               <motion.div key={cap} variants={animations.scaleUp} custom={i}>
