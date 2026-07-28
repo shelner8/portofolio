@@ -39,9 +39,14 @@ export function SelfHostedInfrastructureSection({ technologies }: SelfHostedInfr
       techs: ["Proxmox VE", "VMware ESXi", "Ubuntu Server"]
     },
     {
-      title: "Network Lab",
+      title: "Networking",
       icon: <Network className="w-5 h-5 text-accent-blue" />,
-      techs: ["Aruba AOS-CX", "Aruba VSX", "EVPN", "VXLAN", "MP-BGP", "OSPF", "MikroTik", "EVE-NG", "PNETLab"]
+      techs: ["MikroTik", "Aruba AOS-CX", "Tailscale"]
+    },
+    {
+      title: "Network Simulation",
+      icon: <Network className="w-5 h-5 text-accent-blue" />,
+      techs: ["EVE-NG", "PNETLab"]
     },
     {
       title: "Container Platform",
@@ -66,7 +71,7 @@ export function SelfHostedInfrastructureSection({ technologies }: SelfHostedInfr
     {
       title: "Secure Connectivity",
       icon: <ShieldCheck className="w-5 h-5 text-accent-emerald" />,
-      techs: ["Tailscale", "Site-to-Site VPN", "Ubuntu ↔ Ubuntu"]
+      techs: ["Tailscale", "Site-to-Site VPN"]
     }
   ]
 
@@ -101,7 +106,7 @@ export function SelfHostedInfrastructureSection({ technologies }: SelfHostedInfr
                 whileInView="whileInView"
                 viewport={{ once: true, margin: "-50px" }}
                 custom={idx}
-                className={panel.title === "Network Lab" ? "md:col-span-2" : ""}
+                className=""
               >
                 <div className="flex flex-col bg-surface/30 border border-surface/80 rounded-xl overflow-hidden hover:border-accent-orange/30 transition-colors h-full">
                   <div className="flex items-center gap-3 px-4 py-3 border-b border-surface/50 bg-surface/20">
