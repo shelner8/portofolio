@@ -32,5 +32,33 @@ export const experience: Experience[] = [
       "Linux", "Python", "Docker", "Git"
     ],
     projects: []
+  },
+  {
+    id: "angkasa-pura-solusi-integra",
+    company: "Angkasa Pura Solusi Integra",
+    position: "Network Team Lead",
+    employmentType: "Full-time",
+    location: "Soekarno-Hatta International Airport",
+    startDate: "Aug 2022",
+    endDate: "Sep 2023",
+    current: false,
+    summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra.",
+    responsibilities: [
+      "Led network operations teams and acted as the technical authority for enterprise campus and data center network environments.",
+      "Managed enterprise routing and switching infrastructure using MikroTik CCR1036/CCR1072 and Aruba devices, including: VLAN Segmentation, Layer 2 / Layer 3 Switching, Static Routing, OSPF, External BGP Peering, Policy-Based Routing (PBR), Firewall Filter, Firewall NAT, QoS, Queue Tree, PCQ, FastTrack Optimization, DHCP Server, DHCP Relay, and Bandwidth Management.",
+      "Designed and managed ISP connectivity and Internet Exchange (Cyber APJII, IX, IIX) using multi-NAP BGP peering for high availability and redundant external connectivity.",
+      "Implemented enterprise routing architecture using Static Routing, OSPF, and External BGP to provide resilient connectivity between sites and external providers.",
+      "Designed, maintained, and optimized MikroTik RouterOS gateway services, including: Multi-WAN Routing, ISP Failover, Firewall Security Policies, Traffic Shaping, Address Lists, Routing Policies, Performance Optimization, and Network Troubleshooting.",
+      "Designed and deployed Fortinet firewall solutions to secure enterprise network traffic and improve perimeter security.",
+      "Implemented enterprise monitoring using Zabbix, Cacti, and Observium, enabling proactive monitoring, capacity planning, and faster incident response.",
+      "Led Incident Management, Root Cause Analysis (RCA), and production recovery activities while maintaining SLA targets above 99%.",
+      "Reviewed and approved Method of Procedure (MOP) documents for production network changes and developed contingency plans for routers, switches, fiber optic infrastructure, Metro-E services, and ISP connectivity.",
+      "Managed VMware ESXi host configuration and supported enterprise virtualization environments."
+    ],
+    achievements: [],
+    technologies: [
+      "MikroTik", "RouterOS", "VLAN", "Static Routing", "OSPF", "BGP", "Policy-Based Routing", "Firewall", "NAT", "QoS", "Queue Tree", "PCQ", "FastTrack", "DHCP", "DHCP Relay", "Multi-WAN", "ISP Peering", "Internet Exchange", "Aruba AOS-CX", "Fortinet", "VMware ESXi", "Zabbix", "Cacti", "Observium"
+    ],
+    projects: ["angkasa-pura-solusi-integra"]
   }
 ];

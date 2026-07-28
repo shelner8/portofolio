@@ -64,6 +64,12 @@ export const technologies: Technology[] = [
     category: "Data Center",
     featured: true,
     description: "Link-state routing protocol for robust underlay connectivity.",
+    experience: [
+      {
+        experienceId: "angkasa-pura-solusi-integra",
+        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
+      }
+    ],
     relatedProjects: ["kompas-gramedia", "gmf-aeroasia"],
     relatedArticles: [],
     relatedCertifications: ["juniper-jncis-dc", "juniper-jncia-dc"],
@@ -77,6 +83,12 @@ export const technologies: Technology[] = [
     category: "Data Center",
     featured: true,
     description: "Core routing protocol used for both internet and data center IP fabrics.",
+    experience: [
+      {
+        experienceId: "angkasa-pura-solusi-integra",
+        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
+      }
+    ],
     relatedProjects: [],
     relatedArticles: [],
     relatedCertifications: ["juniper-jncis-dc"],
@@ -152,6 +164,12 @@ export const technologies: Technology[] = [
     category: "Aruba",
     featured: true,
     description: "Modern microservices-based, database-driven operating system for enterprise switching.",
+    experience: [
+      {
+        experienceId: "angkasa-pura-solusi-integra",
+        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
+      }
+    ],
     relatedProjects: ["kompas-gramedia", "gmf-aeroasia"],
     relatedArticles: [],
     relatedCertifications: ["aruba-acsp"],
@@ -230,6 +248,12 @@ export const technologies: Technology[] = [
     name: "VLAN",
     category: "Enterprise Networking",
     description: "Virtual Local Area Network enabling Layer 2 segmentation.",
+    experience: [
+      {
+        experienceId: "angkasa-pura-solusi-integra",
+        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
+      }
+    ],
     relatedProjects: [],
     relatedArticles: [],
     relatedCertifications: ["juniper-jncia-dc", "aruba-acsp"],
@@ -343,10 +367,264 @@ export const technologies: Technology[] = [
     category: "Platforms",
     featured: true,
     description: "RouterOS platform providing cost-effective routing and switching capabilities.",
+    experience: [
+      {
+        experienceId: "angkasa-pura-solusi-integra",
+        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
+      }
+    ],
     relatedProjects: [],
     relatedArticles: [],
     relatedCertifications: [],
     relatedTechnologies: [],
     icon: "server"
+  }
+,
+  {
+    id: "routeros",
+    slug: "routeros",
+    name: "RouterOS",
+    category: "Platforms",
+    description: "Enterprise implementation of RouterOS.",
+    experience: [
+      {
+        experienceId: "angkasa-pura-solusi-integra",
+        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
+      }
+    ]
+  },
+  {
+    id: "static-routing",
+    slug: "static-routing",
+    name: "Static Routing",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of Static Routing.",
+    experience: [
+      {
+        experienceId: "angkasa-pura-solusi-integra",
+        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
+      }
+    ]
+  },
+  {
+    id: "policy-based-routing",
+    slug: "policy-based-routing",
+    name: "Policy-Based Routing",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of Policy-Based Routing.",
+    experience: [
+      {
+        experienceId: "angkasa-pura-solusi-integra",
+        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
+      }
+    ]
+  },
+  {
+    id: "firewall",
+    slug: "firewall",
+    name: "Firewall",
+    category: "Security",
+    description: "Enterprise implementation of Firewall.",
+    experience: [
+      {
+        experienceId: "angkasa-pura-solusi-integra",
+        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
+      }
+    ]
+  },
+  {
+    id: "nat",
+    slug: "nat",
+    name: "NAT",
+    category: "Security",
+    description: "Enterprise implementation of NAT.",
+    experience: [
+      {
+        experienceId: "angkasa-pura-solusi-integra",
+        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
+      }
+    ]
+  },
+  {
+    id: "qos",
+    slug: "qos",
+    name: "QoS",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of QoS.",
+    experience: [
+      {
+        experienceId: "angkasa-pura-solusi-integra",
+        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
+      }
+    ]
+  },
+  {
+    id: "queue-tree",
+    slug: "queue-tree",
+    name: "Queue Tree",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of Queue Tree.",
+    experience: [
+      {
+        experienceId: "angkasa-pura-solusi-integra",
+        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
+      }
+    ]
+  },
+  {
+    id: "pcq",
+    slug: "pcq",
+    name: "PCQ",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of PCQ.",
+    experience: [
+      {
+        experienceId: "angkasa-pura-solusi-integra",
+        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
+      }
+    ]
+  },
+  {
+    id: "fasttrack",
+    slug: "fasttrack",
+    name: "FastTrack",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of FastTrack.",
+    experience: [
+      {
+        experienceId: "angkasa-pura-solusi-integra",
+        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
+      }
+    ]
+  },
+  {
+    id: "dhcp",
+    slug: "dhcp",
+    name: "DHCP",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of DHCP.",
+    experience: [
+      {
+        experienceId: "angkasa-pura-solusi-integra",
+        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
+      }
+    ]
+  },
+  {
+    id: "dhcp-relay",
+    slug: "dhcp-relay",
+    name: "DHCP Relay",
+    category: "Enterprise Networking",
+    description: "Enterprise implementation of DHCP Relay.",
+    experience: [
+      {
+        experienceId: "angkasa-pura-solusi-integra",
+        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
+      }
+    ]
+  },
+  {
+    id: "multi-wan",
+    slug: "multi-wan",
+    name: "Multi-WAN",
+    category: "Connectivity",
+    description: "Enterprise implementation of Multi-WAN.",
+    experience: [
+      {
+        experienceId: "angkasa-pura-solusi-integra",
+        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
+      }
+    ]
+  },
+  {
+    id: "isp-peering",
+    slug: "isp-peering",
+    name: "ISP Peering",
+    category: "Connectivity",
+    description: "Enterprise implementation of ISP Peering.",
+    experience: [
+      {
+        experienceId: "angkasa-pura-solusi-integra",
+        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
+      }
+    ]
+  },
+  {
+    id: "internet-exchange",
+    slug: "internet-exchange",
+    name: "Internet Exchange",
+    category: "Connectivity",
+    description: "Enterprise implementation of Internet Exchange.",
+    experience: [
+      {
+        experienceId: "angkasa-pura-solusi-integra",
+        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
+      }
+    ]
+  },
+  {
+    id: "fortinet",
+    slug: "fortinet",
+    name: "Fortinet",
+    category: "Security",
+    description: "Enterprise implementation of Fortinet.",
+    experience: [
+      {
+        experienceId: "angkasa-pura-solusi-integra",
+        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
+      }
+    ]
+  },
+  {
+    id: "vmware-esxi",
+    slug: "vmware-esxi",
+    name: "VMware ESXi",
+    category: "Platforms",
+    description: "Enterprise implementation of VMware ESXi.",
+    experience: [
+      {
+        experienceId: "angkasa-pura-solusi-integra",
+        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
+      }
+    ]
+  },
+  {
+    id: "zabbix",
+    slug: "zabbix",
+    name: "Zabbix",
+    category: "Monitoring",
+    description: "Enterprise implementation of Zabbix.",
+    experience: [
+      {
+        experienceId: "angkasa-pura-solusi-integra",
+        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
+      }
+    ]
+  },
+  {
+    id: "cacti",
+    slug: "cacti",
+    name: "Cacti",
+    category: "Monitoring",
+    description: "Enterprise implementation of Cacti.",
+    experience: [
+      {
+        experienceId: "angkasa-pura-solusi-integra",
+        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
+      }
+    ]
+  },
+  {
+    id: "observium",
+    slug: "observium",
+    name: "Observium",
+    category: "Monitoring",
+    description: "Enterprise implementation of Observium.",
+    experience: [
+      {
+        experienceId: "angkasa-pura-solusi-integra",
+        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
+      }
+    ]
   }
 ];

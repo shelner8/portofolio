@@ -2,6 +2,7 @@ import { notFound } from "next/navigation"
 import Link from "next/link"
 import { getTechnologyBySlug, getAllTechnologies, getRelatedTechnologies } from "@/lib/technologies"
 import { getAllProjects } from "@/lib/projects"
+import { experience as allExperiences } from "@/data/experience"
 import { certifications } from "@/data/certifications"
 import { ProjectCard } from "@/components/cards/ProjectCard"
 import { CertificationCard } from "@/components/cards/CertificationCard"
@@ -165,7 +166,9 @@ export default function TechnologyDetailPage({ params }: { params: { slug: strin
                   </div>
                   <div className="flex flex-col gap-6">
                     {technology.experience.map((exp, index) => {
-                      const project = allProjects.find(p => p.id === exp.projectId);
+                      const project = exp.projectId ? allProjects.find(p => p.id === exp.projectId) : null;
+                      const experienceMatch = exp.experienceId ? allExperiences.find(e => e.id === exp.experienceId) : null;
+                      
                       return (
                         <div key={index} className="flex flex-col gap-4 p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface shadow-lg relative overflow-hidden group">
                           <div className="absolute top-0 right-0 w-32 h-32 bg-accent-blue/5 rounded-full blur-[40px] -mr-10 -mt-10 pointer-events-none transition-opacity duration-500 opacity-0 group-hover:opacity-100" />
@@ -174,6 +177,12 @@ export default function TechnologyDetailPage({ params }: { params: { slug: strin
                             {project && (
                               <Link href={`/projects/${project.slug}`} className="inline-flex items-center gap-2 text-sm font-bold text-accent-blue hover:text-accent-blue/80 transition-colors">
                                 {project.title}
+                                <ChevronRight className="w-4 h-4" />
+                              </Link>
+                            )}
+                            {experienceMatch && (
+                              <Link href={`/#experience`} className="inline-flex items-center gap-2 text-sm font-bold text-accent-orange hover:text-accent-orange/80 transition-colors">
+                                {experienceMatch.company}
                                 <ChevronRight className="w-4 h-4" />
                               </Link>
                             )}

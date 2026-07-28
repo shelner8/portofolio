@@ -39,7 +39,8 @@ export interface Experience {
 }
 
 export interface TechnologyExperience {
-  projectId: string;
+  projectId?: string;
+  experienceId?: string;
   summary: string;
 }
 
