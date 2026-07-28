@@ -38,33 +38,42 @@ TODO
 TODO
 
 ### Infrastructure Environment
-- Data Center
+- Aruba CX10000 Spine-Leaf Fabric
+- Aruba Fabric Composer (AFC)
+- Border Leaf
+- EVPN-VXLAN Overlay
+- OSPF Underlay
 
 ### Project Scope
-Installation of a modern Data Center Network featuring Spine-Leaf architecture, EVPN-VXLAN fabric, and distributed firewalling.
+- Data Center Network Deployment
+- Fabric Deployment
 
 ### Responsibilities
-- Deployed Aruba CX10000 switches at the spine and leaf layers to establish a high-performance network foundation.
-- Configured Border Leaf nodes to facilitate secure and efficient external routing.
-- Implemented Aruba Fabric Composer (AFC) to centralize data center automation and lifecycle management.
-- Integrated Pensando DPUs to enable distributed, localized firewalling directly at the top-of-rack level.
+- Participated in Aruba CX10000 fabric deployment.
+- Implemented EVPN-VXLAN networking.
+- Configured Aruba Fabric Composer.
+- Configured Border Leaf connectivity.
+- Integrated Pensando DPUs for localized firewalling.
 
-### Architecture Summary
-- Spine-Leaf
-- Border Leaf
+### Network Architecture Summary
+The data center network utilizes a high-performance Spine-Leaf topology integrated with an EVPN-VXLAN overlay to enable scalable Layer-2 extension and robust Layer-3 routing. Centralized provisioning and automation are handled by Aruba Fabric Composer, while Pensando DPUs provide localized top-of-rack firewalling capabilities.
 
 ### Technologies
 - Aruba CX10000
+- Aruba Fabric Composer
 - EVPN
 - VXLAN
-- Spine-Leaf
-- Border Leaf
-- AFC
-- Pensando
 - OSPF
+- Spine-Leaf Architecture
+- Border Leaf
+- Pensando
 
 ### Implementation Highlights
-TODO
+- Aruba CX10000 deployment
+- EVPN-VXLAN implementation
+- Fabric provisioning
+- Border Leaf integration
+- Pensando DPU integration
 
 ### Challenges
 TODO
