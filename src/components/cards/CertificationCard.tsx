@@ -17,16 +17,20 @@ export function CertificationCard({ certification, className, ...props }: Certif
         <div className="rounded-xl bg-surface p-3 text-accent-emerald flex-shrink-0">
           <Award className="h-8 w-8" />
         </div>
-        <div className="flex-1">
-          <h3 className="text-lg font-bold text-primary leading-tight mb-1">{certification.name}</h3>
-          <p className="text-sm text-muted">{certification.vendor}</p>
+        <div className="flex flex-col">
+          <h3 className="text-lg font-bold text-primary group-hover:text-accent-blue transition-colors">
+            {certification.name}
+          </h3>
+          <p className="text-sm font-medium text-muted">
+            {certification.issuer}
+          </p>
         </div>
       </div>
       
       <div className="grid grid-cols-2 gap-4 text-sm mt-auto">
         <div>
           <div className="text-muted text-xs mb-1">Issue Date</div>
-          <div className="font-medium text-primary">{certification.issueDate}</div>
+          <div className="font-medium text-primary">{certification.date}</div>
         </div>
         <div>
           <div className="text-muted text-xs mb-1">Level</div>
@@ -35,9 +39,11 @@ export function CertificationCard({ certification, className, ...props }: Certif
       </div>
 
       <div className="flex gap-3 pt-4 border-t border-surface">
-        {certification.verificationUrl && (
-          <Button variant="ghost" size="sm" className="flex-1 gap-2 text-xs">
-            <ExternalLink className="w-3 h-3" /> Verify
+        {certification.url && (
+          <Button variant="ghost" size="sm" className="flex-1 gap-2 text-xs" asChild>
+            <a href={certification.url} target="_blank" rel="noopener noreferrer">
+              <ExternalLink className="w-3 h-3" /> Verify
+            </a>
           </Button>
         )}
         {certification.certificateUrl && (

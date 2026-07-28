@@ -59,28 +59,30 @@ export interface Skill {
 export interface Certification {
   id: string;
   name: string;
-  vendor: string;
-  level: string;
-  issueDate: string;
+  issuer: string;
+  level?: string;
+  date: string;
   expirationDate?: string;
   credentialId?: string;
-  verificationUrl?: string;
+  url?: string;
   certificateUrl?: string;
-  badge: string;
-  featured: boolean;
+  badge?: string;
+  featured?: boolean;
+  category?: string;
 }
 
 export interface Article {
   id: string;
-  slug: string;
+  url: string;
   title: string;
   summary: string;
-  category: string;
-  publishedAt: string;
-  readingTime: string;
-  tags: string[];
-  coverImage: string;
-  featured: boolean;
+  category?: string;
+  date: string;
+  readingTime?: string;
+  tags?: string[];
+  coverImage?: string;
+  featured?: boolean;
+  platform?: string;
 }
 
 export interface Architecture {

@@ -37,8 +37,8 @@ export function ArticleCard({ article, className, ...props }: ArticleCardProps) 
           {article.summary}
         </p>
         
-        <div className="text-xs text-muted/60 mt-4">
-          Published {article.publishedAt}
+        <div className="flex items-center text-xs text-muted mt-auto pt-4 border-t border-surface/50">
+          <span>{article.date}</span>
         </div>
       </div>
     </BaseCard>

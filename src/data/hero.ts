@@ -4,25 +4,25 @@ import { statistics } from "./statistics";
 export const hero: HeroContent = {
   title: "Designing Enterprise-Scale Data Center Networks with Modern Architecture",
   subtitle: "Data Center Network Specialist & Enterprise Network Engineer",
-  description: "Building resilient, scalable, and highly available infrastructure using Aruba Networking, EVPN-VXLAN Fabric, Enterprise Routing & Switching, and Network Automation.",
+  description: "Building resilient, scalable, and highly available infrastructure using Aruba Networking, EVPN-VXLAN Fabric, Enterprise Routing & Switching, Network Automation, and Modern Data Center Architecture.",
   highlights: [
     "Aruba AOS-CX",
-    "CX10000",
-    "Spine Leaf",
-    "Border Leaf",
-    "MP-BGP EVPN",
-    "VTEP",
+    "Aruba CX10000",
+    "Aruba Fabric Composer",
+    "VSX",
     "EVPN",
     "VXLAN",
-    "VSX",
-    "AFC",
-    "Enterprise Networking",
+    "MP-BGP",
+    "VTEP",
+    "Spine-Leaf",
+    "Border Leaf",
     "Linux",
-    "Docker",
     "Python",
+    "Docker",
     "FastAPI",
-    "Tailscale",
-    "Automation"
+    "Git",
+    "Automation",
+    "Enterprise Networking"
   ],
   statistics: statistics,
   actions: [
@@ -33,7 +33,7 @@ export const hero: HeroContent = {
     },
     {
       label: "Explore Projects",
-      href: "/projects",
+      href: "/#projects",
       variant: "secondary"
     }
   ]
