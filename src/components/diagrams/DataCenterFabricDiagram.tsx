@@ -29,9 +29,9 @@ export interface TopologyLink {
 // Data Definition
 // ==========================================
 const STD_W = 280
-const STD_H = 84
+const STD_H = 72
 const SML_W = 150
-const SML_H = 68
+const SML_H = 56
 
 // Centers
 const COL2_1 = 350
@@ -42,10 +42,10 @@ const COL4_3 = 875
 const COL4_4 = 1225
 
 // Y Levels
-const Y_CORE = 100
-const Y_BORDER = 300
-const Y_SPINE = 650
-const Y_LEAF = 850
+const Y_CORE = 80
+const Y_BORDER = 210
+const Y_SPINE = 450
+const Y_LEAF = 610
 
 export const nodes: TopologyNode[] = [
   // Cores
@@ -149,12 +149,12 @@ export function DataCenterFabricDiagram() {
 
   return (
     <div className="w-full mx-auto overflow-hidden rounded-2xl border border-surface bg-[#0a0f1c] shadow-2xl">
-      <div className="p-4 md:p-6 border-b border-surface/50 bg-[#0f172a] flex flex-col md:flex-row items-center justify-between gap-4">
-        <h3 className="text-base md:text-lg font-bold text-primary font-mono flex items-center gap-2">
+      <div className="p-3 md:p-4 border-b border-surface/50 bg-[#0f172a] flex flex-col md:flex-row items-center justify-between gap-3">
+        <h3 className="text-base font-bold text-primary font-mono flex items-center gap-2">
           <div className="w-2.5 h-2.5 rounded-full bg-accent-orange animate-pulse shadow-[0_0_8px_#f97316]" />
           Data Center Fabric Architecture
         </h3>
-        <div className="flex flex-wrap gap-4 items-center">
+        <div className="flex flex-wrap gap-3 items-center">
           <div className="flex items-center gap-1.5">
             <div className="w-4 h-0.5 bg-accent-emerald shadow-[0_0_4px_#10b981]" />
             <span className="text-[10px] text-muted font-mono uppercase tracking-wider">VSX</span>
@@ -176,7 +176,7 @@ export function DataCenterFabricDiagram() {
       
       <div className="w-full relative">
         <svg 
-          viewBox="0 0 1400 950" 
+          viewBox="0 0 1400 700" 
           className="w-full h-auto block" 
           preserveAspectRatio="xMidYMid meet"
         >
@@ -313,9 +313,9 @@ export function DataCenterFabricDiagram() {
 
           {/* Layer 2: Logical Overlays */}
           <g className="overlays">
-             <foreignObject x={400} y={425} width={600} height={100} className="pointer-events-none">
+             <foreignObject x={400} y={305} width={600} height={80} className="pointer-events-none">
                 <div className="flex items-center justify-center w-full h-full">
-                  <div className="w-full max-w-xl rounded-xl border border-[#3b82f6]/40 bg-[#0f172a] p-3 md:p-4 text-center shadow-[0_0_30px_rgba(59,130,246,0.2)] flex flex-col gap-1 backdrop-blur-sm">
+                  <div className="w-full max-w-xl rounded-xl border border-[#3b82f6]/40 bg-[#0f172a] p-2 md:p-3 text-center shadow-[0_0_30px_rgba(59,130,246,0.2)] flex flex-col gap-0.5 backdrop-blur-sm">
                      <span className="text-[#3b82f6] font-bold font-mono text-sm md:text-base tracking-widest">EVPN • VXLAN • MULTI-VRF</span>
                      <span className="text-muted font-mono text-[10px] md:text-xs">Overlay Control Plane: iBGP EVPN</span>
                   </div>
@@ -349,22 +349,22 @@ export function DataCenterFabricDiagram() {
         </svg>
       </div>
 
-      <div className="bg-surface/30 p-6 md:p-8 border-t border-surface grid grid-cols-2 md:grid-cols-4 gap-6 text-center z-10 relative">
-        <div className="flex flex-col gap-1 p-3 rounded-xl border border-surface bg-[#0a0f1c]">
-          <span className="text-xs text-muted uppercase tracking-wider font-semibold">Underlay</span>
-          <span className="text-sm font-bold text-accent-emerald font-mono">OSPF</span>
+      <div className="bg-surface/30 p-4 md:p-5 border-t border-surface grid grid-cols-2 md:grid-cols-4 gap-4 text-center z-10 relative">
+        <div className="flex flex-col gap-0.5 p-2 rounded-xl border border-surface bg-[#0a0f1c]">
+          <span className="text-[10px] md:text-xs text-muted uppercase tracking-wider font-semibold">Underlay</span>
+          <span className="text-xs md:text-sm font-bold text-accent-emerald font-mono">OSPF</span>
         </div>
-        <div className="flex flex-col gap-1 p-3 rounded-xl border border-surface bg-[#0a0f1c]">
-          <span className="text-xs text-muted uppercase tracking-wider font-semibold">Overlay</span>
-          <span className="text-sm font-bold text-[#3b82f6] font-mono">BGP EVPN</span>
+        <div className="flex flex-col gap-0.5 p-2 rounded-xl border border-surface bg-[#0a0f1c]">
+          <span className="text-[10px] md:text-xs text-muted uppercase tracking-wider font-semibold">Overlay</span>
+          <span className="text-xs md:text-sm font-bold text-[#3b82f6] font-mono">BGP EVPN</span>
         </div>
-        <div className="flex flex-col gap-1 p-3 rounded-xl border border-surface bg-[#0a0f1c]">
-          <span className="text-xs text-muted uppercase tracking-wider font-semibold">Automation</span>
-          <span className="text-sm font-bold text-accent-blue font-mono">Aruba Fabric Composer</span>
+        <div className="flex flex-col gap-0.5 p-2 rounded-xl border border-surface bg-[#0a0f1c]">
+          <span className="text-[10px] md:text-xs text-muted uppercase tracking-wider font-semibold">Automation</span>
+          <span className="text-xs md:text-sm font-bold text-accent-blue font-mono">Aruba Fabric Composer</span>
         </div>
-        <div className="flex flex-col gap-1 p-3 rounded-xl border border-surface bg-[#0a0f1c]">
-          <span className="text-xs text-muted uppercase tracking-wider font-semibold">Segmentation</span>
-          <span className="text-sm font-bold text-accent-orange font-mono">Multi-VRF</span>
+        <div className="flex flex-col gap-0.5 p-2 rounded-xl border border-surface bg-[#0a0f1c]">
+          <span className="text-[10px] md:text-xs text-muted uppercase tracking-wider font-semibold">Segmentation</span>
+          <span className="text-xs md:text-sm font-bold text-accent-orange font-mono">Multi-VRF</span>
         </div>
       </div>
     </div>

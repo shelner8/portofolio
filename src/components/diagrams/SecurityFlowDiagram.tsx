@@ -4,7 +4,7 @@ import React from "react"
 import { motion } from "framer-motion"
 
 const Node = ({ title, subtitle, glow = false, active = true }: { title: string, subtitle: string, glow?: boolean, active?: boolean }) => (
-  <div className={`flex flex-col w-full max-w-[320px] items-center p-5 md:p-6 rounded-xl border bg-[#0f172a] shadow-xl transition-all duration-300
+  <div className={`flex flex-col w-full max-w-[320px] items-center p-3 md:p-4 rounded-xl border bg-[#0f172a] shadow-xl transition-all duration-300
     ${glow ? 'border-accent-blue/50 shadow-[0_0_20px_rgba(59,130,246,0.15)]' : 'border-surface-light'}
   `}>
     <div className="flex items-center gap-3 mb-1.5">
@@ -16,7 +16,7 @@ const Node = ({ title, subtitle, glow = false, active = true }: { title: string,
 )
 
 const VerticalConnector = () => (
-  <div className="flex justify-center items-center h-12 md:h-20 w-full">
+  <div className="flex justify-center items-center h-8 md:h-12 w-full">
     <svg width="12" height="100%" className="overflow-visible">
       {/* Background Line */}
       <line x1="6" y1="0" x2="6" y2="100%" stroke="rgba(255,255,255,0.1)" strokeWidth="2" />
@@ -39,9 +39,9 @@ const VerticalConnector = () => (
 export function SecurityFlowDiagram() {
   return (
     <div className="w-full overflow-hidden rounded-2xl border border-surface bg-[#0a0f1c] shadow-2xl">
-      <div className="p-6 md:p-8 border-b border-surface/50 bg-[#0f172a] flex items-center">
-        <h3 className="text-lg md:text-xl font-bold text-primary font-mono flex items-center gap-3">
-          <div className="w-3 h-3 rounded-full bg-accent-blue animate-pulse shadow-[0_0_8px_#3b82f6]" />
+      <div className="p-4 md:p-6 border-b border-surface/50 bg-[#0f172a] flex items-center">
+        <h3 className="text-base md:text-lg font-bold text-primary font-mono flex items-center gap-2">
+          <div className="w-2.5 h-2.5 rounded-full bg-accent-blue animate-pulse shadow-[0_0_8px_#3b82f6]" />
           Security Traffic Flow
         </h3>
       </div>
@@ -50,11 +50,11 @@ export function SecurityFlowDiagram() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-surface/50">
         
         {/* Left Column (East-West) */}
-        <div className="p-8 md:p-16 bg-[#0a0f1c] flex flex-col items-center w-full">
-          <div className="mb-12 text-center flex flex-col items-center">
-            <span className="text-xl md:text-2xl font-bold text-primary font-mono tracking-widest">EAST - WEST</span>
-            <span className="text-base text-muted mt-2 font-mono">Internal Workload Inspection</span>
-            <div className="w-20 h-px bg-surface-light mt-6" />
+        <div className="p-6 md:p-10 bg-[#0a0f1c] flex flex-col items-center w-full">
+          <div className="mb-8 text-center flex flex-col items-center">
+            <span className="text-lg md:text-xl font-bold text-primary font-mono tracking-widest">EAST - WEST</span>
+            <span className="text-sm md:text-base text-muted mt-1 md:mt-2 font-mono">Internal Workload Inspection</span>
+            <div className="w-16 md:w-20 h-px bg-surface-light mt-4 md:mt-6" />
           </div>
 
           <Node title="Source Server" subtitle="Internal Workload" />
@@ -76,11 +76,11 @@ export function SecurityFlowDiagram() {
         </div>
 
         {/* Right Column (North-South) */}
-        <div className="p-8 md:p-16 bg-[#0a0f1c] flex flex-col items-center w-full">
-          <div className="mb-12 text-center flex flex-col items-center">
-            <span className="text-xl md:text-2xl font-bold text-primary font-mono tracking-widest">NORTH - SOUTH</span>
-            <span className="text-base text-muted mt-2 font-mono">External Perimeter Defense</span>
-            <div className="w-20 h-px bg-surface-light mt-6" />
+        <div className="p-6 md:p-10 bg-[#0a0f1c] flex flex-col items-center w-full">
+          <div className="mb-8 text-center flex flex-col items-center">
+            <span className="text-lg md:text-xl font-bold text-primary font-mono tracking-widest">NORTH - SOUTH</span>
+            <span className="text-sm md:text-base text-muted mt-1 md:mt-2 font-mono">External Perimeter Defense</span>
+            <div className="w-16 md:w-20 h-px bg-surface-light mt-4 md:mt-6" />
           </div>
 
           <Node title="External Traffic" subtitle="External Network" active={false} />
