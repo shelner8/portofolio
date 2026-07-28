@@ -1,16 +1,18 @@
 import { About } from "@/types";
 
 export const about: About = {
-  title: "About Me",
+  title: "Professional Profile",
   bio: [
-    "I am an Enterprise Network Engineer with over 8 years of experience designing and operating large-scale data center environments.",
-    "My focus is on translating business requirements into resilient, automated infrastructure."
+    "I am a Senior Data Center Network Specialist and Enterprise Network Engineer with over 8 years of experience architecting, deploying, and maintaining large-scale infrastructure.",
+    "My expertise centers on Enterprise Data Center Networking and Aruba Networking, where I specialize in building highly available EVPN-VXLAN Fabric networks utilizing robust Spine-Leaf Architectures. I actively leverage Aruba Fabric Composer to orchestrate and streamline enterprise routing and switching operations.",
+    "Beyond foundational connectivity, I drive complex infrastructure migrations and conduct deep-dive performance optimization and troubleshooting. I maintain a strict enterprise mindset, fueled by a passion for Network Automation and continuous improvement to ensure networks operate smoothly and securely at scale."
   ],
-  philosophy: "Reliability is the feature that matters most.",
+  philosophy: "Enterprise networks must be resilient by design, automated by default, and simple to operate at scale.",
   corePrinciples: [
-    "Automation First",
-    "Security by Design",
-    "Operational Excellence",
-    "Simplicity in Architecture"
+    "Reliability",
+    "Scalability",
+    "Simplicity",
+    "Automation",
+    "Documentation"
   ]
 };
