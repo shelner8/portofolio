@@ -140,7 +140,7 @@ export default function TechnologyDetailPage({ params }: { params: { slug: strin
                 <p className="text-muted max-w-md">
                   Additional projects, certifications, and technical articles relating to this technology will be dynamically linked as they are published.
                 </p>
-                <Button variant="outline" className="mt-8 border-surface-light text-muted hover:text-primary" asChild>
+                <Button variant="secondary" className="mt-8 border-surface-light text-muted hover:text-primary" asChild>
                   <Link href="/technology">
                     <ArrowLeft className="w-4 h-4 mr-2" />
                     Return to Library
