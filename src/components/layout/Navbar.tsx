@@ -25,8 +25,8 @@ export function Navbar({ navigation }: NavbarProps) {
   return (
     <header
       className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-300 h-[72px] flex items-center border-b border-transparent",
-        scrolled && "bg-background/80 backdrop-blur-md border-surface shadow-sm"
+        "fixed top-0 w-full z-50 transition-all duration-500 h-20 flex items-center border-b border-transparent",
+        scrolled && "bg-background/70 backdrop-blur-xl border-surface shadow-md"
       )}
     >
       <Container className="flex items-center justify-between">

@@ -13,9 +13,9 @@ export const BaseCard = React.forwardRef<HTMLDivElement, BaseCardProps>(
       <div
         ref={ref}
         className={cn(
-          "relative overflow-hidden rounded-card bg-card border border-surface",
-          glass && "bg-card/80 backdrop-blur-md",
-          hoverable && "transition-all duration-200 hover:scale-[1.02] hover:shadow-card-hover hover:border-surface/80",
+          "relative overflow-hidden rounded-2xl bg-card border border-surface",
+          glass && "bg-card/80 backdrop-blur-xl",
+          hoverable && "transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-primary/5 hover:border-surface-light",
           !hoverable && "shadow-soft",
           className
         )}

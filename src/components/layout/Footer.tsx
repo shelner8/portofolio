@@ -9,9 +9,9 @@ interface FooterProps {
 
 export function Footer({ footer }: FooterProps) {
   return (
-    <footer className="w-full border-t border-surface bg-secondary py-12 md:py-16">
+    <footer className="w-full border-t border-surface bg-background/95 py-16 md:py-24">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-16">
           <div className="lg:col-span-2 flex flex-col gap-4">
             <div className="text-2xl font-bold text-primary">
               <span className="text-accent-orange">/</span>DC_Eng

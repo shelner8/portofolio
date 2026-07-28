@@ -17,7 +17,7 @@ export const SectionLayout = React.forwardRef<HTMLElement, SectionLayoutProps>(
       <section
         ref={ref}
         className={cn(
-          "w-full py-section-mobile md:py-section-tablet lg:py-section-desktop relative",
+          "w-full py-24 md:py-32 lg:py-40 relative",
           className
         )}
         {...props}
