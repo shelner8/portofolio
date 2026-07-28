@@ -6,6 +6,8 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, ArrowRight, Calendar, Building2, LayoutTemplate } from "lucide-react"
 import { ProjectCard } from "@/components/cards/ProjectCard"
+import { FabricArchitectureDiagram } from "@/components/diagrams/FabricArchitectureDiagram"
+import { SecurityFlowDiagram } from "@/components/diagrams/SecurityFlowDiagram"
 
 export function generateStaticParams() {
   const projects = getAllProjects()
@@ -103,6 +105,13 @@ export default function ProjectCaseStudy({ params }: { params: { slug: string } 
                 [&>ul]:text-muted [&>ul]:list-disc [&>ul]:pl-6 [&>ul>li]:mb-3 [&>ul>li]:pl-2
                 [&>ul>li::marker]:text-accent-orange/50">
                 <ReactMarkdown>{project.content || ""}</ReactMarkdown>
+                
+                {project.slug === 'kompas-gramedia' && (
+                  <div className="flex flex-col mt-4">
+                    <FabricArchitectureDiagram />
+                    <SecurityFlowDiagram />
+                  </div>
+                )}
               </div>
             </div>
             
