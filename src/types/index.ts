@@ -60,6 +60,7 @@ export interface Certification {
   name: string;
   issuer: string;
   level?: string;
+  description?: string;
   date: string;
   expirationDate?: string;
   credentialId?: string;

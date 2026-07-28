@@ -37,8 +37,8 @@ export function CertificationCard({ certification, className, ...props }: Certif
           </p>
         </div>
         
-        <p className="text-sm text-muted/90 leading-relaxed mt-2 line-clamp-2">
-          Professional certification validating expertise in {certification.category?.toLowerCase() || "networking"}.
+        <p className="text-sm text-muted/90 leading-relaxed mt-2 line-clamp-3">
+          {certification.description || `Professional certification validating expertise in ${certification.category?.toLowerCase() || "networking"}.`}
         </p>
       </div>
       
