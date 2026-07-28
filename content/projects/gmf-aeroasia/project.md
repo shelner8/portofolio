@@ -14,6 +14,7 @@ responsibilities:
   - Troubleshooting
   - Performance Optimization
 technologies:
+  - MC-LAG
   - Aruba VSX
   - Aruba AOS-CX
   - OSPF

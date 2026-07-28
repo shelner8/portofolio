@@ -116,6 +116,15 @@ export const technologies: Technology[] = [
     description: "Gateway switches bridging the internal fabric to external networks and services.",
     icon: "shield-alert"
   },
+  {
+    id: "mc-lag",
+    slug: "mc-lag",
+    name: "MC-LAG",
+    category: "Data Center",
+    featured: true,
+    description: "Multi-Chassis Link Aggregation enabling active-active dual-homing, link redundancy, and high availability across enterprise data center fabrics.",
+    icon: "git-merge"
+  },
 
   // --- Aruba ---
   {

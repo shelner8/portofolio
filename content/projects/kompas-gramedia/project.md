@@ -16,6 +16,7 @@ responsibilities:
 technologies:
 - Aruba CX10000
 - EVPN
+- MC-LAG
 - VXLAN
 - Spine-Leaf
 - Border Leaf

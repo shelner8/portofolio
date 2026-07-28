@@ -28,7 +28,7 @@ export const experience: Experience[] = [
     achievements: [],
     technologies: [
       "Aruba AOS-CX", "Aruba CX10000", "VSX", "EVPN", 
-      "VXLAN", "MP-BGP", "Spine-Leaf", "AFC", 
+      "VXLAN", "MC-LAG", "MP-BGP", "Spine-Leaf", "AFC", 
       "Linux", "Python", "Docker", "Git"
     ],
     projects: []
