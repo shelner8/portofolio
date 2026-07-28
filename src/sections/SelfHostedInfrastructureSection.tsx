@@ -91,9 +91,9 @@ export function SelfHostedInfrastructureSection({ technologies }: SelfHostedInfr
             <div className="inline-flex items-center justify-center p-3 rounded-2xl bg-surface border border-surface shadow-soft mb-2">
               <Server className="w-6 h-6 text-accent-orange" />
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary tracking-tight">Self-Hosted Enterprise Infrastructure</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary tracking-tight">Home Lab</h2>
             <p className="text-muted text-lg max-w-3xl mx-auto leading-relaxed">
-              Self-hosted infrastructure powering my home network, automation, AI, monitoring, and continuous experimentation.
+              A personal self-hosted environment for networking, automation, AI, monitoring, and continuous experimentation.
             </p>
           </motion.div>
 
