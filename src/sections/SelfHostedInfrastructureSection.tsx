@@ -41,7 +41,7 @@ export function SelfHostedInfrastructureSection({ technologies }: SelfHostedInfr
     {
       title: "Networking",
       icon: <Network className="w-5 h-5 text-accent-blue" />,
-      techs: ["MikroTik", "Aruba AOS-CX", "Tailscale"]
+      techs: ["MikroTik", "Hub Tp-Link", "VLAN", "DHCP", "Tailscale"]
     },
     {
       title: "Network Simulation",
