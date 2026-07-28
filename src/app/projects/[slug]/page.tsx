@@ -39,35 +39,43 @@ export default function ProjectCaseStudy({ params }: { params: { slug: string } 
   const nextProject = projectIndex < projects.length - 1 ? projects[projectIndex + 1] : null
   const relatedProjects = getRelatedProjects(project.category, project.id)
 
-  const cardSectionTitles = new Set([
-    'Project Scope', 'Responsibilities', 'Technologies', 'Implementation Highlights',
-    'Traffic Flow', 'Validation', 'Challenges', 'Solution', 'Lessons Learned', 'Future Improvements'
-  ])
-
-  let mainMarkdown = ""
-  const cardSections: { title: string; content: string }[] = []
-
-  // Split content by '### ' while keeping the delimiter in the matched string using positive lookahead
+  // Parse Markdown into sections dictionary
+  const sections: Record<string, string> = {}
   const rawSections = (project.content || "").split(/(?=^### )/m)
 
   rawSections.forEach(section => {
-    const match = section.match(/^### (.*)$/m)
+    const match = section.match(/^### (.*?)\r?\n([\s\S]*)$/m)
     if (match) {
       const title = match[1].trim()
-      if (cardSectionTitles.has(title)) {
-        const contentWithoutHeader = section.replace(/^### .*$/m, '').trim()
-        if (contentWithoutHeader) {
-          cardSections.push({ title, content: contentWithoutHeader })
-        }
-      } else {
-        mainMarkdown += section + "\n\n"
+      // Remove any diagram codeblocks from the text
+      const cleanContent = match[2].replace(/```diagram\s*\r?\n(fabric|security)\s*\r?\n```/g, '').trim()
+      if (cleanContent) {
+        sections[title] = cleanContent
       }
-    } else {
-      mainMarkdown += section + "\n\n"
     }
   })
 
-  const contentParts = mainMarkdown.split(/```diagram\s*\r?\n(fabric|security)\s*\r?\n```/)
+  // Helper to render sidebar text cards
+  const renderSidebarCard = (title: string) => {
+    if (!sections[title]) return null;
+    return (
+      <div className="p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface flex flex-col gap-4 shadow-lg">
+        <h3 className="text-xl font-bold text-primary font-mono border-b border-surface/50 pb-3">{title}</h3>
+        <div className="prose prose-invert prose-sm max-w-none 
+          [&>p]:text-muted [&>p]:leading-relaxed
+          [&>ul]:text-muted [&>ul]:list-disc [&>ul]:pl-5 [&>ul>li]:mb-1.5
+          [&>h4]:text-base [&>h4]:font-bold [&>h4]:text-primary/90 [&>h4]:mt-5 [&>h4]:mb-2">
+          <ReactMarkdown>{sections[title]}</ReactMarkdown>
+        </div>
+      </div>
+    )
+  }
+
+  const operationalCards = [
+    'Project Scope', 'Responsibilities', 'Technologies', 'Implementation Highlights',
+    'Traffic Flow', 'Challenges', 'Solution', 'Validation', 'Operational Notes',
+    'Lessons Learned', 'Future Improvements'
+  ]
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -123,107 +131,85 @@ export default function ProjectCaseStudy({ params }: { params: { slug: string } 
       </section>
 
       {/* Content Section */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px]">
           <div className="flex flex-col gap-16 md:gap-24">
             
-            {/* Top Section: Overview + Sidebar */}
-            {contentParts[0] && contentParts[0].trim() && (
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+            {/* Section 1: Architecture Diagram + Context Sidebar */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+              {/* Left Column (65-70%): Diagram */}
+              <div className="lg:col-span-8 flex flex-col w-full">
+                <DataCenterFabricDiagram />
+              </div>
+              
+              {/* Right Column (30-35%): Sticky Sidebar Context */}
+              <div className="lg:col-span-4 flex flex-col gap-6 lg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto pr-2 custom-scrollbar">
+                {renderSidebarCard('Overview')}
+                {renderSidebarCard('Background')}
+                {renderSidebarCard('Project Objectives')}
                 
-                {/* Main Markdown Body */}
-                <div className="lg:col-span-8 flex flex-col gap-10">
-                  <div className="prose prose-invert prose-lg max-w-none 
-                    [&>h3]:text-2xl [&>h3]:font-bold [&>h3]:text-primary [&>h3]:mt-12 [&>h3]:mb-6
-                    [&>h4]:text-xl [&>h4]:font-bold [&>h4]:text-primary [&>h4]:mt-8 [&>h4]:mb-4
-                    [&>p]:text-muted [&>p]:leading-relaxed [&>p]:mb-6
-                    [&>ul]:text-muted [&>ul]:list-disc [&>ul]:pl-6 [&>ul>li]:mb-3 [&>ul>li]:pl-2
-                    [&>ul>li::marker]:text-accent-orange/50">
-                    <ReactMarkdown>{contentParts[0]}</ReactMarkdown>
+                <div className="p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface flex flex-col gap-4 shadow-lg">
+                  <h3 className="text-xl font-bold text-primary font-mono border-b border-surface/50 pb-3">Technologies</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map(tech => (
+                      <Badge key={tech} variant="outline" className="bg-surface/50 border-surface-light text-muted hover:text-primary transition-colors py-1 px-3">
+                        {tech}
+                      </Badge>
+                    ))}
                   </div>
                 </div>
                 
-                {/* Sidebar / Meta */}
-                <div className="lg:col-span-4 flex flex-col gap-10">
-                  <div className="p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface flex flex-col gap-6">
-                    <h3 className="text-lg font-semibold text-primary">Technologies</h3>
+                {project.skills && project.skills.length > 0 && (
+                  <div className="p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface flex flex-col gap-4 shadow-lg">
+                    <h3 className="text-xl font-bold text-primary font-mono border-b border-surface/50 pb-3">Key Skills</h3>
                     <div className="flex flex-wrap gap-2">
-                      {project.technologies.map(tech => (
-                        <Badge key={tech} variant="outline" className="bg-surface/50 border-surface-light text-muted hover:text-primary transition-colors py-1 px-3">
-                          {tech}
+                      {project.skills.map(skill => (
+                        <Badge key={skill} variant="outline" className="border-accent-blue/30 text-accent-blue bg-accent-blue/5 py-1 px-3">
+                          {skill}
                         </Badge>
                       ))}
                     </div>
                   </div>
-                  
-                  {project.skills && project.skills.length > 0 && (
-                    <div className="p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface flex flex-col gap-6">
-                      <h3 className="text-lg font-semibold text-primary">Key Skills</h3>
-                      <div className="flex flex-wrap gap-2">
-                        {project.skills.map(skill => (
-                          <Badge key={skill} variant="outline" className="border-accent-blue/30 text-accent-blue bg-accent-blue/5 py-1 px-3">
-                            {skill}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
+                )}
               </div>
-            )}
+            </div>
 
-            {/* Interleaved Diagrams and Text */}
-            {contentParts.slice(1).map((part, index) => {
-              if (part === "fabric") {
-                return (
-                  <div key={index} className="w-full">
-                    <DataCenterFabricDiagram />
-                  </div>
-                )
-              }
-              if (part === "security") {
-                return (
-                  <div key={index} className="w-full">
-                    <SecurityFlowDiagram />
-                  </div>
-                )
-              }
-              if (part.trim()) {
-                return (
-                  <div key={index} className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-                    <div className="lg:col-span-8 flex flex-col gap-10">
-                      <div className="prose prose-invert prose-lg max-w-none 
-                        [&>h3]:text-2xl [&>h3]:font-bold [&>h3]:text-primary [&>h3]:mt-12 [&>h3]:mb-6
-                        [&>h4]:text-xl [&>h4]:font-bold [&>h4]:text-primary [&>h4]:mt-8 [&>h4]:mb-4
-                        [&>p]:text-muted [&>p]:leading-relaxed [&>p]:mb-6
-                        [&>ul]:text-muted [&>ul]:list-disc [&>ul]:pl-6 [&>ul>li]:mb-3 [&>ul>li]:pl-2
-                        [&>ul>li::marker]:text-accent-orange/50">
-                        <ReactMarkdown>{part}</ReactMarkdown>
-                      </div>
-                    </div>
-                  </div>
-                )
-              }
-              return null
-            })}
+            {/* Section 2: Security Flow Diagram + Infra Sidebar */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start border-t border-surface/50 pt-16 md:pt-24">
+              {/* Left Column: Security Diagram */}
+              <div className="lg:col-span-8 flex flex-col w-full">
+                <SecurityFlowDiagram />
+              </div>
+              
+              {/* Right Column: Infra Sidebar */}
+              <div className="lg:col-span-4 flex flex-col gap-6 lg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto pr-2 custom-scrollbar">
+                {renderSidebarCard('Infrastructure Environment')}
+                {renderSidebarCard('Network Architecture Summary')}
+                {renderSidebarCard('Security Architecture')}
+              </div>
+            </div>
 
-            {/* Documentation Cards Grid */}
-            {cardSections.length > 0 && (
+            {/* Section 3: Operational Cards Grid */}
+            <div className="flex flex-col gap-8 border-t border-surface/50 pt-16 md:pt-24">
+              <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Operational Details</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                {cardSections.map((card, idx) => (
-                  <div key={idx} className="flex flex-col p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface shadow-lg h-full">
-                    <h3 className="text-xl font-bold text-primary font-mono mb-4 pb-4 border-b border-surface/50">{card.title}</h3>
-                    <div className="prose prose-invert prose-base max-w-none 
-                      [&>p]:text-muted [&>p]:leading-relaxed
-                      [&>ul]:text-muted [&>ul]:list-disc [&>ul]:pl-5 [&>ul>li]:mb-2
-                      [&>ul>li::marker]:text-accent-blue/50
-                      [&>h4]:text-lg [&>h4]:font-bold [&>h4]:text-primary/90 [&>h4]:mt-6 [&>h4]:mb-3">
-                      <ReactMarkdown>{card.content}</ReactMarkdown>
+                {operationalCards.map((title) => {
+                  if (!sections[title]) return null;
+                  return (
+                    <div key={title} className="flex flex-col p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface shadow-lg h-full">
+                      <h3 className="text-xl font-bold text-primary font-mono mb-4 pb-4 border-b border-surface/50">{title}</h3>
+                      <div className="prose prose-invert prose-base max-w-none 
+                        [&>p]:text-muted [&>p]:leading-relaxed
+                        [&>ul]:text-muted [&>ul]:list-disc [&>ul]:pl-5 [&>ul>li]:mb-2
+                        [&>ul>li::marker]:text-accent-blue/50
+                        [&>h4]:text-lg [&>h4]:font-bold [&>h4]:text-primary/90 [&>h4]:mt-6 [&>h4]:mb-3">
+                        <ReactMarkdown>{sections[title]}</ReactMarkdown>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  )
+                })}
               </div>
-            )}
+            </div>
 
           </div>
         </div>
