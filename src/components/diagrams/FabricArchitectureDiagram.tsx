@@ -16,9 +16,9 @@ const Node = ({ title, subtitle, glow = false, active = true }: { title: string,
 )
 
 const VSXLink = () => (
-  <div className="flex flex-col items-center justify-center w-16 md:w-24">
-    <span className="text-[10px] text-accent-emerald font-mono mb-1 tracking-wider">VSX ISL</span>
-    <svg width="100%" height="2" className="overflow-visible">
+  <div className="flex flex-col items-center justify-center w-12 md:w-20">
+    <span className="text-[9px] md:text-[10px] text-accent-emerald font-mono mb-1 tracking-wider whitespace-nowrap bg-[#0a0f1c] px-1 rounded">VSX ISL</span>
+    <svg width="100%" height="2" className="overflow-visible z-0">
       <motion.line 
         x1="0" y1="1" x2="100%" y2="1" 
         stroke="#10b981" 
@@ -82,17 +82,18 @@ const BorderSpineMesh = () => (
       viewBox="0 0 100 100"
     >
       {/* Border A (left) to Spines */}
-      <FabricLine x1="22" x2="22" color="#3b82f6" />
-      <FabricLine x1="22" x2="78" color="#3b82f6" />
+      <FabricLine x1="22" x2="22" color="#f97316" />
+      <FabricLine x1="22" x2="78" color="#f97316" />
       
       {/* Border B (right) to Spines */}
-      <FabricLine x1="78" x2="22" color="#3b82f6" />
-      <FabricLine x1="78" x2="78" color="#3b82f6" />
+      <FabricLine x1="78" x2="22" color="#f97316" />
+      <FabricLine x1="78" x2="78" color="#f97316" />
     </svg>
     
     {/* Logical Fabric Overlay */}
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-xl rounded-xl border border-[#3b82f6]/30 bg-[#0a0f1c]/90 backdrop-blur-sm p-3 md:p-4 text-center shadow-[0_0_15px_rgba(59,130,246,0.1)]">
-       <span className="text-[#3b82f6] font-bold font-mono text-sm tracking-widest">EVPN-VXLAN MULTI-VRF FABRIC</span>
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-xl rounded-xl border border-[#3b82f6]/30 bg-[#0a0f1c]/90 backdrop-blur-sm p-3 md:p-4 text-center shadow-[0_0_15px_rgba(59,130,246,0.1)] flex flex-col gap-1">
+       <span className="text-[#3b82f6] font-bold font-mono text-sm tracking-widest">EVPN • VXLAN • MULTI-VRF</span>
+       <span className="text-muted font-mono text-xs">Overlay Control Plane: iBGP EVPN</span>
     </div>
   </div>
 )
@@ -127,11 +128,15 @@ export function FabricArchitectureDiagram() {
           <div className="w-2 h-2 rounded-full bg-accent-orange animate-pulse shadow-[0_0_8px_#f97316]" />
           Data Center Fabric Architecture
         </h3>
-        
+        {/* Legend */}
         <div className="flex flex-wrap gap-4 items-center">
           <div className="flex items-center gap-1.5">
             <div className="w-4 h-0.5 bg-accent-emerald shadow-[0_0_4px_#10b981]" />
-            <span className="text-[10px] text-muted font-mono uppercase tracking-wider">VSX</span>
+            <span className="text-[10px] text-muted font-mono uppercase tracking-wider">VSX Pair</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <div className="w-4 h-0.5 border-t-2 border-dashed border-accent-orange shadow-[0_0_4px_#f97316]" />
+            <span className="text-[10px] text-muted font-mono uppercase tracking-wider">Physical Clos Fabric</span>
           </div>
           <div className="flex items-center gap-1.5">
             <div className="w-4 h-0.5 bg-accent-orange shadow-[0_0_4px_#f97316]" />
@@ -139,11 +144,7 @@ export function FabricArchitectureDiagram() {
           </div>
           <div className="flex items-center gap-1.5">
             <div className="w-4 h-0.5 bg-[#3b82f6] shadow-[0_0_4px_#3b82f6]" />
-            <span className="text-[10px] text-muted font-mono uppercase tracking-wider">iBGP EVPN</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <div className="w-4 h-0.5 border-t-2 border-dashed border-accent-orange shadow-[0_0_4px_#f97316]" />
-            <span className="text-[10px] text-muted font-mono uppercase tracking-wider">Fabric</span>
+            <span className="text-[10px] text-muted font-mono uppercase tracking-wider">EVPN Overlay Control Plane</span>
           </div>
         </div>
       </div>
@@ -181,11 +182,24 @@ export function FabricArchitectureDiagram() {
         
         <SpineLeafMesh />
         
-        <div className="grid grid-cols-4 gap-2 md:gap-6 w-full justify-items-center relative z-10 mt-2">
-           <Node title="Leaf-01" subtitle="Aruba CX10000" />
-           <Node title="Leaf-02" subtitle="Aruba CX10000" />
-           <Node title="Leaf-03" subtitle="Aruba CX10000" />
-           <Node title="Leaf-04" subtitle="Aruba CX10000" />
+        {/* Leaves (Forced 4-columns to match Mesh) */}
+        <div className="relative w-full mt-2">
+          <div className="grid grid-cols-4 gap-2 md:gap-6 w-full justify-items-center relative z-10">
+             <Node title="Leaf-01" subtitle="Aruba CX10000" />
+             <Node title="Leaf-02" subtitle="Aruba CX10000" />
+             <Node title="Leaf-03" subtitle="Aruba CX10000" />
+             <Node title="Leaf-04" subtitle="Aruba CX10000" />
+          </div>
+          
+          {/* Absolute Leaf VSX Overlays placed in the visual gap between 1-2 and 3-4 */}
+          <div className="absolute inset-0 z-0 flex items-center pointer-events-none">
+             <div className="w-1/2 flex justify-center">
+               <VSXLink />
+             </div>
+             <div className="w-1/2 flex justify-center">
+               <VSXLink />
+             </div>
+          </div>
         </div>
         
       </div>
