@@ -147,15 +147,6 @@ export function DataCenterFabricDiagram() {
     return false
   }
 
-  const getSpineOffset = (spineId: string, leafId: string) => {
-    const isSpine1 = spineId === "spine-01"
-    const offsets = isSpine1 
-      ? { "leaf-01": -70, "leaf-02": -23, "leaf-03": 23, "leaf-04": 70 }
-      : { "leaf-01": -70, "leaf-02": -23, "leaf-03": 23, "leaf-04": 70 }
-    
-    return offsets[leafId as keyof typeof offsets] || 0
-  }
-
   return (
     <div className="w-full mx-auto overflow-hidden rounded-2xl border border-surface bg-[#0a0f1c] shadow-2xl">
       <div className="p-4 md:p-6 border-b border-surface/50 bg-[#0f172a] flex flex-col md:flex-row items-center justify-between gap-4">
@@ -288,10 +279,6 @@ export function DataCenterFabricDiagram() {
                 x1 = fromNode.x
                 y1 = fromNode.y + fromNode.height / 2
                 
-                if (fromNode.type === "spine") {
-                  x1 += getSpineOffset(fromNode.id, toNode.id)
-                }
-
                 x2 = toNode.x
                 y2 = toNode.y - toNode.height / 2
 
