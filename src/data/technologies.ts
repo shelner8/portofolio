@@ -313,26 +313,14 @@ export const technologies: Technology[] = [
     id: "cisco-firepower",
     slug: "cisco-firepower",
     name: "Cisco Firepower",
-    category: "Security",
+    category: "Enterprise Networking",
     featured: true,
-    description: "Next-generation firewall platform providing deep packet inspection.",
+    description: "Enterprise firewall integration with Aruba switching, enterprise routing, and production network infrastructure.",
     relatedProjects: ["kompas-gramedia"],
     relatedArticles: [],
     relatedCertifications: [],
     relatedTechnologies: ["border-leaf"],
     icon: "shield"
-  },
-  {
-    id: "palo-alto",
-    slug: "palo-alto",
-    name: "Palo Alto",
-    category: "Security",
-    description: "Enterprise next-generation firewalls focusing on zero-trust and application security.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: [],
-    relatedTechnologies: [],
-    icon: "lock"
   },
   // --- Connectivity ---
   {
@@ -412,32 +400,6 @@ export const technologies: Technology[] = [
     name: "Policy-Based Routing",
     category: "Enterprise Networking",
     description: "Enterprise implementation of Policy-Based Routing.",
-    experience: [
-      {
-        experienceId: "angkasa-pura-solusi-integra",
-        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
-      }
-    ]
-  },
-  {
-    id: "firewall",
-    slug: "firewall",
-    name: "Firewall",
-    category: "Security",
-    description: "Enterprise implementation of Firewall.",
-    experience: [
-      {
-        experienceId: "angkasa-pura-solusi-integra",
-        summary: "Designed and operated enterprise gateway infrastructure using MikroTik RouterOS with OSPF, BGP, Firewall, QoS, Multi-WAN, and ISP peering while leading enterprise network operations at Angkasa Pura Solusi Integra."
-      }
-    ]
-  },
-  {
-    id: "nat",
-    slug: "nat",
-    name: "NAT",
-    category: "Security",
-    description: "Enterprise implementation of NAT.",
     experience: [
       {
         experienceId: "angkasa-pura-solusi-integra",
@@ -566,8 +528,8 @@ export const technologies: Technology[] = [
     id: "fortinet",
     slug: "fortinet",
     name: "Fortinet",
-    category: "Security",
-    description: "Enterprise implementation of Fortinet.",
+    category: "Enterprise Networking",
+    description: "Enterprise firewall integration supporting secure connectivity within enterprise network deployments.",
     experience: [
       {
         experienceId: "angkasa-pura-solusi-integra",
