@@ -21,6 +21,12 @@ summary: Engineered Software-Defined Networking (SDN) solutions and validated in
 ### Overview
 Engineered Software-Defined Networking (SDN) solutions tailored for a secure government data center environment.
 
+### Background
+TODO
+
+### Project Scope
+Implementation of Software-Defined Networking (SDN) and validation of network infrastructure resilience for a secure government data center.
+
 ### Responsibilities
 - Architected multi-tenant VRF separation to ensure strict logical isolation across critical government domains.
 - Designed and optimized BGP routing policies for robust inter-tenant communication.
@@ -28,3 +34,15 @@ Engineered Software-Defined Networking (SDN) solutions tailored for a secure gov
 
 ### Technologies
 SDN, IXIA, Multi-Tenant VRF, BGP
+
+### Challenges
+TODO
+
+### Solution
+TODO
+
+### Operational Notes
+TODO
+
+### Lessons Learned
+TODO
