@@ -24,16 +24,21 @@ Engineered Software-Defined Networking (SDN) solutions tailored for a secure gov
 ### Background
 TODO
 
-### Project Scope
+### Environment
+- Government Data Center
+
+### Scope
 Implementation of Software-Defined Networking (SDN) and validation of network infrastructure resilience for a secure government data center.
 
 ### Responsibilities
 - Architected multi-tenant VRF separation to ensure strict logical isolation across critical government domains.
 - Designed and optimized BGP routing policies for robust inter-tenant communication.
-- Validated network performance and infrastructure resilience through rigorous IXIA load testing.
 
 ### Technologies
-SDN, IXIA, Multi-Tenant VRF, BGP
+- SDN
+- IXIA
+- Multi-Tenant VRF
+- BGP
 
 ### Challenges
 TODO
@@ -41,8 +46,14 @@ TODO
 ### Solution
 TODO
 
+### Validation
+- Validated network performance and infrastructure resilience through rigorous IXIA load testing.
+
 ### Operational Notes
 TODO
 
 ### Lessons Learned
+TODO
+
+### Future Improvements
 TODO
