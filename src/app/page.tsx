@@ -25,7 +25,7 @@ import { contact } from "@/data/contact"
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-12 md:gap-24 pb-24">
+    <div className="flex flex-col gap-0 pb-16">
       <HeroSection hero={hero} />
       <CoreExpertiseSection />
       <AboutSection about={about} />

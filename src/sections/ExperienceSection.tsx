@@ -28,7 +28,7 @@ export function ExperienceSection({ experience }: ExperienceSectionProps) {
         </Button>
       }
     >
-      <div className="flex flex-col gap-8 md:gap-12 mt-12 md:mt-16">
+      <div className="flex flex-col gap-8 md:gap-12 mt-4 md:mt-6">
         {experience.map((exp) => (
           <motion.div 
             key={exp.id}

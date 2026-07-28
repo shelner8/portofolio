@@ -14,7 +14,7 @@ interface AboutSectionProps {
 export function AboutSection({ about }: AboutSectionProps) {
   return (
     <SectionLayout title={about.title} id="about">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-12 md:mt-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-4 md:mt-6">
         <motion.div 
           className="flex flex-col gap-6 md:gap-8"
           variants={animations.staggerContainer}

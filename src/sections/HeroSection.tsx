@@ -17,13 +17,13 @@ interface HeroSectionProps {
 
 export function HeroSection({ hero }: HeroSectionProps) {
   return (
-    <section id="hero" className="relative w-full pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+    <section id="hero" className="relative w-full pt-20 pb-12 md:pt-28 md:pb-16 overflow-hidden">
       {/* Background glow effects */}
       <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-accent-blue/10 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-accent-orange/10 blur-[120px] pointer-events-none" />
       
       <Container>
-        <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 lg:gap-16 items-center mb-20 md:mb-32">
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 lg:gap-16 items-center mb-12 md:mb-16">
           <motion.div 
             className="flex flex-col gap-6 xl:col-span-7"
             variants={animations.staggerContainer}
@@ -94,7 +94,7 @@ export function HeroSection({ hero }: HeroSectionProps) {
           initial="initial"
           whileInView="whileInView"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 pt-10 md:pt-12 border-t border-surface/50"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 pt-8 md:pt-10 border-t border-surface/50"
         >
           {hero.statistics.map(stat => (
             <motion.div key={stat.id} variants={animations.fadeUp} className="h-full">

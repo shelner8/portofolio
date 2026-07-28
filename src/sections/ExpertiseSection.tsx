@@ -27,7 +27,7 @@ export function ExpertiseSection({ skills }: ExpertiseSectionProps) {
       id="expertise"
     >
       <motion.div 
-        className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 mt-12 md:mt-16"
+        className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 mt-4 md:mt-6"
         variants={animations.staggerContainer}
         initial="initial"
         whileInView="whileInView"

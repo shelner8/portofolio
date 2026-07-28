@@ -20,7 +20,7 @@ export function ArticleSection({ articles }: ArticleSectionProps) {
       id="articles"
     >
       <motion.div 
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-12 md:mt-16"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-4 md:mt-6"
         variants={animations.staggerContainer}
         initial="initial"
         whileInView="whileInView"
@@ -38,7 +38,7 @@ export function ArticleSection({ articles }: ArticleSectionProps) {
         initial="initial"
         whileInView="whileInView"
         viewport={{ once: true }}
-        className="mt-12 md:mt-16 text-center"
+        className="mt-4 md:mt-6 text-center"
       >
         <Button variant="secondary" className="gap-2 group bg-surface hover:bg-surface-light border border-surface transition-all" asChild>
           <a href="#">

@@ -31,7 +31,7 @@ export const SectionLayout = React.forwardRef<HTMLElement, SectionLayoutProps>(
           </div>
 
           {footerLink && (
-            <div className="mt-12 flex justify-center w-full">
+            <div className="mt-4 flex justify-center w-full">
               {footerLink}
             </div>
           )}

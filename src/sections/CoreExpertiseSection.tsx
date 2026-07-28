@@ -15,11 +15,11 @@ export function CoreExpertiseSection() {
   if (technologies.length === 0) return null
 
   return (
-    <section id="expertise" className="py-16 md:py-24 relative overflow-hidden bg-background">
+    <section id="expertise" className="py-12 md:py-16 relative overflow-hidden bg-background">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent-orange/5 to-transparent pointer-events-none" />
       
       <Container className="relative z-10">
-        <div className="flex flex-col gap-10 md:gap-14">
+        <div className="flex flex-col gap-8 md:gap-10">
           <motion.div 
             variants={animations.fadeUp}
             initial="initial"

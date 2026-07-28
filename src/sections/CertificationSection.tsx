@@ -18,7 +18,7 @@ export function CertificationSection({ certifications }: CertificationSectionPro
       id="certifications"
     >
       <motion.div 
-        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8 mt-12 md:mt-16"
+        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8 mt-4 md:mt-6"
         variants={animations.staggerContainer}
         initial="initial"
         whileInView="whileInView"
@@ -36,7 +36,7 @@ export function CertificationSection({ certifications }: CertificationSectionPro
         initial="initial"
         whileInView="whileInView"
         viewport={{ once: true }}
-        className="mt-12 text-center max-w-2xl mx-auto"
+        className="mt-4 text-center max-w-2xl mx-auto"
       >
         <p className="text-muted text-sm md:text-base italic leading-relaxed bg-surface/30 py-4 px-6 rounded-2xl border border-surface-light">
           Committed to continuous learning through professional certifications, hands-on enterprise deployments and real-world engineering experience. <br className="hidden md:block" />

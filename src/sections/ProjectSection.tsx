@@ -31,7 +31,7 @@ export function ProjectSection({ projects }: ProjectSectionProps) {
       }
     >
       <motion.div 
-        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8 mt-12 md:mt-16"
+        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8 mt-4 md:mt-6"
         variants={animations.staggerContainer}
         initial="initial"
         whileInView="whileInView"
