@@ -276,31 +276,6 @@ export const technologies: Technology[] = [
     icon: "share-2"
   },
   {
-    id: "fortinet",
-    slug: "fortinet",
-    name: "Fortinet",
-    category: "Enterprise Networking",
-    description: "Enterprise firewall integration supporting secure connectivity within enterprise network deployments.",
-    icon: "shield"
-  },
-  {
-    id: "cisco-firepower",
-    slug: "cisco-firepower",
-    name: "Cisco Firepower",
-    category: "Enterprise Networking",
-    featured: true,
-    description: "Enterprise firewall integration with Aruba switching, enterprise routing, and production network infrastructure.",
-    icon: "shield"
-  },
-  {
-    id: "layer-3-routing",
-    slug: "layer-3-routing",
-    name: "Layer 3 Routing",
-    category: "Enterprise Networking",
-    description: "Inter-VLAN routing and enterprise network traversal.",
-    icon: "route"
-  },
-  {
     id: "ruckus",
     slug: "ruckus",
     name: "Ruckus",
@@ -322,14 +297,6 @@ export const technologies: Technology[] = [
     name: "Aruba Wireless",
     category: "Enterprise Networking",
     description: "Enterprise implementation of Aruba Wireless infrastructure.",
-    icon: "wifi"
-  },
-  {
-    id: "access-point",
-    slug: "access-point",
-    name: "Access Point",
-    category: "Enterprise Networking",
-    description: "Wireless Access Point deployment for enterprise mobility.",
     icon: "wifi"
   },
   {
@@ -355,14 +322,6 @@ export const technologies: Technology[] = [
     category: "Enterprise Networking",
     description: "Design and deployment of highly available enterprise routing architectures.",
     icon: "route"
-  },
-  {
-    id: "wireless-lan",
-    slug: "wireless-lan",
-    name: "Wireless LAN",
-    category: "Enterprise Networking",
-    description: "Enterprise wireless networking for reliable connectivity and mobility.",
-    icon: "wifi"
   },
   {
     id: "internet-gateway",
