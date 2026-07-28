@@ -1,3 +1,4 @@
+import React from 'react'
 import { getProjectBySlug, getAllProjects, getRelatedProjects } from "@/lib/projects"
 import { notFound } from "next/navigation"
 import Link from "next/link"
