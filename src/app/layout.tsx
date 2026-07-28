@@ -20,10 +20,10 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://enterprise-portfoli
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Shelnerio | Enterprise Network Engineer",
+    default: "Shelnerio | Data Center & Enterprise Network Engineer",
     template: "%s | SHLNR"
   },
-  description: "Professional engineering portfolio showcasing enterprise networking, modern data center architecture, automation, and infrastructure engineering.",
+  description: "Enterprise Network Engineer specializing in Data Center Networking, Aruba AOS-CX, EVPN-VXLAN, MikroTik, High Availability, and Enterprise Infrastructure.",
   keywords: ["Network Engineer", "Data Center", "Aruba AOS-CX", "EVPN", "VXLAN", "BGP", "Network Automation", "Python", "Zero Trust Campus"],
   authors: [{ name: "Shelnerio", url: siteUrl }],
   creator: "Shelnerio",
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Shelnerio | Enterprise Network Engineer",
-    description: "Professional engineering portfolio showcasing enterprise networking, modern data center architecture, automation, and infrastructure engineering.",
+    title: "Shelnerio | Data Center & Enterprise Network Engineer",
+    description: "Enterprise Network Engineer specializing in Data Center Networking, Aruba AOS-CX, EVPN-VXLAN, MikroTik, High Availability, and Enterprise Infrastructure.",
     url: siteUrl,
     siteName: "SHLNR",
     images: [
@@ -48,10 +48,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shelnerio | Enterprise Network Engineer",
-    description: "Professional engineering portfolio showcasing enterprise networking, modern data center architecture, automation, and infrastructure engineering.",
+    title: "Shelnerio | Data Center & Enterprise Network Engineer",
+    description: "Enterprise Network Engineer specializing in Data Center Networking, Aruba AOS-CX, EVPN-VXLAN, MikroTik, High Availability, and Enterprise Infrastructure.",
     images: ["/og-image.jpg"],
-    creator: "@yourhandle",
+    creator: "@shelnerio",
   },
   robots: {
     index: true,

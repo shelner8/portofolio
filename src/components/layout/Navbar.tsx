@@ -4,6 +4,7 @@ import * as React from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Container } from "@/components/shared/Container"
+import { HexagonLogo } from "@/components/ui/HexagonLogo"
 import { NavigationItem } from "@/types"
 import { cn } from "@/lib/utils"
 
@@ -30,8 +31,11 @@ export function Navbar({ navigation }: NavbarProps) {
       )}
     >
       <Container className="flex items-center justify-between">
-        <Link href="/" className="text-xl font-bold tracking-tight text-primary transition-colors hover:text-accent-orange">
-          <span className="text-accent-orange">SH</span>LNR
+        <Link href="/" className="flex items-center gap-3 group transition-colors outline-none">
+          <HexagonLogo size={32} className="group-hover:text-accent-orange/80 transition-colors drop-shadow-[0_0_10px_rgba(245,158,11,0.2)]" />
+          <span className="text-xl font-bold tracking-tight text-primary group-hover:text-accent-orange transition-colors hidden sm:inline-block">
+            Shelnerio
+          </span>
         </Link>
 
         <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-6">
