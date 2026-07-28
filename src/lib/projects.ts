@@ -53,6 +53,7 @@ export function getAllProjects(): Project[] {
       featured: data.featured || false,
       futureCaseStudy: data.futureCaseStudy || false,
       associatedWith: data.associatedWith,
+      content: matter(fileContents).content,
     } as Project;
   }).filter(Boolean) as Project[];
   
@@ -62,4 +63,16 @@ export function getAllProjects(): Project[] {
 
 export function getFeaturedProjects(): Project[] {
   return getAllProjects().filter(p => p.featured).slice(0, 6);
+}
+
+export function getProjectBySlug(slug: string): Project | undefined {
+  const projects = getAllProjects();
+  return projects.find((project) => project.slug === slug);
+}
+
+export function getRelatedProjects(category: string, currentId: string, limit: number = 3): Project[] {
+  const projects = getAllProjects();
+  return projects
+    .filter((project) => project.category === category && project.id !== currentId)
+    .slice(0, limit);
 }
