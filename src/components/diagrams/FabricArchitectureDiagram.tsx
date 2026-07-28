@@ -4,37 +4,37 @@ import React from "react"
 import { motion } from "framer-motion"
 
 const Node = ({ title, subtitle, glow = false, active = true }: { title: string, subtitle: string, glow?: boolean, active?: boolean }) => (
-  <div className={`flex flex-col w-full max-w-[260px] items-center p-4 rounded-xl border bg-[#0f172a] shadow-lg transition-all duration-300
-    ${glow ? 'border-accent-blue/50 shadow-[0_0_15px_rgba(59,130,246,0.15)]' : 'border-surface-light'}
+  <div className={`flex flex-col w-full max-w-[320px] items-center p-5 md:p-6 rounded-xl border bg-[#0f172a] shadow-xl transition-all duration-300
+    ${glow ? 'border-accent-blue/50 shadow-[0_0_20px_rgba(59,130,246,0.15)]' : 'border-surface-light'}
   `}>
-    <div className="flex items-center gap-2 mb-1">
-      {active && <div className="w-2 h-2 rounded-full bg-accent-emerald animate-pulse shadow-[0_0_5px_#10b981]" />}
-      <span className="text-sm md:text-base font-bold text-primary font-mono text-center leading-tight">{title}</span>
+    <div className="flex items-center gap-3 mb-1.5">
+      {active && <div className="w-2.5 h-2.5 rounded-full bg-accent-emerald animate-pulse shadow-[0_0_6px_#10b981]" />}
+      <span className="text-base md:text-lg font-bold text-primary font-mono text-center leading-tight">{title}</span>
     </div>
-    <span className="text-xs md:text-sm text-muted font-mono text-center">{subtitle}</span>
+    <span className="text-sm md:text-base text-muted font-mono text-center">{subtitle}</span>
   </div>
 )
 
 const VSXLink = () => (
-  <div className="flex flex-col items-center justify-center w-12 md:w-20">
-    <span className="text-[9px] md:text-[10px] text-accent-emerald font-mono mb-1 tracking-wider whitespace-nowrap bg-[#0a0f1c] px-1 rounded">VSX ISL</span>
+  <div className="flex flex-col items-center justify-center w-16 md:w-32">
+    <span className="text-[10px] md:text-xs text-accent-emerald font-mono mb-2 tracking-wider whitespace-nowrap bg-[#0a0f1c] px-2 py-0.5 rounded border border-surface">VSX ISL</span>
     <svg width="100%" height="2" className="overflow-visible z-0">
       <motion.line 
         x1="0" y1="1" x2="100%" y2="1" 
         stroke="#10b981" 
-        strokeWidth="2" 
-        strokeDasharray="4 4"
-        initial={{ strokeDashoffset: 8 }}
+        strokeWidth="2.5" 
+        strokeDasharray="4 6"
+        initial={{ strokeDashoffset: 10 }}
         animate={{ strokeDashoffset: 0 }}
         transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
-        style={{ filter: 'drop-shadow(0 0 4px rgba(16,185,129,0.6))' }}
+        style={{ filter: 'drop-shadow(0 0 5px rgba(16,185,129,0.6))' }}
       />
     </svg>
   </div>
 )
 
 const StraightLink = ({ color, label }: { color: string, label?: string }) => (
-  <div className="flex justify-center items-center h-8 md:h-12 w-full relative">
+  <div className="flex justify-center items-center h-12 md:h-20 w-full relative">
     <svg width="2" height="100%" className="overflow-visible" preserveAspectRatio="none">
       <line x1="1" y1="0" x2="1" y2="100%" stroke="rgba(255,255,255,0.1)" strokeWidth="2" />
       <motion.line 
@@ -49,7 +49,7 @@ const StraightLink = ({ color, label }: { color: string, label?: string }) => (
       />
     </svg>
     {label && (
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#0f172a] px-2 py-0.5 rounded border border-surface text-[10px] text-white font-bold font-mono whitespace-nowrap shadow-lg">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#0f172a] px-3 py-1 rounded border border-surface text-xs text-white font-bold font-mono whitespace-nowrap shadow-lg">
         {label}
       </div>
     )}
@@ -75,7 +75,7 @@ const FabricLine = ({ x1, x2, color = "#f97316" }: { x1: string, x2: string, col
 )
 
 const BorderSpineMesh = () => (
-  <div className="w-full max-w-3xl h-24 md:h-32 relative overflow-visible flex items-center justify-center mt-2 z-0">
+  <div className="w-full max-w-4xl h-32 md:h-48 relative overflow-visible flex items-center justify-center mt-4 z-0">
     <svg 
       className="absolute inset-0 w-full h-full overflow-visible"
       preserveAspectRatio="none"
@@ -91,15 +91,15 @@ const BorderSpineMesh = () => (
     </svg>
     
     {/* Logical Fabric Overlay */}
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-xl rounded-xl border border-[#3b82f6]/30 bg-[#0a0f1c]/90 backdrop-blur-sm p-3 md:p-4 text-center shadow-[0_0_15px_rgba(59,130,246,0.1)] flex flex-col gap-1">
-       <span className="text-[#3b82f6] font-bold font-mono text-sm tracking-widest">EVPN • VXLAN • MULTI-VRF</span>
-       <span className="text-muted font-mono text-xs">Overlay Control Plane: iBGP EVPN</span>
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl rounded-xl border border-[#3b82f6]/40 bg-[#0a0f1c]/95 backdrop-blur p-4 md:p-6 text-center shadow-[0_0_25px_rgba(59,130,246,0.15)] flex flex-col gap-2">
+       <span className="text-[#3b82f6] font-bold font-mono text-base md:text-xl tracking-widest">EVPN • VXLAN • MULTI-VRF</span>
+       <span className="text-muted font-mono text-xs md:text-sm">Overlay Control Plane: iBGP EVPN</span>
     </div>
   </div>
 )
 
 const SpineLeafMesh = () => (
-  <div className="w-full h-16 md:h-24 relative overflow-visible flex items-center justify-center mt-2 z-0">
+  <div className="w-full h-24 md:h-36 relative overflow-visible flex items-center justify-center mt-4 z-0">
     <svg 
       className="absolute inset-0 w-full h-full overflow-visible"
       preserveAspectRatio="none"
@@ -122,49 +122,51 @@ const SpineLeafMesh = () => (
 
 export function FabricArchitectureDiagram() {
   return (
-    <div className="w-full max-w-5xl mx-auto overflow-hidden rounded-2xl border border-surface bg-[#0a0f1c] shadow-2xl my-12">
-      <div className="p-5 md:p-6 border-b border-surface/50 bg-[#0f172a] flex flex-col md:flex-row items-center justify-between gap-4">
-        <h3 className="text-base md:text-lg font-bold text-primary font-mono flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-accent-orange animate-pulse shadow-[0_0_8px_#f97316]" />
+    <div className="w-full max-w-[1100px] mx-auto overflow-hidden rounded-2xl border border-surface bg-[#0a0f1c] shadow-2xl my-16">
+      <div className="p-6 md:p-8 border-b border-surface/50 bg-[#0f172a] flex flex-col md:flex-row items-center justify-between gap-6">
+        <h3 className="text-lg md:text-xl font-bold text-primary font-mono flex items-center gap-3">
+          <div className="w-3 h-3 rounded-full bg-accent-orange animate-pulse shadow-[0_0_8px_#f97316]" />
           Data Center Fabric Architecture
         </h3>
         {/* Legend */}
-        <div className="flex flex-wrap gap-4 items-center">
-          <div className="flex items-center gap-1.5">
-            <div className="w-4 h-0.5 bg-accent-emerald shadow-[0_0_4px_#10b981]" />
-            <span className="text-[10px] text-muted font-mono uppercase tracking-wider">VSX Pair</span>
+        <div className="flex flex-wrap gap-6 items-center">
+          <div className="flex items-center gap-2">
+            <div className="w-5 h-0.5 bg-accent-emerald shadow-[0_0_4px_#10b981]" />
+            <span className="text-xs text-muted font-mono uppercase tracking-wider">VSX Pair</span>
           </div>
-          <div className="flex items-center gap-1.5">
-            <div className="w-4 h-0.5 border-t-2 border-dashed border-accent-orange shadow-[0_0_4px_#f97316]" />
-            <span className="text-[10px] text-muted font-mono uppercase tracking-wider">Physical Clos Fabric</span>
+          <div className="flex items-center gap-2">
+            <div className="w-5 h-0.5 border-t-2 border-dashed border-accent-orange shadow-[0_0_4px_#f97316]" />
+            <span className="text-xs text-muted font-mono uppercase tracking-wider">Physical Clos Fabric</span>
           </div>
-          <div className="flex items-center gap-1.5">
-            <div className="w-4 h-0.5 bg-accent-orange shadow-[0_0_4px_#f97316]" />
-            <span className="text-[10px] text-muted font-mono uppercase tracking-wider">eBGP</span>
+          <div className="flex items-center gap-2">
+            <div className="w-5 h-0.5 bg-accent-orange shadow-[0_0_4px_#f97316]" />
+            <span className="text-xs text-muted font-mono uppercase tracking-wider">eBGP</span>
           </div>
-          <div className="flex items-center gap-1.5">
-            <div className="w-4 h-0.5 bg-[#3b82f6] shadow-[0_0_4px_#3b82f6]" />
-            <span className="text-[10px] text-muted font-mono uppercase tracking-wider">EVPN Overlay Control Plane</span>
+          <div className="flex items-center gap-2">
+            <div className="w-5 h-0.5 bg-[#3b82f6] shadow-[0_0_4px_#3b82f6]" />
+            <span className="text-xs text-muted font-mono uppercase tracking-wider">EVPN Overlay Control Plane</span>
           </div>
         </div>
       </div>
       
-      <div className="p-6 md:p-12 flex flex-col items-center">
+      <div className="p-8 md:p-16 flex flex-col items-center">
         
-        <div className="grid grid-cols-[1fr_auto_1fr] gap-2 items-center w-full max-w-3xl justify-items-center">
+        {/* Core Layer */}
+        <div className="grid grid-cols-[1fr_auto_1fr] gap-4 md:gap-8 items-center w-full max-w-4xl justify-items-center">
           <Node title="Core-A" subtitle="Aruba CX8325" />
           <VSXLink />
           <Node title="Core-B" subtitle="Aruba CX8325" />
         </div>
 
-        <div className="grid grid-cols-[1fr_auto_1fr] gap-2 w-full max-w-3xl justify-items-center">
+        {/* Core -> Border Connectors */}
+        <div className="grid grid-cols-[1fr_auto_1fr] gap-4 md:gap-8 w-full max-w-4xl justify-items-center">
           <StraightLink color="#f97316" label="eBGP" />
-          <div className="w-16 md:w-24"></div>
+          <div className="w-16 md:w-32"></div>
           <StraightLink color="#f97316" label="eBGP" />
         </div>
         
         {/* Border Layer */}
-        <div className="grid grid-cols-[1fr_auto_1fr] gap-2 items-center w-full max-w-3xl justify-items-center relative z-10">
+        <div className="grid grid-cols-[1fr_auto_1fr] gap-4 md:gap-8 items-center w-full max-w-4xl justify-items-center relative z-10">
           <Node title="Border-A" subtitle="Aruba CX8360-48XT4C" />
           <VSXLink />
           <Node title="Border-B" subtitle="Aruba CX8360-48XT4C" />
@@ -174,17 +176,17 @@ export function FabricArchitectureDiagram() {
         <BorderSpineMesh />
         
         {/* Spines */}
-        <div className="grid grid-cols-[1fr_auto_1fr] gap-2 items-center w-full max-w-3xl justify-items-center relative z-10">
+        <div className="grid grid-cols-[1fr_auto_1fr] gap-4 md:gap-8 items-center w-full max-w-4xl justify-items-center relative z-10">
            <Node title="Spine-01" subtitle="Aruba CX8360-12C" glow />
-           <div className="w-16 md:w-24"></div>
+           <div className="w-16 md:w-32"></div>
            <Node title="Spine-02" subtitle="Aruba CX8360-12C" glow />
         </div>
         
         <SpineLeafMesh />
         
         {/* Leaves (Forced 4-columns to match Mesh) */}
-        <div className="relative w-full mt-2">
-          <div className="grid grid-cols-4 gap-2 md:gap-6 w-full justify-items-center relative z-10">
+        <div className="relative w-full mt-4">
+          <div className="grid grid-cols-4 gap-4 md:gap-8 w-full justify-items-center relative z-10">
              <Node title="Leaf-01" subtitle="Aruba CX10000" />
              <Node title="Leaf-02" subtitle="Aruba CX10000" />
              <Node title="Leaf-03" subtitle="Aruba CX10000" />
