@@ -26,6 +26,25 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   }
 }
 
+type DiagramRegistryConfig = {
+  Component: React.ComponentType;
+  sidebarCards: string[];
+  showTechAndSkills?: boolean;
+};
+
+const diagramRegistry: Record<string, DiagramRegistryConfig> = {
+  fabric: {
+    Component: DataCenterFabricDiagram,
+    sidebarCards: ['Overview', 'Background', 'Project Objectives'],
+    showTechAndSkills: true
+  },
+  security: {
+    Component: SecurityFlowDiagram,
+    sidebarCards: ['Infrastructure Environment', 'Network Architecture Summary', 'Security Architecture'],
+    showTechAndSkills: false
+  }
+}
+
 export default function ProjectCaseStudy({ params }: { params: { slug: string } }) {
   const projects = getAllProjects()
   const projectIndex = projects.findIndex(p => p.slug === params.slug)
@@ -77,8 +96,7 @@ export default function ProjectCaseStudy({ params }: { params: { slug: string } 
     'Lessons Learned', 'Future Improvements'
   ]
 
-  const hasFabric = project.diagrams?.includes('fabric')
-  const hasSecurity = project.diagrams?.includes('security')
+  const consumedSections = new Set<string>()
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -138,67 +156,108 @@ export default function ProjectCaseStudy({ params }: { params: { slug: string } 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px]">
           <div className="flex flex-col gap-16 md:gap-24">
             
-            {/* Section 1: Architecture Diagram + Context Sidebar */}
-            {(hasFabric || sections['Overview'] || sections['Background'] || sections['Project Objectives']) && (
-              <div className={`grid grid-cols-1 ${hasFabric ? 'lg:grid-cols-12 gap-8 lg:gap-12' : 'gap-6'} items-start`}>
-                {/* Left Column (65-70%): Diagram */}
-                {hasFabric && (
+            {/* Render Dynamic Diagrams & Sidebars */}
+            {project.diagrams?.map((diagramId, index) => {
+              const config = diagramRegistry[diagramId]
+              if (!config) return null
+              
+              config.sidebarCards.forEach(c => consumedSections.add(c))
+              const DiagramComponent = config.Component
+
+              return (
+                <div key={diagramId} className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start ${index > 0 ? 'border-t border-surface/50 pt-16 md:pt-24' : ''}`}>
+                  {/* Left Column (65-70%): Diagram */}
                   <div className="lg:col-span-8 flex flex-col w-full">
-                    <DataCenterFabricDiagram />
-                  </div>
-                )}
-                
-                {/* Right Column (30-35%): Context */}
-                <div className={hasFabric ? 'lg:col-span-4 flex flex-col gap-6 lg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto pr-2 custom-scrollbar' : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full'}>
-                  {renderSidebarCard('Overview')}
-                  {renderSidebarCard('Background')}
-                  {renderSidebarCard('Project Objectives')}
-                  
-                  <div className="p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface flex flex-col gap-4 shadow-lg h-full">
-                    <h3 className="text-xl font-bold text-primary font-mono border-b border-surface/50 pb-3">Technologies</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map(tech => (
-                        <Badge key={tech} variant="outline" className="bg-surface/50 border-surface-light text-muted hover:text-primary transition-colors py-1 px-3">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
+                    <DiagramComponent />
                   </div>
                   
-                  {project.skills && project.skills.length > 0 && (
-                    <div className="p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface flex flex-col gap-4 shadow-lg h-full">
-                      <h3 className="text-xl font-bold text-primary font-mono border-b border-surface/50 pb-3">Key Skills</h3>
-                      <div className="flex flex-wrap gap-2">
-                        {project.skills.map(skill => (
-                          <Badge key={skill} variant="outline" className="border-accent-blue/30 text-accent-blue bg-accent-blue/5 py-1 px-3">
-                            {skill}
-                          </Badge>
-                        ))}
+                  {/* Right Column (30-35%): Context */}
+                  <div className="lg:col-span-4 flex flex-col gap-6 lg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto pr-2 custom-scrollbar">
+                    {config.sidebarCards.map(title => (
+                      <React.Fragment key={title}>
+                        {renderSidebarCard(title)}
+                      </React.Fragment>
+                    ))}
+                    
+                    {config.showTechAndSkills && (
+                      <>
+                        <div className="p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface flex flex-col gap-4 shadow-lg h-full">
+                          <h3 className="text-xl font-bold text-primary font-mono border-b border-surface/50 pb-3">Technologies</h3>
+                          <div className="flex flex-wrap gap-2">
+                            {project.technologies.map(tech => (
+                              <Badge key={tech} variant="outline" className="bg-surface/50 border-surface-light text-muted hover:text-primary transition-colors py-1 px-3">
+                                {tech}
+                              </Badge>
+                            ))}
+                          </div>
+                        </div>
+                        
+                        {project.skills && project.skills.length > 0 && (
+                          <div className="p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface flex flex-col gap-4 shadow-lg h-full">
+                            <h3 className="text-xl font-bold text-primary font-mono border-b border-surface/50 pb-3">Key Skills</h3>
+                            <div className="flex flex-wrap gap-2">
+                              {project.skills.map(skill => (
+                                <Badge key={skill} variant="outline" className="border-accent-blue/30 text-accent-blue bg-accent-blue/5 py-1 px-3">
+                                  {skill}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </>
+                    )}
+                  </div>
+                </div>
+              )
+            })}
+
+            {/* Fallback for unconsumed context sections (e.g. Overview on a project with no diagrams) */}
+            {(() => {
+              const unconsumedContext = ['Overview', 'Background', 'Project Objectives', 'Infrastructure Environment', 'Network Architecture Summary', 'Security Architecture']
+                .filter(title => sections[title] && !consumedSections.has(title))
+
+              const shouldRenderTechAndSkills = (!project.diagrams || project.diagrams.length === 0)
+              
+              if (unconsumedContext.length === 0 && !shouldRenderTechAndSkills) return null
+
+              return (
+                <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full ${project.diagrams && project.diagrams.length > 0 ? 'border-t border-surface/50 pt-16 md:pt-24' : ''}`}>
+                  {unconsumedContext.map(title => (
+                    <React.Fragment key={title}>
+                      {renderSidebarCard(title)}
+                    </React.Fragment>
+                  ))}
+
+                  {shouldRenderTechAndSkills && (
+                    <>
+                      <div className="p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface flex flex-col gap-4 shadow-lg h-full">
+                        <h3 className="text-xl font-bold text-primary font-mono border-b border-surface/50 pb-3">Technologies</h3>
+                        <div className="flex flex-wrap gap-2">
+                          {project.technologies.map(tech => (
+                            <Badge key={tech} variant="outline" className="bg-surface/50 border-surface-light text-muted hover:text-primary transition-colors py-1 px-3">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                      
+                      {project.skills && project.skills.length > 0 && (
+                        <div className="p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface flex flex-col gap-4 shadow-lg h-full">
+                          <h3 className="text-xl font-bold text-primary font-mono border-b border-surface/50 pb-3">Key Skills</h3>
+                          <div className="flex flex-wrap gap-2">
+                            {project.skills.map(skill => (
+                              <Badge key={skill} variant="outline" className="border-accent-blue/30 text-accent-blue bg-accent-blue/5 py-1 px-3">
+                                {skill}
+                              </Badge>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </>
                   )}
                 </div>
-              </div>
-            )}
-
-            {/* Section 2: Security Flow Diagram + Infra Sidebar */}
-            {(hasSecurity || sections['Infrastructure Environment'] || sections['Network Architecture Summary'] || sections['Security Architecture']) && (
-              <div className={`grid grid-cols-1 ${hasSecurity ? 'lg:grid-cols-12 gap-8 lg:gap-12' : 'gap-6'} items-start border-t border-surface/50 pt-16 md:pt-24`}>
-                {/* Left Column: Security Diagram */}
-                {hasSecurity && (
-                  <div className="lg:col-span-8 flex flex-col w-full">
-                    <SecurityFlowDiagram />
-                  </div>
-                )}
-                
-                {/* Right Column: Infra Sidebar */}
-                <div className={hasSecurity ? 'lg:col-span-4 flex flex-col gap-6 lg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto pr-2 custom-scrollbar' : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full'}>
-                  {renderSidebarCard('Infrastructure Environment')}
-                  {renderSidebarCard('Network Architecture Summary')}
-                  {renderSidebarCard('Security Architecture')}
-                </div>
-              </div>
-            )}
+              )
+            })()}
 
             {/* Section 3: Operational Cards Grid */}
             <div className="flex flex-col gap-8 border-t border-surface/50 pt-16 md:pt-24">
