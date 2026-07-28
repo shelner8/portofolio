@@ -10,9 +10,10 @@ import { FileText, Download } from "lucide-react"
 
 interface ResumeSectionProps {
   resumeCTA: ResumeCTA
+  isAvailable?: boolean
 }
 
-export function ResumeSection({ resumeCTA }: ResumeSectionProps) {
+export function ResumeSection({ resumeCTA, isAvailable = true }: ResumeSectionProps) {
   return (
     <SectionLayout 
       title="Resume" 
@@ -38,12 +39,19 @@ export function ResumeSection({ resumeCTA }: ResumeSectionProps) {
             </p>
           </div>
           
-          <Button variant="primary" size="lg" className="mt-4 gap-2 text-base font-semibold px-8" asChild>
-            <a href={resumeCTA.url} target="_blank" rel="noreferrer">
+          {isAvailable ? (
+            <Button variant="primary" size="lg" className="mt-4 gap-2 text-base font-semibold px-8" asChild aria-label="Download or view resume">
+              <a href={resumeCTA.url} target="_blank" rel="noopener noreferrer">
+                <Download className="w-5 h-5" />
+                {resumeCTA.buttonText}
+              </a>
+            </Button>
+          ) : (
+            <Button variant="secondary" size="lg" className="mt-4 gap-2 text-base font-semibold px-8 opacity-70 cursor-not-allowed" disabled aria-label="Resume coming soon">
               <Download className="w-5 h-5" />
-              {resumeCTA.buttonText}
-            </a>
-          </Button>
+              Resume Coming Soon
+            </Button>
+          )}
         </BaseCard>
       </motion.div>
     </SectionLayout>

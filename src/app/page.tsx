@@ -25,10 +25,13 @@ import { articles } from "@/data/articles"
 import { resumeCTA } from "@/data/resume"
 import { contact } from "@/data/contact"
 import { getAllTechnologies } from "@/lib/technologies"
+import fs from "fs"
+import path from "path"
 
 const SHOW_ARTICLES = false
 
 export default function Home() {
+  const resumeAvailable = fs.existsSync(path.join(process.cwd(), "public", "resume", "Shelnerio_Data_Center_Network_Engineer_Resume.pdf"))
   const featuredTechnologies = getAllTechnologies().filter(tech => tech.featured);
 
   return (
@@ -44,7 +47,7 @@ export default function Home() {
       <ExperienceSection experience={experience} />
       <CertificationSection certifications={certifications} />
       {SHOW_ARTICLES && <ArticleSection articles={articles} />}
-      <ResumeSection resumeCTA={resumeCTA} />
+      <ResumeSection resumeCTA={resumeCTA} isAvailable={resumeAvailable} />
       <ContactSection contact={contact} />
     </div>
   )

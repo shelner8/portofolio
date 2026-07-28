@@ -10,7 +10,7 @@ export const footer = {
     { name: "Experience", href: "#experience" },
     { name: "Certifications", href: "#certifications" },
     // { name: "Articles", href: "/articles" },
-    { name: "Resume", href: "/resume.pdf" },
+    { name: "Resume", href: "/resume/Shelnerio_Data_Center_Network_Engineer_Resume.pdf" },
     { name: "Contact", href: "#contact" },
   ],
   technologies: [
