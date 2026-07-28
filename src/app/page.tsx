@@ -26,6 +26,8 @@ import { resumeCTA } from "@/data/resume"
 import { contact } from "@/data/contact"
 import { getAllTechnologies } from "@/lib/technologies"
 
+const SHOW_ARTICLES = false
+
 export default function Home() {
   const featuredTechnologies = getAllTechnologies().filter(tech => tech.featured);
 
@@ -41,7 +43,7 @@ export default function Home() {
       <ProjectSection projects={getFeaturedProjects()} />
       <ExperienceSection experience={experience} />
       <CertificationSection certifications={certifications} />
-      <ArticleSection articles={articles} />
+      {SHOW_ARTICLES && <ArticleSection articles={articles} />}
       <ResumeSection resumeCTA={resumeCTA} />
       <ContactSection contact={contact} />
     </div>

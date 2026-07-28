@@ -9,7 +9,7 @@ export const footer = {
     { name: "Projects", href: "#projects" },
     { name: "Experience", href: "#experience" },
     { name: "Certifications", href: "#certifications" },
-    { name: "Articles", href: "/articles" },
+    // { name: "Articles", href: "/articles" },
     { name: "Resume", href: "/resume.pdf" },
     { name: "Contact", href: "#contact" },
   ],
