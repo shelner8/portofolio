@@ -1,13 +1,16 @@
+import dynamic from "next/dynamic"
 import { HeroSection } from "@/sections/HeroSection"
-import { AboutSection } from "@/sections/AboutSection"
-import { ExpertiseSection } from "@/sections/ExpertiseSection"
-import { ArchitectureSection } from "@/sections/ArchitectureSection"
-import { ProjectSection } from "@/sections/ProjectSection"
-import { ExperienceSection } from "@/sections/ExperienceSection"
-import { CertificationSection } from "@/sections/CertificationSection"
-import { ArticleSection } from "@/sections/ArticleSection"
-import { ResumeSection } from "@/sections/ResumeSection"
-import { ContactSection } from "@/sections/ContactSection"
+
+// Dynamically import below-the-fold sections to drastically reduce initial JS payload
+const AboutSection = dynamic(() => import("@/sections/AboutSection").then(mod => ({ default: mod.AboutSection })))
+const ExpertiseSection = dynamic(() => import("@/sections/ExpertiseSection").then(mod => ({ default: mod.ExpertiseSection })))
+const ArchitectureSection = dynamic(() => import("@/sections/ArchitectureSection").then(mod => ({ default: mod.ArchitectureSection })))
+const ProjectSection = dynamic(() => import("@/sections/ProjectSection").then(mod => ({ default: mod.ProjectSection })))
+const ExperienceSection = dynamic(() => import("@/sections/ExperienceSection").then(mod => ({ default: mod.ExperienceSection })))
+const CertificationSection = dynamic(() => import("@/sections/CertificationSection").then(mod => ({ default: mod.CertificationSection })))
+const ArticleSection = dynamic(() => import("@/sections/ArticleSection").then(mod => ({ default: mod.ArticleSection })))
+const ResumeSection = dynamic(() => import("@/sections/ResumeSection").then(mod => ({ default: mod.ResumeSection })))
+const ContactSection = dynamic(() => import("@/sections/ContactSection").then(mod => ({ default: mod.ContactSection })))
 import { hero } from "@/data/hero"
 import { about } from "@/data/about"
 import { skills } from "@/data/skills"
