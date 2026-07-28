@@ -1,3 +1,5 @@
+import { RESUME_URL } from "@/lib/constants";
+
 export const footer = {
   brandStatement: "Designing reliable infrastructure for modern enterprises through architecture, automation, and operational excellence.",
   quote: "Reliable infrastructure is not built by chance. It is engineered through thoughtful architecture, continuous improvement, and operational excellence.",
@@ -10,7 +12,7 @@ export const footer = {
     { name: "Experience", href: "#experience" },
     { name: "Certifications", href: "#certifications" },
     // { name: "Articles", href: "/articles" },
-    { name: "Resume", href: "/resume/Shelnerio_Data_Center_Network_Engineer_Resume.pdf" },
+    { name: "Resume", href: RESUME_URL },
     { name: "Contact", href: "#contact" },
   ],
   technologies: [

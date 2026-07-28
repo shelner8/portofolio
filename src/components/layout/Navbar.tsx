@@ -7,6 +7,7 @@ import { Container } from "@/components/shared/Container"
 import { HexagonLogo } from "@/components/ui/HexagonLogo"
 import { NavigationItem } from "@/types"
 import { cn } from "@/lib/utils"
+import { RESUME_URL } from "@/lib/constants"
 
 interface NavbarProps {
   navigation: NavigationItem[]
@@ -52,7 +53,7 @@ export function Navbar({ navigation }: NavbarProps) {
 
         <div className="flex items-center gap-4">
           <Button variant="primary" size="sm" asChild className="hidden md:inline-flex">
-            <Link href="/resume.pdf" target="_blank">
+            <Link href={RESUME_URL} target="_blank" rel="noopener noreferrer">
               Download Resume
             </Link>
           </Button>

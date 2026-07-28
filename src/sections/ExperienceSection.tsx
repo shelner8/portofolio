@@ -4,10 +4,11 @@ import { motion } from "framer-motion"
 import { SectionLayout } from "@/sections/SectionLayout"
 import { ExperienceCard } from "@/components/cards/ExperienceCard"
 import { Experience } from "@/types"
+import { Download } from "lucide-react"
+import { RESUME_URL } from "@/lib/constants"
 import { animations } from "@/components/animations/presets"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
-import Link from "next/link"
 
 interface ExperienceSectionProps {
   experience: Experience[]
@@ -21,7 +22,7 @@ export function ExperienceSection({ experience }: ExperienceSectionProps) {
       id="experience"
       footerLink={
         <Button variant="ghost" className="gap-2 group text-primary hover:text-accent-orange transition-colors" asChild>
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+          <a href={RESUME_URL} target="_blank" rel="noopener noreferrer">
             Download Full Resume
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>

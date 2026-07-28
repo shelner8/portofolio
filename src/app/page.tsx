@@ -25,13 +25,14 @@ import { articles } from "@/data/articles"
 import { resumeCTA } from "@/data/resume"
 import { contact } from "@/data/contact"
 import { getAllTechnologies } from "@/lib/technologies"
+import { RESUME_FILE_PATH } from "@/lib/constants"
 import fs from "fs"
 import path from "path"
 
 const SHOW_ARTICLES = false
 
 export default function Home() {
-  const resumeAvailable = fs.existsSync(path.join(process.cwd(), "public", "resume", "Shelnerio_Data_Center_Network_Engineer_Resume.pdf"))
+  const resumeAvailable = fs.existsSync(path.join(process.cwd(), ...RESUME_FILE_PATH))
   const featuredTechnologies = getAllTechnologies().filter(tech => tech.featured);
 
   return (

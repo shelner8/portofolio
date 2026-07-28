@@ -7,6 +7,7 @@ import { ContactData } from "@/types"
 import { animations } from "@/components/animations/presets"
 import { Button } from "@/components/ui/button"
 import { Github, Linkedin, FileText, ArrowRight } from "lucide-react"
+import { RESUME_URL } from "@/lib/constants"
 
 interface ContactSectionProps {
   contact: ContactData
@@ -99,7 +100,7 @@ export function ContactSection({ contact }: ContactSectionProps) {
             
             <div className="mt-auto pt-6 border-t border-surface/60">
               <Button variant="secondary" className="w-full group/btn bg-surface hover:bg-accent-emerald/10 hover:text-accent-emerald hover:border-accent-emerald/20 border border-surface transition-all" asChild>
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Resume PDF">
+                <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" aria-label="Download Resume PDF">
                   Download Resume
                   <ArrowRight aria-hidden="true" className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                 </a>
