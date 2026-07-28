@@ -3,21 +3,22 @@
 import React from "react"
 import { motion } from "framer-motion"
 
-const Node = ({ title, subtitle, glow = false, active = true }: { title: string, subtitle: string, glow?: boolean, active?: boolean }) => (
-  <div className={`flex flex-col w-full max-w-[320px] items-center p-5 md:p-6 rounded-xl border bg-[#0f172a] shadow-xl transition-all duration-300
+const Node = ({ title, subtitle, glow = false, active = true, small = false }: { title: string, subtitle: string, glow?: boolean, active?: boolean, small?: boolean }) => (
+  <div className={`flex flex-col w-full items-center rounded-xl border bg-[#0f172a] shadow-xl transition-all duration-300
+    ${small ? 'max-w-[200px] p-3 md:p-4' : 'max-w-[320px] p-5 md:p-6'}
     ${glow ? 'border-accent-blue/50 shadow-[0_0_20px_rgba(59,130,246,0.15)]' : 'border-surface-light'}
   `}>
-    <div className="flex items-center gap-3 mb-1.5">
-      {active && <div className="w-2.5 h-2.5 rounded-full bg-accent-emerald animate-pulse shadow-[0_0_6px_#10b981]" />}
-      <span className="text-base md:text-lg font-bold text-primary font-mono text-center leading-tight">{title}</span>
+    <div className={`flex items-center ${small ? 'gap-2' : 'gap-3'} mb-1.5`}>
+      {active && <div className={`${small ? 'w-2 h-2' : 'w-2.5 h-2.5'} rounded-full bg-accent-emerald animate-pulse shadow-[0_0_6px_#10b981]`} />}
+      <span className={`${small ? 'text-sm md:text-base' : 'text-base md:text-lg'} font-bold text-primary font-mono text-center leading-tight`}>{title}</span>
     </div>
-    <span className="text-sm md:text-base text-muted font-mono text-center">{subtitle}</span>
+    <span className={`${small ? 'text-xs md:text-sm' : 'text-sm md:text-base'} text-muted font-mono text-center`}>{subtitle}</span>
   </div>
 )
 
-const VSXLink = () => (
-  <div className="flex flex-col items-center justify-center w-16 md:w-32">
-    <span className="text-[10px] md:text-xs text-accent-emerald font-mono mb-2 tracking-wider whitespace-nowrap bg-[#0a0f1c] px-2 py-0.5 rounded border border-surface">VSX ISL</span>
+const VSXLink = ({ labelOffset = "-top-8" }: { labelOffset?: string }) => (
+  <div className="flex flex-col items-center justify-center w-16 md:w-32 relative">
+    <span className={`absolute ${labelOffset} text-[10px] md:text-xs text-accent-emerald font-mono tracking-wider whitespace-nowrap bg-[#0f172a] px-2 py-0.5 rounded border border-surface z-20`}>VSX ISL</span>
     <svg width="100%" height="2" className="overflow-visible z-0">
       <motion.line 
         x1="0" y1="1" x2="100%" y2="1" 
@@ -91,7 +92,7 @@ const BorderSpineMesh = () => (
     </svg>
     
     {/* Logical Fabric Overlay */}
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl rounded-xl border border-[#3b82f6]/40 bg-[#0a0f1c]/95 backdrop-blur p-4 md:p-6 text-center shadow-[0_0_25px_rgba(59,130,246,0.15)] flex flex-col gap-2">
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl rounded-xl border border-[#3b82f6]/40 bg-[#0f172a] p-4 md:p-6 text-center shadow-[0_0_25px_rgba(59,130,246,0.3)] flex flex-col gap-2 z-10">
        <span className="text-[#3b82f6] font-bold font-mono text-base md:text-xl tracking-widest">EVPN • VXLAN • MULTI-VRF</span>
        <span className="text-muted font-mono text-xs md:text-sm">Overlay Control Plane: iBGP EVPN</span>
     </div>
@@ -152,9 +153,9 @@ export function FabricArchitectureDiagram() {
       <div className="p-8 md:p-16 flex flex-col items-center">
         
         {/* Core Layer */}
-        <div className="grid grid-cols-[1fr_auto_1fr] gap-4 md:gap-8 items-center w-full max-w-4xl justify-items-center">
+        <div className="grid grid-cols-[1fr_auto_1fr] gap-4 md:gap-8 items-center w-full max-w-4xl justify-items-center mt-6">
           <Node title="Core-A" subtitle="Aruba CX8325" />
-          <VSXLink />
+          <VSXLink labelOffset="-top-8 md:-top-10" />
           <Node title="Core-B" subtitle="Aruba CX8325" />
         </div>
 
@@ -168,7 +169,7 @@ export function FabricArchitectureDiagram() {
         {/* Border Layer */}
         <div className="grid grid-cols-[1fr_auto_1fr] gap-4 md:gap-8 items-center w-full max-w-4xl justify-items-center relative z-10">
           <Node title="Border-A" subtitle="Aruba CX8360-48XT4C" />
-          <VSXLink />
+          <VSXLink labelOffset="-top-8 md:-top-10" />
           <Node title="Border-B" subtitle="Aruba CX8360-48XT4C" />
         </div>
 
@@ -185,21 +186,21 @@ export function FabricArchitectureDiagram() {
         <SpineLeafMesh />
         
         {/* Leaves (Forced 4-columns to match Mesh) */}
-        <div className="relative w-full mt-4">
-          <div className="grid grid-cols-4 gap-4 md:gap-8 w-full justify-items-center relative z-10">
-             <Node title="Leaf-01" subtitle="Aruba CX10000" />
-             <Node title="Leaf-02" subtitle="Aruba CX10000" />
-             <Node title="Leaf-03" subtitle="Aruba CX10000" />
-             <Node title="Leaf-04" subtitle="Aruba CX10000" />
+        <div className="relative w-full max-w-4xl mt-4 mb-6">
+          <div className="grid grid-cols-4 gap-4 md:gap-6 w-full justify-items-center relative z-10">
+             <Node title="Leaf-01" subtitle="Aruba CX10000" small />
+             <Node title="Leaf-02" subtitle="Aruba CX10000" small />
+             <Node title="Leaf-03" subtitle="Aruba CX10000" small />
+             <Node title="Leaf-04" subtitle="Aruba CX10000" small />
           </div>
           
           {/* Absolute Leaf VSX Overlays placed in the visual gap between 1-2 and 3-4 */}
           <div className="absolute inset-0 z-0 flex items-center pointer-events-none">
              <div className="w-1/2 flex justify-center">
-               <VSXLink />
+               <VSXLink labelOffset="top-6 md:top-8" />
              </div>
              <div className="w-1/2 flex justify-center">
-               <VSXLink />
+               <VSXLink labelOffset="top-6 md:top-8" />
              </div>
           </div>
         </div>
