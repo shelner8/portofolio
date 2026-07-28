@@ -411,7 +411,7 @@ export const technologies: Technology[] = [
     id: "vmware-esxi",
     slug: "vmware-esxi",
     name: "VMware ESXi",
-    category: "Platforms",
+    category: "Virtualization",
     description: "Enterprise bare-metal hypervisor for compute virtualization and data center workloads.",
     icon: "server"
   },
@@ -447,7 +447,7 @@ export const technologies: Technology[] = [
     id: "proxmox-ve",
     slug: "proxmox-ve",
     name: "Proxmox VE",
-    category: "Platforms",
+    category: "Virtualization",
     description: "Open-source server virtualization management platform based on KVM and LXC.",
     icon: "server"
   },
@@ -455,7 +455,7 @@ export const technologies: Technology[] = [
     id: "docker",
     slug: "docker",
     name: "Docker",
-    category: "Platforms",
+    category: "Container Platform",
     description: "Platform for developing, shipping, and running containerized applications.",
     icon: "box"
   },
@@ -463,7 +463,7 @@ export const technologies: Technology[] = [
     id: "docker-compose",
     slug: "docker-compose",
     name: "Docker Compose",
-    category: "Platforms",
+    category: "Container Platform",
     description: "Tool for defining and running multi-container Docker applications.",
     icon: "box"
   },
@@ -471,7 +471,7 @@ export const technologies: Technology[] = [
     id: "portainer",
     slug: "portainer",
     name: "Portainer",
-    category: "Platforms",
+    category: "Container Platform",
     description: "Universal container management platform for deploying and managing Docker environments.",
     icon: "box"
   },
@@ -479,7 +479,7 @@ export const technologies: Technology[] = [
     id: "ubuntu-server",
     slug: "ubuntu-server",
     name: "Ubuntu Server",
-    category: "Platforms",
+    category: "Virtualization",
     description: "Enterprise open-source Linux operating system powering self-hosted infrastructure.",
     icon: "server"
   },
@@ -487,7 +487,7 @@ export const technologies: Technology[] = [
     id: "ollama",
     slug: "ollama",
     name: "Ollama",
-    category: "Platforms",
+    category: "AI Platform",
     description: "Framework for running, managing, and interacting with large language models locally.",
     icon: "cpu"
   },
@@ -495,7 +495,7 @@ export const technologies: Technology[] = [
     id: "hermes-ui",
     slug: "hermes-ui",
     name: "Hermes UI",
-    category: "Platforms",
+    category: "AI Platform",
     description: "Self-hosted Web UI platform for conversational interactions with local LLMs.",
     icon: "layout"
   },
@@ -503,7 +503,7 @@ export const technologies: Technology[] = [
     id: "9router",
     slug: "9router",
     name: "9Router",
-    category: "Platforms",
+    category: "AI Platform",
     description: "Local AI routing service for distributing requests to self-hosted models.",
     icon: "network"
   },
@@ -511,7 +511,7 @@ export const technologies: Technology[] = [
     id: "gemini-api",
     slug: "gemini-api",
     name: "Gemini API",
-    category: "Platforms",
+    category: "AI Platform",
     description: "Integration with Google's advanced language model API for infrastructure documentation.",
     icon: "cpu"
   },
@@ -519,7 +519,7 @@ export const technologies: Technology[] = [
     id: "adguard-home",
     slug: "adguard-home",
     name: "AdGuard Home",
-    category: "Platforms",
+    category: "Self-Hosted Services",
     description: "Network-wide software for blocking ads and tracking acting as an enterprise DNS server.",
     icon: "shield"
   },
@@ -527,7 +527,7 @@ export const technologies: Technology[] = [
     id: "nginx-reverse-proxy",
     slug: "nginx-reverse-proxy",
     name: "Nginx Reverse Proxy",
-    category: "Platforms",
+    category: "Self-Hosted Services",
     description: "High-performance reverse proxy for internal routing and local domain resolution.",
     icon: "server"
   },
@@ -535,7 +535,7 @@ export const technologies: Technology[] = [
     id: "agent-dvr",
     slug: "agent-dvr",
     name: "Agent DVR CCTV",
-    category: "Platforms",
+    category: "Self-Hosted Services",
     description: "Advanced video surveillance and CCTV recording platform.",
     icon: "server"
   },

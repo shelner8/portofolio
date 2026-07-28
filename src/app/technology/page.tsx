@@ -24,10 +24,13 @@ export default function TechnologyLibraryPage() {
     "Data Center",
     "Aruba",
     "Enterprise Networking",
-    "Security",
     "Connectivity",
     "Automation",
-    "Platforms"
+    "Virtualization",
+    "Container Platform",
+    "Self-Hosted Services",
+    "AI Platform",
+    "Monitoring"
   ]
 
   // Extract any remaining categories not explicitly ordered
