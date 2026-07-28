@@ -83,19 +83,19 @@ export function SecurityFlowDiagram() {
             <div className="w-20 h-px bg-surface-light mt-6" />
           </div>
 
-          <Node title="Internet" subtitle="External Traffic" active={false} />
+          <Node title="External Traffic" subtitle="External Network" active={false} />
           <VerticalConnector />
           
-          <Node title="Cisco Firepower" subtitle="Transparent Mode" glow />
+          <Node title="Core VSX" subtitle="Aruba CX8325 VSX" />
           <VerticalConnector />
           
-          <Node title="Border Leaf" subtitle="Aruba CX 8360-48XT4C" />
+          <Node title="Cisco Firepower" subtitle="Transparent Mode Inspection" glow />
           <VerticalConnector />
           
-          <Node title="Core VSX" subtitle="Aruba CX 8325" />
+          <Node title="Border Leaf" subtitle="Aruba CX8360-48XT4C" />
           <VerticalConnector />
           
-          <Node title="EVPN Fabric" subtitle="Overlay Routing" />
+          <Node title="EVPN Fabric" subtitle="Multi-VRF Overlay" />
           <VerticalConnector />
           
           <Node title="Server" subtitle="Destination Workload" />
