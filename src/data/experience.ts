@@ -60,5 +60,29 @@ export const experience: Experience[] = [
       "MikroTik", "RouterOS", "VLAN", "Static Routing", "OSPF", "BGP", "Policy-Based Routing", "Firewall", "NAT", "QoS", "Queue Tree", "PCQ", "FastTrack", "DHCP", "DHCP Relay", "Multi-WAN", "ISP Peering", "Internet Exchange", "Aruba AOS-CX", "Fortinet", "VMware ESXi", "Zabbix", "Cacti", "Observium"
     ],
     projects: ["angkasa-pura-solusi-integra"]
+  },
+  {
+    id: "angkasa-pura-solusi-integra-technician",
+    company: "Angkasa Pura Solusi Integra",
+    position: "Network Operations Technician",
+    employmentType: "Full-time",
+    location: "Soekarno-Hatta International Airport",
+    startDate: "Jul 2022",
+    endDate: "Sep 2022",
+    current: false,
+    summary: "Provided operational support for enterprise campus networking, switching infrastructure, wireless environments, and day-to-day network operations while maintaining service availability.",
+    responsibilities: [
+      "Supported daily enterprise network operations across airport infrastructure.",
+      "Managed and maintained switching infrastructure using Cisco, HPE, Aruba, and Alcatel-Lucent devices.",
+      "Performed wireless infrastructure monitoring using Aruba Wireless solutions.",
+      "Conducted Layer 1 and Layer 2 network troubleshooting.",
+      "Assisted with network asset management and infrastructure maintenance.",
+      "Supported preventive maintenance activities to ensure network availability."
+    ],
+    achievements: [],
+    technologies: [
+      "Cisco", "HPE", "Aruba", "Alcatel-Lucent", "Switching", "Wireless LAN", "Layer 2", "Network Monitoring"
+    ],
+    projects: []
   }
 ];
