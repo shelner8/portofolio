@@ -17,7 +17,7 @@ interface HeroSectionProps {
 
 export function HeroSection({ hero }: HeroSectionProps) {
   return (
-    <section className="relative w-full pt-12 pb-16 md:pt-24 md:pb-24 overflow-hidden">
+    <section id="hero" className="relative w-full pt-12 pb-16 md:pt-24 md:pb-24 overflow-hidden">
       {/* Background glow effects */}
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-accent-blue/10 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] rounded-full bg-accent-orange/10 blur-[100px] pointer-events-none" />
