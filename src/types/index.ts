@@ -57,7 +57,8 @@ export interface Technology {
   color?: string;
   
   overview?: string;
-  concepts?: string[];
+  keyConcepts?: string[];
+  useCases?: string[];
   bestPractices?: string[];
   architectureDiagram?: string;
   experience?: TechnologyExperience[];

@@ -10,7 +10,8 @@ export const technologies: Technology[] = [
     featured: true,
     description: "Modern control-plane for VXLAN fabrics using MP-BGP.",
     overview: "Ethernet VPN (EVPN) is a BGP-based control plane that enables scalable MAC and IP address learning. It replaces legacy flood-and-learn mechanisms in VXLAN fabrics, drastically improving efficiency, minimizing broadcast traffic, and providing seamless multi-tenancy in modern data center environments.",
-    concepts: ["Route Type-2", "Route Type-3", "Route Type-5", "VTEP", "Anycast Gateway", "L2VNI", "L3VNI", "MP-BGP"],
+    keyConcepts: ["Route Type-2", "Route Type-3", "Route Type-5", "Anycast Gateway", "MAC/IP Advertisement", "BUM Replication"],
+    useCases: ["VXLAN Fabric", "Multi-Tenant Data Center", "Layer-2 Extension", "Host Mobility"],
     bestPractices: [
       "Use Loopback interfaces for VTEP addresses.",
       "Keep Underlay and Overlay separated.",
@@ -34,6 +35,7 @@ export const technologies: Technology[] = [
     category: "Data Center",
     featured: true,
     description: "Layer 2 overlay scheme over a Layer 3 network, offering scalable multi-tenancy.",
+    keyConcepts: ["VNI", "VTEP", "UDP 4789", "Overlay", "Encapsulation", "Flood & Learn"],
     icon: "layers"
   },
   {
@@ -52,6 +54,8 @@ export const technologies: Technology[] = [
     category: "Data Center",
     featured: true,
     description: "Link-state routing protocol for robust underlay connectivity.",
+    keyConcepts: ["Area 0", "LSA", "SPF", "Cost", "DR/BDR", "Neighbor States"],
+    useCases: ["Enterprise Core Routing", "Campus Backbone", "WAN Underlay", "Internal Dynamic Routing"],
     experience: [
       {
         experienceId: "angkasa-pura-solusi-integra",
@@ -67,6 +71,7 @@ export const technologies: Technology[] = [
     category: "Data Center",
     featured: true,
     description: "Core routing protocol used for both internet and data center IP fabrics.",
+    keyConcepts: ["ASN", "iBGP", "eBGP", "Route Reflector", "Communities", "Local Preference"],
     experience: [
       {
         experienceId: "angkasa-pura-solusi-integra",
@@ -150,7 +155,8 @@ export const technologies: Technology[] = [
     featured: true,
     description: "Virtual Switching Extension provides high availability without shared control planes.",
     overview: "Aruba VSX (Virtual Switching Extension) is a high-availability technology designed for the core and aggregation layers. Unlike legacy stacking, VSX maintains independent control planes on each switch while presenting a unified active-active gateway to downstream devices, ensuring zero-downtime software upgrades.",
-    concepts: ["ISL", "Keepalive", "Active Gateway", "MC-LAG", "Sync", "VSX Pair"],
+    keyConcepts: ["ISL", "Keepalive", "MC-LAG", "Active Gateway", "Split Brain Protection"],
+    useCases: ["Active-Active Core", "Dual-Homing", "High Availability", "Enterprise Data Center"],
     bestPractices: [
       "Dedicate high-bandwidth interfaces for the ISL.",
       "Route Keepalive over a separate out-of-band management network when possible.",

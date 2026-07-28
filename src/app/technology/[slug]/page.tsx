@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { 
   ArrowLeft, Cpu, FolderGit2, Award, Network, ChevronRight, 
-  BookOpen, Lightbulb, ShieldCheck, LayoutTemplate, Briefcase, FileText
+  BookOpen, Lightbulb, ShieldCheck, LayoutTemplate, Briefcase, FileText, Target
 } from "lucide-react"
 import { DataCenterFabricDiagram } from "@/components/diagrams/DataCenterFabricDiagram"
 import { SecurityFlowDiagram } from "@/components/diagrams/SecurityFlowDiagram"
@@ -107,20 +107,38 @@ export default function TechnologyDetailPage({ params }: { params: { slug: strin
                 </div>
               )}
 
-              {/* Core Concepts */}
-              {technology.concepts && technology.concepts.length > 0 && (
+              {/* Key Concepts */}
+              {technology.keyConcepts && technology.keyConcepts.length > 0 && (
                 <div className="flex flex-col gap-6">
                   <div className="flex items-center gap-3">
                     <Lightbulb className="w-6 h-6 text-accent-orange" />
-                    <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Core Concepts</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Key Concepts</h2>
                   </div>
                   <div className="flex flex-wrap gap-3">
-                    {technology.concepts.map(concept => (
+                    {technology.keyConcepts.map(concept => (
                       <div key={concept} className="px-4 py-2 rounded-lg bg-surface/30 border border-surface text-primary font-medium hover:border-accent-orange/50 hover:bg-accent-orange/5 transition-colors cursor-default">
                         {concept}
                       </div>
                     ))}
                   </div>
+                </div>
+              )}
+
+              {/* Typical Use Cases */}
+              {technology.useCases && technology.useCases.length > 0 && (
+                <div className="flex flex-col gap-6">
+                  <div className="flex items-center gap-3">
+                    <Target className="w-6 h-6 text-accent-emerald" />
+                    <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Typical Use Cases</h2>
+                  </div>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {technology.useCases.map(useCase => (
+                      <li key={useCase} className="flex items-start gap-3">
+                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent-emerald flex-shrink-0" />
+                        <span className="text-muted leading-relaxed">{useCase}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               )}
 
