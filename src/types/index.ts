@@ -5,7 +5,7 @@ export interface Project {
   summary: string;
   description: string;
   status: "Production" | "Completed" | "In Progress" | "Lab" | "Research";
-  category: "Data Center" | "Enterprise Networking" | "Automation" | "Monitoring" | "Security";
+  category: "Data Center" | "Enterprise Networking" | "Automation" | "Monitoring" | "Security" | "Operations";
   environment: "Production" | "Lab";
   vendor: string[];
   technologies: string[];
