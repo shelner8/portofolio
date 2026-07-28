@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, ArrowRight, Calendar, Building2, LayoutTemplate } from "lucide-react"
 import { ProjectCard } from "@/components/cards/ProjectCard"
-import { FabricArchitectureDiagram } from "@/components/diagrams/FabricArchitectureDiagram"
+import { DataCenterFabricDiagram } from "@/components/diagrams/DataCenterFabricDiagram"
 import { SecurityFlowDiagram } from "@/components/diagrams/SecurityFlowDiagram"
 
 export function generateStaticParams() {
@@ -177,7 +177,7 @@ export default function ProjectCaseStudy({ params }: { params: { slug: string } 
               if (part === "fabric") {
                 return (
                   <div key={index} className="w-full">
-                    <FabricArchitectureDiagram />
+                    <DataCenterFabricDiagram />
                   </div>
                 )
               }
