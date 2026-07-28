@@ -53,7 +53,6 @@ Designed and implemented a complete enterprise network infrastructure from the g
 - Ruckus Access Points
 
 #### Core Services
-- Internet Gateway
 - NAT
 - Firewall
 - DHCP

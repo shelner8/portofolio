@@ -8,7 +8,6 @@ technologies:
   - Broadband
   - Ruckus
   - Wireless LAN
-  - Internet Gateway
 status: Completed
 featured: false
 futureCaseStudy: false

@@ -33,7 +33,6 @@ Enterprise gateway deployment providing ISP connectivity and secure inter-site c
 - External BGP
 - ISP Connectivity
 - Site-to-Site Tunnel
-- Internet Gateway
 - Routing
 
 #### Deployment Type

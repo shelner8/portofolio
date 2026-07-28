@@ -3,15 +3,6 @@ import { Technology } from "@/types";
 export const technologies: Technology[] = [
   // --- Data Center ---
   {
-    id: "vxlan-evpn-fabric",
-    slug: "vxlan-evpn-fabric",
-    name: "VXLAN EVPN Fabric",
-    category: "Data Center",
-    featured: true,
-    description: "Enterprise spine-leaf fabric architecture combining EVPN control-plane and VXLAN overlay networking for scalable modern data center deployments.",
-    icon: "layers"
-  },
-  {
     id: "evpn",
     slug: "evpn",
     name: "EVPN",
@@ -323,15 +314,6 @@ export const technologies: Technology[] = [
     description: "Design and deployment of highly available enterprise routing architectures.",
     icon: "route"
   },
-  {
-    id: "internet-gateway",
-    slug: "internet-gateway",
-    name: "Internet Gateway",
-    category: "Enterprise Networking",
-    description: "Production gateway deployment securing and routing enterprise internet traffic.",
-    icon: "globe"
-  },
-
   // MikroTik Enhancements (Enterprise Networking)
   {
     id: "nat",

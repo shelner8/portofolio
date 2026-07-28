@@ -25,7 +25,6 @@ Delivered a converged network infrastructure supporting premium multimedia and v
 - Wireless Access Points
 
 #### Core Services
-- Internet Gateway
 - Wireless LAN
 - VLAN
 
