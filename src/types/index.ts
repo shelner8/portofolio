@@ -16,6 +16,7 @@ export interface Project {
   featured: boolean;
   futureCaseStudy: boolean;
   associatedWith?: string;
+  diagrams?: string[];
   content?: string;
 }
 

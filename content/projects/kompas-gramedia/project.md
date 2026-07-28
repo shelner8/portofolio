@@ -24,6 +24,9 @@ skills:
 status: In Progress
 featured: true
 futureCaseStudy: true
+diagrams:
+  - fabric
+  - security
 summary: Architected a scalable Spine-Leaf EVPN-VXLAN fabric utilizing Aruba CX10000
   switches and distributed Pensando DPU firewalling.
 ---

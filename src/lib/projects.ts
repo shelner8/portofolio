@@ -53,6 +53,7 @@ export function getAllProjects(): Project[] {
       featured: data.featured || false,
       futureCaseStudy: data.futureCaseStudy || false,
       associatedWith: data.associatedWith,
+      diagrams: data.diagrams || [],
       content: matter(fileContents).content,
     } as Project;
   }).filter(Boolean) as Project[];

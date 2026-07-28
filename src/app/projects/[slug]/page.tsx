@@ -77,6 +77,9 @@ export default function ProjectCaseStudy({ params }: { params: { slug: string } 
     'Lessons Learned', 'Future Improvements'
   ]
 
+  const hasFabric = project.diagrams?.includes('fabric')
+  const hasSecurity = project.diagrams?.includes('security')
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -136,58 +139,66 @@ export default function ProjectCaseStudy({ params }: { params: { slug: string } 
           <div className="flex flex-col gap-16 md:gap-24">
             
             {/* Section 1: Architecture Diagram + Context Sidebar */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-              {/* Left Column (65-70%): Diagram */}
-              <div className="lg:col-span-8 flex flex-col w-full">
-                <DataCenterFabricDiagram />
-              </div>
-              
-              {/* Right Column (30-35%): Sticky Sidebar Context */}
-              <div className="lg:col-span-4 flex flex-col gap-6 lg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto pr-2 custom-scrollbar">
-                {renderSidebarCard('Overview')}
-                {renderSidebarCard('Background')}
-                {renderSidebarCard('Project Objectives')}
-                
-                <div className="p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface flex flex-col gap-4 shadow-lg">
-                  <h3 className="text-xl font-bold text-primary font-mono border-b border-surface/50 pb-3">Technologies</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map(tech => (
-                      <Badge key={tech} variant="outline" className="bg-surface/50 border-surface-light text-muted hover:text-primary transition-colors py-1 px-3">
-                        {tech}
-                      </Badge>
-                    ))}
+            {(hasFabric || sections['Overview'] || sections['Background'] || sections['Project Objectives']) && (
+              <div className={`grid grid-cols-1 ${hasFabric ? 'lg:grid-cols-12 gap-8 lg:gap-12' : 'gap-6'} items-start`}>
+                {/* Left Column (65-70%): Diagram */}
+                {hasFabric && (
+                  <div className="lg:col-span-8 flex flex-col w-full">
+                    <DataCenterFabricDiagram />
                   </div>
-                </div>
+                )}
                 
-                {project.skills && project.skills.length > 0 && (
-                  <div className="p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface flex flex-col gap-4 shadow-lg">
-                    <h3 className="text-xl font-bold text-primary font-mono border-b border-surface/50 pb-3">Key Skills</h3>
+                {/* Right Column (30-35%): Context */}
+                <div className={hasFabric ? 'lg:col-span-4 flex flex-col gap-6 lg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto pr-2 custom-scrollbar' : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full'}>
+                  {renderSidebarCard('Overview')}
+                  {renderSidebarCard('Background')}
+                  {renderSidebarCard('Project Objectives')}
+                  
+                  <div className="p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface flex flex-col gap-4 shadow-lg h-full">
+                    <h3 className="text-xl font-bold text-primary font-mono border-b border-surface/50 pb-3">Technologies</h3>
                     <div className="flex flex-wrap gap-2">
-                      {project.skills.map(skill => (
-                        <Badge key={skill} variant="outline" className="border-accent-blue/30 text-accent-blue bg-accent-blue/5 py-1 px-3">
-                          {skill}
+                      {project.technologies.map(tech => (
+                        <Badge key={tech} variant="outline" className="bg-surface/50 border-surface-light text-muted hover:text-primary transition-colors py-1 px-3">
+                          {tech}
                         </Badge>
                       ))}
                     </div>
                   </div>
-                )}
+                  
+                  {project.skills && project.skills.length > 0 && (
+                    <div className="p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface flex flex-col gap-4 shadow-lg h-full">
+                      <h3 className="text-xl font-bold text-primary font-mono border-b border-surface/50 pb-3">Key Skills</h3>
+                      <div className="flex flex-wrap gap-2">
+                        {project.skills.map(skill => (
+                          <Badge key={skill} variant="outline" className="border-accent-blue/30 text-accent-blue bg-accent-blue/5 py-1 px-3">
+                            {skill}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Section 2: Security Flow Diagram + Infra Sidebar */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start border-t border-surface/50 pt-16 md:pt-24">
-              {/* Left Column: Security Diagram */}
-              <div className="lg:col-span-8 flex flex-col w-full">
-                <SecurityFlowDiagram />
+            {(hasSecurity || sections['Infrastructure Environment'] || sections['Network Architecture Summary'] || sections['Security Architecture']) && (
+              <div className={`grid grid-cols-1 ${hasSecurity ? 'lg:grid-cols-12 gap-8 lg:gap-12' : 'gap-6'} items-start border-t border-surface/50 pt-16 md:pt-24`}>
+                {/* Left Column: Security Diagram */}
+                {hasSecurity && (
+                  <div className="lg:col-span-8 flex flex-col w-full">
+                    <SecurityFlowDiagram />
+                  </div>
+                )}
+                
+                {/* Right Column: Infra Sidebar */}
+                <div className={hasSecurity ? 'lg:col-span-4 flex flex-col gap-6 lg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto pr-2 custom-scrollbar' : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full'}>
+                  {renderSidebarCard('Infrastructure Environment')}
+                  {renderSidebarCard('Network Architecture Summary')}
+                  {renderSidebarCard('Security Architecture')}
+                </div>
               </div>
-              
-              {/* Right Column: Infra Sidebar */}
-              <div className="lg:col-span-4 flex flex-col gap-6 lg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto pr-2 custom-scrollbar">
-                {renderSidebarCard('Infrastructure Environment')}
-                {renderSidebarCard('Network Architecture Summary')}
-                {renderSidebarCard('Security Architecture')}
-              </div>
-            </div>
+            )}
 
             {/* Section 3: Operational Cards Grid */}
             <div className="flex flex-col gap-8 border-t border-surface/50 pt-16 md:pt-24">
