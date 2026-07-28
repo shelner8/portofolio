@@ -39,12 +39,18 @@ export interface Experience {
 export interface Technology {
   id: string;
   name: string;
+  slug?: string;
   category: string;
-  vendor: string;
-  level: "Beginner" | "Intermediate" | "Advanced" | "Expert";
+  vendor?: string;
+  level?: "Beginner" | "Intermediate" | "Advanced" | "Expert";
   description: string;
-  featured: boolean;
-  icon: string;
+  featured?: boolean;
+  icon?: string;
+  color?: string;
+  relatedProjects?: string[];
+  relatedArticles?: string[];
+  relatedCertifications?: string[];
+  relatedTechnologies?: string[];
 }
 
 export interface Skill {
