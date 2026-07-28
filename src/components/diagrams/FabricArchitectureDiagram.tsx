@@ -57,23 +57,29 @@ const StraightLink = ({ color, label }: { color: string, label?: string }) => (
   </div>
 )
 
-const FabricLine = ({ x1, x2, color = "#f97316" }: { x1: string, x2: string, color?: string }) => (
-  <g>
-    <line x1={x1} y1="0" x2={x2} y2="100" stroke="rgba(255,255,255,0.08)" strokeWidth="1" vectorEffect="non-scaling-stroke" />
-    <motion.line 
-      x1={x1} y1="0" x2={x2} y2="100" 
-      stroke={color} 
-      strokeWidth="1.5" 
-      strokeDasharray="4 8"
-      strokeLinecap="round"
-      vectorEffect="non-scaling-stroke"
-      initial={{ strokeDashoffset: 24 }}
-      animate={{ strokeDashoffset: 0 }}
-      transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
-      style={{ filter: `drop-shadow(0 0 4px ${color})` }}
-    />
-  </g>
-)
+const CVDFabricLine = ({ startX, endX, startY = 0, trunkY = 25, endY = 100, color = "#f97316" }: { startX: number, endX: number, startY?: number, trunkY?: number, endY?: number, color?: string }) => {
+  const dx = endX - startX;
+  const absDx = Math.abs(dx);
+  
+  let path = "";
+  if (absDx === 0) {
+    path = `M ${startX} ${startY} L ${startX} ${endY}`;
+  } else {
+    const midY = trunkY + absDx;
+    path = `M ${startX} ${startY} L ${startX} ${trunkY} L ${endX} ${midY} L ${endX} ${endY}`;
+  }
+  
+  return (
+    <g>
+      <path d={path} fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" vectorEffect="non-scaling-stroke" strokeLinejoin="round" />
+      <motion.path 
+        d={path} fill="none" stroke={color} strokeWidth="1.5" strokeDasharray="4 8" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke"
+        initial={{ strokeDashoffset: 24 }} animate={{ strokeDashoffset: 0 }} transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
+        style={{ filter: `drop-shadow(0 0 4px ${color})` }}
+      />
+    </g>
+  );
+}
 
 const BorderSpineMesh = () => (
   <div className="w-full max-w-4xl h-20 md:h-32 relative overflow-visible flex items-center justify-center mt-2 z-0">
@@ -83,12 +89,12 @@ const BorderSpineMesh = () => (
       viewBox="0 0 100 100"
     >
       {/* Border A (37.5) to Spines */}
-      <FabricLine x1="37.5" x2="37.5" color="#f97316" />
-      <FabricLine x1="37.5" x2="62.5" color="#f97316" />
+      <CVDFabricLine startX={37.5} endX={37.5} color="#f97316" />
+      <CVDFabricLine startX={37.5} endX={62.5} color="#f97316" />
       
       {/* Border B (62.5) to Spines */}
-      <FabricLine x1="62.5" x2="37.5" color="#f97316" />
-      <FabricLine x1="62.5" x2="62.5" color="#f97316" />
+      <CVDFabricLine startX={62.5} endX={37.5} color="#f97316" />
+      <CVDFabricLine startX={62.5} endX={62.5} color="#f97316" />
     </svg>
     
     {/* Logical Fabric Overlay */}
@@ -107,16 +113,16 @@ const SpineLeafMesh = () => (
       viewBox="0 0 100 100"
     >
       {/* Spine 1 (37.5) Links */}
-      <FabricLine x1="37.5" x2="12.5" />
-      <FabricLine x1="37.5" x2="37.5" />
-      <FabricLine x1="37.5" x2="62.5" />
-      <FabricLine x1="37.5" x2="87.5" />
+      <CVDFabricLine startX={37.5} endX={12.5} />
+      <CVDFabricLine startX={37.5} endX={37.5} />
+      <CVDFabricLine startX={37.5} endX={62.5} />
+      <CVDFabricLine startX={37.5} endX={87.5} />
       
       {/* Spine 2 (62.5) Links */}
-      <FabricLine x1="62.5" x2="12.5" />
-      <FabricLine x1="62.5" x2="37.5" />
-      <FabricLine x1="62.5" x2="62.5" />
-      <FabricLine x1="62.5" x2="87.5" />
+      <CVDFabricLine startX={62.5} endX={12.5} />
+      <CVDFabricLine startX={62.5} endX={37.5} />
+      <CVDFabricLine startX={62.5} endX={62.5} />
+      <CVDFabricLine startX={62.5} endX={87.5} />
     </svg>
   </div>
 )
