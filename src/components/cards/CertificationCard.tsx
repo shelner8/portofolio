@@ -49,6 +49,7 @@ export function CertificationCard({ certification, className, ...props }: Certif
           </Badge>
           <span className="text-xs font-mono text-muted-foreground uppercase tracking-wider">
             {new Date(certification.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+            {certification.expirationDate && ` - ${new Date(certification.expirationDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}`}
           </span>
         </div>
         
