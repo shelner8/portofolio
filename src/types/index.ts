@@ -36,6 +36,11 @@ export interface Experience {
   projects: string[];
 }
 
+export interface TechnologyExperience {
+  projectId: string;
+  summary: string;
+}
+
 export interface Technology {
   id: string;
   name: string;
@@ -47,6 +52,14 @@ export interface Technology {
   featured?: boolean;
   icon?: string;
   color?: string;
+  
+  overview?: string;
+  concepts?: string[];
+  bestPractices?: string[];
+  architectureDiagram?: string;
+  experience?: TechnologyExperience[];
+  tags?: string[];
+
   relatedProjects?: string[];
   relatedArticles?: string[];
   relatedCertifications?: string[];

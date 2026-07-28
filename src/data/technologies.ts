@@ -8,6 +8,22 @@ export const technologies: Technology[] = [
     name: "EVPN",
     category: "Data Center",
     description: "Modern control-plane for VXLAN fabrics using MP-BGP.",
+    overview: "Ethernet VPN (EVPN) is a BGP-based control plane that enables scalable MAC and IP address learning. It replaces legacy flood-and-learn mechanisms in VXLAN fabrics, drastically improving efficiency, minimizing broadcast traffic, and providing seamless multi-tenancy in modern data center environments.",
+    concepts: ["Route Type-2", "Route Type-3", "Route Type-5", "VTEP", "Anycast Gateway", "L2VNI", "L3VNI", "MP-BGP"],
+    bestPractices: [
+      "Use Loopback interfaces for VTEP addresses.",
+      "Keep Underlay and Overlay separated.",
+      "Enable Jumbo Frames consistently.",
+      "Use ECMP for Underlay routing.",
+      "Validate MTU before enabling VXLAN."
+    ],
+    architectureDiagram: "fabric",
+    experience: [
+      {
+        projectId: "kompas-gramedia",
+        summary: "Production deployment using Aruba CX10000 Spine-Leaf architecture with EVPN-VXLAN overlay and MP-BGP control plane."
+      }
+    ],
     relatedProjects: ["kompas-gramedia"],
     relatedArticles: [],
     relatedCertifications: ["juniper-jncis-dc"],
@@ -141,6 +157,20 @@ export const technologies: Technology[] = [
     name: "Aruba VSX",
     category: "Aruba",
     description: "Virtual Switching Extension provides high availability without shared control planes.",
+    overview: "Aruba VSX (Virtual Switching Extension) is a high-availability technology designed for the core and aggregation layers. Unlike legacy stacking, VSX maintains independent control planes on each switch while presenting a unified active-active gateway to downstream devices, ensuring zero-downtime software upgrades.",
+    concepts: ["ISL", "Keepalive", "Active Gateway", "MC-LAG", "Sync", "VSX Pair"],
+    bestPractices: [
+      "Dedicate high-bandwidth interfaces for the ISL.",
+      "Route Keepalive over a separate out-of-band management network when possible.",
+      "Enable 'vsx-sync' for critical control plane protocols to prevent drift.",
+      "Use Active Gateway for first-hop routing redundancy."
+    ],
+    experience: [
+      {
+        projectId: "gmf-aeroasia",
+        summary: "Implemented redundant Aruba VSX core pairs for seamless high availability and simplified MC-LAG connectivity to server racks."
+      }
+    ],
     relatedProjects: ["kompas-gramedia", "gmf-aeroasia"],
     relatedArticles: [],
     relatedCertifications: ["aruba-acsp"],

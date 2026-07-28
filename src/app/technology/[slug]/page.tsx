@@ -7,7 +7,17 @@ import { ProjectCard } from "@/components/cards/ProjectCard"
 import { CertificationCard } from "@/components/cards/CertificationCard"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, Cpu, FolderGit2, Award, Network, ChevronRight } from "lucide-react"
+import { 
+  ArrowLeft, Cpu, FolderGit2, Award, Network, ChevronRight, 
+  BookOpen, Lightbulb, ShieldCheck, LayoutTemplate, Briefcase
+} from "lucide-react"
+import { DataCenterFabricDiagram } from "@/components/diagrams/DataCenterFabricDiagram"
+import { SecurityFlowDiagram } from "@/components/diagrams/SecurityFlowDiagram"
+
+const diagramRegistry: Record<string, React.ComponentType> = {
+  fabric: DataCenterFabricDiagram,
+  security: SecurityFlowDiagram
+}
 
 export function generateStaticParams() {
   const technologies = getAllTechnologies()
@@ -36,10 +46,10 @@ export default function TechnologyDetailPage({ params }: { params: { slug: strin
   // Fetch relations
   const allProjects = getAllProjects()
   const relatedProjects = allProjects.filter(p => technology.relatedProjects?.includes(p.id))
-  
   const relatedCerts = certifications.filter(c => technology.relatedCertifications?.includes(c.id))
-  
   const relatedTechs = getRelatedTechnologies(technology.relatedTechnologies || [])
+
+  const ArchitectureDiagram = technology.architectureDiagram ? diagramRegistry[technology.architectureDiagram] : null
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -56,7 +66,7 @@ export default function TechnologyDetailPage({ params }: { params: { slug: strin
             </Link>
             
             <div className="flex flex-col gap-6">
-              <Badge variant="outline" className="border-accent-blue/30 text-accent-blue bg-accent-blue/5 w-fit font-medium">
+              <Badge variant="outline" className="border-accent-blue/30 text-accent-blue bg-accent-blue/5 w-fit font-medium px-4 py-1.5 text-sm">
                 {technology.category}
               </Badge>
               
@@ -72,86 +82,178 @@ export default function TechnologyDetailPage({ params }: { params: { slug: strin
         </div>
       </section>
 
-      {/* Relations Section */}
-      <section className="py-16 md:py-24 bg-background flex-1">
+      {/* Main Content Section */}
+      <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px]">
-          <div className="flex flex-col gap-20 md:gap-32">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
             
-            {/* Related Projects */}
-            {relatedProjects.length > 0 && (
-              <div className="flex flex-col gap-8">
-                <div className="flex items-center gap-4 pb-4 border-b border-surface/50">
-                  <FolderGit2 className="w-6 h-6 text-accent-orange" />
-                  <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Real-World Projects</h2>
+            {/* Left Column: Documentation */}
+            <div className="lg:col-span-8 flex flex-col gap-16 md:gap-24">
+              
+              {/* Overview */}
+              {technology.overview && (
+                <div className="flex flex-col gap-6">
+                  <div className="flex items-center gap-3">
+                    <BookOpen className="w-6 h-6 text-accent-blue" />
+                    <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Overview</h2>
+                  </div>
+                  <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
+                    <p>{technology.overview}</p>
+                  </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                  {relatedProjects.map(project => (
-                    <ProjectCard key={project.id} project={project} />
-                  ))}
-                </div>
-              </div>
-            )}
+              )}
 
-            {/* Related Certifications */}
-            {relatedCerts.length > 0 && (
-              <div className="flex flex-col gap-8">
-                <div className="flex items-center gap-4 pb-4 border-b border-surface/50">
-                  <Award className="w-6 h-6 text-accent-emerald" />
-                  <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Professional Certifications</h2>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                  {relatedCerts.map(cert => (
-                    <div key={cert.id} className="max-w-2xl w-full">
-                      <CertificationCard certification={cert} />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Related Technologies */}
-            {relatedTechs.length > 0 && (
-              <div className="flex flex-col gap-8">
-                <div className="flex items-center gap-4 pb-4 border-b border-surface/50">
-                  <Network className="w-6 h-6 text-accent-purple" />
-                  <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Connected Technologies</h2>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                  {relatedTechs.map(tech => (
-                    <Link key={tech.id} href={`/technology/${tech.slug || tech.id}`} className="group outline-none">
-                      <div className="p-4 rounded-xl bg-surface/30 border border-surface flex items-center justify-between group-hover:bg-surface/60 group-hover:border-surface-light transition-all">
-                        <div className="flex flex-col gap-1">
-                          <span className="text-sm font-bold text-primary group-hover:text-accent-blue transition-colors">{tech.name}</span>
-                          <span className="text-xs text-muted font-medium">{tech.category}</span>
-                        </div>
-                        <ChevronRight className="w-4 h-4 text-muted group-hover:text-accent-blue transform group-hover:translate-x-1 transition-all" />
+              {/* Core Concepts */}
+              {technology.concepts && technology.concepts.length > 0 && (
+                <div className="flex flex-col gap-6">
+                  <div className="flex items-center gap-3">
+                    <Lightbulb className="w-6 h-6 text-accent-orange" />
+                    <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Core Concepts</h2>
+                  </div>
+                  <div className="flex flex-wrap gap-3">
+                    {technology.concepts.map(concept => (
+                      <div key={concept} className="px-4 py-2 rounded-lg bg-surface/30 border border-surface text-primary font-medium hover:border-accent-orange/50 hover:bg-accent-orange/5 transition-colors cursor-default">
+                        {concept}
                       </div>
-                    </Link>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
 
-            {/* Empty State Fallback */}
-            {relatedProjects.length === 0 && relatedCerts.length === 0 && relatedTechs.length === 0 && (
-              <div className="flex flex-col items-center justify-center py-20 px-4 text-center rounded-2xl bg-surface/10 border border-surface border-dashed">
-                <Cpu className="w-12 h-12 text-muted-foreground/30 mb-6" />
-                <h3 className="text-xl font-bold text-primary mb-2">Knowledge Graph Expanding</h3>
-                <p className="text-muted max-w-md">
-                  Additional projects, certifications, and technical articles relating to this technology will be dynamically linked as they are published.
-                </p>
-                <Button variant="secondary" className="mt-8 border-surface-light text-muted hover:text-primary" asChild>
-                  <Link href="/technology">
-                    <ArrowLeft className="w-4 h-4 mr-2" />
-                    Return to Library
-                  </Link>
-                </Button>
+              {/* Architecture */}
+              <div className="flex flex-col gap-6">
+                <div className="flex items-center gap-3">
+                  <LayoutTemplate className="w-6 h-6 text-accent-emerald" />
+                  <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Architecture</h2>
+                </div>
+                {ArchitectureDiagram ? (
+                  <div className="p-1 rounded-2xl bg-surface/20 border border-surface shadow-2xl">
+                    <ArchitectureDiagram />
+                  </div>
+                ) : (
+                  <div className="flex flex-col items-center justify-center p-12 md:p-24 rounded-2xl bg-surface/10 border border-surface border-dashed">
+                    <LayoutTemplate className="w-12 h-12 text-muted-foreground/30 mb-4" />
+                    <span className="text-muted font-medium">Architecture diagram coming soon.</span>
+                  </div>
+                )}
               </div>
-            )}
 
+              {/* Best Practices */}
+              {technology.bestPractices && technology.bestPractices.length > 0 && (
+                <div className="flex flex-col gap-6">
+                  <div className="flex items-center gap-3">
+                    <ShieldCheck className="w-6 h-6 text-accent-purple" />
+                    <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Best Practices</h2>
+                  </div>
+                  <ul className="flex flex-col gap-4">
+                    {technology.bestPractices.map((practice, index) => (
+                      <li key={index} className="flex items-start gap-4 p-4 md:p-6 rounded-xl bg-surface/30 border border-surface">
+                        <div className="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-accent-purple" />
+                        <span className="text-muted leading-relaxed font-medium">{practice}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Real Project Experience */}
+              {technology.experience && technology.experience.length > 0 && (
+                <div className="flex flex-col gap-6">
+                  <div className="flex items-center gap-3">
+                    <Briefcase className="w-6 h-6 text-accent-blue" />
+                    <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Real Project Experience</h2>
+                  </div>
+                  <div className="flex flex-col gap-6">
+                    {technology.experience.map((exp, index) => {
+                      const project = allProjects.find(p => p.id === exp.projectId);
+                      return (
+                        <div key={index} className="flex flex-col gap-4 p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface shadow-lg relative overflow-hidden group">
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-accent-blue/5 rounded-full blur-[40px] -mr-10 -mt-10 pointer-events-none transition-opacity duration-500 opacity-0 group-hover:opacity-100" />
+                          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-surface/50 pb-4">
+                            <span className="text-sm font-medium text-muted uppercase tracking-wider">Implementation Summary</span>
+                            {project && (
+                              <Link href={`/projects/${project.slug}`} className="inline-flex items-center gap-2 text-sm font-bold text-accent-blue hover:text-accent-blue/80 transition-colors">
+                                {project.title}
+                                <ChevronRight className="w-4 h-4" />
+                              </Link>
+                            )}
+                          </div>
+                          <p className="text-lg text-primary/90 leading-relaxed">
+                            {exp.summary}
+                          </p>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </div>
+              )}
+
+            </div>
+
+            {/* Right Column: Relationships */}
+            <div className="lg:col-span-4 flex flex-col gap-12 lg:sticky lg:top-24 h-fit">
+              
+              {/* Related Technologies */}
+              {relatedTechs.length > 0 && (
+                <div className="flex flex-col gap-4 p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface shadow-lg">
+                  <div className="flex items-center gap-3 pb-4 border-b border-surface/50">
+                    <Network className="w-5 h-5 text-accent-purple" />
+                    <h3 className="text-lg font-bold text-primary font-mono">Connected Technologies</h3>
+                  </div>
+                  <div className="flex flex-col gap-3">
+                    {relatedTechs.map(tech => (
+                      <Link key={tech.id} href={`/technology/${tech.slug || tech.id}`} className="group outline-none">
+                        <div className="px-4 py-3 rounded-xl bg-surface/50 border border-surface flex items-center justify-between group-hover:bg-surface-light group-hover:border-surface-light transition-all">
+                          <span className="text-sm font-bold text-primary group-hover:text-accent-blue transition-colors">{tech.name}</span>
+                          <ChevronRight className="w-4 h-4 text-muted group-hover:text-accent-blue transform group-hover:translate-x-1 transition-all" />
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Related Certifications */}
+              {relatedCerts.length > 0 && (
+                <div className="flex flex-col gap-4 p-6 md:p-8 rounded-2xl bg-surface/30 border border-surface shadow-lg">
+                  <div className="flex items-center gap-3 pb-4 border-b border-surface/50">
+                    <Award className="w-5 h-5 text-accent-emerald" />
+                    <h3 className="text-lg font-bold text-primary font-mono">Certifications</h3>
+                  </div>
+                  <div className="flex flex-col gap-4">
+                    {relatedCerts.map(cert => (
+                      <div key={cert.id} className="w-full">
+                        <CertificationCard certification={cert} className="p-4 sm:p-5" />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+            </div>
           </div>
         </div>
       </section>
+
+      {/* Full Width Related Projects */}
+      {relatedProjects.length > 0 && (
+        <section className="py-16 md:py-24 bg-surface/10 border-t border-surface">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px]">
+            <div className="flex flex-col gap-12">
+              <div className="flex items-center gap-4 border-b border-surface/50 pb-4">
+                <FolderGit2 className="w-8 h-8 text-accent-orange" />
+                <h2 className="text-3xl md:text-4xl font-bold text-primary tracking-tight">Referenced In Projects</h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                {relatedProjects.map((p) => (
+                  <ProjectCard key={p.id} project={p} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
     </div>
   )
 }
