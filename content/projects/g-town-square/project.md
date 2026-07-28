@@ -2,35 +2,67 @@
 id: g-town-square
 title: G-Town Square Serpong
 duration: Apr 2023 - Sep 2023
-category: Campus Network
-responsibilities:
-  - Network Infrastructure Design
-  - Fiber Backbone
-  - Ruckus Wireless
-  - Implementation
+category: Enterprise Network
 technologies:
   - MikroTik
+  - RouterOS
   - Queue Tree
   - Bandwidth Management
-  - Ruckus
+  - Firewall
+  - NAT
+  - DHCP
+  - VLAN
   - Alcatel
+  - Ruckus
   - Enterprise LAN
+  - Wireless LAN
 status: Completed
 featured: true
 futureCaseStudy: false
-summary: >-
-  Designed and led the implementation of enterprise network infrastructure and
-  backbone systems.
+summary: Designed and implemented a complete enterprise network infrastructure from the ground up for G-Town Square Serpong, delivering reliable wired and wireless connectivity using MikroTik as the enterprise gateway, Alcatel switching infrastructure, and Ruckus wireless solutions.
 ---
 
 ### Overview
-Architected a comprehensive campus network infrastructure, integrating high-speed backbone connectivity with extensive wireless coverage.
+Designed and implemented a complete enterprise network infrastructure from the ground up for G-Town Square Serpong, delivering reliable wired and wireless connectivity using MikroTik as the enterprise gateway, Alcatel switching infrastructure, and Ruckus wireless solutions.
 
 ### Responsibilities
-- Designed the core network infrastructure to support high-density campus environments.
-- Deployed a resilient fiber optic backbone for high-bandwidth internal communication.
-- Implemented Ruckus wireless solutions to deliver seamless, pervasive Wi-Fi coverage across the premises.
-- Configured foundational routing and switching hardware to ensure stable data delivery.
+- Designed the complete enterprise network architecture from planning through production deployment.
+- Implemented MikroTik RouterOS as the primary Internet Gateway, providing routing, NAT, firewall security policies, DHCP services, and enterprise gateway functionality.
+- Configured Queue Tree bandwidth management to optimize Internet utilization and ensure fair bandwidth allocation.
+- Designed VLAN segmentation and Layer 2 switching for enterprise network separation.
+- Implemented Alcatel enterprise switches and integrated them with the MikroTik gateway infrastructure.
+- Deployed and configured Ruckus wireless access points to provide seamless Wi-Fi coverage across the facility.
+- Integrated wired and wireless infrastructure into a unified enterprise network architecture.
+- Performed end-to-end testing, commissioning, validation, and production handover.
 
-### Technologies
-Ruckus, Fiber Backbone, Routing, Switching
+### Implementation Highlights
+- Greenfield enterprise network deployment
+- MikroTik Internet Gateway
+- Queue Tree bandwidth optimization
+- Enterprise VLAN segmentation
+- Alcatel switching infrastructure
+- Ruckus Wireless deployment
+- Enterprise LAN backbone
+- Production commissioning
+
+### Infrastructure Environment
+
+#### Network Hardware
+- MikroTik Router
+- Alcatel Enterprise Switches
+- Ruckus Access Points
+
+#### Core Services
+- Internet Gateway
+- NAT
+- Firewall
+- DHCP
+- VLAN
+- Queue Tree
+- Wireless LAN
+
+#### Deployment Type
+Enterprise Network
+
+#### Production Environment
+Production Environment
