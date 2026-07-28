@@ -4,14 +4,14 @@ export const statistics: Statistic[] = [
   {
     id: "years-experience",
     label: "Years of Professional Experience",
-    value: 8,
+    value: 4,
     suffix: "+",
     icon: "clock",
   },
   {
     id: "enterprise-projects",
     label: "Enterprise Projects",
-    value: 12,
+    value: 8,
     suffix: "+",
     icon: "briefcase",
   },
@@ -25,7 +25,7 @@ export const statistics: Statistic[] = [
   {
     id: "network-devices",
     label: "Enterprise Network Devices",
-    value: 500,
+    value: 150,
     suffix: "+",
     icon: "network",
   },
@@ -37,8 +37,8 @@ export const statistics: Statistic[] = [
   },
   {
     id: "technologies",
-    label: "Technologies Mastered",
-    value: 15,
+    label: "Core Technologies",
+    value: 12,
     suffix: "+",
     icon: "cpu",
   }
