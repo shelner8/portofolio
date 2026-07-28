@@ -6,7 +6,7 @@ export const experience: Experience[] = [
     company: "Mitra Solusi Infokom",
     position: "Network Engineer",
     employmentType: "Full-time",
-    location: "Soekarno-Hatta International Airport (Client: Angkasa Pura Solusi Integra)",
+    location: "",
     startDate: "Sep 2023",
     current: true,
     summary: "Responsible for designing, implementing, operating and maintaining enterprise networking and modern data center infrastructure.",
