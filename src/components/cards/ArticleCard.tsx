@@ -2,9 +2,9 @@ import * as React from "react"
 import { BaseCard } from "./BaseCard"
 import { Article } from "@/types"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { Clock } from "lucide-react"
-import Image from "next/image"
+import { Clock, ArrowRight, BookOpen } from "lucide-react"
 
 interface ArticleCardProps extends React.HTMLAttributes<HTMLDivElement> {
   article: Article
@@ -12,34 +12,51 @@ interface ArticleCardProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export function ArticleCard({ article, className, ...props }: ArticleCardProps) {
   return (
-    <BaseCard className={cn("flex flex-col h-full group", className)} hoverable {...props}>
-      <div className="relative w-full h-48 overflow-hidden bg-surface">
-        {/* Placeholder for Next Image since we don't have actual assets */}
-        <div className="absolute inset-0 bg-surface flex items-center justify-center text-muted group-hover:scale-105 transition-transform duration-500">
-          <span className="text-xs">[Image: {article.coverImage}]</span>
-        </div>
-      </div>
+    <BaseCard className={cn("flex flex-col h-full group relative overflow-hidden", className)} hoverable {...props}>
+      {/* Subtle hover glow */}
+      <div className="absolute top-0 right-0 w-32 h-32 bg-accent-orange/5 rounded-full blur-[40px] -mr-10 -mt-10 pointer-events-none transition-opacity duration-500 opacity-0 group-hover:opacity-100" />
       
-      <div className="p-6 flex flex-col flex-1 gap-4">
-        <div className="flex items-center justify-between text-xs text-muted mb-2">
-          <Badge variant="default">{article.category}</Badge>
-          <div className="flex items-center gap-1">
-            <Clock className="w-3 h-3" />
-            {article.readingTime}
+      <div className="p-8 md:p-10 flex flex-col flex-1 gap-6">
+        <div className="flex flex-col gap-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-accent-orange bg-accent-orange/10 px-3 py-1.5 rounded-md">
+              <BookOpen className="w-3.5 h-3.5" />
+              {article.category}
+            </div>
           </div>
+          
+          <h3 className="text-xl md:text-2xl font-bold text-primary group-hover:text-accent-blue transition-colors duration-300 leading-tight">
+            {article.title}
+          </h3>
         </div>
         
-        <h3 className="text-xl font-bold text-primary group-hover:text-accent-orange transition-colors">
-          {article.title}
-        </h3>
-        
-        <p className="text-sm text-muted line-clamp-2 mt-auto">
+        <p className="text-muted text-base md:text-lg leading-relaxed line-clamp-4">
           {article.summary}
         </p>
-        
-        <div className="flex items-center text-xs text-muted mt-auto pt-4 border-t border-surface/50">
-          <span>{article.date}</span>
+
+        {article.tags && article.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-surface/60">
+            {article.tags.map(tech => (
+              <Badge key={tech} variant="outline" className="bg-surface/50 border-surface-light text-muted hover:text-primary hover:border-primary/50 transition-all text-xs py-1 px-2.5">
+                {tech}
+              </Badge>
+            ))}
+          </div>
+        )}
+      </div>
+      
+      <div className="p-8 md:p-10 pt-0 mt-auto flex items-center justify-between">
+        <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-medium">
+          <Clock className="w-3.5 h-3.5" />
+          {article.readingTime || "5 min read"}
         </div>
+        
+        <Button variant="ghost" className="gap-2 group/btn hover:text-accent-orange hover:bg-transparent px-0 transition-colors" asChild>
+          <a href={article.url}>
+            Read More 
+            <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+          </a>
+        </Button>
       </div>
     </BaseCard>
   )

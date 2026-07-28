@@ -2,27 +2,30 @@ import { Article } from "@/types";
 
 export const articles: Article[] = [
   {
-    id: "aruba-cx-vsx-best-practices",
-    title: "Aruba AOS-CX VSX Best Practices for the Data Center",
-    summary: "A deep dive into deploying Virtual Switching Extension (VSX) in enterprise data centers for maximum availability, including split-recovery configurations and active-gateway tuning.",
-    url: "https://medium.com/",
-    date: "2023-11-10",
-    platform: "Medium"
+    id: "evpn-route-type-2",
+    title: "Understanding EVPN Route Type-2",
+    category: "EVPN",
+    summary: "A practical explanation of EVPN Route Type-2, MAC/IP advertisement and host learning within modern VXLAN fabrics.",
+    tags: ["EVPN", "VXLAN", "MP-BGP", "Aruba"],
+    url: "#",
+    date: ""
   },
   {
-    id: "automating-bgp-ansible",
-    title: "Automating BGP Peering with Python and Ansible",
-    summary: "Step-by-step tutorial on building a declarative Infrastructure as Code pipeline to automatically provision and validate BGP neighbors across a multi-vendor core network.",
-    url: "https://dev.to/",
-    date: "2024-01-22",
-    platform: "Dev.to"
+    id: "aruba-vsx-ha",
+    title: "Designing High Availability with Aruba VSX",
+    category: "Aruba",
+    summary: "Best practices for deploying Aruba VSX to achieve enterprise-grade redundancy and operational simplicity.",
+    tags: ["VSX", "Aruba", "High Availability"],
+    url: "#",
+    date: ""
   },
   {
-    id: "evpn-vxlan-practical",
-    title: "Implementing EVPN-VXLAN: A Practical Guide",
-    summary: "Cutting through the academic theory to provide a pragmatic, production-ready approach to designing and deploying EVPN-VXLAN overlay fabrics in mid-sized data centers.",
-    url: "https://hashnode.com/",
-    date: "2024-04-05",
-    platform: "Hashnode"
+    id: "deploying-aruba-fabric-composer",
+    title: "Deploying Aruba Fabric Composer",
+    category: "Automation",
+    summary: "An overview of Aruba Fabric Composer for automating lifecycle management in Spine-Leaf data center fabrics.",
+    tags: ["AFC", "Automation", "Data Center"],
+    url: "#",
+    date: ""
   }
 ];
