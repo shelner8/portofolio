@@ -9,7 +9,6 @@ export const footer = {
     { name: "Experience", href: "#experience" },
     { name: "Certifications", href: "#certifications" },
     { name: "Articles", href: "/articles" },
-    { name: "About", href: "#about" },
     { name: "Resume", href: "/resume.pdf" },
     { name: "Contact", href: "#contact" },
   ],
