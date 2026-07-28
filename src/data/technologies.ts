@@ -534,7 +534,7 @@ export const technologies: Technology[] = [
   {
     id: "agent-dvr",
     slug: "agent-dvr",
-    name: "Agent DVR",
+    name: "Agent DVR CCTV",
     category: "Platforms",
     description: "Advanced video surveillance and CCTV recording platform.",
     icon: "server"

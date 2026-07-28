@@ -34,7 +34,7 @@ const resolveTechLink = (techName: string, technologies: Technology[]) => {
 export function SelfHostedInfrastructureSection({ technologies }: SelfHostedInfrastructureSectionProps) {
   const panels = [
     {
-      title: "Hypervisor",
+      title: "Compute Platform",
       icon: <Server className="w-5 h-5 text-accent-purple" />,
       techs: ["Proxmox VE", "VMware ESXi", "Ubuntu Server"]
     },
@@ -44,14 +44,14 @@ export function SelfHostedInfrastructureSection({ technologies }: SelfHostedInfr
       techs: ["MikroTik"]
     },
     {
-      title: "Network Simulation",
+      title: "Network Emulation",
       icon: <Network className="w-5 h-5 text-accent-blue" />,
       techs: ["EVE-NG", "PNETLab"]
     },
     {
       title: "Container Platform",
       icon: <Box className="w-5 h-5 text-accent-orange" />,
-      techs: ["Docker", "Docker Compose", "Portainer"]
+      techs: ["Docker", "Portainer"]
     },
     {
       title: "AI Platform",
@@ -61,12 +61,12 @@ export function SelfHostedInfrastructureSection({ technologies }: SelfHostedInfr
     {
       title: "Infrastructure Services",
       icon: <LayoutGrid className="w-5 h-5 text-accent-blue" />,
-      techs: ["AdGuard Home", "Nginx Reverse Proxy", "Agent DVR"]
+      techs: ["AdGuard Home", "Nginx Reverse Proxy", "Agent DVR CCTV"]
     },
     {
       title: "Monitoring",
       icon: <Activity className="w-5 h-5 text-accent-purple" />,
-      techs: ["Zabbix", "Beszel", "SNMP"]
+      techs: ["Zabbix", "Beszel"]
     },
     {
       title: "Secure Connectivity",
@@ -93,7 +93,7 @@ export function SelfHostedInfrastructureSection({ technologies }: SelfHostedInfr
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary tracking-tight">Self-Hosted Enterprise Infrastructure</h2>
             <p className="text-muted text-lg max-w-3xl mx-auto leading-relaxed">
-              Production-grade home infrastructure used to validate enterprise networking, virtualization, self-hosted services, AI workloads, secure connectivity, and monitoring.
+              Self-hosted infrastructure powering my home network, automation, AI, monitoring, and continuous experimentation.
             </p>
           </motion.div>
 
