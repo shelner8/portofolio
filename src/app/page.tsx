@@ -13,6 +13,7 @@ const ResumeSection = dynamic(() => import("@/sections/ResumeSection").then(mod 
 const ContactSection = dynamic(() => import("@/sections/ContactSection").then(mod => ({ default: mod.ContactSection })))
 const CoreExpertiseSection = dynamic(() => import("@/sections/CoreExpertiseSection").then(mod => ({ default: mod.CoreExpertiseSection })))
 const SelfHostedInfrastructureSection = dynamic(() => import("@/sections/SelfHostedInfrastructureSection").then(mod => ({ default: mod.SelfHostedInfrastructureSection })))
+const StatementSection = dynamic(() => import("@/sections/StatementSection").then(mod => ({ default: mod.StatementSection })))
 import { hero } from "@/data/hero"
 import { about } from "@/data/about"
 import { skills } from "@/data/skills"
@@ -31,6 +32,7 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-0 pb-16">
       <HeroSection hero={hero} />
+      <StatementSection />
       <CoreExpertiseSection technologies={featuredTechnologies} />
       <SelfHostedInfrastructureSection technologies={getAllTechnologies()} />
       <AboutSection about={about} />

@@ -39,6 +39,20 @@ export function AboutSection({ about }: AboutSectionProps) {
               "{about.philosophy}"
             </p>
           </motion.div>
+
+          <motion.div variants={animations.fadeUp} className="mt-2">
+            <h3 className="text-xl md:text-2xl font-bold text-primary mb-6 flex items-center gap-4">
+              <span className="h-[2px] w-8 bg-surface border-b border-surface-light hidden md:block"></span>
+              Specializations
+            </h3>
+            <div className="flex flex-wrap gap-3">
+              {["Enterprise Data Center", "Aruba Networking", "MikroTik", "EVPN-VXLAN", "Self-Hosted Infrastructure", "Network Automation"].map((spec, i) => (
+                <span key={i} className="px-4 py-2 rounded-lg bg-surface/40 border border-surface text-sm font-medium text-primary shadow-sm hover:border-accent-orange/30 hover:bg-surface/60 transition-colors">
+                  {spec}
+                </span>
+              ))}
+            </div>
+          </motion.div>
         </motion.div>
 
         <motion.div

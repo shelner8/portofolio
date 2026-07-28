@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import { Container } from "@/components/shared/Container"
 import { animations } from "@/components/animations/presets"
 import { Technology } from "@/types"
-import { ChevronRight, Cpu } from "lucide-react"
+import { Cpu, Check } from "lucide-react"
 
 interface CoreExpertiseSectionProps {
   technologies: Technology[]
@@ -15,6 +15,37 @@ interface CoreExpertiseSectionProps {
 export function CoreExpertiseSection({ technologies }: CoreExpertiseSectionProps) {
 
   if (technologies.length === 0) return null
+
+  const capabilities = [
+    "Enterprise Networking",
+    "Data Center Fabric",
+    "Self-Hosted Infrastructure",
+    "Network Automation",
+    "Virtualization",
+    "Monitoring",
+    "AI Integration"
+  ]
+
+  const resolveCapability = (cap: string) => {
+    const match = technologies.find(t => t.name.toLowerCase() === cap.toLowerCase())
+    if (match) {
+      return (
+        <Link href={`/technology/${match.slug || match.id}`} className="group outline-none block">
+          <div className="flex items-center gap-2.5 px-6 py-3 rounded-full bg-surface/30 border border-surface text-primary font-medium hover:border-accent-orange/50 hover:bg-accent-orange/10 hover:text-accent-orange hover:shadow-[0_0_20px_rgba(249,115,22,0.15)] transition-all duration-300 transform hover:-translate-y-0.5">
+            <Check className="w-4 h-4 text-accent-orange flex-shrink-0 opacity-80 group-hover:opacity-100" />
+            <span className="text-sm md:text-base tracking-wide">{cap}</span>
+          </div>
+        </Link>
+      )
+    }
+
+    return (
+      <div className="flex items-center gap-2.5 px-6 py-3 rounded-full bg-surface/30 border border-surface text-primary font-medium hover:border-accent-orange/30 hover:bg-surface/50 transition-all duration-300">
+        <Check className="w-4 h-4 text-accent-orange flex-shrink-0 opacity-80" />
+        <span className="text-sm md:text-base tracking-wide">{cap}</span>
+      </div>
+    )
+  }
 
   return (
     <section id="expertise" className="py-12 md:py-16 relative overflow-hidden bg-background">
@@ -45,14 +76,9 @@ export function CoreExpertiseSection({ technologies }: CoreExpertiseSectionProps
             viewport={{ once: true, margin: "-50px" }}
             className="flex flex-wrap justify-center gap-3 md:gap-4 max-w-5xl mx-auto"
           >
-            {technologies.map(tech => (
-              <motion.div key={tech.id} variants={animations.scaleUp}>
-                <Link href={`/technology/${tech.slug || tech.id}`} className="group outline-none block">
-                  <div className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-surface/30 border border-surface text-primary font-medium hover:border-accent-orange/50 hover:bg-accent-orange/10 hover:text-accent-orange hover:shadow-[0_0_20px_rgba(249,115,22,0.15)] transition-all duration-300 transform hover:-translate-y-0.5">
-                    <span className="text-sm md:text-base">{tech.name}</span>
-                    <ChevronRight className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
-                  </div>
-                </Link>
+            {capabilities.map((cap, i) => (
+              <motion.div key={cap} variants={animations.scaleUp} custom={i}>
+                {resolveCapability(cap)}
               </motion.div>
             ))}
           </motion.div>
