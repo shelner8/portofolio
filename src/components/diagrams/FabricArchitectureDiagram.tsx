@@ -78,13 +78,13 @@ const BorderSpineMesh = () => (
       preserveAspectRatio="none"
       viewBox="0 0 100 100"
     >
-      {/* Border A (37.5) to Spines */}
-      <CVDFabricLine startX={37.5} endX={37.5} color="#f97316" />
-      <CVDFabricLine startX={37.5} endX={62.5} color="#f97316" />
+      {/* Border A (25) to Spines */}
+      <CVDFabricLine startX={25} endX={25} color="#f97316" />
+      <CVDFabricLine startX={25} endX={75} color="#f97316" />
       
-      {/* Border B (62.5) to Spines */}
-      <CVDFabricLine startX={62.5} endX={37.5} color="#f97316" />
-      <CVDFabricLine startX={62.5} endX={62.5} color="#f97316" />
+      {/* Border B (75) to Spines */}
+      <CVDFabricLine startX={75} endX={25} color="#f97316" />
+      <CVDFabricLine startX={75} endX={75} color="#f97316" />
     </svg>
     
     {/* Logical Fabric Overlay */}
@@ -102,17 +102,17 @@ const SpineLeafMesh = () => (
       preserveAspectRatio="none"
       viewBox="0 0 100 100"
     >
-      {/* Spine 1 (37.5) Links */}
-      <CVDFabricLine startX={37.5} endX={12.5} />
-      <CVDFabricLine startX={37.5} endX={37.5} />
-      <CVDFabricLine startX={37.5} endX={62.5} />
-      <CVDFabricLine startX={37.5} endX={87.5} />
+      {/* Spine 1 (25) Links */}
+      <CVDFabricLine startX={25} endX={12.5} />
+      <CVDFabricLine startX={25} endX={37.5} />
+      <CVDFabricLine startX={25} endX={62.5} />
+      <CVDFabricLine startX={25} endX={87.5} />
       
-      {/* Spine 2 (62.5) Links */}
-      <CVDFabricLine startX={62.5} endX={12.5} />
-      <CVDFabricLine startX={62.5} endX={37.5} />
-      <CVDFabricLine startX={62.5} endX={62.5} />
-      <CVDFabricLine startX={62.5} endX={87.5} />
+      {/* Spine 2 (75) Links */}
+      <CVDFabricLine startX={75} endX={12.5} />
+      <CVDFabricLine startX={75} endX={37.5} />
+      <CVDFabricLine startX={75} endX={62.5} />
+      <CVDFabricLine startX={75} endX={87.5} />
     </svg>
   </div>
 )
@@ -150,11 +150,9 @@ export function FabricArchitectureDiagram() {
         
         {/* Core Layer */}
         <div className="relative w-full max-w-4xl mt-2">
-           <div className="grid grid-cols-4 gap-4 md:gap-6 justify-items-center relative z-10">
-              <div />
+           <div className="grid grid-cols-2 gap-4 md:gap-6 justify-items-center relative z-10">
               <Node title="Core-A" subtitle="Aruba CX8325" />
               <Node title="Core-B" subtitle="Aruba CX8325" />
-              <div />
            </div>
            <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
               <VSXLink labelOffset="-top-6 md:-top-8" />
@@ -163,21 +161,17 @@ export function FabricArchitectureDiagram() {
 
         {/* Core -> Border Connectors */}
         <div className="relative w-full max-w-4xl mt-2">
-           <div className="grid grid-cols-4 gap-4 md:gap-6 justify-items-center">
-              <div />
+           <div className="grid grid-cols-2 gap-4 md:gap-6 justify-items-center">
               <StraightLink color="#f97316" label="eBGP" />
               <StraightLink color="#f97316" label="eBGP" />
-              <div />
            </div>
         </div>
         
         {/* Border Layer */}
         <div className="relative w-full max-w-4xl mt-2">
-           <div className="grid grid-cols-4 gap-4 md:gap-6 justify-items-center relative z-10">
-              <div />
+           <div className="grid grid-cols-2 gap-4 md:gap-6 justify-items-center relative z-10">
               <Node title="Border-A" subtitle="Aruba CX8360-48XT4C" />
               <Node title="Border-B" subtitle="Aruba CX8360-48XT4C" />
-              <div />
            </div>
            <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
               <VSXLink labelOffset="-top-6 md:-top-8" />
@@ -188,11 +182,9 @@ export function FabricArchitectureDiagram() {
         <BorderSpineMesh />
         
         {/* Spines */}
-        <div className="grid grid-cols-4 gap-4 md:gap-6 items-center w-full max-w-4xl justify-items-center relative z-10">
-           <div />
+        <div className="grid grid-cols-2 gap-4 md:gap-6 items-center w-full max-w-4xl justify-items-center relative z-10">
            <Node title="Spine-01" subtitle="Aruba CX8360-12C" glow />
            <Node title="Spine-02" subtitle="Aruba CX8360-12C" glow />
-           <div />
         </div>
         
         <SpineLeafMesh />
