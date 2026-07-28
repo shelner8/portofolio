@@ -104,14 +104,21 @@ export default function ProjectCaseStudy({ params }: { params: { slug: string } 
                 [&>p]:text-muted [&>p]:leading-relaxed [&>p]:mb-6
                 [&>ul]:text-muted [&>ul]:list-disc [&>ul]:pl-6 [&>ul>li]:mb-3 [&>ul>li]:pl-2
                 [&>ul>li::marker]:text-accent-orange/50">
-                <ReactMarkdown>{project.content || ""}</ReactMarkdown>
-                
-                {project.slug === 'kompas-gramedia' && (
-                  <div className="flex flex-col mt-4">
-                    <FabricArchitectureDiagram />
-                    <SecurityFlowDiagram />
-                  </div>
-                )}
+                <ReactMarkdown
+                  components={{
+                    code({ node, inline, className, children, ...props }: any) {
+                      const match = /language-(\w+)/.exec(className || "")
+                      if (!inline && match && match[1] === "diagram") {
+                        const type = String(children).replace(/\n$/, "").trim()
+                        if (type === "fabric") return <FabricArchitectureDiagram />
+                        if (type === "security") return <SecurityFlowDiagram />
+                      }
+                      return <code className={className} {...props}>{children}</code>
+                    }
+                  }}
+                >
+                  {project.content || ""}
+                </ReactMarkdown>
               </div>
             </div>
             

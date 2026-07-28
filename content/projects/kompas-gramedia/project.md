@@ -62,6 +62,10 @@ TODO
 ### Network Architecture Summary
 The data center network utilizes a high-performance Spine and Leaf topology featuring Core VSX and Border Leaf VSX clusters. The architecture integrates an EVPN-VXLAN overlay with Multi-VRF segmentation to enable scalable Layer-2 and Layer-3 routing, orchestrated via Aruba Fabric Composer (AFC).
 
+```diagram
+fabric
+```
+
 ### Security Architecture
 
 #### East-West Traffic
@@ -71,6 +75,10 @@ The data center network utilizes a high-performance Spine and Leaf topology feat
 #### North-South Traffic
 - External connectivity and entry/exit traffic passes through the Border Leaf switches.
 - Cisco Firepower operates in Transparent Mode, providing essential security inspection while preserving existing network addressing and routing architectures.
+
+```diagram
+security
+```
 
 ### Project Scope
 - Data Center Fabric Deployment
