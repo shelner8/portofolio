@@ -5,7 +5,7 @@ import Link from "next/link"
 import ReactMarkdown from "react-markdown"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, ArrowRight, Calendar, Building2, LayoutTemplate } from "lucide-react"
+import { ArrowLeft, ArrowRight, Calendar, Building2, LayoutTemplate, User, Clock, Server, Network, ShieldCheck, CheckCircle2 } from "lucide-react"
 import { ProjectCard } from "@/components/cards/ProjectCard"
 import { DataCenterFabricDiagram } from "@/components/diagrams/DataCenterFabricDiagram"
 import { SecurityFlowDiagram } from "@/components/diagrams/SecurityFlowDiagram"
@@ -147,6 +147,76 @@ export default function ProjectCaseStudy({ params }: { params: { slug: string } 
                   </div>
                 )}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Project Summary Section */}
+      <section className="py-12 bg-surface/5 border-b border-surface">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px]">
+          <div className="flex flex-col gap-8">
+            <h2 className="text-2xl font-bold text-primary font-mono flex items-center gap-3">
+              <span className="w-2 h-6 bg-accent-orange rounded-full"></span>
+              Project Summary
+            </h2>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-6">
+              
+              {/* Card 1: Role */}
+              <div className="flex flex-col gap-3 p-5 rounded-2xl bg-surface/30 border border-surface hover:border-accent-orange/50 hover:bg-surface/50 transition-all group">
+                <div className="flex items-center gap-3 text-muted group-hover:text-accent-orange transition-colors">
+                  <User className="w-5 h-5" />
+                  <span className="text-xs font-bold uppercase tracking-wider">Role</span>
+                </div>
+                <span className="text-primary font-medium">{project.role || "Network Engineer"}</span>
+              </div>
+
+              {/* Card 2: Duration */}
+              <div className="flex flex-col gap-3 p-5 rounded-2xl bg-surface/30 border border-surface hover:border-accent-orange/50 hover:bg-surface/50 transition-all group">
+                <div className="flex items-center gap-3 text-muted group-hover:text-accent-orange transition-colors">
+                  <Clock className="w-5 h-5" />
+                  <span className="text-xs font-bold uppercase tracking-wider">Duration</span>
+                </div>
+                <span className="text-primary font-medium">{project.duration || "N/A"}</span>
+              </div>
+
+              {/* Card 3: Environment */}
+              <div className="flex flex-col gap-3 p-5 rounded-2xl bg-surface/30 border border-surface hover:border-accent-orange/50 hover:bg-surface/50 transition-all group">
+                <div className="flex items-center gap-3 text-muted group-hover:text-accent-orange transition-colors">
+                  <Server className="w-5 h-5" />
+                  <span className="text-xs font-bold uppercase tracking-wider">Environment</span>
+                </div>
+                <span className="text-primary font-medium">{project.environment || "Enterprise"}</span>
+              </div>
+
+              {/* Card 4: Architecture */}
+              <div className="flex flex-col gap-3 p-5 rounded-2xl bg-surface/30 border border-surface hover:border-accent-orange/50 hover:bg-surface/50 transition-all group">
+                <div className="flex items-center gap-3 text-muted group-hover:text-accent-orange transition-colors">
+                  <Network className="w-5 h-5" />
+                  <span className="text-xs font-bold uppercase tracking-wider">Architecture</span>
+                </div>
+                <span className="text-primary font-medium">{project.architecture || "N/A"}</span>
+              </div>
+
+              {/* Card 5: High Availability */}
+              <div className="flex flex-col gap-3 p-5 rounded-2xl bg-surface/30 border border-surface hover:border-accent-orange/50 hover:bg-surface/50 transition-all group">
+                <div className="flex items-center gap-3 text-muted group-hover:text-accent-orange transition-colors">
+                  <ShieldCheck className="w-5 h-5" />
+                  <span className="text-xs font-bold uppercase tracking-wider">Availability</span>
+                </div>
+                <span className="text-primary font-medium">{project.availability || "N/A"}</span>
+              </div>
+
+              {/* Card 6: Status */}
+              <div className="flex flex-col gap-3 p-5 rounded-2xl bg-surface/30 border border-surface hover:border-accent-orange/50 hover:bg-surface/50 transition-all group">
+                <div className="flex items-center gap-3 text-muted group-hover:text-accent-orange transition-colors">
+                  <CheckCircle2 className="w-5 h-5" />
+                  <span className="text-xs font-bold uppercase tracking-wider">Status</span>
+                </div>
+                <span className="text-primary font-medium">{project.status || "Completed"}</span>
+              </div>
+
             </div>
           </div>
         </div>

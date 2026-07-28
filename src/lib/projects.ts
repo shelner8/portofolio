@@ -50,6 +50,8 @@ export function getAllProjects(): Project[] {
       technologies: data.technologies || [],
       skills: data.skills || [],
       status: data.status || "",
+      architecture: data.architecture,
+      availability: data.availability,
       featured: data.featured || false,
       futureCaseStudy: data.futureCaseStudy || false,
       associatedWith: data.associatedWith,

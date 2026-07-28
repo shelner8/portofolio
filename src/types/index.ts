@@ -13,6 +13,8 @@ export interface Project {
   technologies: string[];
   skills?: string[];
   status: string;
+  architecture?: string;
+  availability?: string;
   featured: boolean;
   futureCaseStudy: boolean;
   associatedWith?: string;

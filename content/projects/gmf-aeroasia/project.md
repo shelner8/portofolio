@@ -3,6 +3,10 @@ id: gmf-aeroasia
 title: GMF AeroAsia - Soekarno Hatta International Airport
 duration: Jul 2024 - Apr 2025
 category: Airport Enterprise Network
+role: Senior Network Engineer
+environment: Production
+architecture: Core-Distribution-Access
+availability: VSX Redundancy
 responsibilities:
 - Enterprise L2/L3 Operations
 - VSX Core

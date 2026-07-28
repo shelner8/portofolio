@@ -4,6 +4,9 @@ title: Kompas Gramedia - Installation Data Center Network
 duration: Jan 2025 - Present
 category: Enterprise Data Center
 environment: Data Center
+role: Senior Network Engineer
+architecture: Spine-Leaf EVPN-VXLAN
+availability: VSX Redundancy
 associatedWith: Mitra Solusi Infokom (MSInfokom)
 responsibilities:
 - Deploy Spine-Leaf (CX10000)
