@@ -47,14 +47,24 @@ export function ExperienceCard({ experience, className, ...props }: ExperienceCa
         {experience.responsibilities.length > 0 && (
           <div className="mt-4">
             <h4 className="text-sm font-bold text-primary uppercase tracking-widest mb-5 border-b border-surface pb-3">Key Responsibilities</h4>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
-              {experience.responsibilities.map((resp, i) => (
-                <li key={i} className="flex items-start gap-3 group/item">
-                  <ChevronRight className="w-4 h-4 mt-1 text-accent-orange flex-shrink-0 transition-transform duration-300 group-hover/item:translate-x-1" />
-                  <span className="text-sm md:text-base text-muted group-hover/item:text-primary transition-colors duration-300 leading-relaxed">{resp}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+              <ul className="flex-1 flex flex-col gap-4">
+                {experience.responsibilities.slice(0, Math.ceil(experience.responsibilities.length / 2)).map((resp, i) => (
+                  <li key={i} className="flex items-start gap-3 group/item">
+                    <ChevronRight className="w-4 h-4 mt-1 text-accent-orange flex-shrink-0 transition-transform duration-300 group-hover/item:translate-x-1" />
+                    <span className="text-sm md:text-base text-muted group-hover/item:text-primary transition-colors duration-300 leading-relaxed">{resp}</span>
+                  </li>
+                ))}
+              </ul>
+              <ul className="flex-1 flex flex-col gap-4">
+                {experience.responsibilities.slice(Math.ceil(experience.responsibilities.length / 2)).map((resp, i) => (
+                  <li key={i} className="flex items-start gap-3 group/item">
+                    <ChevronRight className="w-4 h-4 mt-1 text-accent-orange flex-shrink-0 transition-transform duration-300 group-hover/item:translate-x-1" />
+                    <span className="text-sm md:text-base text-muted group-hover/item:text-primary transition-colors duration-300 leading-relaxed">{resp}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         )}
         
