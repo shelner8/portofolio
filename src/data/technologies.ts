@@ -324,18 +324,6 @@ export const technologies: Technology[] = [
   },
   // --- Connectivity ---
   {
-    id: "sd-wan",
-    slug: "sd-wan",
-    name: "SD-WAN",
-    category: "Connectivity",
-    description: "Software-Defined Wide Area Network orchestrating secure branch routing over internet transport.",
-    relatedProjects: [],
-    relatedArticles: [],
-    relatedCertifications: ["aruba-sdwan-expert"],
-    relatedTechnologies: [],
-    icon: "wifi"
-  },
-  {
     id: "tailscale",
     slug: "tailscale",
     name: "Tailscale",
