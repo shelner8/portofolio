@@ -73,7 +73,7 @@ export default function TechnologyLibraryPage() {
               <div className="w-px h-12 bg-surface" />
               <div className="flex flex-col justify-center">
                 <span className="text-sm font-bold text-primary uppercase tracking-wider max-w-[150px] leading-relaxed">
-                  Used Across Enterprise Deployments
+                  Documented from Production Experience
                 </span>
               </div>
             </div>
