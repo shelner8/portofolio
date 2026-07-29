@@ -16,12 +16,12 @@ export const metadata = {
 
 export default function TechnologyPage() {
   const useCases = [
-    "AI request load balancing",
-    "Model routing",
-    "API gateway for inference",
-    "Endpoint health monitoring",
-    "Latency optimization",
-    "Resource utilization tracking"
+    "Unified API endpoint",
+    "Provider routing (Gemini, Antigravity, Kiro)",
+    "Model selection",
+    "Token and cost optimization",
+    "Simplified client configuration",
+    "Centralized endpoint management"
 ];
 
   const integrations = [
@@ -54,8 +54,8 @@ export default function TechnologyPage() {
               </h1>
               
               <div className="text-xl md:text-2xl text-muted leading-relaxed font-light mt-4 flex flex-col gap-4">
-                <p>9Router provides a unified API endpoint for routing requests to local AI services.</p>
-                <p>It distributes inference requests across available models hosted within the environment.</p>
+                <p>9Router provides a unified API endpoint for routing requests to different AI providers.</p>
+                <p>It centralizes access to models from Gemini API, Antigravity, Kiro, and other compatible services.</p>
               </div>
             </div>
           </div>
@@ -74,8 +74,8 @@ export default function TechnologyPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Overview</h2>
               </div>
               <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
-                <p>9Router functions as the API gateway for self-hosted AI services within the home lab.</p>
-                <p>It abstracts the underlying hardware, allowing interfaces to query a single endpoint regardless of where the model is hosted.</p>
+                <p>9Router functions as the central API gateway for AI interactions within the home lab.</p>
+                <p>It simplifies client configurations by providing a single endpoint, allowing for rapid model switching, token optimization, and cost management without altering frontend applications.</p>
               </div>
             </div>
 

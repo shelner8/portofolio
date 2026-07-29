@@ -16,12 +16,12 @@ export const metadata = {
 
 export default function TechnologyPage() {
   const useCases = [
-    "Remote infrastructure access",
-    "Zero-trust network overlay",
-    "Secure service exposure",
-    "Encrypted site-to-site links",
-    "Out-of-band management",
-    "Direct peer-to-peer routing"
+    "Secure remote access",
+    "Encrypted mesh VPN",
+    "Accessing internal services",
+    "Remote administration",
+    "Direct peer-to-peer routing",
+    "Bypassing NAT restrictions"
 ];
 
   const integrations = [

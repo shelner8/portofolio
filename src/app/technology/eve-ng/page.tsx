@@ -16,12 +16,12 @@ export const metadata = {
 
 export default function TechnologyPage() {
   const useCases = [
-    "Multi-vendor interoperability testing",
-    "BGP route manipulation validation",
-    "Firewall rule testing",
-    "VLAN and STP simulation",
-    "Network automation script targets",
-    "Certification lab scenarios"
+    "Multi-vendor network emulation",
+    "Protocol validation",
+    "Firewall testing",
+    "Routing labs",
+    "Layer 2 switching",
+    "Interoperability testing"
 ];
 
   const integrations = [
@@ -56,8 +56,8 @@ export default function TechnologyPage() {
               </h1>
               
               <div className="text-xl md:text-2xl text-muted leading-relaxed font-light mt-4 flex flex-col gap-4">
-                <p>EVE-NG provides an isolated network laboratory for validating multi-vendor topologies.</p>
-                <p>It is used to run vendor images, validate routing protocols, and experiment with switching configurations.</p>
+                <p>EVE-NG provides a multi-vendor network emulation platform for protocol validation and laboratory testing.</p>
+                <p>It is used to run vendor images, validate firewall rules, and experiment with complex switching environments.</p>
               </div>
             </div>
           </div>
@@ -76,8 +76,8 @@ export default function TechnologyPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Overview</h2>
               </div>
               <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
-                <p>EVE-NG operates on virtualization to simulate complex network environments safely.</p>
-                <p>It enables practical testing of BGP peering, firewall rules, and Layer 2 mechanisms in a controlled sandbox.</p>
+                <p>EVE-NG operates on virtualization to simulate multi-vendor network environments.</p>
+                <p>It enables interoperability testing, routing labs, and firewall policy validation in a controlled, isolated sandbox.</p>
               </div>
             </div>
 

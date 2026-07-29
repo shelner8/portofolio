@@ -60,8 +60,8 @@ export default function PNETLabPage() {
               </h1>
               
               <div className="text-xl md:text-2xl text-muted leading-relaxed font-light mt-4 flex flex-col gap-4">
-                <p>PNETLab is deployed inside my home lab to emulate enterprise network environments before production implementation.</p>
-                <p>It is primarily used to validate routing behavior, Layer 2 and Layer 3 designs, migration procedures, and infrastructure changes in an isolated environment.</p>
+                <p>PNETLab is an isolated network emulation environment used for building virtual network topologies and practicing configurations.</p>
+                <p>It provides a safe sandbox for testing routing protocols, Layer 2 mechanisms, and migration procedures.</p>
               </div>
             </div>
           </div>
@@ -80,8 +80,8 @@ export default function PNETLabPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Overview</h2>
               </div>
               <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
-                <p>PNETLab serves as the primary network emulation platform within my home lab.</p>
-                <p>It allows complex enterprise network topologies to be built and tested safely before production deployment. The environment is used to validate routing, switching, migration scenarios, and infrastructure changes without impacting live services.</p>
+                <p>PNETLab serves as the primary laboratory for hands-on networking practice and proof-of-concepts.</p>
+                <p>It enables practical experimentation with EVPN-VXLAN, troubleshooting scenarios, and certification practice without impacting real network hardware.</p>
               </div>
             </div>
 

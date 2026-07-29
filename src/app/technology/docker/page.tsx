@@ -16,12 +16,12 @@ export const metadata = {
 
 export default function TechnologyPage() {
   const useCases = [
+    "Containerized application deployment",
     "Service isolation",
-    "Rapid application deployment",
     "Dependency management",
-    "Infrastructure as Code validation",
-    "Resource limitation",
-    "Cross-platform execution"
+    "Configuration consistency",
+    "Local development",
+    "Simplified application updates"
 ];
 
   const integrations = [

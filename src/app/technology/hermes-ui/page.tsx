@@ -16,12 +16,12 @@ export const metadata = {
 
 export default function TechnologyPage() {
   const useCases = [
-    "Conversational AI interface",
-    "Configuration analysis frontend",
-    "Internal documentation querying",
+    "Graphical interface",
+    "Interacting with AI models",
     "Prompt management",
-    "Model switching",
-    "Chat history persistence"
+    "Conversation history",
+    "Testing prompts",
+    "Frontend for inference access"
 ];
 
   const integrations = [
@@ -54,8 +54,8 @@ export default function TechnologyPage() {
               </h1>
               
               <div className="text-xl md:text-2xl text-muted leading-relaxed font-light mt-4 flex flex-col gap-4">
-                <p>Hermes UI acts as the graphical interface for interacting with local AI models.</p>
-                <p>It provides a conversational frontend for querying internal data and analyzing configurations.</p>
+                <p>Hermes UI serves as the graphical interface for interacting with various AI models.</p>
+                <p>It provides a conversational frontend for testing prompts, managing context, and retaining conversation history.</p>
               </div>
             </div>
           </div>
@@ -74,8 +74,8 @@ export default function TechnologyPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Overview</h2>
               </div>
               <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
-                <p>Hermes UI connects directly to local AI inference endpoints to facilitate seamless interaction.</p>
-                <p>It is deployed via Docker and exposed through the internal reverse proxy for access across the home network.</p>
+                <p>Hermes UI connects directly to the 9Router endpoint to facilitate seamless interaction with different AI providers.</p>
+                <p>It is deployed via Docker to provide a practical interface for evaluating model responses and managing prompt templates.</p>
               </div>
             </div>
 
