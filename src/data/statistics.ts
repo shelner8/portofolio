@@ -11,15 +11,13 @@ export const statistics: Statistic[] = [
   {
     id: "enterprise-projects",
     label: "Enterprise Projects",
-    value: 8,
-    suffix: "+",
+    value: 11,
     icon: "briefcase",
   },
   {
     id: "data-center-deployments",
     label: "Data Center Deployments",
-    value: 5,
-    suffix: "+",
+    value: 3,
     icon: "server",
   },
   {
