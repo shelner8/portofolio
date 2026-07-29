@@ -430,6 +430,14 @@ export const technologies: Technology[] = [
     description: "Used as an enterprise edge gateway providing routing, switching, and firewall services.",
     icon: "server",
   },
+  {
+    id: "ubuntu-server",
+    slug: "ubuntu-server",
+    name: "Ubuntu Server",
+    category: "Network Operating Systems",
+    description: "Used as the primary Linux platform hosting virtualization, containers, monitoring, automation, and self-hosted infrastructure services.",
+    icon: "server",
+  },
   // --- Network Emulation ---
   {
     id: "eve-ng",
@@ -462,14 +470,6 @@ export const technologies: Technology[] = [
     name: "Proxmox VE",
     category: "Virtualization",
     description: "Manages virtual machines and Linux containers for the primary home data center infrastructure.",
-    icon: "server",
-  },
-  {
-    id: "ubuntu-server",
-    slug: "ubuntu-server",
-    name: "Ubuntu Server",
-    category: "Virtualization",
-    description: "Used as the primary Linux platform hosting virtualization, containers, monitoring, automation, and self-hosted infrastructure services.",
     icon: "server",
   },
   // --- Container Platform ---
