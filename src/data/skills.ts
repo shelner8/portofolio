@@ -36,10 +36,10 @@ export const skills: Skill[] = [
     id: "operations-infrastructure",
     name: "Network Operations",
     category: "Operations",
-    description: "Ensuring stability through migration planning, troubleshooting, monitoring, capacity planning, documentation, and operational excellence.",
+    description: "Supporting production operations through migration planning, troubleshooting, monitoring, documentation, and infrastructure maintenance.",
     technologies: [
       "Migration", "Troubleshooting", "Monitoring", 
-      "Capacity Planning", "Documentation", "Operational Excellence"
+      "Capacity Planning", "Documentation", "Maintenance"
     ]
   }
 ];

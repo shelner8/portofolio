@@ -4,7 +4,7 @@ import { statistics } from "./statistics";
 export const hero: HeroContent = {
   title: "Building and Operating Data Center & Enterprise Networks",
   subtitle: "Data Center & Enterprise Network Engineer",
-  description: "Deploying and maintaining resilient network infrastructure, scalable data center fabrics, and self-hosted environments through practical engineering and automation.",
+  description: "Deploying, operating, and maintaining enterprise networks and data center infrastructure while validating changes through practical engineering, automation, and continuous testing.",
   highlights: [
     "Aruba Fabric Composer",
     "High Availability",

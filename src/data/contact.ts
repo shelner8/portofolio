@@ -1,8 +1,8 @@
 import { ContactData } from "@/types";
 
 export const contact: ContactData = {
-  title: "Let's Build Reliable Infrastructure Together",
-  description: "Whether it's enterprise networking, modern data center architecture, infrastructure automation, or technical collaboration, I'm always open to meaningful conversations and new opportunities.",
+  title: "Open for Engineering Collaboration",
+  description: "Available for networking discussions, engineering collaboration, and professional opportunities.",
   email: "",
   location: "",
   socials: [

@@ -18,7 +18,7 @@ export function StatementSection() {
           className="max-w-4xl mx-auto text-center"
         >
           <p className="text-xl md:text-2xl text-primary font-medium leading-[1.8] tracking-tight">
-            Specializing in enterprise networking, modern data center architectures, and practical self-hosted infrastructure with a strong focus on reliability, automation, and continuous learning.
+            Practical engineering experience across enterprise networking, data center infrastructure, and self-hosted technologies.
           </p>
         </motion.div>
       </Container>

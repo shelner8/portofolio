@@ -16,7 +16,7 @@ export function ArchitectureSection({ architectures }: ArchitectureSectionProps)
   return (
     <SectionLayout 
       title="Implementation Highlights" 
-      description="Proven architectural patterns for building resilient, scalable, and secure enterprise networks."
+      description="Practical implementation experience from production data center and enterprise networking projects."
       id="architecture"
     >
       <div className="flex flex-col gap-8 mt-8">

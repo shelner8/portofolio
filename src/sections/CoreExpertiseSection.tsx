@@ -51,7 +51,7 @@ export function CoreExpertiseSection({ technologies }: CoreExpertiseSectionProps
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary tracking-tight">Core Expertise</h2>
             <p className="text-muted text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-              Core engineering capabilities built through enterprise deployments, modern data center projects, professional certifications, and continuous learning.
+              Technologies and engineering domains regularly used across production deployments and personal engineering projects.
             </p>
           </motion.div>
 
