@@ -19,11 +19,10 @@ export function CoreExpertiseSection({ technologies }: CoreExpertiseSectionProps
   const capabilities = [
     "Enterprise Networking",
     "Data Center Fabric",
-    "Network Automation",
+    "Infrastructure Automation",
     "Virtualization",
     "Self-Hosted Infrastructure",
-    "Monitoring",
-    "AI Integration"
+    "Monitoring"
   ]
 
   const resolveCapability = (cap: string) => {
