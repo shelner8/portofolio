@@ -1,6 +1,6 @@
 import { getAllTechnologies } from "@/lib/technologies"
-import { TechnologyCard } from "@/components/cards/TechnologyCard"
-import { Cpu, Terminal, ArrowRight } from "lucide-react"
+import { CategorySection } from "./CategorySection"
+import { Cpu } from "lucide-react"
 
 export const metadata = {
   title: 'Technology Library | Knowledge Hub',
@@ -87,23 +87,11 @@ export default function TechnologyLibraryPage() {
           <div className="flex flex-col gap-12">
             
             {orderedCategories.map(category => (
-              <div key={category} className="flex flex-col gap-8 scroll-mt-24" id={category.toLowerCase().replace(/\s+/g, '-')}>
-                <div className="flex items-center justify-between pb-4 border-b border-surface/50">
-                  <div className="flex items-center gap-4">
-                    <Terminal className="w-6 h-6 text-accent-blue opacity-50" />
-                    <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">{category}</h2>
-                  </div>
-                  <span className="text-sm font-medium text-muted bg-surface/30 px-3 py-1 rounded-full border border-surface">
-                    {categories[category].length} {categories[category].length === 1 ? 'Item' : 'Items'}
-                  </span>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                  {categories[category].map(tech => (
-                    <TechnologyCard key={tech.id} technology={tech} />
-                  ))}
-                </div>
-              </div>
+              <CategorySection 
+                key={category} 
+                category={category} 
+                technologies={categories[category]} 
+              />
             ))}
 
           </div>
