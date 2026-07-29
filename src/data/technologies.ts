@@ -8,7 +8,7 @@ export const technologies: Technology[] = [
     name: "EVPN",
     category: "Data Center",
     featured: true,
-    description: "Modern control-plane for VXLAN fabrics using MP-BGP.",
+    description: "Used to advertise MAC and IP reachability across scalable VXLAN EVPN data center fabrics.",
     overview: "Ethernet VPN (EVPN) is a BGP-based control plane that enables scalable MAC and IP address learning. It replaces legacy flood-and-learn mechanisms in VXLAN fabrics, drastically improving efficiency, minimizing broadcast traffic, and providing seamless multi-tenancy in modern data center environments.",
     keyConcepts: ["Route Type-2","Route Type-3","Route Type-5","Anycast Gateway","MAC/IP Advertisement","BUM Replication"],
     useCases: ["VXLAN Fabric","Multi-Tenant Data Center","Layer-2 Extension","Host Mobility"],
@@ -28,7 +28,7 @@ export const technologies: Technology[] = [
     name: "VXLAN",
     category: "Data Center",
     featured: true,
-    description: "Layer 2 overlay scheme over a Layer 3 network, offering scalable multi-tenancy.",
+    description: "Enables scalable Layer 2 extension over Layer 3 infrastructure.",
     keyConcepts: ["VNI","VTEP","UDP 4789","Overlay","Encapsulation","Flood & Learn"],
     icon: "layers",
   },
@@ -38,7 +38,7 @@ export const technologies: Technology[] = [
     name: "MP-BGP",
     category: "Data Center",
     featured: true,
-    description: "Multiprotocol BGP used to distribute MAC and IP reachability information.",
+    description: "Used to distribute MAC and IP routing information across enterprise data center fabrics.",
     icon: "share-2",
   },
   {
@@ -46,7 +46,7 @@ export const technologies: Technology[] = [
     slug: "anycast-gateway",
     name: "Anycast Gateway",
     category: "Data Center",
-    description: "Distributed default gateway architecture providing optimal first-hop routing.",
+    description: "Provides distributed default gateway services for optimal first-hop routing across the data center.",
     icon: "milestone",
   },
   {
@@ -54,7 +54,7 @@ export const technologies: Technology[] = [
     slug: "spine-leaf",
     name: "Spine-Leaf",
     category: "Data Center",
-    description: "Two-tier network topology offering non-blocking, predictable east-west traffic flow.",
+    description: "Supports high-performance, non-blocking east-west traffic flows for enterprise data centers.",
     icon: "git-merge",
   },
   {
@@ -62,7 +62,7 @@ export const technologies: Technology[] = [
     slug: "leaf-switch",
     name: "Leaf Switch",
     category: "Data Center",
-    description: "Access-layer switch in a Clos architecture providing endpoint connectivity.",
+    description: "Provides access-layer connectivity for servers and endpoints within a Clos data center fabric.",
     icon: "server",
   },
   {
@@ -70,7 +70,7 @@ export const technologies: Technology[] = [
     slug: "border-leaf",
     name: "Border Leaf",
     category: "Data Center",
-    description: "Gateway switches bridging the internal fabric to external networks and services.",
+    description: "Enables external connectivity by bridging the internal data center fabric to enterprise networks.",
     icon: "shield-alert",
   },
   {
@@ -79,7 +79,7 @@ export const technologies: Technology[] = [
     name: "MC-LAG",
     category: "Data Center",
     featured: true,
-    description: "Multi-Chassis Link Aggregation enabling active-active dual-homing, link redundancy, and high availability across enterprise data center fabrics.",
+    description: "Provides active-active redundancy across enterprise core switches.",
     icon: "git-merge",
   },
   // --- Enterprise Networking ---
@@ -130,7 +130,7 @@ export const technologies: Technology[] = [
     slug: "policy-based-routing",
     name: "Policy-Based Routing",
     category: "Enterprise Networking",
-    description: "Implements granular traffic steering and traffic engineering based on operational policies.",
+    description: "Used to implement granular traffic steering based on operational policies.",
     icon: "route",
   },
   {
@@ -138,7 +138,7 @@ export const technologies: Technology[] = [
     slug: "enterprise-routing",
     name: "Enterprise Routing",
     category: "Enterprise Networking",
-    description: "Design and deployment of highly available enterprise routing architectures.",
+    description: "Supports resilient Layer 3 routing for campus and data center environments.",
     icon: "route",
   },
   {
@@ -146,7 +146,7 @@ export const technologies: Technology[] = [
     slug: "static-routing",
     name: "Static Routing",
     category: "Enterprise Networking",
-    description: "Manual configuration of network routes for deterministic traffic flow.",
+    description: "Used to define manual network routes for highly deterministic traffic flows.",
     icon: "route",
   },
   {
@@ -154,7 +154,7 @@ export const technologies: Technology[] = [
     slug: "tunneling",
     name: "Tunneling",
     category: "Enterprise Networking",
-    description: "Site-to-site network tunneling for secure remote interconnectivity.",
+    description: "Provides secure site-to-site connectivity between distributed enterprise locations.",
     icon: "network",
   },
   {
@@ -162,7 +162,7 @@ export const technologies: Technology[] = [
     slug: "isp",
     name: "ISP",
     category: "Enterprise Networking",
-    description: "Configuring and maintaining upstream ISP circuits and resilient gateway services.",
+    description: "Used to connect enterprise gateways to upstream internet service providers.",
     icon: "globe",
   },
   {
@@ -170,7 +170,7 @@ export const technologies: Technology[] = [
     slug: "vlan",
     name: "VLAN",
     category: "Enterprise Networking",
-    description: "Layer 2 segmentation used across campus and data center networks.",
+    description: "Enables logical Layer 2 segmentation across campus and data center networks.",
     icon: "layers",
   },
   {
@@ -194,7 +194,7 @@ export const technologies: Technology[] = [
     slug: "dhcp-snooping",
     name: "DHCP Snooping",
     category: "Enterprise Networking",
-    description: "Layer 2 security feature that prevents unauthorized rogue DHCP servers on campus networks.",
+    description: "Prevents rogue DHCP servers on enterprise access networks.",
     icon: "shield",
   },
   {
@@ -210,7 +210,7 @@ export const technologies: Technology[] = [
     slug: "alcatel",
     name: "Alcatel",
     category: "Enterprise Networking",
-    description: "Enterprise switching integration for LAN architectures.",
+    description: "Used to deploy reliable access and distribution switching for enterprise LAN architectures.",
     icon: "server",
   },
   {
@@ -218,7 +218,7 @@ export const technologies: Technology[] = [
     slug: "acl",
     name: "ACL",
     category: "Enterprise Networking",
-    description: "Access Control Lists utilized for stateless traffic filtering, segmentation, and perimeter defense.",
+    description: "Provides stateless traffic filtering, network segmentation, and perimeter security.",
     icon: "shield-alert",
   },
   {
@@ -226,7 +226,7 @@ export const technologies: Technology[] = [
     slug: "device-policy",
     name: "Device Policy",
     category: "Enterprise Networking",
-    description: "Endpoint admission control and network access policies for secure device onboarding.",
+    description: "Enables endpoint admission control and secure device onboarding policies.",
     icon: "lock",
   },
   {
@@ -234,7 +234,7 @@ export const technologies: Technology[] = [
     slug: "firewall-filter",
     name: "Firewall Filter",
     category: "Enterprise Networking",
-    description: "Access control and security policies for enterprise gateway deployments.",
+    description: "Used to enforce access control and security policies on enterprise gateways.",
     icon: "shield",
   },
   {
@@ -242,7 +242,7 @@ export const technologies: Technology[] = [
     slug: "nat",
     name: "NAT",
     category: "Enterprise Networking",
-    description: "Enterprise gateway deployment and Network Address Translation for production network operations.",
+    description: "Enables IP address translation for secure enterprise internet access.",
     icon: "share-2",
   },
   {
@@ -250,7 +250,7 @@ export const technologies: Technology[] = [
     slug: "mangle",
     name: "Mangle",
     category: "Enterprise Networking",
-    description: "Advanced packet marking and routing policies for enterprise bandwidth management.",
+    description: "Used to mark packets and enforce advanced bandwidth management policies.",
     icon: "layers",
   },
   {
@@ -258,7 +258,7 @@ export const technologies: Technology[] = [
     slug: "fasttrack",
     name: "FastTrack",
     category: "Enterprise Networking",
-    description: "Traffic acceleration technique for optimizing enterprise gateway performance.",
+    description: "Optimizes enterprise gateway performance by accelerating trusted network traffic.",
     icon: "maximize",
   },
   {
@@ -266,7 +266,7 @@ export const technologies: Technology[] = [
     slug: "qos",
     name: "QoS",
     category: "Enterprise Networking",
-    description: "Quality of Service strategies for bandwidth management and traffic prioritization.",
+    description: "Used to prioritize business-critical traffic and optimize bandwidth utilization.",
     icon: "layers",
   },
   {
@@ -274,7 +274,7 @@ export const technologies: Technology[] = [
     slug: "queue-tree",
     name: "Queue Tree",
     category: "Enterprise Networking",
-    description: "Hierarchical bandwidth management and traffic shaping mechanism.",
+    description: "Provides hierarchical bandwidth management and traffic shaping for enterprise networks.",
     icon: "layers",
   },
   {
@@ -282,7 +282,7 @@ export const technologies: Technology[] = [
     slug: "pcq",
     name: "PCQ",
     category: "Enterprise Networking",
-    description: "Per Connection Queue for dynamic and equitable bandwidth allocation.",
+    description: "Enables dynamic and equitable bandwidth allocation for active network connections.",
     icon: "layers",
   },
   {
@@ -290,7 +290,7 @@ export const technologies: Technology[] = [
     slug: "aruba-wireless",
     name: "Aruba Wireless",
     category: "Enterprise Networking",
-    description: "Enterprise implementation of Aruba Wireless infrastructure.",
+    description: "Provides scalable and highly available wireless connectivity for enterprise environments.",
     icon: "wifi",
   },
   {
@@ -298,7 +298,7 @@ export const technologies: Technology[] = [
     slug: "ruckus",
     name: "Ruckus",
     category: "Enterprise Networking",
-    description: "Enterprise wireless LAN infrastructure deployment and optimization.",
+    description: "Used to deliver reliable high-density Wi-Fi access across enterprise campuses.",
     icon: "wifi",
   },
   {
@@ -306,7 +306,7 @@ export const technologies: Technology[] = [
     slug: "dhcp",
     name: "DHCP",
     category: "Enterprise Networking",
-    description: "Dynamic Host Configuration Protocol for automated IP assignment.",
+    description: "Enables automated IP address assignment and network configuration for endpoints.",
     icon: "network",
   },
   {
@@ -314,7 +314,7 @@ export const technologies: Technology[] = [
     slug: "dhcp-relay",
     name: "DHCP Relay",
     category: "Enterprise Networking",
-    description: "Forwarding DHCP packets between clients and servers on different subnets.",
+    description: "Used to forward DHCP requests across routed subnets to centralized servers.",
     icon: "share-2",
   },
   // --- Aruba ---
@@ -324,7 +324,7 @@ export const technologies: Technology[] = [
     name: "Aruba AOS-CX",
     category: "Aruba",
     featured: true,
-    description: "Modern microservices-based, database-driven operating system for enterprise switching.",
+    description: "Provides a highly available microservices-based operating system for enterprise core switching.",
     experience: [
       {
         experienceId: "angkasa-pura-solusi-integra",
@@ -339,7 +339,7 @@ export const technologies: Technology[] = [
     name: "Aruba VSX",
     category: "Aruba",
     featured: true,
-    description: "Virtual Switching Extension provides high availability without shared control planes.",
+    description: "Provides active-active high availability without shared control planes across enterprise core switches.",
     overview: "Aruba VSX (Virtual Switching Extension) is a high-availability technology designed for the core and aggregation layers. Unlike legacy stacking, VSX maintains independent control planes on each switch while presenting a unified active-active gateway to downstream devices, ensuring zero-downtime software upgrades.",
     keyConcepts: ["ISL","Keepalive","MC-LAG","Active Gateway","Split Brain Protection"],
     useCases: ["Active-Active Core","Dual-Homing","High Availability","Enterprise Data Center"],
@@ -357,7 +357,7 @@ export const technologies: Technology[] = [
     slug: "aruba-vsf",
     name: "Aruba VSF",
     category: "Aruba",
-    description: "Virtual Switching Framework combines multiple switches into a single logical device.",
+    description: "Used to combine multiple access switches into a single logical management plane.",
     icon: "link",
   },
   {
@@ -366,7 +366,7 @@ export const technologies: Technology[] = [
     name: "Aruba CX10000",
     category: "Aruba",
     featured: true,
-    description: "Distributed services switch powered by Pensando DPU for stateful inspection.",
+    description: "Delivers distributed firewalling and stateful inspection directly at the data center switch port.",
     icon: "server",
   },
   // --- Infrastructure Automation ---
@@ -376,7 +376,7 @@ export const technologies: Technology[] = [
     name: "Aruba Fabric Composer",
     category: "Infrastructure Automation",
     featured: true,
-    description: "Automation platform for Aruba CX Data Center lifecycle management, configuration orchestration, and fabric provisioning.",
+    description: "Used to automate configuration, orchestration, and lifecycle management for data center fabrics.",
     icon: "cpu",
   },
   // --- Connectivity ---
@@ -385,7 +385,7 @@ export const technologies: Technology[] = [
     slug: "tailscale",
     name: "Tailscale",
     category: "Connectivity",
-    description: "Zero-config VPN utilizing WireGuard for peer-to-peer mesh connectivity.",
+    description: "Provides zero-configuration mesh VPN connectivity for secure infrastructure access.",
     icon: "network",
   },
   {
@@ -393,7 +393,7 @@ export const technologies: Technology[] = [
     slug: "multi-wan",
     name: "Multi-WAN",
     category: "Connectivity",
-    description: "Redundant wide area network connectivity for enterprise reliability.",
+    description: "Delivers redundant external connectivity for highly reliable enterprise internet access.",
     icon: "network",
   },
   {
@@ -401,7 +401,7 @@ export const technologies: Technology[] = [
     slug: "isp-peering",
     name: "ISP Peering",
     category: "Connectivity",
-    description: "BGP peering implementation with Internet Service Providers.",
+    description: "Used to establish direct BGP routing with upstream internet service providers.",
     icon: "globe",
   },
   {
@@ -409,7 +409,7 @@ export const technologies: Technology[] = [
     slug: "ix-iix-peering",
     name: "IX & IIX Peering",
     category: "Connectivity",
-    description: "Internet Exchange connectivity using public IX infrastructure and BGP peering.",
+    description: "Enables direct BGP peering with public internet exchanges to optimize traffic routing.",
     icon: "globe",
   },
   {
@@ -417,17 +417,17 @@ export const technologies: Technology[] = [
     slug: "site-to-site-vpn",
     name: "Site-to-Site VPN",
     category: "Connectivity",
-    description: "Encrypted point-to-point tunnels securely bridging remote private networks.",
+    description: "Provides encrypted point-to-point IPsec tunnels between remote enterprise locations.",
     icon: "lock",
   },
-  // --- Operating Systems ---
+  // --- Network Operating Systems ---
   {
     id: "mikrotik",
     slug: "mikrotik",
     name: "MikroTik",
-    category: "Operating Systems",
+    category: "Network Operating Systems",
     featured: true,
-    description: "Enterprise hardware platform providing robust routing, switching, and gateway capabilities.",
+    description: "Used as an enterprise edge gateway providing robust routing, switching, and security services.",
     icon: "server",
   },
   // --- Network Emulation ---
@@ -436,7 +436,7 @@ export const technologies: Technology[] = [
     slug: "eve-ng",
     name: "EVE-NG",
     category: "Network Emulation",
-    description: "Emulated Virtual Environment Next Generation for simulating complex network topologies.",
+    description: "Used to simulate complex network topologies and validate enterprise architectures before production deployment.",
     icon: "network",
   },
   {
@@ -444,7 +444,7 @@ export const technologies: Technology[] = [
     slug: "pnetlab",
     name: "PNETLab",
     category: "Network Emulation",
-    description: "Network simulation and emulation platform for testing data center topologies.",
+    description: "Provides an emulation environment for testing data center topologies and routing changes.",
     icon: "network",
   },
   // --- Virtualization ---
@@ -453,7 +453,7 @@ export const technologies: Technology[] = [
     slug: "vmware-esxi",
     name: "VMware ESXi",
     category: "Virtualization",
-    description: "Enterprise bare-metal hypervisor for compute virtualization and data center workloads.",
+    description: "Used to deploy and manage virtualized enterprise workloads on bare-metal infrastructure.",
     icon: "server",
   },
   {
@@ -461,7 +461,7 @@ export const technologies: Technology[] = [
     slug: "proxmox-ve",
     name: "Proxmox VE",
     category: "Virtualization",
-    description: "Open-source server virtualization management platform based on KVM and LXC.",
+    description: "Provides open-source virtualization management for deploying virtual machines and Linux containers.",
     icon: "server",
   },
   {
@@ -469,7 +469,7 @@ export const technologies: Technology[] = [
     slug: "ubuntu-server",
     name: "Ubuntu Server",
     category: "Virtualization",
-    description: "Enterprise open-source Linux operating system powering self-hosted infrastructure.",
+    description: "Powers self-hosted infrastructure, network management tools, and containerized enterprise services.",
     icon: "server",
   },
   // --- Container Platform ---
@@ -478,7 +478,7 @@ export const technologies: Technology[] = [
     slug: "docker",
     name: "Docker",
     category: "Container Platform",
-    description: "Platform for developing, shipping, and running containerized applications.",
+    description: "Used to deploy and manage self-hosted infrastructure services in isolated container environments.",
     icon: "box",
   },
   {
@@ -486,7 +486,7 @@ export const technologies: Technology[] = [
     slug: "docker-compose",
     name: "Docker Compose",
     category: "Container Platform",
-    description: "Tool for defining and running multi-container Docker applications.",
+    description: "Enables declarative configuration and orchestration of multi-container infrastructure stacks.",
     icon: "box",
   },
   {
@@ -494,7 +494,7 @@ export const technologies: Technology[] = [
     slug: "portainer",
     name: "Portainer",
     category: "Container Platform",
-    description: "Universal container management platform for deploying and managing Docker environments.",
+    description: "Provides a centralized management interface for monitoring and operating Docker environments.",
     icon: "box",
   },
   // --- Self-Hosted Services ---
@@ -503,7 +503,7 @@ export const technologies: Technology[] = [
     slug: "adguard-home",
     name: "AdGuard Home",
     category: "Self-Hosted Services",
-    description: "Network-wide software for blocking ads and tracking acting as an enterprise DNS server.",
+    description: "Provides production DNS filtering, local recursive DNS, and network-wide advertisement blocking.",
     icon: "shield",
   },
   {
@@ -511,7 +511,7 @@ export const technologies: Technology[] = [
     slug: "nginx-reverse-proxy",
     name: "Nginx Reverse Proxy",
     category: "Self-Hosted Services",
-    description: "High-performance reverse proxy for internal routing and local domain resolution.",
+    description: "Used to route incoming traffic securely to internal self-hosted infrastructure services.",
     icon: "server",
   },
   {
@@ -519,7 +519,7 @@ export const technologies: Technology[] = [
     slug: "agent-dvr",
     name: "Agent DVR CCTV",
     category: "Self-Hosted Services",
-    description: "Advanced video surveillance and CCTV recording platform.",
+    description: "Provides centralized video surveillance management and continuous camera recording.",
     icon: "server",
   },
   // --- Local AI ---
@@ -528,7 +528,7 @@ export const technologies: Technology[] = [
     slug: "ollama",
     name: "Ollama",
     category: "Local AI",
-    description: "Framework for running, managing, and interacting with large language models locally.",
+    description: "Used to run and manage large language models securely within local infrastructure.",
     icon: "cpu",
   },
   {
@@ -536,7 +536,7 @@ export const technologies: Technology[] = [
     slug: "hermes-ui",
     name: "Hermes UI",
     category: "Local AI",
-    description: "Self-hosted Web UI platform for conversational interactions with local LLMs.",
+    description: "Provides a self-hosted graphical interface for interacting with local AI models.",
     icon: "layout",
   },
   {
@@ -544,7 +544,7 @@ export const technologies: Technology[] = [
     slug: "9router",
     name: "9Router",
     category: "Local AI",
-    description: "Local AI routing service for distributing requests to self-hosted models.",
+    description: "Enables local API routing and load balancing for self-hosted language models.",
     icon: "network",
   },
   {
@@ -552,7 +552,7 @@ export const technologies: Technology[] = [
     slug: "gemini-api",
     name: "Gemini API",
     category: "Local AI",
-    description: "Integration with Google's advanced language model API for infrastructure documentation.",
+    description: "Used to integrate advanced AI capabilities into infrastructure documentation workflows.",
     icon: "cpu",
   },
   // --- Monitoring ---
@@ -561,7 +561,7 @@ export const technologies: Technology[] = [
     slug: "zabbix",
     name: "Zabbix",
     category: "Monitoring",
-    description: "Enterprise-class open source distributed monitoring solution.",
+    description: "Used to monitor enterprise servers, network devices, infrastructure health, and service availability.",
     icon: "network",
   },
   {
@@ -569,7 +569,7 @@ export const technologies: Technology[] = [
     slug: "cacti",
     name: "Cacti",
     category: "Monitoring",
-    description: "Network graphing solution leveraging RRDTool for telemetry visualization.",
+    description: "Provides detailed network telemetry visualization and historical bandwidth graphing.",
     icon: "network",
   },
   {
@@ -577,7 +577,7 @@ export const technologies: Technology[] = [
     slug: "observium",
     name: "Observium",
     category: "Monitoring",
-    description: "Auto-discovering network monitoring platform tailored for broad device support.",
+    description: "Used for automated network discovery and comprehensive infrastructure health monitoring.",
     icon: "network",
   },
   {
@@ -585,7 +585,7 @@ export const technologies: Technology[] = [
     slug: "beszel",
     name: "Beszel",
     category: "Monitoring",
-    description: "Lightweight, modern dashboard for monitoring server metrics and Docker containers.",
+    description: "Provides lightweight monitoring and alerting for Linux servers and Docker containers.",
     icon: "activity",
   },
   {
@@ -593,7 +593,7 @@ export const technologies: Technology[] = [
     slug: "snmp",
     name: "SNMP",
     category: "Monitoring",
-    description: "Simple Network Management Protocol for collecting hardware telemetry from enterprise devices.",
+    description: "Used to securely poll hardware metrics and telemetry from enterprise network devices.",
     icon: "activity",
   },
   {
@@ -601,7 +601,7 @@ export const technologies: Technology[] = [
     slug: "linux-monitoring",
     name: "Linux Monitoring",
     category: "Monitoring",
-    description: "Comprehensive telemetry and health monitoring for Linux-based servers.",
+    description: "Enables continuous health tracking, resource utilization, and performance monitoring for Linux servers.",
     icon: "activity",
   }
 ];

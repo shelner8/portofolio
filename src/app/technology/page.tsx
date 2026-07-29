@@ -25,11 +25,13 @@ export default function TechnologyLibraryPage() {
     "Aruba",
     "Enterprise Networking",
     "Connectivity",
-    "Automation",
+    "Infrastructure Automation",
+    "Network Operating Systems",
+    "Network Emulation",
     "Virtualization",
     "Container Platform",
     "Self-Hosted Services",
-    "AI Platform",
+    "Local AI",
     "Monitoring"
   ]
 
