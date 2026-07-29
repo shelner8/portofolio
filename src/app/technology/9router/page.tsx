@@ -54,8 +54,8 @@ export default function TechnologyPage() {
               </h1>
               
               <div className="text-xl md:text-2xl text-muted leading-relaxed font-light mt-4 flex flex-col gap-4">
-                <p>9Router handles internal API request routing and load balancing for local AI models.</p>
-                <p>It ensures optimal resource utilization by distributing inference requests across available GPU endpoints.</p>
+                <p>9Router provides a unified API endpoint for routing requests to local AI services.</p>
+                <p>It distributes inference requests across available models hosted within the environment.</p>
               </div>
             </div>
           </div>
@@ -74,8 +74,8 @@ export default function TechnologyPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Overview</h2>
               </div>
               <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
-                <p>9Router functions as the API gateway for all self-hosted AI services within the home lab.</p>
-                <p>It abstracts the underlying hardware complexity, allowing interfaces to query a single unified endpoint regardless of where the model is hosted.</p>
+                <p>9Router functions as the API gateway for self-hosted AI services within the home lab.</p>
+                <p>It abstracts the underlying hardware, allowing interfaces to query a single endpoint regardless of where the model is hosted.</p>
               </div>
             </div>
 
@@ -102,7 +102,7 @@ export default function TechnologyPage() {
                 subtitle="Current self-hosted 9Router deployment running inside the Home Lab."
                 imagePath="/images/homelab/9router-dashboard.png"
                 altText="9Router Dashboard"
-                caption="Self-hosted 9Router instance deployed in the home lab environment for enterprise network emulation and pre-production validation."
+                caption="Self-hosted 9Router instance running in the Home Lab environment."
               />
 
               {/* SECTION 5: Integrated With */}
@@ -125,7 +125,7 @@ export default function TechnologyPage() {
             <div className="w-full p-6 md:p-8 rounded-xl bg-accent-blue/5 border border-accent-blue/20 flex items-start gap-4">
               <Info className="w-6 h-6 text-accent-blue flex-shrink-0 mt-0.5" />
               <p className="text-lg text-accent-blue/90 leading-relaxed font-medium">
-                This environment is continuously used to validate new technologies, reproduce production scenarios, and safely test infrastructure changes before deployment.
+                This Home Lab is continuously used for learning, experimenting with new technologies, validating infrastructure changes, and improving operational knowledge through hands-on practice.
               </p>
             </div>
 

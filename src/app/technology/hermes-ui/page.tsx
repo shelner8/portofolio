@@ -54,8 +54,8 @@ export default function TechnologyPage() {
               </h1>
               
               <div className="text-xl md:text-2xl text-muted leading-relaxed font-light mt-4 flex flex-col gap-4">
-                <p>Hermes UI acts as the primary graphical interface for interacting with self-hosted language models.</p>
-                <p>It provides a conversational frontend for querying internal knowledge bases and analyzing infrastructure configurations.</p>
+                <p>Hermes UI acts as the graphical interface for interacting with local AI models.</p>
+                <p>It provides a conversational frontend for querying internal data and analyzing configurations.</p>
               </div>
             </div>
           </div>
@@ -74,8 +74,8 @@ export default function TechnologyPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Overview</h2>
               </div>
               <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
-                <p>Hermes UI connects directly to local AI routing endpoints to facilitate seamless user interactions.</p>
-                <p>It is deployed via Docker and exposed through the internal reverse proxy for secure access across the home network.</p>
+                <p>Hermes UI connects directly to local AI inference endpoints to facilitate seamless interaction.</p>
+                <p>It is deployed via Docker and exposed through the internal reverse proxy for access across the home network.</p>
               </div>
             </div>
 
@@ -102,7 +102,7 @@ export default function TechnologyPage() {
                 subtitle="Current self-hosted Hermes UI deployment running inside the Home Lab."
                 imagePath="/images/homelab/hermes-ui-dashboard.png"
                 altText="Hermes UI Dashboard"
-                caption="Self-hosted Hermes UI instance deployed in the home lab environment for enterprise network emulation and pre-production validation."
+                caption="Self-hosted Hermes UI instance running in the Home Lab environment."
               />
 
               {/* SECTION 5: Integrated With */}
@@ -125,7 +125,7 @@ export default function TechnologyPage() {
             <div className="w-full p-6 md:p-8 rounded-xl bg-accent-blue/5 border border-accent-blue/20 flex items-start gap-4">
               <Info className="w-6 h-6 text-accent-blue flex-shrink-0 mt-0.5" />
               <p className="text-lg text-accent-blue/90 leading-relaxed font-medium">
-                This environment is continuously used to validate new technologies, reproduce production scenarios, and safely test infrastructure changes before deployment.
+                This Home Lab is continuously used for learning, experimenting with new technologies, validating infrastructure changes, and improving operational knowledge through hands-on practice.
               </p>
             </div>
 

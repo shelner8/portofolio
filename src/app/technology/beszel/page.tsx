@@ -55,8 +55,8 @@ export default function TechnologyPage() {
               </h1>
               
               <div className="text-xl md:text-2xl text-muted leading-relaxed font-light mt-4 flex flex-col gap-4">
-                <p>Beszel provides lightweight, real-time resource monitoring for individual Docker containers and Linux hosts.</p>
-                <p>It offers a simplified dashboard for quickly assessing CPU, memory, and disk usage across the infrastructure.</p>
+                <p>Beszel provides lightweight resource monitoring for Docker containers and Linux hosts.</p>
+                <p>It offers a simple dashboard for assessing CPU, memory, and disk usage across the infrastructure.</p>
               </div>
             </div>
           </div>
@@ -75,8 +75,8 @@ export default function TechnologyPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Overview</h2>
               </div>
               <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
-                <p>Beszel complements Zabbix by focusing specifically on granular container metrics with minimal overhead.</p>
-                <p>It enables rapid identification of resource-heavy applications and ensures host systems operate within capacity limits.</p>
+                <p>Beszel focuses specifically on granular container metrics with minimal overhead.</p>
+                <p>It enables quick identification of resource-heavy applications and ensures host systems operate within capacity.</p>
               </div>
             </div>
 
@@ -103,7 +103,7 @@ export default function TechnologyPage() {
                 subtitle="Current self-hosted Beszel deployment running inside the Home Lab."
                 imagePath="/images/homelab/beszel-dashboard.png"
                 altText="Beszel Dashboard"
-                caption="Self-hosted Beszel instance deployed in the home lab environment for enterprise network emulation and pre-production validation."
+                caption="Self-hosted Beszel instance running in the Home Lab environment."
               />
 
               {/* SECTION 5: Integrated With */}
@@ -126,7 +126,7 @@ export default function TechnologyPage() {
             <div className="w-full p-6 md:p-8 rounded-xl bg-accent-blue/5 border border-accent-blue/20 flex items-start gap-4">
               <Info className="w-6 h-6 text-accent-blue flex-shrink-0 mt-0.5" />
               <p className="text-lg text-accent-blue/90 leading-relaxed font-medium">
-                This environment is continuously used to validate new technologies, reproduce production scenarios, and safely test infrastructure changes before deployment.
+                This Home Lab is continuously used for learning, experimenting with new technologies, validating infrastructure changes, and improving operational knowledge through hands-on practice.
               </p>
             </div>
 

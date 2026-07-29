@@ -55,8 +55,8 @@ export default function TechnologyPage() {
               </h1>
               
               <div className="text-xl md:text-2xl text-muted leading-relaxed font-light mt-4 flex flex-col gap-4">
-                <p>AdGuard Home provides network-wide DNS filtering, blocking malicious domains and telemetry tracking.</p>
-                <p>It acts as the primary recursive DNS resolver for all internal infrastructure and user devices.</p>
+                <p>AdGuard Home acts as the primary DNS server for the home lab, providing network-wide DNS filtering.</p>
+                <p>It handles local DNS records and blocks advertisements and telemetry tracking.</p>
               </div>
             </div>
           </div>
@@ -75,7 +75,7 @@ export default function TechnologyPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Overview</h2>
               </div>
               <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
-                <p>AdGuard Home intercepts DNS queries to enforce security policies at the network level.</p>
+                <p>AdGuard Home intercepts DNS queries to enforce custom filtering policies at the network level.</p>
                 <p>It maintains local DNS records for accessing self-hosted services via standard domain names instead of IP addresses.</p>
               </div>
             </div>
@@ -103,7 +103,7 @@ export default function TechnologyPage() {
                 subtitle="Current self-hosted AdGuard Home deployment running inside the Home Lab."
                 imagePath="/images/homelab/adguard-home-dashboard.png"
                 altText="AdGuard Home Dashboard"
-                caption="Self-hosted AdGuard Home instance deployed in the home lab environment for enterprise network emulation and pre-production validation."
+                caption="Self-hosted AdGuard Home instance running in the Home Lab environment."
               />
 
               {/* SECTION 5: Integrated With */}
@@ -126,7 +126,7 @@ export default function TechnologyPage() {
             <div className="w-full p-6 md:p-8 rounded-xl bg-accent-blue/5 border border-accent-blue/20 flex items-start gap-4">
               <Info className="w-6 h-6 text-accent-blue flex-shrink-0 mt-0.5" />
               <p className="text-lg text-accent-blue/90 leading-relaxed font-medium">
-                This environment is continuously used to validate new technologies, reproduce production scenarios, and safely test infrastructure changes before deployment.
+                This Home Lab is continuously used for learning, experimenting with new technologies, validating infrastructure changes, and improving operational knowledge through hands-on practice.
               </p>
             </div>
 

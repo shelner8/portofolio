@@ -93,7 +93,7 @@ export function SelfHostedInfrastructureSection({ technologies }: SelfHostedInfr
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary tracking-tight">Home Lab</h2>
             <p className="text-muted text-lg max-w-3xl mx-auto leading-relaxed">
-              This environment is used to validate enterprise network designs, simulate production scenarios, test routing changes, verify migration procedures, and evaluate automation workflows before production deployment.
+              This Home Lab is used to build, test, and validate networking, virtualization, self-hosted services, and infrastructure automation in an isolated environment. It serves as a practical space for learning new technologies, reproducing network scenarios, and validating infrastructure changes before applying knowledge in production.
             </p>
           </motion.div>
 

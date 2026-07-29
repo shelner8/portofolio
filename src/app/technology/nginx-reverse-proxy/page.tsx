@@ -55,8 +55,8 @@ export default function TechnologyPage() {
               </h1>
               
               <div className="text-xl md:text-2xl text-muted leading-relaxed font-light mt-4 flex flex-col gap-4">
-                <p>Nginx Reverse Proxy routes internal HTTP traffic to the appropriate containerized services.</p>
-                <p>It terminates SSL connections and provides a single entry point for all web-based infrastructure management tools.</p>
+                <p>Nginx Reverse Proxy publishes internal services and provides centralized access to the home lab.</p>
+                <p>It routes HTTP traffic and assigns friendly domain names to containerized web applications.</p>
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@ export default function TechnologyPage() {
               </div>
               <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
                 <p>Nginx simplifies internal networking by mapping local DNS names to specific service ports.</p>
-                <p>It enforces secure access policies and centralizes certificate management for the entire home lab environment.</p>
+                <p>It acts as the single entry point for web-based infrastructure tools, providing centralized certificate management.</p>
               </div>
             </div>
 
@@ -103,7 +103,7 @@ export default function TechnologyPage() {
                 subtitle="Current self-hosted Nginx Reverse Proxy deployment running inside the Home Lab."
                 imagePath="/images/homelab/nginx-reverse-proxy-dashboard.png"
                 altText="Nginx Reverse Proxy Dashboard"
-                caption="Self-hosted Nginx Reverse Proxy instance deployed in the home lab environment for enterprise network emulation and pre-production validation."
+                caption="Self-hosted Nginx Reverse Proxy instance running in the Home Lab environment."
               />
 
               {/* SECTION 5: Integrated With */}
@@ -126,7 +126,7 @@ export default function TechnologyPage() {
             <div className="w-full p-6 md:p-8 rounded-xl bg-accent-blue/5 border border-accent-blue/20 flex items-start gap-4">
               <Info className="w-6 h-6 text-accent-blue flex-shrink-0 mt-0.5" />
               <p className="text-lg text-accent-blue/90 leading-relaxed font-medium">
-                This environment is continuously used to validate new technologies, reproduce production scenarios, and safely test infrastructure changes before deployment.
+                This Home Lab is continuously used for learning, experimenting with new technologies, validating infrastructure changes, and improving operational knowledge through hands-on practice.
               </p>
             </div>
 
