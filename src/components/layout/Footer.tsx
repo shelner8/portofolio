@@ -28,6 +28,11 @@ export function Footer({ footer }: FooterProps) {
             <p className="text-muted-foreground text-sm">
               Data Center & Enterprise Network Engineer
             </p>
+            {footer.deploymentNote && (
+              <p className="text-muted-foreground/80 text-xs font-light leading-relaxed max-w-[700px] mt-6 px-4">
+                {footer.deploymentNote}
+              </p>
+            )}
           </div>
         </div>
       </Container>

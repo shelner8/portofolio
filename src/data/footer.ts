@@ -4,6 +4,7 @@ export const footer = {
   brandStatement: "Designing reliable infrastructure for modern enterprises through architecture, automation, and operational excellence.",
   quote: "Reliable infrastructure is not built by chance. It is engineered through thoughtful architecture, continuous improvement, and operational excellence.",
   copyright: `© ${new Date().getFullYear()} Enterprise Network Engineer. All rights reserved.`,
+  deploymentNote: "This portfolio is self-hosted on my home lab infrastructure, running on Ubuntu Server with Docker, Nginx Reverse Proxy, and Tailscale for secure remote administration.",
   navigation: [
     { name: "Home", href: "/" },
     { name: "Expertise", href: "#expertise" },

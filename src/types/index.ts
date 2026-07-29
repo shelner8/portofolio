@@ -161,6 +161,7 @@ export interface FooterContent {
   brandStatement: string;
   quote: string;
   copyright: string;
+  deploymentNote?: string;
   navigation: NavigationItem[];
   technologies: string[];
 }
