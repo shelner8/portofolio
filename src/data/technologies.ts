@@ -385,7 +385,7 @@ export const technologies: Technology[] = [
     slug: "tailscale",
     name: "Tailscale",
     category: "Connectivity",
-    description: "Provides zero-configuration mesh VPN connectivity for infrastructure access.",
+    description: "Provides zero-configuration mesh VPN connectivity for remote infrastructure access.",
     icon: "network",
   },
   {
@@ -393,7 +393,7 @@ export const technologies: Technology[] = [
     slug: "multi-wan",
     name: "Multi-WAN",
     category: "Connectivity",
-    description: "Delivers redundant external connectivity for enterprise internet access.",
+    description: "Used for ISP redundancy, automatic failover, and traffic distribution across multiple internet uplinks.",
     icon: "network",
   },
   {
@@ -401,7 +401,7 @@ export const technologies: Technology[] = [
     slug: "isp-peering",
     name: "BGP Peering",
     category: "Connectivity",
-    description: "Used to establish direct BGP routing with upstream internet service providers.",
+    description: "Used to establish BGP sessions with upstream providers for enterprise internet connectivity.",
     icon: "globe",
   },
   {
@@ -409,7 +409,7 @@ export const technologies: Technology[] = [
     slug: "ix-iix-peering",
     name: "Internet Exchange (IX)",
     category: "Connectivity",
-    description: "Enables direct BGP peering with public internet exchanges to manage traffic routing.",
+    description: "Used to exchange local internet traffic through Internet Exchange infrastructure.",
     icon: "globe",
   },
   {
@@ -417,7 +417,7 @@ export const technologies: Technology[] = [
     slug: "site-to-site-vpn",
     name: "Site-to-Site VPN",
     category: "Connectivity",
-    description: "Provides encrypted point-to-point IPsec tunnels between remote enterprise locations.",
+    description: "Used to securely interconnect geographically separated enterprise networks using encrypted tunnels.",
     icon: "lock",
   },
   // --- Network Operating Systems ---
