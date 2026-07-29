@@ -16,12 +16,12 @@ export const metadata = {
 
 export default function PNETLabPage() {
   const useCases = [
-    "Building virtual network topologies",
-    "Routing practice",
-    "Layer 2 / Layer 3 labs",
-    "EVPN-VXLAN experiments",
+    "Network topology validation",
+    "Layer 2 and Layer 3 design verification",
+    "Routing protocol validation",
     "Migration rehearsal",
-    "Certification practice"
+    "EVPN-VXLAN topology testing",
+    "Proof-of-concept development"
 ]
 
   const integrations = [
@@ -60,8 +60,8 @@ export default function PNETLabPage() {
               </h1>
               
               <div className="text-xl md:text-2xl text-muted leading-relaxed font-light mt-4 flex flex-col gap-4">
-                <p>PNETLab is used as an isolated network emulation environment for building virtual network topologies and practicing configurations.</p>
-                <p>It acts as a safe sandbox for experimenting with routing protocols, Layer 2 mechanisms, and migration rehearsals.</p>
+                <p>PNETLab provides an isolated network emulation environment for validating network designs, testing routing behavior, and rehearsing infrastructure changes before production deployment.</p>
+                <p>It is used to safely evaluate Layer 2, Layer 3, and data center networking scenarios without impacting live infrastructure.</p>
               </div>
             </div>
           </div>
@@ -80,8 +80,8 @@ export default function PNETLabPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Overview</h2>
               </div>
               <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
-                <p>PNETLab serves as the primary laboratory for hands-on networking practice and proof-of-concepts.</p>
-                <p>It is deployed to allow practical experimentation with EVPN-VXLAN, troubleshooting scenarios, and certification practice without impacting real network hardware.</p>
+                <p>PNETLab serves as a practical engineering sandbox for validating enterprise network configurations and deployment workflows.</p>
+                <p>It is regularly used to reproduce production scenarios, verify routing behavior, and perform migration rehearsals before implementing changes in operational environments.</p>
               </div>
             </div>
 
@@ -108,7 +108,7 @@ export default function PNETLabPage() {
                 subtitle="Current self-hosted PNETLab deployment running inside the Home Lab."
                 imagePath="/images/homelab/pnetlab-login.png"
                 altText="PNETLab Login Interface"
-                caption="Self-hosted PNETLab instance running in the Home Lab environment."
+                caption="Self-hosted PNETLab instance used for network design validation and pre-production testing."
               />
 
               {/* SECTION 5: Integrated With */}
