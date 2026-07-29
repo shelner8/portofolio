@@ -412,14 +412,6 @@ export const technologies: Technology[] = [
     description: "Used to exchange local internet traffic through Internet Exchange infrastructure.",
     icon: "globe",
   },
-  {
-    id: "site-to-site-vpn",
-    slug: "site-to-site-vpn",
-    name: "Site-to-Site VPN",
-    category: "Connectivity",
-    description: "Used to securely interconnect geographically separated enterprise networks using encrypted tunnels.",
-    icon: "lock",
-  },
   // --- Network Operating Systems ---
   {
     id: "mikrotik",
@@ -524,14 +516,6 @@ export const technologies: Technology[] = [
   },
   // --- Local AI ---
   {
-    id: "ollama",
-    slug: "ollama",
-    name: "Ollama",
-    category: "Local AI",
-    description: "Hosts large language models locally to power self-hosted AI applications.",
-    icon: "cpu",
-  },
-  {
     id: "hermes-ui",
     slug: "hermes-ui",
     name: "Hermes UI",
@@ -546,14 +530,6 @@ export const technologies: Technology[] = [
     category: "Local AI",
     description: "Routes local API requests and balances loads across self-hosted language models.",
     icon: "network",
-  },
-  {
-    id: "gemini-api",
-    slug: "gemini-api",
-    name: "Gemini API",
-    category: "Local AI",
-    description: "Used to integrate AI capabilities into infrastructure documentation workflows.",
-    icon: "cpu",
   },
   // --- Monitoring ---
   {

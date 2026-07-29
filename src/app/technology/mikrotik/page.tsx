@@ -26,7 +26,6 @@ export default function TechnologyPage() {
 
   const integrations = [
     "Multi-WAN",
-    "Site-to-Site VPN",
     "OSPF",
     "BGP",
     "Zabbix",

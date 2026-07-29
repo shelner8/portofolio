@@ -25,7 +25,6 @@ export default function TechnologyPage() {
 ];
 
   const integrations = [
-    "Ollama",
     "9Router",
     "Docker",
     "Nginx Reverse Proxy"

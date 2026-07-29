@@ -25,7 +25,6 @@ export default function TechnologyPage() {
 ];
 
   const integrations = [
-    "Ollama",
     "Hermes UI",
     "Docker",
     "Ubuntu Server"

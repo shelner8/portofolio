@@ -56,7 +56,7 @@ export function SelfHostedInfrastructureSection({ technologies }: SelfHostedInfr
     {
       title: "AI Platform",
       icon: <BrainCircuit className="w-5 h-5 text-accent-emerald" />,
-      techs: ["Ollama", "Hermes UI", "9Router", "Gemini API"]
+      techs: ["Hermes UI", "9Router"]
     },
     {
       title: "Infrastructure Services",
@@ -71,7 +71,7 @@ export function SelfHostedInfrastructureSection({ technologies }: SelfHostedInfr
     {
       title: "Secure Connectivity",
       icon: <ShieldCheck className="w-5 h-5 text-accent-emerald" />,
-      techs: ["Tailscale", "Site-to-Site VPN"]
+      techs: ["Tailscale"]
     }
   ]
 
