@@ -94,7 +94,7 @@ export function HeroSection({ hero }: HeroSectionProps) {
           initial="initial"
           whileInView="whileInView"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 pt-8 md:pt-10 border-t border-surface/50"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 pt-8 md:pt-10 border-t border-surface/50"
         >
           {hero.statistics.map(stat => (
             <motion.div key={stat.id} variants={animations.fadeUp} className="h-full">
