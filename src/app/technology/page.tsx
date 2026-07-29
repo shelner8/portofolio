@@ -69,9 +69,10 @@ export default function TechnologyLibraryPage() {
                 <span className="text-sm font-medium text-muted uppercase tracking-wider">Technologies</span>
               </div>
               <div className="w-px h-12 bg-surface" />
-              <div className="flex flex-col">
-                <span className="text-3xl font-black text-primary">{Object.keys(categories).length}</span>
-                <span className="text-sm font-medium text-muted uppercase tracking-wider">Domains</span>
+              <div className="flex flex-col justify-center">
+                <span className="text-sm font-bold text-primary uppercase tracking-wider max-w-[150px] leading-relaxed">
+                  Used Across Enterprise Deployments
+                </span>
               </div>
             </div>
           </div>
