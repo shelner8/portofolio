@@ -436,7 +436,7 @@ export const technologies: Technology[] = [
     slug: "eve-ng",
     name: "EVE-NG",
     category: "Network Emulation",
-    description: "Used to simulate complex network topologies and validate enterprise architectures before production deployment.",
+    description: "Simulates complex network topologies to validate enterprise architectures before production deployment.",
     icon: "network",
   },
   {
@@ -444,7 +444,7 @@ export const technologies: Technology[] = [
     slug: "pnetlab",
     name: "PNETLab",
     category: "Network Emulation",
-    description: "Provides an emulation environment for testing data center topologies and routing changes.",
+    description: "Emulates data center topologies to test routing changes and configurations safely.",
     icon: "network",
   },
   // --- Virtualization ---
@@ -453,7 +453,7 @@ export const technologies: Technology[] = [
     slug: "vmware-esxi",
     name: "VMware ESXi",
     category: "Virtualization",
-    description: "Used to deploy and manage virtualized enterprise workloads on bare-metal infrastructure.",
+    description: "Hosts bare-metal virtual machines for testing enterprise network architectures and services.",
     icon: "server",
   },
   {
@@ -461,7 +461,7 @@ export const technologies: Technology[] = [
     slug: "proxmox-ve",
     name: "Proxmox VE",
     category: "Virtualization",
-    description: "Provides open-source virtualization management for deploying virtual machines and Linux containers.",
+    description: "Manages virtual machines and Linux containers for the primary home data center infrastructure.",
     icon: "server",
   },
   {
@@ -469,7 +469,7 @@ export const technologies: Technology[] = [
     slug: "ubuntu-server",
     name: "Ubuntu Server",
     category: "Virtualization",
-    description: "Used to run self-hosted infrastructure, network management tools, and containerized services.",
+    description: "Used as the primary Linux platform hosting virtualization, containers, monitoring, automation, and self-hosted infrastructure services.",
     icon: "server",
   },
   // --- Container Platform ---
@@ -478,7 +478,7 @@ export const technologies: Technology[] = [
     slug: "docker",
     name: "Docker",
     category: "Container Platform",
-    description: "Used to deploy and manage self-hosted infrastructure services in isolated container environments.",
+    description: "Hosts self-managed infrastructure services using isolated containers.",
     icon: "box",
   },
   {
@@ -486,7 +486,7 @@ export const technologies: Technology[] = [
     slug: "docker-compose",
     name: "Docker Compose",
     category: "Container Platform",
-    description: "Enables declarative configuration and orchestration of multi-container infrastructure stacks.",
+    description: "Used to orchestrate multi-container infrastructure stacks and automate local service deployments.",
     icon: "box",
   },
   {
@@ -494,7 +494,7 @@ export const technologies: Technology[] = [
     slug: "portainer",
     name: "Portainer",
     category: "Container Platform",
-    description: "Provides a centralized management interface for monitoring and operating Docker environments.",
+    description: "Provides a centralized management interface for operating and monitoring the local container infrastructure.",
     icon: "box",
   },
   // --- Self-Hosted Services ---
@@ -503,7 +503,7 @@ export const technologies: Technology[] = [
     slug: "adguard-home",
     name: "AdGuard Home",
     category: "Self-Hosted Services",
-    description: "Provides production DNS filtering, local recursive DNS, and network-wide advertisement blocking.",
+    description: "Provides production DNS filtering, recursive DNS resolution, and network-wide advertisement blocking for the home infrastructure.",
     icon: "shield",
   },
   {
@@ -511,7 +511,7 @@ export const technologies: Technology[] = [
     slug: "nginx-reverse-proxy",
     name: "Nginx Reverse Proxy",
     category: "Self-Hosted Services",
-    description: "Used to route incoming traffic to internal self-hosted infrastructure services.",
+    description: "Routes internal services through secure reverse proxy endpoints with local domain resolution.",
     icon: "server",
   },
   {
@@ -519,7 +519,7 @@ export const technologies: Technology[] = [
     slug: "agent-dvr",
     name: "Agent DVR CCTV",
     category: "Self-Hosted Services",
-    description: "Provides centralized video surveillance management and continuous camera recording.",
+    description: "Manages continuous video surveillance and camera recording for the local environment.",
     icon: "server",
   },
   // --- Local AI ---
@@ -528,7 +528,7 @@ export const technologies: Technology[] = [
     slug: "ollama",
     name: "Ollama",
     category: "Local AI",
-    description: "Used to run and manage large language models within local infrastructure.",
+    description: "Hosts large language models locally to power self-hosted AI applications.",
     icon: "cpu",
   },
   {
@@ -536,7 +536,7 @@ export const technologies: Technology[] = [
     slug: "hermes-ui",
     name: "Hermes UI",
     category: "Local AI",
-    description: "Provides a self-hosted graphical interface for interacting with local AI models.",
+    description: "Serves as the primary graphical interface for interacting with self-hosted AI models.",
     icon: "layout",
   },
   {
@@ -544,7 +544,7 @@ export const technologies: Technology[] = [
     slug: "9router",
     name: "9Router",
     category: "Local AI",
-    description: "Enables local API routing and load balancing for self-hosted language models.",
+    description: "Routes local API requests and balances loads across self-hosted language models.",
     icon: "network",
   },
   {
@@ -561,7 +561,7 @@ export const technologies: Technology[] = [
     slug: "zabbix",
     name: "Zabbix",
     category: "Monitoring",
-    description: "Used to monitor enterprise servers, network devices, infrastructure health, and service availability.",
+    description: "Monitors network devices, server health, and service availability across the infrastructure.",
     icon: "network",
   },
   {
@@ -569,7 +569,7 @@ export const technologies: Technology[] = [
     slug: "cacti",
     name: "Cacti",
     category: "Monitoring",
-    description: "Provides detailed network telemetry visualization and historical bandwidth graphing.",
+    description: "Visualizes network telemetry and tracks historical bandwidth utilization.",
     icon: "network",
   },
   {
@@ -577,7 +577,7 @@ export const technologies: Technology[] = [
     slug: "observium",
     name: "Observium",
     category: "Monitoring",
-    description: "Used for automated network discovery and infrastructure health monitoring.",
+    description: "Automatically discovers network devices and tracks infrastructure health metrics.",
     icon: "network",
   },
   {
@@ -585,7 +585,7 @@ export const technologies: Technology[] = [
     slug: "beszel",
     name: "Beszel",
     category: "Monitoring",
-    description: "Provides lightweight monitoring and alerting for Linux servers and Docker containers.",
+    description: "Provides lightweight resource monitoring and alerting for home lab containers and servers.",
     icon: "activity",
   },
   {
@@ -601,7 +601,7 @@ export const technologies: Technology[] = [
     slug: "linux-monitoring",
     name: "Linux Telemetry",
     category: "Monitoring",
-    description: "Enables continuous health tracking, resource utilization, and performance monitoring for Linux servers.",
+    description: "Tracks resource utilization and performance metrics across self-hosted Linux environments.",
     icon: "activity",
   }
 ];
