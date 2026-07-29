@@ -16,12 +16,12 @@ export const metadata = {
 
 export default function TechnologyPage() {
   const useCases = [
-    "Multi-vendor network emulation",
-    "Protocol testing",
-    "Firewall testing",
-    "Routing labs",
-    "Layer 2 switching",
-    "Interoperability testing"
+    "Multi-vendor interoperability validation",
+    "Enterprise topology simulation",
+    "Routing protocol validation",
+    "Layer 2 switching validation",
+    "Firewall policy testing",
+    "Network design verification"
 ]
 
   const integrations = [
@@ -56,8 +56,8 @@ export default function TechnologyPage() {
               </h1>
               
               <div className="text-xl md:text-2xl text-muted leading-relaxed font-light mt-4 flex flex-col gap-4">
-                <p>EVE-NG is deployed as a multi-vendor network emulation platform for protocol testing and laboratory experimentation.</p>
-                <p>It is used to run vendor images, practice firewall rules, and experiment with complex switching environments.</p>
+                <p>EVE-NG is used as a multi-vendor network emulation platform for validating enterprise network architectures and interoperability across different vendors.</p>
+                <p>It provides a controlled environment for testing routing behavior, switching designs, firewall policies, and migration scenarios before production implementation.</p>
               </div>
             </div>
           </div>
@@ -76,8 +76,8 @@ export default function TechnologyPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Overview</h2>
               </div>
               <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
-                <p>EVE-NG runs on virtualization to simulate multi-vendor network environments.</p>
-                <p>It is utilized for interoperability testing, routing labs, and firewall policy practice in a controlled, isolated sandbox.</p>
+                <p>EVE-NG serves as a virtual engineering lab for reproducing production network environments and validating infrastructure changes.</p>
+                <p>It enables safe experimentation with multi-vendor network designs while reducing operational risk during deployment planning.</p>
               </div>
             </div>
 
@@ -104,7 +104,7 @@ export default function TechnologyPage() {
                 subtitle="Current self-hosted EVE-NG deployment running inside the Home Lab."
                 imagePath="/images/homelab/eve-ng-dashboard.png"
                 altText="EVE-NG Dashboard"
-                caption="Self-hosted EVE-NG instance running in the Home Lab environment."
+                caption="Self-hosted EVE-NG environment used for enterprise network validation and interoperability testing."
               />
 
               {/* SECTION 5: Integrated With */}
