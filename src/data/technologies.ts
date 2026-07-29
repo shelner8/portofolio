@@ -136,7 +136,7 @@ export const technologies: Technology[] = [
   {
     id: "enterprise-routing",
     slug: "enterprise-routing",
-    name: "Enterprise Routing",
+    name: "Layer 3 Routing",
     category: "Enterprise Networking",
     description: "Supports resilient Layer 3 routing for campus and data center environments.",
     icon: "route",
@@ -152,7 +152,7 @@ export const technologies: Technology[] = [
   {
     id: "tunneling",
     slug: "tunneling",
-    name: "Tunneling",
+    name: "IPsec & GRE",
     category: "Enterprise Networking",
     description: "Provides secure site-to-site connectivity between distributed enterprise locations.",
     icon: "network",
@@ -160,7 +160,7 @@ export const technologies: Technology[] = [
   {
     id: "isp",
     slug: "isp",
-    name: "ISP",
+    name: "Internet Gateway",
     category: "Enterprise Networking",
     description: "Used to connect enterprise gateways to upstream internet service providers.",
     icon: "globe",
@@ -208,7 +208,7 @@ export const technologies: Technology[] = [
   {
     id: "alcatel",
     slug: "alcatel",
-    name: "Alcatel",
+    name: "Alcatel OmniSwitch",
     category: "Enterprise Networking",
     description: "Used to deploy reliable access and distribution switching for enterprise LAN architectures.",
     icon: "server",
@@ -224,7 +224,7 @@ export const technologies: Technology[] = [
   {
     id: "device-policy",
     slug: "device-policy",
-    name: "Device Policy",
+    name: "Network Access Control",
     category: "Enterprise Networking",
     description: "Enables endpoint admission control and secure device onboarding policies.",
     icon: "lock",
@@ -296,7 +296,7 @@ export const technologies: Technology[] = [
   {
     id: "ruckus",
     slug: "ruckus",
-    name: "Ruckus",
+    name: "Ruckus Wireless",
     category: "Enterprise Networking",
     description: "Used to deliver reliable high-density Wi-Fi access across enterprise campuses.",
     icon: "wifi",
@@ -399,7 +399,7 @@ export const technologies: Technology[] = [
   {
     id: "isp-peering",
     slug: "isp-peering",
-    name: "ISP Peering",
+    name: "BGP Peering",
     category: "Connectivity",
     description: "Used to establish direct BGP routing with upstream internet service providers.",
     icon: "globe",
@@ -407,7 +407,7 @@ export const technologies: Technology[] = [
   {
     id: "ix-iix-peering",
     slug: "ix-iix-peering",
-    name: "IX & IIX Peering",
+    name: "Internet Exchange (IX)",
     category: "Connectivity",
     description: "Enables direct BGP peering with public internet exchanges to optimize traffic routing.",
     icon: "globe",
@@ -424,7 +424,7 @@ export const technologies: Technology[] = [
   {
     id: "mikrotik",
     slug: "mikrotik",
-    name: "MikroTik",
+    name: "MikroTik RouterOS",
     category: "Network Operating Systems",
     featured: true,
     description: "Used as an enterprise edge gateway providing robust routing, switching, and security services.",
@@ -599,7 +599,7 @@ export const technologies: Technology[] = [
   {
     id: "linux-monitoring",
     slug: "linux-monitoring",
-    name: "Linux Monitoring",
+    name: "Linux Telemetry",
     category: "Monitoring",
     description: "Enables continuous health tracking, resource utilization, and performance monitoring for Linux servers.",
     icon: "activity",
