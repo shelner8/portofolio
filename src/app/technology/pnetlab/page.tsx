@@ -11,18 +11,18 @@ import {
 
 export const metadata = {
   title: 'PNETLab | Technology Library',
-  description: 'Self-hosted network emulation environment used for enterprise architecture validation.',
+  description: 'Self-hosted network emulation environment used for building virtual network topologies and practicing configurations.',
 }
 
 export default function PNETLabPage() {
   const useCases = [
-    "Enterprise routing validation",
-    "Layer 2 / Layer 3 switching labs",
-    "EVPN-VXLAN testing",
-    "Spine-Leaf topology simulation",
-    "Migration procedure validation",
-    "Network troubleshooting scenarios"
-  ]
+    "Building virtual network topologies",
+    "Routing practice",
+    "Layer 2 / Layer 3 labs",
+    "EVPN-VXLAN experiments",
+    "Migration rehearsal",
+    "Certification practice"
+]
 
   const integrations = [
     "Ubuntu Server",
@@ -61,7 +61,7 @@ export default function PNETLabPage() {
               
               <div className="text-xl md:text-2xl text-muted leading-relaxed font-light mt-4 flex flex-col gap-4">
                 <p>PNETLab is an isolated network emulation environment used for building virtual network topologies and practicing configurations.</p>
-                <p>It provides a safe sandbox for testing routing protocols, Layer 2 mechanisms, and migration procedures.</p>
+                <p>It provides a safe sandbox for experimenting with routing protocols, Layer 2 mechanisms, and migration rehearsals.</p>
               </div>
             </div>
           </div>

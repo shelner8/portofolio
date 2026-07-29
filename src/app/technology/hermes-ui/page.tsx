@@ -21,8 +21,8 @@ export default function TechnologyPage() {
     "Prompt management",
     "Conversation history",
     "Testing prompts",
-    "Frontend for inference access"
-];
+    "Frontend for AI Interaction"
+]
 
   const integrations = [
     "9Router",

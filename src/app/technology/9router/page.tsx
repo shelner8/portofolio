@@ -16,13 +16,13 @@ export const metadata = {
 
 export default function TechnologyPage() {
   const useCases = [
-    "Unified API endpoint",
+    "Unified endpoint",
     "Provider routing (Gemini, Antigravity, Kiro)",
     "Model selection",
     "Token and cost optimization",
     "Simplified client configuration",
     "Centralized endpoint management"
-];
+]
 
   const integrations = [
     "Hermes UI",
@@ -74,8 +74,8 @@ export default function TechnologyPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Overview</h2>
               </div>
               <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
-                <p>9Router functions as the central API gateway for AI interactions within the home lab.</p>
-                <p>It simplifies client configurations by providing a single endpoint, allowing for rapid model switching, token optimization, and cost management without altering frontend applications.</p>
+                <p>9Router functions as the local API gateway for AI interactions within the home lab.</p>
+                <p>It simplifies client configurations by providing a single endpoint, allowing for rapid model switching, token optimization, and cost optimization without altering frontend applications.</p>
               </div>
             </div>
 

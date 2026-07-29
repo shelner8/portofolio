@@ -17,12 +17,12 @@ export const metadata = {
 export default function TechnologyPage() {
   const useCases = [
     "Multi-vendor network emulation",
-    "Protocol validation",
+    "Protocol testing",
     "Firewall testing",
     "Routing labs",
     "Layer 2 switching",
     "Interoperability testing"
-];
+]
 
   const integrations = [
     "Ubuntu Server",
@@ -56,8 +56,8 @@ export default function TechnologyPage() {
               </h1>
               
               <div className="text-xl md:text-2xl text-muted leading-relaxed font-light mt-4 flex flex-col gap-4">
-                <p>EVE-NG provides a multi-vendor network emulation platform for protocol validation and laboratory testing.</p>
-                <p>It is used to run vendor images, validate firewall rules, and experiment with complex switching environments.</p>
+                <p>EVE-NG provides a multi-vendor network emulation platform for protocol testing and laboratory experimentation.</p>
+                <p>It is used to run vendor images, practice firewall rules, and experiment with complex switching environments.</p>
               </div>
             </div>
           </div>
@@ -77,7 +77,7 @@ export default function TechnologyPage() {
               </div>
               <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
                 <p>EVE-NG operates on virtualization to simulate multi-vendor network environments.</p>
-                <p>It enables interoperability testing, routing labs, and firewall policy validation in a controlled, isolated sandbox.</p>
+                <p>It enables interoperability testing, routing labs, and firewall policy practice in a controlled, isolated sandbox.</p>
               </div>
             </div>
 

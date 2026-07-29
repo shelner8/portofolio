@@ -16,13 +16,12 @@ export const metadata = {
 
 export default function TechnologyPage() {
   const useCases = [
-    "Internal HTTP routing",
-    "SSL/TLS termination",
-    "Local domain mapping",
-    "Access control enforcement",
-    "Service load balancing",
-    "Centralized web logging"
-];
+    "Reverse Proxy",
+    "Local Domain Routing",
+    "TLS Termination",
+    "HTTP Routing",
+    "Centralized Service Access"
+]
 
   const integrations = [
     "Docker",
@@ -76,7 +75,7 @@ export default function TechnologyPage() {
               </div>
               <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
                 <p>Nginx simplifies internal networking by mapping local DNS names to specific service ports.</p>
-                <p>It acts as the single entry point for web-based infrastructure tools, providing centralized certificate management.</p>
+                <p>It acts as the single entry point for web-based infrastructure tools, providing centralized certificate management and local domain routing.</p>
               </div>
             </div>
 

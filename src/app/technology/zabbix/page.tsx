@@ -16,13 +16,13 @@ export const metadata = {
 
 export default function TechnologyPage() {
   const useCases = [
-    "SNMP hardware polling",
-    "Linux server metrics collection",
-    "Service uptime monitoring",
-    "Bandwidth utilization tracking",
-    "Alert generation and notification",
-    "Historical performance graphing"
-];
+    "Alerting",
+    "Health Monitoring",
+    "Resource Monitoring",
+    "SNMP monitoring",
+    "Linux monitoring",
+    "Bandwidth tracking"
+]
 
   const integrations = [
     "MikroTik",
@@ -76,7 +76,7 @@ export default function TechnologyPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Overview</h2>
               </div>
               <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
-                <p>Zabbix serves as the alerting and metrics aggregation platform for monitored home lab systems.</p>
+                <p>Zabbix serves as the alerting and health monitoring platform for monitored home lab systems.</p>
                 <p>It tracks bandwidth utilization, CPU loads, and service uptime, generating notifications when operational thresholds are breached.</p>
               </div>
             </div>
