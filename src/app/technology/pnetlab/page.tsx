@@ -1,10 +1,10 @@
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
+import { DeploymentEvidence } from "@/components/ui/DeploymentEvidence"
 import { 
   ArrowLeft, 
   BookOpen, 
   Target, 
-  MonitorCheck, 
   Layers, 
   Info 
 } from "lucide-react"
@@ -102,26 +102,13 @@ export default function PNETLabPage() {
             </div>
 
             {/* SECTION 4: Deployment Evidence */}
-            <div className="flex flex-col gap-6">
-              <div className="flex items-center gap-3">
-                <MonitorCheck className="w-6 h-6 text-accent-orange" />
-                <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Deployment Evidence</h2>
-              </div>
-              <p className="text-lg text-muted">Current self-hosted PNETLab deployment running inside the Home Lab.</p>
-              
-              <div className="flex flex-col gap-4 mt-2">
-                <div className="relative w-full rounded-xl overflow-hidden border border-surface shadow-2xl bg-surface/30">
-                  <img 
-                    src="/images/pnetlab-login.png" 
-                    alt="PNETLab Login Interface" 
-                    className="w-full h-auto min-h-[300px] object-cover" 
-                  />
-                </div>
-                <p className="text-sm text-muted/80 italic text-center">
-                  "Self-hosted PNETLab instance deployed in the home lab environment for enterprise network emulation and pre-production validation."
-                </p>
-              </div>
-            </div>
+            <DeploymentEvidence 
+              title="Deployment Evidence"
+              subtitle="Current self-hosted PNETLab deployment running inside the Home Lab."
+              imagePath="/images/homelab/pnetlab-login.png"
+              altText="PNETLab Login Interface"
+              caption="Self-hosted PNETLab instance deployed in the home lab environment for enterprise network emulation and pre-production validation."
+            />
 
             {/* SECTION 5: Integrated With */}
             <div className="flex flex-col gap-6">
