@@ -9,7 +9,7 @@ export const architectures: Architecture[] = [
     technologies: ["Aruba AOS-CX", "High Availability", "OSPF", "BGP", "Aruba Fabric Composer"],
     environment: "Production",
     diagrams: [],
-    lessonsLearned: ["Configuration validation reduces deployment risk.", "Documentation simplifies future operations."],
+    lessonsLearned: ["Lab validation significantly reduces production risk.", "Thorough documentation simplifies future maintenance and troubleshooting."],
     bestPractices: ["Validate all configurations in EVE-NG or PNETLab before production deployment whenever practical.", "Perform staged deployment with rollback planning."]
   },
   {
@@ -20,7 +20,7 @@ export const architectures: Architecture[] = [
     technologies: ["EVPN", "VXLAN", "MP-BGP", "Spine-Leaf", "Border Leaf"],
     environment: "Production",
     diagrams: [],
-    lessonsLearned: ["Routing consistency is critical for scalable environments.", "Testing before production minimizes operational impact."],
+    lessonsLearned: ["Routing consistency is more important than deployment speed.", "Production changes should always include rollback procedures."],
     bestPractices: ["Verify routing convergence before maintenance windows.", "Validate redundancy and failover after deployment."]
   },
   {
@@ -31,7 +31,7 @@ export const architectures: Architecture[] = [
     technologies: ["Routing", "Switching", "ACL", "Device Policy", "PBR", "Network Segmentation"],
     environment: "Production",
     diagrams: [],
-    lessonsLearned: ["Testing before production minimizes operational impact.", "Configuration validation reduces deployment risk."],
+    lessonsLearned: ["Configuration review prevents most operational mistakes.", "Lab validation significantly reduces production risk."],
     bestPractices: ["Document configuration changes before implementation.", "Validate all configurations in EVE-NG or PNETLab before production deployment whenever practical."]
   }
 ];
