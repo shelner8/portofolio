@@ -5,11 +5,10 @@ export const skills: Skill[] = [
     id: "data-center-networking",
     name: "Data Center Networking",
     category: "Data Center",
-    description: "Practical engineering, deployment, and management of highly available data center infrastructure, VSX, and operational reliability.",
+    description: "Practical engineering, deployment, and operation of highly available enterprise data center infrastructure using modern Layer 2 and Layer 3 architectures.",
     technologies: [
-      "Aruba AOS-CX", "Aruba CX10000", "VSX", "EVPN", 
-      "VXLAN", "MP-BGP", "VTEP", "Spine-Leaf", 
-      "Border Leaf", "Aruba Fabric Composer"
+      "Aruba AOS-CX", "High Availability", "EVPN", "VXLAN", 
+      "MP-BGP", "Spine-Leaf", "Border Leaf", "Aruba Fabric Composer"
     ]
   },
   {
@@ -19,15 +18,15 @@ export const skills: Skill[] = [
     description: "Deploying enterprise routing, switching, and network segmentation with a focus on high availability and operational stability.",
     technologies: [
       "Routing", "Switching", "OSPF", "BGP", 
-      "VLAN", "VRF", "ACL", "High Availability", 
-      "Network Segmentation"
+      "VLAN", "VRF", "ACL", "Device Policy", 
+      "PBR", "High Availability", "Network Segmentation"
     ]
   },
   {
     id: "network-automation",
-    name: "Network Automation",
+    name: "Network Automation & Tooling",
     category: "Automation",
-    description: "Improving efficiency and reducing errors through automation, scripting, and repeatable operational workflows.",
+    description: "Improving operational efficiency through scripting, APIs, automation tooling, and repeatable operational workflows.",
     technologies: [
       "Python", "FastAPI", "REST API", "Docker", 
       "Linux", "Git", "Infrastructure Automation"

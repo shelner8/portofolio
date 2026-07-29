@@ -7,18 +7,15 @@ export const hero: HeroContent = {
   description: "Designing and operating resilient enterprise networks, modern data center fabrics, and self-hosted infrastructure through practical engineering, automation, and continuous learning.",
   highlights: [
     "Aruba Fabric Composer",
-    "VSX",
+    "High Availability",
     "EVPN",
     "VXLAN",
     "MP-BGP",
-    "VTEP",
     "Spine-Leaf",
     "Border Leaf",
-    "Linux",
-    "Python",
-    "Docker",
     "Automation",
-    "Enterprise Networking"
+    "Enterprise Networking",
+    "Self-Hosted Lab"
   ],
   statistics: statistics,
   actions: [
