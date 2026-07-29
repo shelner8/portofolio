@@ -11,7 +11,7 @@ import {
 
 export const metadata = {
   title: 'Docker | Technology Library',
-  description: 'Docker serves as the standard container runtime for deploying self-hosted services and infrastructure dependencies.',
+  description: 'Docker serves as the container runtime for deploying supported self-hosted services and isolated dependencies.',
 }
 
 export default function TechnologyPage() {
@@ -55,8 +55,8 @@ export default function TechnologyPage() {
               </h1>
               
               <div className="text-xl md:text-2xl text-muted leading-relaxed font-light mt-4 flex flex-col gap-4">
-                <p>Docker serves as the standard container runtime for deploying self-hosted services and infrastructure dependencies.</p>
-                <p>It isolates applications, simplifies updates, and ensures consistent configuration across the home lab.</p>
+                <p>Docker serves as the container runtime for deploying supported self-hosted services and infrastructure dependencies.</p>
+                <p>It isolates targeted applications, simplifies updates, and ensures consistent configuration for containerized workloads across the home lab.</p>
               </div>
             </div>
           </div>
@@ -75,8 +75,9 @@ export default function TechnologyPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Overview</h2>
               </div>
               <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
-                <p>Docker is deployed across multiple Linux instances to host the majority of internal applications.</p>
-                <p>Containerization minimizes host OS configuration drift and allows for rapid redeployment of the entire infrastructure stack using declarative configurations.</p>
+                <p>Docker is used to deploy and manage selected self-hosted applications within the Home Lab.</p>
+                <p>Containerization simplifies application deployment, updates, service isolation, and maintenance while integrating with the underlying Ubuntu Server infrastructure.</p>
+                <p>Not every service in the Home Lab runs inside Docker. Docker is used where containerization provides operational and management benefits.</p>
               </div>
             </div>
 
@@ -103,7 +104,7 @@ export default function TechnologyPage() {
                 subtitle="Current self-hosted Docker deployment running inside the Home Lab."
                 imagePath="/images/homelab/docker-dashboard.png"
                 altText="Docker Dashboard"
-                caption="Self-hosted Docker instance deployed in the home lab environment for enterprise network emulation and pre-production validation."
+                caption="Self-hosted Docker environment actively managing containerized applications within the infrastructure."
               />
 
               {/* SECTION 5: Integrated With */}
