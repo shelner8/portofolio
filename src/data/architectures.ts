@@ -5,7 +5,7 @@ export const architectures: Architecture[] = [
     id: "aruba-aos-cx-data-center",
     title: "Aruba AOS-CX Data Center",
     category: "Data Center",
-    description: "Modern data center deployments built around Aruba AOS-CX switching platforms designed for enterprise environments requiring high performance, stability, and operational visibility.",
+    description: "Practical deployment experience using Aruba AOS-CX, VSX, routing, and switching to ensure strict operational reliability in enterprise environments.",
     technologies: ["Aruba AOS-CX", "VSX", "OSPF", "BGP", "Aruba Fabric Composer"],
     environment: "Production",
     diagrams: [],
@@ -16,7 +16,7 @@ export const architectures: Architecture[] = [
     id: "evpn-vxlan-multisite",
     title: "EVPN-VXLAN Multi-Site",
     category: "Data Center",
-    description: "Scalable overlay architecture extending Layer 2 and Layer 3 connectivity across physical locations without relying on legacy Spanning Tree Protocol, enabling seamless workload mobility.",
+    description: "Real implementation experience deploying scalable EVPN-VXLAN fabrics for robust Layer 2 and Layer 3 connectivity.",
     technologies: ["EVPN", "VXLAN", "MP-BGP", "Anycast Gateway", "Symmetric IRB"],
     environment: "Production",
     diagrams: [],
@@ -24,14 +24,14 @@ export const architectures: Architecture[] = [
     bestPractices: ["Use eBGP for the underlay routing protocol", "Implement Route Reflectors for fabric scalability"]
   },
   {
-    id: "zero-trust-campus",
-    title: "Zero Trust Campus Network",
+    id: "enterprise-security",
+    title: "Enterprise Network Security & Segmentation",
     category: "Enterprise Networking",
-    description: "A secure-by-default architecture that assumes breach and strictly verifies every device and user attempting to access network resources, utilizing microsegmentation and dynamic role assignment.",
-    technologies: ["802.1X", "RADIUS", "ClearPass", "Microsegmentation", "Dynamic Segmentation"],
+    description: "Real production implementation experience involving ACLs, Device Policy, Policy-Based Routing (PBR), network segmentation, and strict enterprise access control.",
+    technologies: ["ACL", "Device Policy", "PBR", "Network Segmentation", "Access Control", "Security Policy"],
     environment: "Production",
     diagrams: [],
-    lessonsLearned: ["Device profiling accuracy is the hardest challenge", "Start with visibility mode before enforcing block policies"],
-    bestPractices: ["Implement fail-open policies for critical infrastructure", "Map user roles tightly to business functions"]
+    lessonsLearned: ["Testing security policies in simulation prevents production outages", "Clear documentation is required for complex routing policies"],
+    bestPractices: ["Enforce least privilege access control", "Maintain strict network segmentation"]
   }
 ];

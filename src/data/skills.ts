@@ -5,7 +5,7 @@ export const skills: Skill[] = [
     id: "data-center-networking",
     name: "Data Center Networking",
     category: "Data Center",
-    description: "Designing resilient and scalable enterprise data center infrastructure using modern architectures and Aruba Networking solutions.",
+    description: "Practical engineering, deployment, and management of highly available data center infrastructure, VSX, and operational reliability.",
     technologies: [
       "Aruba AOS-CX", "Aruba CX10000", "VSX", "EVPN", 
       "VXLAN", "MP-BGP", "VTEP", "Spine-Leaf", 
@@ -16,7 +16,7 @@ export const skills: Skill[] = [
     id: "enterprise-networking",
     name: "Enterprise Networking",
     category: "Networking",
-    description: "Building highly available enterprise campus and core networks with routing, switching and segmentation best practices.",
+    description: "Deploying enterprise routing, switching, and network segmentation with a focus on high availability and operational stability.",
     technologies: [
       "Routing", "Switching", "OSPF", "BGP", 
       "VLAN", "VRF", "ACL", "High Availability", 
@@ -27,7 +27,7 @@ export const skills: Skill[] = [
     id: "network-automation",
     name: "Network Automation",
     category: "Automation",
-    description: "Improving operational efficiency through automation, scripting and infrastructure-as-code practices.",
+    description: "Improving efficiency and reducing errors through automation, scripting, and repeatable operational workflows.",
     technologies: [
       "Python", "FastAPI", "REST API", "Docker", 
       "Linux", "Git", "Infrastructure Automation"
@@ -35,9 +35,9 @@ export const skills: Skill[] = [
   },
   {
     id: "operations-infrastructure",
-    name: "Operations & Infrastructure",
+    name: "Network Operations",
     category: "Operations",
-    description: "Delivering stable enterprise infrastructure through migration planning, troubleshooting and operational excellence.",
+    description: "Ensuring stability through migration planning, troubleshooting, monitoring, capacity planning, documentation, and operational excellence.",
     technologies: [
       "Migration", "Troubleshooting", "Monitoring", 
       "Capacity Planning", "Documentation", "Operational Excellence"

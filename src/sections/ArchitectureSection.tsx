@@ -15,7 +15,7 @@ interface ArchitectureSectionProps {
 export function ArchitectureSection({ architectures }: ArchitectureSectionProps) {
   return (
     <SectionLayout 
-      title="Data Center Excellence" 
+      title="Implementation Highlights" 
       description="Proven architectural patterns for building resilient, scalable, and secure enterprise networks."
       id="architecture"
     >
