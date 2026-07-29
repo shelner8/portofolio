@@ -54,8 +54,8 @@ export default function TechnologyPage() {
               </h1>
               
               <div className="text-xl md:text-2xl text-muted leading-relaxed font-light mt-4 flex flex-col gap-4">
-                <p>Nginx Reverse Proxy publishes internal services and provides centralized access to the home lab.</p>
-                <p>It routes HTTP traffic and assigns friendly domain names to containerized web applications.</p>
+                <p>Nginx Reverse Proxy is deployed to publish internal services and provide centralized access to the home lab.</p>
+                <p>It acts as the primary tool to route HTTP traffic and assign friendly domain names to containerized web applications.</p>
               </div>
             </div>
           </div>
@@ -74,8 +74,8 @@ export default function TechnologyPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Overview</h2>
               </div>
               <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
-                <p>Nginx simplifies internal networking by mapping local DNS names to specific service ports.</p>
-                <p>It acts as the single entry point for web-based infrastructure tools, providing centralized certificate management and local domain routing.</p>
+                <p>Nginx is used to map local DNS names to specific service ports.</p>
+                <p>It serves as the single entry point for web-based infrastructure tools, acting as the centralized certificate manager and local domain router.</p>
               </div>
             </div>
 
@@ -125,7 +125,7 @@ export default function TechnologyPage() {
             <div className="w-full p-6 md:p-8 rounded-xl bg-accent-blue/5 border border-accent-blue/20 flex items-start gap-4">
               <Info className="w-6 h-6 text-accent-blue flex-shrink-0 mt-0.5" />
               <p className="text-lg text-accent-blue/90 leading-relaxed font-medium">
-                This Home Lab is continuously used for learning, experimenting with new technologies, validating infrastructure changes, and improving operational knowledge through hands-on practice.
+                This deployment is actively maintained as part of the Home Lab and is used for testing infrastructure changes, validating configurations, and supporting continuous learning.
               </p>
             </div>
 

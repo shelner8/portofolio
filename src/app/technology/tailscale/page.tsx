@@ -55,8 +55,8 @@ export default function TechnologyPage() {
               </h1>
               
               <div className="text-xl md:text-2xl text-muted leading-relaxed font-light mt-4 flex flex-col gap-4">
-                <p>Tailscale establishes a secure remote access mesh VPN for the home lab environment.</p>
-                <p>It facilitates direct, encrypted connections to internal services without exposing ports directly to the public internet.</p>
+                <p>Tailscale is used to establish a secure remote access mesh VPN for the home lab environment.</p>
+                <p>It is deployed to facilitate direct, encrypted connections to internal services without exposing ports to the public internet.</p>
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@ export default function TechnologyPage() {
               </div>
               <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
                 <p>Tailscale operates as the primary method for secure remote administration of the infrastructure.</p>
-                <p>It uses WireGuard to ensure low-latency access to virtual machines, containers, and hypervisors from external locations.</p>
+                <p>It acts as a WireGuard overlay, granting secure access to virtual machines, containers, and hypervisors from external locations.</p>
               </div>
             </div>
 
@@ -126,7 +126,7 @@ export default function TechnologyPage() {
             <div className="w-full p-6 md:p-8 rounded-xl bg-accent-blue/5 border border-accent-blue/20 flex items-start gap-4">
               <Info className="w-6 h-6 text-accent-blue flex-shrink-0 mt-0.5" />
               <p className="text-lg text-accent-blue/90 leading-relaxed font-medium">
-                This Home Lab is continuously used for learning, experimenting with new technologies, validating infrastructure changes, and improving operational knowledge through hands-on practice.
+                This deployment is actively maintained as part of the Home Lab and is used for testing infrastructure changes, validating configurations, and supporting continuous learning.
               </p>
             </div>
 

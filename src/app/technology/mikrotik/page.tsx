@@ -56,8 +56,8 @@ export default function TechnologyPage() {
               </h1>
               
               <div className="text-xl md:text-2xl text-muted leading-relaxed font-light mt-4 flex flex-col gap-4">
-                <p>MikroTik RouterOS acts as the primary edge gateway and internal routing platform for the home network.</p>
-                <p>It handles WAN failover, complex firewall policies, inter-VLAN routing, and encrypted VPN tunnels.</p>
+                <p>MikroTik RouterOS is deployed as the primary routing and switching OS across the physical network hardware.</p>
+                <p>It acts as the core gateway, managing VLANs, routing protocols, and firewall rules for the internal network.</p>
               </div>
             </div>
           </div>
@@ -76,8 +76,8 @@ export default function TechnologyPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Overview</h2>
               </div>
               <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
-                <p>RouterOS provides enterprise-grade routing capabilities on dedicated hardware.</p>
-                <p>The deployment enforces network segmentation between user devices, IoT systems, and the home lab management infrastructure.</p>
+                <p>RouterOS operates on dedicated hardware to handle routing for the physical infrastructure.</p>
+                <p>It is responsible for enforcing network segmentation between user devices, IoT systems, and the home lab management infrastructure.</p>
               </div>
             </div>
 
@@ -127,7 +127,7 @@ export default function TechnologyPage() {
             <div className="w-full p-6 md:p-8 rounded-xl bg-accent-blue/5 border border-accent-blue/20 flex items-start gap-4">
               <Info className="w-6 h-6 text-accent-blue flex-shrink-0 mt-0.5" />
               <p className="text-lg text-accent-blue/90 leading-relaxed font-medium">
-                This Home Lab is continuously used for learning, experimenting with new technologies, validating infrastructure changes, and improving operational knowledge through hands-on practice.
+                This deployment is actively maintained as part of the Home Lab and is used for testing infrastructure changes, validating configurations, and supporting continuous learning.
               </p>
             </div>
 

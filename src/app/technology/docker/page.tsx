@@ -55,8 +55,8 @@ export default function TechnologyPage() {
               </h1>
               
               <div className="text-xl md:text-2xl text-muted leading-relaxed font-light mt-4 flex flex-col gap-4">
-                <p>Docker serves as the container runtime for deploying supported self-hosted services and infrastructure dependencies.</p>
-                <p>It isolates targeted applications, simplifies updates, and ensures consistent configuration for containerized workloads across the home lab.</p>
+                <p>Docker is used to run selected self-hosted services and isolated dependencies throughout the Home Lab.</p>
+                <p>It is deployed to isolate targeted applications and manage configuration consistency for containerized workloads.</p>
               </div>
             </div>
           </div>
@@ -75,9 +75,9 @@ export default function TechnologyPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Overview</h2>
               </div>
               <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
-                <p>Docker is used to deploy and manage selected self-hosted applications within the Home Lab.</p>
-                <p>Containerization simplifies application deployment, updates, service isolation, and maintenance while integrating with the underlying Ubuntu Server infrastructure.</p>
-                <p>Not every service in the Home Lab runs inside Docker. Docker is used where containerization provides operational and management benefits.</p>
+                <p>Docker is used to deploy and manage selected self-hosted applications within the environment.</p>
+                <p>It acts as the primary runtime where containerization simplifies application deployment, updates, service isolation, and maintenance.</p>
+                <p>Not every service in the Home Lab runs inside Docker. It is utilized specifically where it supports operational requirements.</p>
               </div>
             </div>
 
@@ -127,7 +127,7 @@ export default function TechnologyPage() {
             <div className="w-full p-6 md:p-8 rounded-xl bg-accent-blue/5 border border-accent-blue/20 flex items-start gap-4">
               <Info className="w-6 h-6 text-accent-blue flex-shrink-0 mt-0.5" />
               <p className="text-lg text-accent-blue/90 leading-relaxed font-medium">
-                This Home Lab is continuously used for learning, experimenting with new technologies, validating infrastructure changes, and improving operational knowledge through hands-on practice.
+                This deployment is actively maintained as part of the Home Lab and is used for testing infrastructure changes, validating configurations, and supporting continuous learning.
               </p>
             </div>
 

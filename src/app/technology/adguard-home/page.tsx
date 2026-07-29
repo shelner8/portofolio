@@ -55,8 +55,8 @@ export default function TechnologyPage() {
               </h1>
               
               <div className="text-xl md:text-2xl text-muted leading-relaxed font-light mt-4 flex flex-col gap-4">
-                <p>AdGuard Home acts as the primary DNS server for the home lab, providing network-wide DNS filtering.</p>
-                <p>It handles local DNS records and blocks advertisements and telemetry tracking.</p>
+                <p>AdGuard Home acts as the primary DNS server for the home lab, managing local DNS records and filtering traffic.</p>
+                <p>It is deployed to handle local domain resolution and block advertisements across the network.</p>
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@ export default function TechnologyPage() {
               </div>
               <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
                 <p>AdGuard Home intercepts DNS queries to enforce custom filtering policies at the network level.</p>
-                <p>It maintains local DNS records for accessing self-hosted services via standard domain names instead of IP addresses.</p>
+                <p>It is responsible for maintaining local DNS records used for accessing self-hosted services via standard domain names instead of IP addresses.</p>
               </div>
             </div>
 
@@ -126,7 +126,7 @@ export default function TechnologyPage() {
             <div className="w-full p-6 md:p-8 rounded-xl bg-accent-blue/5 border border-accent-blue/20 flex items-start gap-4">
               <Info className="w-6 h-6 text-accent-blue flex-shrink-0 mt-0.5" />
               <p className="text-lg text-accent-blue/90 leading-relaxed font-medium">
-                This Home Lab is continuously used for learning, experimenting with new technologies, validating infrastructure changes, and improving operational knowledge through hands-on practice.
+                This deployment is actively maintained as part of the Home Lab and is used for testing infrastructure changes, validating configurations, and supporting continuous learning.
               </p>
             </div>
 

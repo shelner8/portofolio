@@ -60,8 +60,8 @@ export default function PNETLabPage() {
               </h1>
               
               <div className="text-xl md:text-2xl text-muted leading-relaxed font-light mt-4 flex flex-col gap-4">
-                <p>PNETLab is an isolated network emulation environment used for building virtual network topologies and practicing configurations.</p>
-                <p>It provides a safe sandbox for experimenting with routing protocols, Layer 2 mechanisms, and migration rehearsals.</p>
+                <p>PNETLab is used as an isolated network emulation environment for building virtual network topologies and practicing configurations.</p>
+                <p>It acts as a safe sandbox for experimenting with routing protocols, Layer 2 mechanisms, and migration rehearsals.</p>
               </div>
             </div>
           </div>
@@ -81,7 +81,7 @@ export default function PNETLabPage() {
               </div>
               <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
                 <p>PNETLab serves as the primary laboratory for hands-on networking practice and proof-of-concepts.</p>
-                <p>It enables practical experimentation with EVPN-VXLAN, troubleshooting scenarios, and certification practice without impacting real network hardware.</p>
+                <p>It is deployed to allow practical experimentation with EVPN-VXLAN, troubleshooting scenarios, and certification practice without impacting real network hardware.</p>
               </div>
             </div>
 
@@ -131,7 +131,7 @@ export default function PNETLabPage() {
             <div className="w-full p-6 md:p-8 rounded-xl bg-accent-blue/5 border border-accent-blue/20 flex items-start gap-4">
               <Info className="w-6 h-6 text-accent-blue flex-shrink-0 mt-0.5" />
               <p className="text-lg text-accent-blue/90 leading-relaxed font-medium">
-                This Home Lab is continuously used for learning, experimenting with new technologies, validating infrastructure changes, and improving operational knowledge through hands-on practice.
+                This deployment is actively maintained as part of the Home Lab and is used for testing infrastructure changes, validating configurations, and supporting continuous learning.
               </p>
             </div>
 

@@ -54,8 +54,8 @@ export default function TechnologyPage() {
               </h1>
               
               <div className="text-xl md:text-2xl text-muted leading-relaxed font-light mt-4 flex flex-col gap-4">
-                <p>Hermes UI serves as the graphical interface for interacting with various AI models.</p>
-                <p>It provides a conversational frontend for testing prompts, managing context, and retaining conversation history.</p>
+                <p>Hermes UI is used as the graphical interface for interacting with various AI models.</p>
+                <p>It acts as a conversational frontend for testing prompts, managing context, and retaining conversation history.</p>
               </div>
             </div>
           </div>
@@ -74,8 +74,8 @@ export default function TechnologyPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Overview</h2>
               </div>
               <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
-                <p>Hermes UI connects directly to the 9Router endpoint to facilitate seamless interaction with different AI providers.</p>
-                <p>It is deployed via Docker to provide a practical interface for evaluating model responses and managing prompt templates.</p>
+                <p>Hermes UI connects directly to the 9Router endpoint to facilitate interaction with different AI providers.</p>
+                <p>It is deployed via Docker to act as a practical interface for evaluating model responses and managing prompt templates.</p>
               </div>
             </div>
 
@@ -125,7 +125,7 @@ export default function TechnologyPage() {
             <div className="w-full p-6 md:p-8 rounded-xl bg-accent-blue/5 border border-accent-blue/20 flex items-start gap-4">
               <Info className="w-6 h-6 text-accent-blue flex-shrink-0 mt-0.5" />
               <p className="text-lg text-accent-blue/90 leading-relaxed font-medium">
-                This Home Lab is continuously used for learning, experimenting with new technologies, validating infrastructure changes, and improving operational knowledge through hands-on practice.
+                This deployment is actively maintained as part of the Home Lab and is used for testing infrastructure changes, validating configurations, and supporting continuous learning.
               </p>
             </div>
 

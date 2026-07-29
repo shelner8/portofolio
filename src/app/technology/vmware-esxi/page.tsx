@@ -55,8 +55,8 @@ export default function TechnologyPage() {
               </h1>
               
               <div className="text-xl md:text-2xl text-muted leading-relaxed font-light mt-4 flex flex-col gap-4">
-                <p>VMware ESXi is deployed to maintain operational familiarity with enterprise hypervisor architectures.</p>
-                <p>It hosts dedicated virtual machines for specialized networking controllers and vendor appliances that require ESXi deployment.</p>
+                <p>VMware ESXi is deployed as a secondary hypervisor environment within the home lab.</p>
+                <p>It is used for virtualizing specific appliances and validating cross-hypervisor topologies.</p>
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@ export default function TechnologyPage() {
               </div>
               <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
                 <p>VMware ESXi operates as a secondary virtualization environment within the home infrastructure.</p>
-                <p>This deployment allows for testing cross-hypervisor migration scenarios, virtual appliance validation, and replication of typical enterprise deployments.</p>
+                <p>It is used for testing cross-hypervisor migration scenarios, virtual appliance validation, and replicating typical enterprise deployments.</p>
               </div>
             </div>
 
@@ -126,7 +126,7 @@ export default function TechnologyPage() {
             <div className="w-full p-6 md:p-8 rounded-xl bg-accent-blue/5 border border-accent-blue/20 flex items-start gap-4">
               <Info className="w-6 h-6 text-accent-blue flex-shrink-0 mt-0.5" />
               <p className="text-lg text-accent-blue/90 leading-relaxed font-medium">
-                This Home Lab is continuously used for learning, experimenting with new technologies, validating infrastructure changes, and improving operational knowledge through hands-on practice.
+                This deployment is actively maintained as part of the Home Lab and is used for testing infrastructure changes, validating configurations, and supporting continuous learning.
               </p>
             </div>
 
