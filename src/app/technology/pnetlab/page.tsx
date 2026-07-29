@@ -71,7 +71,7 @@ export default function PNETLabPage() {
       {/* Main Content Section */}
       <section className="py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px]">
-          <div className="flex flex-col gap-12 md:gap-16 max-w-4xl">
+          <div className="flex flex-col gap-16 md:gap-20 w-full max-w-[1000px]">
             
             {/* SECTION 2: Overview */}
             <div className="flex flex-col gap-6">
@@ -101,32 +101,34 @@ export default function PNETLabPage() {
               </ul>
             </div>
 
-            {/* SECTION 4: Deployment Evidence */}
-            <DeploymentEvidence 
-              title="Deployment Evidence"
-              subtitle="Current self-hosted PNETLab deployment running inside the Home Lab."
-              imagePath="/images/homelab/pnetlab-login.png"
-              altText="PNETLab Login Interface"
-              caption="Self-hosted PNETLab instance deployed in the home lab environment for enterprise network emulation and pre-production validation."
-            />
+            <div className="flex flex-col gap-8 md:gap-10">
+              {/* SECTION 4: Deployment Evidence */}
+              <DeploymentEvidence 
+                title="Deployment Evidence"
+                subtitle="Current self-hosted PNETLab deployment running inside the Home Lab."
+                imagePath="/images/homelab/pnetlab-login.png"
+                altText="PNETLab Login Interface"
+                caption="Self-hosted PNETLab instance deployed in the home lab environment for enterprise network emulation and pre-production validation."
+              />
 
-            {/* SECTION 5: Integrated With */}
-            <div className="flex flex-col gap-6">
-              <div className="flex items-center gap-3">
-                <Layers className="w-6 h-6 text-accent-blue" />
-                <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Integrated With</h2>
-              </div>
-              <div className="flex flex-wrap gap-3">
-                {integrations.map(tech => (
-                  <div key={tech} className="px-4 py-2 rounded-lg bg-surface/30 border border-surface text-primary font-medium hover:border-accent-blue/50 hover:bg-accent-blue/5 transition-colors cursor-default">
-                    {tech}
-                  </div>
-                ))}
+              {/* SECTION 5: Integrated With */}
+              <div className="flex flex-col gap-6">
+                <div className="flex items-center gap-3">
+                  <Layers className="w-6 h-6 text-accent-blue" />
+                  <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Integrated With</h2>
+                </div>
+                <div className="flex flex-wrap gap-3 md:gap-4">
+                  {integrations.map(tech => (
+                    <div key={tech} className="px-4 py-2 rounded-lg bg-surface/30 border border-surface text-primary font-medium hover:border-accent-blue/50 hover:bg-accent-blue/5 transition-colors cursor-default">
+                      {tech}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
             {/* SECTION 6: Footer Note */}
-            <div className="mt-8 p-6 rounded-xl bg-accent-blue/5 border border-accent-blue/20 flex items-start gap-4">
+            <div className="w-full p-6 md:p-8 rounded-xl bg-accent-blue/5 border border-accent-blue/20 flex items-start gap-4">
               <Info className="w-6 h-6 text-accent-blue flex-shrink-0 mt-0.5" />
               <p className="text-lg text-accent-blue/90 leading-relaxed font-medium">
                 This environment is continuously used to validate new technologies, reproduce production scenarios, and safely test infrastructure changes before deployment.

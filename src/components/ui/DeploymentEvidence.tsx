@@ -51,7 +51,7 @@ export function DeploymentEvidence({
       )}
       
       {/* Evidence Image Section */}
-      <div className="flex flex-col gap-4 my-6 max-w-[1000px]">
+      <div className="flex flex-col gap-5 md:gap-6 mt-8 md:mt-12 w-full max-w-[1000px] mx-auto">
         <div 
           className="relative w-full rounded-xl overflow-hidden border border-surface/50 shadow-lg shadow-black/20 bg-surface/30 cursor-zoom-in transition-transform duration-300 hover:border-accent-orange/30 group"
           onClick={() => setIsModalOpen(true)}
@@ -67,7 +67,7 @@ export function DeploymentEvidence({
             sizes="(max-width: 1000px) 100vw, 1000px"
           />
         </div>
-        <p className="text-sm text-muted/70 italic text-left">
+        <p className="text-sm text-muted/70 italic text-center">
           {caption}
         </p>
       </div>
