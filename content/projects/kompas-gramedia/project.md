@@ -31,12 +31,12 @@ futureCaseStudy: true
 diagrams:
   - fabric
   - security
-summary: Architected a scalable Spine-Leaf EVPN-VXLAN fabric utilizing Aruba CX10000
+summary: Deployed a scalable Spine-Leaf EVPN-VXLAN fabric utilizing Aruba CX10000
   switches and distributed Pensando DPU firewalling.
 ---
 
 ### Overview
-Architected a state-of-the-art Spine-Leaf EVPN-VXLAN fabric designed to provide scalable Layer-2 extension and modern data center segmentation.
+Deployed a state-of-the-art Spine-Leaf EVPN-VXLAN fabric configured to provide scalable Layer-2 extension and modern data center segmentation.
 
 ### Background
 TODO

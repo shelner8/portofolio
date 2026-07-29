@@ -19,17 +19,17 @@ technologies:
 status: Completed
 featured: true
 futureCaseStudy: false
-summary: Designed and implemented a complete enterprise network infrastructure from the ground up for G-Town Square Serpong, delivering reliable wired and wireless connectivity using MikroTik as the enterprise gateway, Alcatel switching infrastructure, and Ruckus wireless solutions.
+summary: Implemented a complete enterprise network infrastructure from the ground up for G-Town Square Serpong, delivering reliable wired and wireless connectivity using MikroTik as the enterprise gateway, Alcatel switching infrastructure, and Ruckus wireless solutions.
 ---
 
 ### Overview
-Designed and implemented a complete enterprise network infrastructure from the ground up for G-Town Square Serpong, delivering reliable wired and wireless connectivity using MikroTik as the enterprise gateway, Alcatel switching infrastructure, and Ruckus wireless solutions.
+Implemented a complete enterprise network infrastructure from the ground up for G-Town Square Serpong, delivering reliable wired and wireless connectivity using MikroTik as the enterprise gateway, Alcatel switching infrastructure, and Ruckus wireless solutions.
 
 ### Responsibilities
-- Designed the complete enterprise network architecture from planning through production deployment.
+- Deployed the complete enterprise network infrastructure from planning through production deployment.
 - Implemented MikroTik RouterOS as the primary Internet Gateway, providing routing, NAT, firewall security policies, DHCP services, and enterprise gateway functionality.
 - Configured Queue Tree bandwidth management to optimize Internet utilization and ensure fair bandwidth allocation.
-- Designed VLAN segmentation and Layer 2 switching for enterprise network separation.
+- Configured VLAN segmentation and Layer 2 switching for enterprise network separation.
 - Implemented Alcatel enterprise switches and integrated them with the MikroTik gateway infrastructure.
 - Deployed and configured Ruckus wireless access points to provide seamless Wi-Fi coverage across the facility.
 - Integrated wired and wireless infrastructure into a unified enterprise network architecture.

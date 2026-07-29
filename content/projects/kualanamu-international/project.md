@@ -42,7 +42,7 @@ Enterprise Network
 Production
 
 ### Responsibilities
-- Architected the enterprise backbone network to handle large-scale data aggregation.
+- Deployed the enterprise backbone network to handle large-scale data aggregation.
 
 ### Implementation Highlights
 - MikroTik Gateway

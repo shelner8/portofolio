@@ -19,11 +19,11 @@ skills:
 status: In Progress
 featured: true
 futureCaseStudy: true
-summary: Designed and implemented an IXIA-based network visibility solution for a government data center environment, providing traffic monitoring, bypass switching, and high availability for critical network infrastructure.
+summary: Deployed and implemented an IXIA-based network visibility solution for a government data center environment, providing traffic monitoring, bypass switching, and high availability for critical network infrastructure.
 ---
 
 ### Overview
-Designed and implemented an IXIA-based network visibility solution for a government data center environment, providing traffic monitoring, bypass switching, and high availability for critical network infrastructure.
+Deployed and implemented an IXIA-based network visibility solution for a government data center environment, providing traffic monitoring, bypass switching, and high availability for critical network infrastructure.
 
 ### Infrastructure Environment
 
@@ -44,7 +44,7 @@ Data Center Network
 Government Data Center
 
 ### Responsibilities
-- Designed and implemented IXIA network visibility and traffic monitoring solutions.
+- Deployed and implemented IXIA network visibility and traffic monitoring solutions.
 - Deployed inline bypass switches to ensure high availability for critical data center infrastructure.
 
 ### Implementation Highlights

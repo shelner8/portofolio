@@ -2,9 +2,9 @@ import { HeroContent } from "@/types";
 import { statistics } from "./statistics";
 
 export const hero: HeroContent = {
-  title: "Designing Enterprise-Scale Data Center Networks with Modern Architecture",
+  title: "Building and Operating Data Center & Enterprise Networks",
   subtitle: "Data Center & Enterprise Network Engineer",
-  description: "Designing and operating resilient enterprise networks, modern data center fabrics, and self-hosted infrastructure through practical engineering, automation, and continuous learning.",
+  description: "Deploying and maintaining resilient network infrastructure, scalable data center fabrics, and self-hosted environments through practical engineering and automation.",
   highlights: [
     "Aruba Fabric Composer",
     "High Availability",

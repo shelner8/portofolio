@@ -26,7 +26,7 @@ export const skills: Skill[] = [
     id: "network-automation",
     name: "Network Automation & Tooling",
     category: "Automation",
-    description: "Improving operational efficiency through scripting, APIs, automation tooling, and repeatable operational workflows.",
+    description: "Developing operational utilities, monitoring integrations, API services, and infrastructure scripting to support day-to-day network operations.",
     technologies: [
       "Python", "FastAPI", "REST API", "Docker", 
       "Linux", "Git", "Infrastructure Automation"

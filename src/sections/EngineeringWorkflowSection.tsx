@@ -11,6 +11,7 @@ export function EngineeringWorkflowSection() {
     { name: "Lab Validation\n(EVE-NG / PNETLab)", icon: Server },
     { name: "Configuration Review", icon: FileCheck },
     { name: "Documentation", icon: FileText },
+    { name: "Rollback Planning", icon: PenTool },
     { name: "Production Deployment", icon: UploadCloud },
     { name: "Post Deployment Validation", icon: CheckSquare },
     { name: "Monitoring & Optimization", icon: Activity }
