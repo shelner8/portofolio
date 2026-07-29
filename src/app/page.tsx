@@ -14,6 +14,7 @@ const ContactSection = dynamic(() => import("@/sections/ContactSection").then(mo
 const CoreExpertiseSection = dynamic(() => import("@/sections/CoreExpertiseSection").then(mod => ({ default: mod.CoreExpertiseSection })))
 const SelfHostedInfrastructureSection = dynamic(() => import("@/sections/SelfHostedInfrastructureSection").then(mod => ({ default: mod.SelfHostedInfrastructureSection })))
 const StatementSection = dynamic(() => import("@/sections/StatementSection").then(mod => ({ default: mod.StatementSection })))
+const EngineeringWorkflowSection = dynamic(() => import("@/sections/EngineeringWorkflowSection").then(mod => ({ default: mod.EngineeringWorkflowSection })))
 import { hero } from "@/data/hero"
 import { about } from "@/data/about"
 import { skills } from "@/data/skills"
@@ -42,6 +43,7 @@ export default function Home() {
       <CoreExpertiseSection technologies={featuredTechnologies} />
       <SelfHostedInfrastructureSection technologies={getAllTechnologies()} />
       <AboutSection about={about} />
+      <EngineeringWorkflowSection />
       <ExpertiseSection skills={skills} />
       <ArchitectureSection architectures={architectures} />
       <ProjectSection projects={getFeaturedProjects()} />
