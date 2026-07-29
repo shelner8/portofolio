@@ -31,15 +31,15 @@ export const statistics: Statistic[] = [
   },
   {
     id: "certifications",
-    label: "Technical Certifications",
+    label: "Professional Certifications",
     value: 4,
     icon: "award",
   },
   {
-    id: "technologies",
-    label: "Core Technologies",
-    value: 12,
-    suffix: "+",
+    id: "home-lab",
+    label: "Self-Hosted Home Lab",
+    value: 24,
+    suffix: "×7",
     icon: "cpu",
   }
 ];
