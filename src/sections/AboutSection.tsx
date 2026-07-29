@@ -11,6 +11,16 @@ interface AboutSectionProps {
   about: About
 }
 
+const renderFormattedText = (text: string) => {
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={i} className="text-primary font-semibold">{part.slice(2, -2)}</strong>;
+    }
+    return part;
+  });
+};
+
 export function AboutSection({ about }: AboutSectionProps) {
   return (
     <SectionLayout title={about.title} id="about">
@@ -29,7 +39,7 @@ export function AboutSection({ about }: AboutSectionProps) {
                 variants={animations.fadeUp}
                 className="text-base md:text-lg text-muted leading-[1.8]"
               >
-                {paragraph}
+                {renderFormattedText(paragraph)}
               </motion.p>
             ))}
           </div>
@@ -46,7 +56,7 @@ export function AboutSection({ about }: AboutSectionProps) {
               Specializations
             </h3>
             <div className="flex flex-wrap gap-3">
-              {["Enterprise Data Center", "Aruba Networking", "MikroTik", "EVPN-VXLAN", "Self-Hosted Infrastructure", "Network Automation"].map((spec, i) => (
+              {["Enterprise Data Center", "Aruba AOS-CX", "EVPN-VXLAN Fabric", "Enterprise Networking", "Self-Hosted Infrastructure", "Network Automation"].map((spec, i) => (
                 <span key={i} className="px-4 py-2 rounded-lg bg-surface/40 border border-surface text-sm font-medium text-primary shadow-sm hover:border-accent-orange/30 hover:bg-surface/60 transition-colors">
                   {spec}
                 </span>
