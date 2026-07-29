@@ -10,7 +10,7 @@ export const architectures: Architecture[] = [
     environment: "Production",
     diagrams: [],
     lessonsLearned: ["Configuration validation reduces deployment risk.", "Documentation simplifies future operations."],
-    bestPractices: ["Use high-availability architectures appropriate to deployment requirements.", "Perform staged deployment and rollback planning."]
+    bestPractices: ["Validate all configurations in EVE-NG or PNETLab before production deployment whenever practical.", "Perform staged deployment with rollback planning."]
   },
   {
     id: "evpn-vxlan-multisite",
@@ -21,7 +21,7 @@ export const architectures: Architecture[] = [
     environment: "Production",
     diagrams: [],
     lessonsLearned: ["Routing consistency is critical for scalable environments.", "Testing before production minimizes operational impact."],
-    bestPractices: ["Validate redundancy before production deployment.", "Validate routing consistency before migration."]
+    bestPractices: ["Verify routing convergence before maintenance windows.", "Validate redundancy and failover after deployment."]
   },
   {
     id: "enterprise-network-infrastructure",
@@ -32,6 +32,6 @@ export const architectures: Architecture[] = [
     environment: "Production",
     diagrams: [],
     lessonsLearned: ["Testing before production minimizes operational impact.", "Configuration validation reduces deployment risk."],
-    bestPractices: ["Validate redundancy before production deployment.", "Perform staged deployment and rollback planning."]
+    bestPractices: ["Document configuration changes before implementation.", "Validate all configurations in EVE-NG or PNETLab before production deployment whenever practical."]
   }
 ];
