@@ -6,8 +6,6 @@ export const hero: HeroContent = {
   subtitle: "Data Center Network Specialist & Enterprise Network Engineer",
   description: "Building resilient, scalable, and highly available infrastructure using Aruba Networking, EVPN-VXLAN Fabric, Enterprise Routing & Switching, Network Automation, and Modern Data Center Architecture.",
   highlights: [
-    "Aruba AOS-CX",
-    "Aruba CX10000",
     "Aruba Fabric Composer",
     "VSX",
     "EVPN",
@@ -19,8 +17,6 @@ export const hero: HeroContent = {
     "Linux",
     "Python",
     "Docker",
-    "FastAPI",
-    "Git",
     "Automation",
     "Enterprise Networking"
   ],

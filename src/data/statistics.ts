@@ -34,12 +34,5 @@ export const statistics: Statistic[] = [
     label: "Professional Certifications",
     value: 4,
     icon: "award",
-  },
-  {
-    id: "home-lab",
-    label: "Self-Hosted Home Lab",
-    value: 24,
-    suffix: "×7",
-    icon: "cpu",
   }
 ];
