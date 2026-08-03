@@ -79,9 +79,11 @@ export default function TechnologyDetailPage({ params }: { params: { slug: strin
                 {technology.name}
               </h1>
               
-              <p className="text-xl md:text-2xl text-muted leading-relaxed font-light mt-4">
-                {technology.description}
-              </p>
+              <div className="text-xl md:text-2xl text-muted leading-relaxed font-light mt-4 flex flex-col gap-4">
+                {technology.description.split('\n\n').map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -103,7 +105,9 @@ export default function TechnologyDetailPage({ params }: { params: { slug: strin
                     <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Overview</h2>
                   </div>
                   <div className="prose prose-invert prose-lg max-w-none text-muted leading-relaxed">
-                    <p>{technology.overview}</p>
+                    {technology.overview.split('\n\n').map((paragraph, index) => (
+                      <p key={index}>{paragraph}</p>
+                    ))}
                   </div>
                 </div>
               )}

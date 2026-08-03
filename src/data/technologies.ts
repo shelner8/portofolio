@@ -385,7 +385,7 @@ export const technologies: Technology[] = [
     slug: "tailscale",
     name: "Tailscale",
     category: "Connectivity",
-    description: "Provides zero-configuration mesh VPN connectivity for remote infrastructure access.",
+    description: "Tailscale is used to establish a secure remote access mesh VPN for the home lab environment.\n\nIt is deployed to facilitate direct, encrypted connections to internal services without exposing ports to the public internet.",
     icon: "network",
 
     overview: "Tailscale operates as the primary method for secure remote administration of the infrastructure.\n\nIt acts as a WireGuard overlay, granting secure access to virtual machines, containers, and hypervisors from external locations.",
@@ -431,7 +431,7 @@ export const technologies: Technology[] = [
     name: "MikroTik RouterOS",
     category: "Network Operating Systems",
     featured: true,
-    description: "Used as an enterprise edge gateway providing routing, switching, and firewall services.",
+    description: "MikroTik RouterOS is deployed as the primary routing and switching OS across the physical network hardware.\n\nIt acts as the core gateway, managing VLANs, routing protocols, and firewall rules for the internal network.",
     icon: "server",
 
     overview: "RouterOS operates on dedicated hardware to handle routing for the physical infrastructure.\n\nIt is responsible for enforcing network segmentation between user devices, IoT systems, and the home lab management infrastructure.",
@@ -451,7 +451,7 @@ export const technologies: Technology[] = [
     slug: "ubuntu-server",
     name: "Ubuntu Server",
     category: "Network Operating Systems",
-    description: "Used as the primary Linux platform hosting virtualization, containers, monitoring, automation, and self-hosted infrastructure services.",
+    description: "Ubuntu Server is deployed to host infrastructure services, automation tools, and monitoring agents throughout the home lab.\n\nIt acts as a stable Linux host for executing self-hosted applications and network utilities.",
     icon: "server",
 
     overview: "Multiple Ubuntu Server instances run across the hypervisor environment.\n\nThey are used as dedicated hosts for Docker Compose stacks, reverse proxies, and continuous integration runners.",
@@ -472,7 +472,7 @@ export const technologies: Technology[] = [
     slug: "eve-ng",
     name: "EVE-NG",
     category: "Network Emulation",
-    description: "Simulates complex network topologies to validate enterprise architectures before production deployment.",
+    description: "EVE-NG is used as a multi-vendor network emulation platform for validating enterprise network architectures and interoperability across different vendors.\n\nIt provides a controlled environment for testing routing behavior, switching designs, firewall policies, and migration scenarios before production implementation.",
     icon: "network",
 
     overview: "EVE-NG serves as a virtual engineering lab for reproducing production network environments and validating infrastructure changes.\n\nIt enables safe experimentation with multi-vendor network designs while reducing operational risk during deployment planning.",
@@ -492,7 +492,7 @@ export const technologies: Technology[] = [
     slug: "pnetlab",
     name: "PNETLab",
     category: "Network Emulation",
-    description: "Emulates data center topologies to test routing changes and configurations safely.",
+    description: "PNETLab provides an isolated network emulation environment for validating network designs, testing routing behavior, and rehearsing infrastructure changes before production deployment.\n\nIt is used to safely evaluate Layer 2, Layer 3, and data center networking scenarios without impacting live infrastructure.",
     icon: "network",
 
     overview: "PNETLab serves as a practical engineering sandbox for validating enterprise network configurations and deployment workflows.\n\nIt is regularly used to reproduce production scenarios, verify routing behavior, and perform migration rehearsals before implementing changes in operational environments.",
@@ -513,7 +513,7 @@ export const technologies: Technology[] = [
     slug: "vmware-esxi",
     name: "VMware ESXi",
     category: "Virtualization",
-    description: "Hosts bare-metal virtual machines for testing enterprise network architectures and services.",
+    description: "VMware ESXi is deployed as a secondary hypervisor environment within the home lab.\n\nIt is used for virtualizing specific appliances and validating cross-hypervisor topologies.",
     icon: "server",
 
     overview: "VMware ESXi operates as a secondary virtualization environment within the home infrastructure.\n\nIt is used for testing cross-hypervisor migration scenarios, virtual appliance validation, and replicating typical enterprise deployments.",
@@ -533,7 +533,7 @@ export const technologies: Technology[] = [
     slug: "proxmox-ve",
     name: "Proxmox VE",
     category: "Virtualization",
-    description: "Manages virtual machines and Linux containers for the primary home data center infrastructure.",
+    description: "Proxmox VE is deployed as the primary bare-metal hypervisor for the home lab environment.\n\nIt is used to host virtual machines, Linux containers, and isolated testing environments.",
     icon: "server",
 
     overview: "Proxmox VE runs bare-metal virtualization for all continuous home lab workloads.\n\nIt is utilized to host monitoring platforms, local AI endpoints, network controllers, and automated infrastructure deployments.",
@@ -554,7 +554,7 @@ export const technologies: Technology[] = [
     slug: "docker",
     name: "Docker",
     category: "Container Platform",
-    description: "Hosts self-managed infrastructure services using isolated containers.",
+    description: "Docker is used to run selected self-hosted services and isolated dependencies throughout the Home Lab.\n\nIt is deployed to isolate targeted applications and manage configuration consistency for containerized workloads.",
     icon: "box",
 
     overview: "Docker is used to deploy and manage selected self-hosted applications within the environment.\n\nIt acts as the primary runtime where containerization simplifies application deployment, updates, service isolation, and maintenance.\n\nNot every service in the Home Lab runs inside Docker. It is utilized specifically where it supports operational requirements.",
@@ -582,7 +582,7 @@ export const technologies: Technology[] = [
     slug: "portainer",
     name: "Portainer",
     category: "Container Platform",
-    description: "Provides a centralized management interface for operating and monitoring the local container infrastructure.",
+    description: "Portainer is used as the web management interface for Docker administration across the home lab.\n\nIt is deployed to monitor containers and manage lifecycles for images, volumes, stacks, and networks.",
     icon: "box",
 
     overview: "Portainer runs as a containerized service to monitor container health and execute administrative tasks without requiring terminal access.\n\nIt acts as the central interface for interacting with local Docker hosts and managing the self-hosted stack.",
@@ -603,7 +603,7 @@ export const technologies: Technology[] = [
     slug: "adguard-home",
     name: "AdGuard Home",
     category: "Self-Hosted Services",
-    description: "Provides production DNS filtering, recursive DNS resolution, and network-wide advertisement blocking for the home infrastructure.",
+    description: "AdGuard Home acts as the primary DNS server for the home lab, managing local DNS records and filtering traffic.\n\nIt is deployed to handle local domain resolution and block advertisements across the network.",
     icon: "shield",
 
     overview: "AdGuard Home intercepts DNS queries to enforce custom filtering policies at the network level.\n\nIt is responsible for maintaining local DNS records used for accessing self-hosted services via standard domain names instead of IP addresses.",
@@ -623,7 +623,7 @@ export const technologies: Technology[] = [
     slug: "nginx-reverse-proxy",
     name: "Nginx Reverse Proxy",
     category: "Self-Hosted Services",
-    description: "Routes internal services through secure reverse proxy endpoints with local domain resolution.",
+    description: "Nginx Reverse Proxy is deployed to publish internal services and provide centralized access to the home lab.\n\nIt acts as the primary tool to route HTTP traffic and assign friendly domain names to containerized web applications.",
     icon: "server",
 
     overview: "Nginx is used to map local DNS names to specific service ports.\n\nIt serves as the single entry point for web-based infrastructure tools, acting as the centralized certificate manager and local domain router.",
@@ -643,7 +643,7 @@ export const technologies: Technology[] = [
     slug: "agent-dvr",
     name: "Agent DVR CCTV",
     category: "Self-Hosted Services",
-    description: "Manages continuous video surveillance and camera recording for the local environment.",
+    description: "Agent DVR is used to manage video surveillance and IP camera recording for the local environment.\n\nIt is deployed to process video streams locally, keeping physical security data on the internal network.",
     icon: "server",
 
     overview: "Agent DVR runs locally to aggregate multiple IP camera feeds into a single monitoring interface.\n\nIt is responsible for handling motion detection, storage retention policies, and alert generation completely offline.",
@@ -664,7 +664,7 @@ export const technologies: Technology[] = [
     slug: "hermes-ui",
     name: "Hermes UI",
     category: "Local AI",
-    description: "Serves as the primary graphical interface for interacting with self-hosted AI models.",
+    description: "Hermes UI is used as the graphical interface for interacting with various AI models.\n\nIt acts as a conversational frontend for testing prompts, managing context, and retaining conversation history.",
     icon: "layout",
 
     overview: "Hermes UI connects directly to the 9Router endpoint to facilitate interaction with different AI providers.\n\nIt is deployed via Docker to act as a practical interface for evaluating model responses and managing prompt templates.",
@@ -684,7 +684,7 @@ export const technologies: Technology[] = [
     slug: "9router",
     name: "9Router",
     category: "Local AI",
-    description: "Routes local API requests and balances loads across self-hosted language models.",
+    description: "9Router acts as a unified API endpoint for routing requests to different AI providers.\n\nIt is deployed to centralize access to models from Gemini API, Antigravity, Kiro, and other compatible services.",
     icon: "network",
 
     overview: "9Router runs as the local API gateway for AI interactions within the home lab.\n\nIt is used to simplify client configurations by providing a single endpoint, allowing for rapid model switching and token optimization without altering frontend applications.",
@@ -705,7 +705,7 @@ export const technologies: Technology[] = [
     slug: "zabbix",
     name: "Zabbix",
     category: "Monitoring",
-    description: "Monitors network devices, server health, and service availability across the infrastructure.",
+    description: "Zabbix is used to monitor the health, performance, and availability of selected network devices and Linux servers.\n\nIt is deployed to collect telemetry via SNMP and local agents for visibility into infrastructure state.",
     icon: "network",
 
     overview: "Zabbix serves as the alerting and health monitoring platform for monitored home lab systems.\n\nIt tracks bandwidth utilization, CPU loads, and service uptime, and is responsible for generating notifications when thresholds are reached.",
@@ -741,7 +741,7 @@ export const technologies: Technology[] = [
     slug: "beszel",
     name: "Beszel",
     category: "Monitoring",
-    description: "Provides lightweight resource monitoring and alerting for home lab containers and servers.",
+    description: "Beszel is used for lightweight resource monitoring of Docker containers and Linux hosts.\n\nIt acts as a simple dashboard for assessing CPU, memory, and disk usage across the infrastructure.",
     icon: "activity",
 
     overview: "Beszel is deployed to track granular container metrics with minimal overhead.\n\nIt is used for quick identification of resource-heavy applications to ensure host systems operate within capacity.",
