@@ -59,6 +59,15 @@ export interface Technology {
   overview?: string;
   keyConcepts?: string[];
   useCases?: string[];
+  deploymentEvidence?: {
+    title: string;
+    subtitle: string;
+    imagePath: string;
+    altText: string;
+    caption: string;
+  };
+  integrations?: string[];
+  footerNote?: string;
   bestPractices?: string[];
   architectureDiagram?: string;
   experience?: TechnologyExperience[];

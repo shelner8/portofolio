@@ -387,6 +387,18 @@ export const technologies: Technology[] = [
     category: "Connectivity",
     description: "Provides zero-configuration mesh VPN connectivity for remote infrastructure access.",
     icon: "network",
+
+    overview: "Tailscale operates as the primary method for secure remote administration of the infrastructure.\n\nIt acts as a WireGuard overlay, granting secure access to virtual machines, containers, and hypervisors from external locations.",
+    useCases: ["Secure remote access","Encrypted mesh VPN","Accessing internal services","Remote administration","Direct peer-to-peer routing","Bypassing NAT restrictions"],
+    deploymentEvidence: {
+      "title": "Deployment Evidence",
+      "subtitle": "Current self-hosted Tailscale deployment running inside the Home Lab.",
+      "imagePath": "/images/homelab/tailscale-dashboard.png",
+      "altText": "Tailscale Dashboard",
+      "caption": "Self-hosted Tailscale instance running in the Home Lab environment."
+    },
+    integrations: ["Ubuntu Server","MikroTik","Docker","Proxmox VE"],
+    footerNote: "This deployment is actively maintained as part of the Home Lab and is used for testing infrastructure changes, validating configurations, and supporting continuous learning.",
   },
   {
     id: "multi-wan",
@@ -421,6 +433,18 @@ export const technologies: Technology[] = [
     featured: true,
     description: "Used as an enterprise edge gateway providing routing, switching, and firewall services.",
     icon: "server",
+
+    overview: "RouterOS operates on dedicated hardware to handle routing for the physical infrastructure.\n\nIt is responsible for enforcing network segmentation between user devices, IoT systems, and the home lab management infrastructure.",
+    useCases: ["Multi-WAN failover","Stateful firewall inspection","Inter-VLAN routing","BGP and OSPF dynamic routing","Bandwidth management (Queue Trees)","IPsec site-to-site VPNs"],
+    deploymentEvidence: {
+      "title": "Deployment Evidence",
+      "subtitle": "Current self-hosted MikroTik RouterOS deployment running inside the Home Lab.",
+      "imagePath": "/images/homelab/mikrotik-winbox.png",
+      "altText": "MikroTik RouterOS Dashboard",
+      "caption": "Self-hosted MikroTik RouterOS instance running in the Home Lab environment."
+    },
+    integrations: ["Multi-WAN","OSPF","BGP","Zabbix","VLAN"],
+    footerNote: "This deployment is actively maintained as part of the Home Lab and is used for testing infrastructure changes, validating configurations, and supporting continuous learning.",
   },
   {
     id: "ubuntu-server",
@@ -429,6 +453,18 @@ export const technologies: Technology[] = [
     category: "Network Operating Systems",
     description: "Used as the primary Linux platform hosting virtualization, containers, monitoring, automation, and self-hosted infrastructure services.",
     icon: "server",
+
+    overview: "Multiple Ubuntu Server instances run across the hypervisor environment.\n\nThey are used as dedicated hosts for Docker Compose stacks, reverse proxies, and continuous integration runners.",
+    useCases: ["Container host infrastructure","Automation script execution","Reverse proxy hosting","Syslog and metrics aggregation","Network utility endpoints","Local DNS resolution"],
+    deploymentEvidence: {
+      "title": "Deployment Evidence",
+      "subtitle": "Current self-hosted Ubuntu Server deployment running inside the Home Lab.",
+      "imagePath": "/images/homelab/ubuntu-server-terminal.png",
+      "altText": "Ubuntu Server Dashboard",
+      "caption": "Self-hosted Ubuntu Server instance running in the Home Lab environment."
+    },
+    integrations: ["Docker","Proxmox VE","Tailscale","Zabbix","Nginx Reverse Proxy"],
+    footerNote: "This deployment is actively maintained as part of the Home Lab and is used for testing infrastructure changes, validating configurations, and supporting continuous learning.",
   },
   // --- Network Emulation ---
   {
@@ -438,6 +474,18 @@ export const technologies: Technology[] = [
     category: "Network Emulation",
     description: "Simulates complex network topologies to validate enterprise architectures before production deployment.",
     icon: "network",
+
+    overview: "EVE-NG serves as a virtual engineering lab for reproducing production network environments and validating infrastructure changes.\n\nIt enables safe experimentation with multi-vendor network designs while reducing operational risk during deployment planning.",
+    useCases: ["Multi-vendor interoperability validation","Enterprise topology simulation","Routing protocol validation","Layer 2 switching validation","Firewall policy testing","Network design verification"],
+    deploymentEvidence: {
+      "title": "Deployment Evidence",
+      "subtitle": "Current self-hosted EVE-NG deployment running inside the Home Lab.",
+      "imagePath": "/images/homelab/eve-ng-dashboard.png",
+      "altText": "EVE-NG Dashboard",
+      "caption": "Self-hosted EVE-NG environment used for enterprise network validation and interoperability testing."
+    },
+    integrations: ["Ubuntu Server","MikroTik","Aruba AOS-CX","OSPF","BGP"],
+    footerNote: "This deployment is actively maintained as part of the Home Lab and is used for testing infrastructure changes, validating configurations, and supporting continuous learning.",
   },
   {
     id: "pnetlab",
@@ -446,6 +494,18 @@ export const technologies: Technology[] = [
     category: "Network Emulation",
     description: "Emulates data center topologies to test routing changes and configurations safely.",
     icon: "network",
+
+    overview: "PNETLab serves as a practical engineering sandbox for validating enterprise network configurations and deployment workflows.\n\nIt is regularly used to reproduce production scenarios, verify routing behavior, and perform migration rehearsals before implementing changes in operational environments.",
+    useCases: ["Network topology validation","Layer 2 and Layer 3 design verification","Routing protocol validation","Migration rehearsal","EVPN-VXLAN topology testing","Proof-of-concept development"],
+    deploymentEvidence: {
+      "title": "Deployment Evidence",
+      "subtitle": "Current self-hosted PNETLab deployment running inside the Home Lab.",
+      "imagePath": "/images/homelab/pnetlab-login.png",
+      "altText": "PNETLab Login Interface",
+      "caption": "Self-hosted PNETLab instance used for network design validation and pre-production testing."
+    },
+    integrations: ["Ubuntu Server","Proxmox VE","EVE-NG","MikroTik","Aruba AOS-CX","OSPF","BGP","EVPN","VXLAN"],
+    footerNote: "This deployment is actively maintained as part of the Home Lab and is used for testing infrastructure changes, validating configurations, and supporting continuous learning.",
   },
   // --- Virtualization ---
   {
@@ -455,6 +515,18 @@ export const technologies: Technology[] = [
     category: "Virtualization",
     description: "Hosts bare-metal virtual machines for testing enterprise network architectures and services.",
     icon: "server",
+
+    overview: "VMware ESXi operates as a secondary virtualization environment within the home infrastructure.\n\nIt is used for testing cross-hypervisor migration scenarios, virtual appliance validation, and replicating typical enterprise deployments.",
+    useCases: ["Virtual appliance deployment","Enterprise hypervisor validation","Network adapter passthrough testing","vSwitch configuration","Cross-hypervisor migration","Isolated testing environments"],
+    deploymentEvidence: {
+      "title": "Deployment Evidence",
+      "subtitle": "Current self-hosted VMware ESXi deployment running inside the Home Lab.",
+      "imagePath": "/images/homelab/vmware-esxi-dashboard.png",
+      "altText": "VMware ESXi Dashboard",
+      "caption": "Self-hosted VMware ESXi instance running in the Home Lab environment."
+    },
+    integrations: ["Ubuntu Server","Aruba AOS-CX","MikroTik","VLAN"],
+    footerNote: "This deployment is actively maintained as part of the Home Lab and is used for testing infrastructure changes, validating configurations, and supporting continuous learning.",
   },
   {
     id: "proxmox-ve",
@@ -463,6 +535,18 @@ export const technologies: Technology[] = [
     category: "Virtualization",
     description: "Manages virtual machines and Linux containers for the primary home data center infrastructure.",
     icon: "server",
+
+    overview: "Proxmox VE runs bare-metal virtualization for all continuous home lab workloads.\n\nIt is utilized to host monitoring platforms, local AI endpoints, network controllers, and automated infrastructure deployments.",
+    useCases: ["Virtual machine provisioning","LXC container management","Infrastructure snapshots and backups","Resource allocation and isolation","Network bridging and VLAN tagging","Storage management"],
+    deploymentEvidence: {
+      "title": "Deployment Evidence",
+      "subtitle": "Current self-hosted Proxmox VE deployment running inside the Home Lab.",
+      "imagePath": "/images/homelab/proxmox-dashboard.png",
+      "altText": "Proxmox VE Dashboard",
+      "caption": "Self-hosted Proxmox VE instance running in the Home Lab environment."
+    },
+    integrations: ["Ubuntu Server","Docker","Tailscale","Zabbix","VLAN"],
+    footerNote: "This deployment is actively maintained as part of the Home Lab and is used for testing infrastructure changes, validating configurations, and supporting continuous learning.",
   },
   // --- Container Platform ---
   {
@@ -472,6 +556,18 @@ export const technologies: Technology[] = [
     category: "Container Platform",
     description: "Hosts self-managed infrastructure services using isolated containers.",
     icon: "box",
+
+    overview: "Docker is used to deploy and manage selected self-hosted applications within the environment.\n\nIt acts as the primary runtime where containerization simplifies application deployment, updates, service isolation, and maintenance.\n\nNot every service in the Home Lab runs inside Docker. It is utilized specifically where it supports operational requirements.",
+    useCases: ["Containerized application deployment","Service isolation","Dependency management","Configuration consistency","Local development","Simplified application updates"],
+    deploymentEvidence: {
+      "title": "Deployment Evidence",
+      "subtitle": "Current self-hosted Docker deployment running inside the Home Lab.",
+      "imagePath": "/images/homelab/docker-dashboard.png",
+      "altText": "Docker Dashboard",
+      "caption": "Self-hosted Docker environment actively managing containerized applications within the infrastructure."
+    },
+    integrations: ["Ubuntu Server","Portainer","Nginx Reverse Proxy","Tailscale"],
+    footerNote: "This deployment is actively maintained as part of the Home Lab and is used for testing infrastructure changes, validating configurations, and supporting continuous learning.",
   },
   {
     id: "docker-compose",
@@ -488,6 +584,18 @@ export const technologies: Technology[] = [
     category: "Container Platform",
     description: "Provides a centralized management interface for operating and monitoring the local container infrastructure.",
     icon: "box",
+
+    overview: "Portainer runs as a containerized service to monitor container health and execute administrative tasks without requiring terminal access.\n\nIt acts as the central interface for interacting with local Docker hosts and managing the self-hosted stack.",
+    useCases: ["Centralized container monitoring","Log inspection and troubleshooting","Volume and network management","Image cleanup and lifecycle","Stack deployment","Host resource visualization"],
+    deploymentEvidence: {
+      "title": "Deployment Evidence",
+      "subtitle": "Current self-hosted Portainer deployment running inside the Home Lab.",
+      "imagePath": "/images/homelab/portainer-dashboard.png",
+      "altText": "Portainer Dashboard",
+      "caption": "Self-hosted Portainer instance running in the Home Lab environment."
+    },
+    integrations: ["Docker","Ubuntu Server","Nginx Reverse Proxy"],
+    footerNote: "This deployment is actively maintained as part of the Home Lab and is used for testing infrastructure changes, validating configurations, and supporting continuous learning.",
   },
   // --- Self-Hosted Services ---
   {
@@ -497,6 +605,18 @@ export const technologies: Technology[] = [
     category: "Self-Hosted Services",
     description: "Provides production DNS filtering, recursive DNS resolution, and network-wide advertisement blocking for the home infrastructure.",
     icon: "shield",
+
+    overview: "AdGuard Home intercepts DNS queries to enforce custom filtering policies at the network level.\n\nIt is responsible for maintaining local DNS records used for accessing self-hosted services via standard domain names instead of IP addresses.",
+    useCases: ["Network-wide advertisement blocking","Telemetry and malware domain filtering","Local DNS record management","DNS over HTTPS (DoH) termination","Query logging and analysis","Client-specific DNS policies"],
+    deploymentEvidence: {
+      "title": "Deployment Evidence",
+      "subtitle": "Current self-hosted AdGuard Home deployment running inside the Home Lab.",
+      "imagePath": "/images/homelab/adguard-home-dashboard.png",
+      "altText": "AdGuard Home Dashboard",
+      "caption": "Self-hosted AdGuard Home instance running in the Home Lab environment."
+    },
+    integrations: ["MikroTik","Ubuntu Server","Nginx Reverse Proxy","Tailscale"],
+    footerNote: "This deployment is actively maintained as part of the Home Lab and is used for testing infrastructure changes, validating configurations, and supporting continuous learning.",
   },
   {
     id: "nginx-reverse-proxy",
@@ -505,6 +625,18 @@ export const technologies: Technology[] = [
     category: "Self-Hosted Services",
     description: "Routes internal services through secure reverse proxy endpoints with local domain resolution.",
     icon: "server",
+
+    overview: "Nginx is used to map local DNS names to specific service ports.\n\nIt serves as the single entry point for web-based infrastructure tools, acting as the centralized certificate manager and local domain router.",
+    useCases: ["Reverse Proxy","Local Domain Routing","TLS Termination","HTTP Routing","Centralized Service Access"],
+    deploymentEvidence: {
+      "title": "Deployment Evidence",
+      "subtitle": "Current self-hosted Nginx Reverse Proxy deployment running inside the Home Lab.",
+      "imagePath": "/images/homelab/nginx-reverse-proxy-dashboard.png",
+      "altText": "Nginx Reverse Proxy Dashboard",
+      "caption": "Self-hosted Nginx Reverse Proxy instance running in the Home Lab environment."
+    },
+    integrations: ["Docker","AdGuard Home","Ubuntu Server","Tailscale"],
+    footerNote: "This deployment is actively maintained as part of the Home Lab and is used for testing infrastructure changes, validating configurations, and supporting continuous learning.",
   },
   {
     id: "agent-dvr",
@@ -513,6 +645,18 @@ export const technologies: Technology[] = [
     category: "Self-Hosted Services",
     description: "Manages continuous video surveillance and camera recording for the local environment.",
     icon: "server",
+
+    overview: "Agent DVR runs locally to aggregate multiple IP camera feeds into a single monitoring interface.\n\nIt is responsible for handling motion detection, storage retention policies, and alert generation completely offline.",
+    useCases: ["Continuous video recording","IP camera aggregation","Local motion detection","Storage retention management","Offline physical security","Event alerting"],
+    deploymentEvidence: {
+      "title": "Deployment Evidence",
+      "subtitle": "Current self-hosted Agent DVR CCTV deployment running inside the Home Lab.",
+      "imagePath": "/images/homelab/agentdvr-dashboard.png",
+      "altText": "Agent DVR CCTV Dashboard",
+      "caption": "Self-hosted Agent DVR CCTV instance running in the Home Lab environment."
+    },
+    integrations: ["Ubuntu Server","Nginx Reverse Proxy","Tailscale","Docker"],
+    footerNote: "This deployment is actively maintained as part of the Home Lab and is used for testing infrastructure changes, validating configurations, and supporting continuous learning.",
   },
   // --- Local AI ---
   {
@@ -522,6 +666,18 @@ export const technologies: Technology[] = [
     category: "Local AI",
     description: "Serves as the primary graphical interface for interacting with self-hosted AI models.",
     icon: "layout",
+
+    overview: "Hermes UI connects directly to the 9Router endpoint to facilitate interaction with different AI providers.\n\nIt is deployed via Docker to act as a practical interface for evaluating model responses and managing prompt templates.",
+    useCases: ["Graphical interface","Interacting with AI models","Prompt management","Conversation history","Testing prompts","Frontend for AI Interaction"],
+    deploymentEvidence: {
+      "title": "Deployment Evidence",
+      "subtitle": "Current self-hosted Hermes UI deployment running inside the Home Lab.",
+      "imagePath": "/images/homelab/hermes-ui-dashboard.png",
+      "altText": "Hermes UI Dashboard",
+      "caption": "Self-hosted Hermes UI instance running in the Home Lab environment."
+    },
+    integrations: ["9Router","Docker","Nginx Reverse Proxy"],
+    footerNote: "This deployment is actively maintained as part of the Home Lab and is used for testing infrastructure changes, validating configurations, and supporting continuous learning.",
   },
   {
     id: "9router",
@@ -530,6 +686,18 @@ export const technologies: Technology[] = [
     category: "Local AI",
     description: "Routes local API requests and balances loads across self-hosted language models.",
     icon: "network",
+
+    overview: "9Router runs as the local API gateway for AI interactions within the home lab.\n\nIt is used to simplify client configurations by providing a single endpoint, allowing for rapid model switching and token optimization without altering frontend applications.",
+    useCases: ["Unified endpoint","Provider routing (Gemini","Antigravity","Kiro)","Model selection","Token and cost optimization","Simplified client configuration","Centralized endpoint management"],
+    deploymentEvidence: {
+      "title": "Deployment Evidence",
+      "subtitle": "Current self-hosted 9Router deployment running inside the Home Lab.",
+      "imagePath": "/images/homelab/9router-dashboard.png",
+      "altText": "9Router Dashboard",
+      "caption": "Self-hosted 9Router instance running in the Home Lab environment."
+    },
+    integrations: ["Hermes UI","Docker","Ubuntu Server"],
+    footerNote: "This deployment is actively maintained as part of the Home Lab and is used for testing infrastructure changes, validating configurations, and supporting continuous learning.",
   },
   // --- Monitoring ---
   {
@@ -539,6 +707,18 @@ export const technologies: Technology[] = [
     category: "Monitoring",
     description: "Monitors network devices, server health, and service availability across the infrastructure.",
     icon: "network",
+
+    overview: "Zabbix serves as the alerting and health monitoring platform for monitored home lab systems.\n\nIt tracks bandwidth utilization, CPU loads, and service uptime, and is responsible for generating notifications when thresholds are reached.",
+    useCases: ["Alerting","Health Monitoring","Resource Monitoring","SNMP monitoring","Linux monitoring","Bandwidth tracking"],
+    deploymentEvidence: {
+      "title": "Deployment Evidence",
+      "subtitle": "Current self-hosted Zabbix deployment running inside the Home Lab.",
+      "imagePath": "/images/homelab/zabbix-dashboard.png",
+      "altText": "Zabbix Dashboard",
+      "caption": "Self-hosted Zabbix instance running in the Home Lab environment."
+    },
+    integrations: ["MikroTik","Proxmox VE","Ubuntu Server","SNMP","Tailscale"],
+    footerNote: "This deployment is actively maintained as part of the Home Lab and is used for testing infrastructure changes, validating configurations, and supporting continuous learning.",
   },
   {
     id: "cacti",
@@ -563,6 +743,18 @@ export const technologies: Technology[] = [
     category: "Monitoring",
     description: "Provides lightweight resource monitoring and alerting for home lab containers and servers.",
     icon: "activity",
+
+    overview: "Beszel is deployed to track granular container metrics with minimal overhead.\n\nIt is used for quick identification of resource-heavy applications to ensure host systems operate within capacity.",
+    useCases: ["Docker container metrics","Real-time host resource tracking","Lightweight performance visualization","Rapid capacity assessment","Storage utilization monitoring","Container health checks"],
+    deploymentEvidence: {
+      "title": "Deployment Evidence",
+      "subtitle": "Current self-hosted Beszel deployment running inside the Home Lab.",
+      "imagePath": "/images/homelab/beszel-dashboard.png",
+      "altText": "Beszel Dashboard",
+      "caption": "Self-hosted Beszel instance running in the Home Lab environment."
+    },
+    integrations: ["Docker","Ubuntu Server","Proxmox VE","Nginx Reverse Proxy"],
+    footerNote: "This deployment is actively maintained as part of the Home Lab and is used for testing infrastructure changes, validating configurations, and supporting continuous learning.",
   },
   {
     id: "snmp",

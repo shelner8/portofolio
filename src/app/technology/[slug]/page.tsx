@@ -9,9 +9,10 @@ import { ProjectCard } from "@/components/cards/ProjectCard"
 import { CertificationCard } from "@/components/cards/CertificationCard"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { DeploymentEvidence } from "@/components/ui/DeploymentEvidence"
 import { 
   ArrowLeft, Cpu, FolderGit2, Award, Network, ChevronRight, 
-  BookOpen, Lightbulb, ShieldCheck, LayoutTemplate, Briefcase, FileText, Target
+  BookOpen, Lightbulb, ShieldCheck, LayoutTemplate, Briefcase, FileText, Target, Layers, Info
 } from "lucide-react"
 import { DataCenterFabricDiagram } from "@/components/diagrams/DataCenterFabricDiagram"
 import { SecurityFlowDiagram } from "@/components/diagrams/SecurityFlowDiagram"
@@ -129,7 +130,7 @@ export default function TechnologyDetailPage({ params }: { params: { slug: strin
                 <div className="flex flex-col gap-6">
                   <div className="flex items-center gap-3">
                     <Target className="w-6 h-6 text-accent-emerald" />
-                    <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Typical Use Cases</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Primary Use Cases</h2>
                   </div>
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {technology.useCases.map(useCase => (
@@ -139,6 +140,49 @@ export default function TechnologyDetailPage({ params }: { params: { slug: strin
                       </li>
                     ))}
                   </ul>
+                </div>
+              )}
+
+              {/* Deployment Evidence and Integrations Container */}
+              {(technology.deploymentEvidence || (technology.integrations && technology.integrations.length > 0)) && (
+                <div className="flex flex-col gap-8 md:gap-10">
+                  {/* Deployment Evidence */}
+                  {technology.deploymentEvidence && (
+                    <DeploymentEvidence 
+                      title={technology.deploymentEvidence.title || "Deployment Evidence"}
+                      subtitle={technology.deploymentEvidence.subtitle || ""}
+                      imagePath={technology.deploymentEvidence.imagePath}
+                      altText={technology.deploymentEvidence.altText}
+                      caption={technology.deploymentEvidence.caption}
+                    />
+                  )}
+
+                  {/* Integrated With */}
+                  {technology.integrations && technology.integrations.length > 0 && (
+                    <div className="flex flex-col gap-6">
+                      <div className="flex items-center gap-3">
+                        <Layers className="w-6 h-6 text-accent-blue" />
+                        <h2 className="text-2xl md:text-3xl font-bold text-primary font-mono">Integrated With</h2>
+                      </div>
+                      <div className="flex flex-wrap gap-3 md:gap-4">
+                        {technology.integrations.map(tech => (
+                          <div key={tech} className="px-4 py-2 rounded-lg bg-surface/30 border border-surface text-primary font-medium hover:border-accent-blue/50 hover:bg-accent-blue/5 transition-colors cursor-default">
+                            {tech}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Footer Note */}
+              {technology.footerNote && (
+                <div className="w-full p-6 md:p-8 rounded-xl bg-accent-blue/5 border border-accent-blue/20 flex items-start gap-4">
+                  <Info className="w-6 h-6 text-accent-blue flex-shrink-0 mt-0.5" />
+                  <p className="text-lg text-accent-blue/90 leading-relaxed font-medium">
+                    {technology.footerNote}
+                  </p>
                 </div>
               )}
 
