@@ -55,6 +55,12 @@ export default function TechnologyDetailPage({ params }: { params: { slug: strin
   const relatedArticlesList = articles.filter(a => technology.relatedArticles?.includes(a.id))
 
   const ArchitectureDiagram = technology.architectureDiagram ? diagramRegistry[technology.architectureDiagram] : null
+  
+  const hideDeploymentEvidence = [
+    "proxmox-ve",
+    "vmware-esxi",
+    "ubuntu-server",
+  ].includes(params.slug);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -148,10 +154,10 @@ export default function TechnologyDetailPage({ params }: { params: { slug: strin
               )}
 
               {/* Deployment Evidence and Integrations Container */}
-              {(technology.deploymentEvidence || (technology.integrations && technology.integrations.length > 0)) && (
+              {((!hideDeploymentEvidence && technology.deploymentEvidence) || (technology.integrations && technology.integrations.length > 0)) && (
                 <div className="flex flex-col gap-8 md:gap-10">
                   {/* Deployment Evidence */}
-                  {technology.deploymentEvidence && (
+                  {!hideDeploymentEvidence && technology.deploymentEvidence && (
                     <DeploymentEvidence 
                       title={technology.deploymentEvidence.title || "Deployment Evidence"}
                       subtitle={technology.deploymentEvidence.subtitle || ""}
